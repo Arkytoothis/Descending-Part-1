@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0586fa184db28c346bfce6f274a59086, type: 3}
+  m_Name: Bandit Male
+  m_EditorClassIdentifier: 
+  Name: Bandit Male
+  Key: Bandit Male
+  ExpValue: 25
+  Prefab: {fileID: 4302448175089489570, guid: 4a0f91db36295f746ad46a135acf6bb4, type: 3}
+  Icon: {fileID: 0}
+  Group: 3
+  HitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  StartingVitals:
+    keyData:
+    - Armor
+    - Life
+    - Magic
+    - Stamina
+    valueData:
+    - _vital: {fileID: 11400000, guid: 18bfe6f4bec976d459ba326b0cd6405e, type: 2}
+      _minimumValue: 0
+      _maximumValue: 0
+    - _vital: {fileID: 11400000, guid: 830a4ee13042db94685c95be9ea29b88, type: 2}
+      _minimumValue: 30
+      _maximumValue: 40
+    - _vital: {fileID: 11400000, guid: 9fa349d9418adc04ab224349214b8932, type: 2}
+      _minimumValue: 1
+      _maximumValue: 5
+    - _vital: {fileID: 11400000, guid: 4f295c83c100d964fa1d833bbac3e725, type: 2}
+      _minimumValue: 10
+      _maximumValue: 20
+  StartingStatistic:
+    keyData: []
+    valueData: []
+  StartingSkills:
+    keyData: []
+    valueData: []
+  Resistances: []
+  ItemDrops: []
+  AttackSounds:
+  - enemy_attack_1
+  - enemy_attack_2
+  - enemy_attack_3
+  HitSounds: []
+  WoundSounds:
+  - enemy_wound_1
+  - enemy_wound_2
+  - enemy_wound_2

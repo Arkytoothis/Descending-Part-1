@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d2d22a7a059c74e99c5fdf18519606, type: 3}
+  m_Name: Hide
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: 40756471736a6464181a540f40ddd815, type: 3}
+  _name: Hide
+  _key: Hide
+  _description: 
+  _equipModel: {fileID: 0}
+  _dropModel: {fileID: 5337427966436275192, guid: 41ff90124e576e6489a123d841f5eb26, type: 3}
+  _projectile: {fileID: 0}
+  _category: 2
+  _itemType: 27
+  _nameFormat: 4
+  _equipmentSlot: 13
+  _renderSlots: []
+  _materialAllowed: 14
+  _hands: 5
+  _bestQualityAllowed: 0
+  _enchantable: 0
+  _modelIndex: -1
+  _basePower: 0
+  _encumbrance: 0
+  _goldValue: 0
+  _gemValue: 0
+  _minimumMight: 0
+  _minimumFinesse: 0
+  _minimumMind: 0
+  _weaponData:
+    _hasData: 0
+    _weaponType: 0
+    _range: 0
+    _speed: 0
+    _knockbackStrength: 0
+    _damageType: {fileID: 0}
+    _minDamage: 0
+    _maxDamage: 0
+    _animatorOverride: {fileID: 0}
+  _wearableData:
+    _hasData: 0
+    _armor: 0
+    _block: 0
+    _spellDefense: 0
+    _perceptionModifier: 0
+    _wearableType: 0
+    _headCoverType: 0
+  _accessoryData:
+    _hasData: 0
+    _accessoryType: 0
+  _usableData:
+    _hasData: 0
+    _maxUses: 0
+    _cooldown: 0
+  _ingredientData:
+    _hasData: 1
+    _type: 7
