@@ -14,22 +14,22 @@ namespace Descending.Core
         [SerializeField] private IntEvent onNewMonth = null;
         [SerializeField] private IntEvent onNewYear = null;
         
-        private int _year = 0;
-        private int _month = 0;
-        private int _day = 0;
-        private int _hour = 0;
+        private int _year = 334;
+        private int _month = 4;
+        private int _day = 31;
+        private int _hour = 12;
 
         private void Start()
         {
-            UniStormSystem.Instance.OnHourChangeEvent.AddListener(HourChanged);
-            UniStormSystem.Instance.OnDayChangeEvent.AddListener(DayChanged);
-            UniStormSystem.Instance.OnMonthChangeEvent.AddListener(MonthChanged);
-            UniStormSystem.Instance.OnYearChangeEvent.AddListener(YearChanged);
+            //UniStormSystem.Instance.OnHourChangeEvent.AddListener(HourChanged);
+            //UniStormSystem.Instance.OnDayChangeEvent.AddListener(DayChanged);
+            //UniStormSystem.Instance.OnMonthChangeEvent.AddListener(MonthChanged);
+            //UniStormSystem.Instance.OnYearChangeEvent.AddListener(YearChanged);
             
-            _hour = UniStormSystem.Instance.Hour;
-            _day = UniStormSystem.Instance.Day;
-            _month = UniStormSystem.Instance.Month;
-            _year = UniStormSystem.Instance.Year;
+            //_hour = UniStormSystem.Instance.Hour;
+            //_day = UniStormSystem.Instance.Day;
+            //_month = UniStormSystem.Instance.Month;
+            //_year = UniStormSystem.Instance.Year;
         }
 
         private void HourChanged()

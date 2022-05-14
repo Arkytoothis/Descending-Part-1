@@ -14,10 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     keyData:
-    - Imperial Village
     - Dungeon Entrance
     - Inn
+    - Chapel
+    - Enchanter
+    - Smith
+    - Market
     valueData:
-    - {fileID: 11400000, guid: 86e60b4253595b743a6660814924a7e3, type: 2}
     - {fileID: 11400000, guid: 5c775f28ca7d8494d8282ef96b0e7a99, type: 2}
     - {fileID: 11400000, guid: dbba9e7a862f81144adff72f379c5e68, type: 2}
+    - {fileID: 11400000, guid: 8d343dd659436a145b0862e970598442, type: 2}
+    - {fileID: 11400000, guid: 3a21e4499d0e46442a85ded5e3d73e07, type: 2}
+    - {fileID: 11400000, guid: 04fec83336df5bb458d76d7e025f112c, type: 2}
+    - {fileID: 11400000, guid: 3bdf49cfd9d75da4aa80acd9b2dfbbe9, type: 2}

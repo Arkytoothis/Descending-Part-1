@@ -7,6 +7,7 @@ using Descending.Core;
 using Descending.Enemies;
 using Descending.Equipment;
 using Descending.Gui;
+using Descending.Party;
 using ScriptableObjectArchitecture;
 using UnityEngine;
 using AttributesController = Descending.Attributes.AttributesController;
@@ -33,14 +34,15 @@ namespace Descending.Characters
         
         [SerializeField] private IntEvent onSyncHero = null;
         
-        [SerializeField]private GameObject _worldModel = null;
-        [SerializeField]private GameObject _portraitModel = null;
+        private GameObject _worldModel = null;
+        private GameObject _portraitModel = null;
         private PortraitMount _portrait = null;
         private Rigidbody _rigidbody = null;
         private Animator _worldAnimator = null;
         private BodyRenderer _worldRenderer = null;
         private BodyRenderer _portraitRenderer = null;
         private AnimationEvents _animationEvents = null;
+        private InteractionDetector _interactionDetector = null;
         
         //public BehaviorController BehaviorController => _behaviorController;
         public HeroData HeroData => _heroData;
@@ -76,6 +78,8 @@ namespace Descending.Characters
 
             _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
             _animationEvents.Setup(this);
+
+            _interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
             
             _portraitModel = HeroBuilder.SpawnPortraitPrefab(gender, race, _portraitMount);
             
@@ -118,6 +122,8 @@ namespace Descending.Characters
 
             _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
             _animationEvents.Setup(this);
+            
+            _interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
             
             _portraitModel = HeroBuilder.SpawnPortraitPrefab(saveData.HeroData.Gender, race, _portraitMount);
             
@@ -236,6 +242,11 @@ namespace Descending.Characters
         public void SetTarget(Enemy enemyTarget)
         {
             _animationEvents.SetTarget(enemyTarget);
+        }
+
+        public void SetInteractionDetectorActive(bool active)
+        {
+            _interactionDetector.gameObject.SetActive(active);
         }
     }
 

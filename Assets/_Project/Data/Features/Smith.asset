@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434822ae78fbf3144a3df00844973dd0, type: 3}
-  m_Name: Imperial Village
+  m_Name: Smith
   m_EditorClassIdentifier: 
-  Name: Imperial Village
-  Key: Imperial Village
-  InteractionString: Enter Village
-  Prefab: {fileID: 6128459891936242844, guid: 56da26eaf2a462940866c99aafec204c, type: 3}
+  Name: Smith
+  Key: Smith
+  InteractionString: Enter Smith
+  Prefab: {fileID: 0}

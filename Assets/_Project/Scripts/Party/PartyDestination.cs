@@ -5,13 +5,14 @@ using Descending.Core;
 using Descending.World;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 namespace Descending
 {
     public class PartyDestination : MonoBehaviour
     {
         [SerializeField] private LayerMask _groundMask = new LayerMask();
-        [SerializeField] private LayerMask _buildingMask = new LayerMask();
+        [FormerlySerializedAs("_buildingMask")] [SerializeField] private LayerMask _featureMask = new LayerMask();
         [SerializeField] private PartyMover _partyMover = null;
         //[SerializeField] private List<Texture2D> _cursors = null;
 
@@ -39,7 +40,7 @@ namespace Descending
                 return;
             }
 
-            if (RaycastForBuilding(GetRay()) == true) return;
+            if (RaycastForFeature(GetRay()) == true) return;
             if (RaycastForTerrain(GetRay()) == true) return;
 
             //Cursor.SetCursor(_cursors[(int)CursorTypes.Gui], Vector2.zero, CursorMode.Auto);
@@ -62,13 +63,12 @@ namespace Descending
             return false;
         }
         
-        bool RaycastForBuilding(Ray ray)
+        bool RaycastForFeature(Ray ray)
         {
-            if (Physics.Raycast(ray, out RaycastHit hit, 1000f, _buildingMask))
+            if (Physics.Raycast(ray, out RaycastHit hit, 1000f, _featureMask))
             {
                 if (Input.GetMouseButtonDown(1))
-                { 
-                    //_party.MoveTo(hit.point);
+                {
                     Feature feature = hit.collider.gameObject.GetComponent<Feature>();
                     transform.position = feature.InteractionTransform.position;
                     _partyMover.MoveTo(feature.InteractionTransform.position);

@@ -38,11 +38,11 @@ namespace Descending.Party
             _resources.AddMaterials(0);
             _resources.AddSupplies(10);
 
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Imperial"), Database.instance.Profession.GetProfession("Soldier"), true, true, 0, true), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Halfling"), Database.instance.Profession.GetProfession("Thief"), true, true, 1, true), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Islander"), Database.instance.Profession.GetProfession("Acolyte"), true, true, 2, true), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Half Orc"), Database.instance.Profession.GetProfession("Soldier"), true, true, 0, true), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Wild Elf"), Database.instance.Profession.GetProfession("Scout"), true, true, 1, true), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Mountain Dwarf"), Database.instance.Profession.GetProfession("Acolyte"), true, true, 2, true), _heroesParent);
             _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice"), true, true, 3, true), _heroesParent);
-            
+            SetLeader(0);
         }
 
         public void Load()
@@ -51,6 +51,7 @@ namespace Descending.Party
 	
             LoadResources();
             LoadParty();
+            SetLeader(0);
         }
 
         private void LoadResources()
@@ -124,6 +125,21 @@ namespace Descending.Party
         {
             _camera.m_Follow = _partyData.Heroes[index].transform;
             _camera.m_LookAt = _partyData.Heroes[index].transform;
+        }
+
+        public void SetLeader(int leaderIndex)
+        {
+            for (int i = 0; i < _partyData.Heroes.Count; i++)
+            {
+                if (i == leaderIndex)
+                {
+                    _partyData.Heroes[i].SetInteractionDetectorActive(true);
+                }
+                else
+                {
+                    _partyData.Heroes[i].SetInteractionDetectorActive(false);
+                }
+            }
         }
     }
 }

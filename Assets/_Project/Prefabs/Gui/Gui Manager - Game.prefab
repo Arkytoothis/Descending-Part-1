@@ -212,6 +212,10 @@ MonoBehaviour:
   - {fileID: 717662804729297410, guid: 83861c72d1cdd704f93523e8b685f969, type: 3}
   - {fileID: 717662804729297410, guid: 343dd73954e23f84f9354a5b8fee15c5, type: 3}
   - {fileID: 717662804729297410, guid: 80a1e21e4c257594384c4f79f0528f06, type: 3}
+  - {fileID: 717662804729297410, guid: ddc1cb7959379684980086bd1c43c1b5, type: 3}
+  - {fileID: 717662804729297410, guid: d0916e4888a7f0c4e902f9b3cc44c099, type: 3}
+  - {fileID: 717662804729297410, guid: 7a041e43a746e3e4e87a20f47ef248e7, type: 3}
+  - {fileID: 717662804729297410, guid: 2ce9ef058cc8b7146ba17d79c2511b67, type: 3}
   _gameWindowsParent: {fileID: 4941666523503857002}
 --- !u!114 &380711416096840089
 MonoBehaviour:
@@ -268,7 +272,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4794604626376908411}
         m_TargetAssemblyTypeName: Descending.Gui.WindowManager, Descending
-        m_MethodName: OnInteractWithInn
+        m_MethodName: OnInteractWithFeature
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

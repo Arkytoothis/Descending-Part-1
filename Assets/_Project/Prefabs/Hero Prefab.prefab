@@ -85,8 +85,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _worldModel: {fileID: 0}
-  _portraitModel: {fileID: 0}
 --- !u!54 &8348049720226259136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,7 +165,7 @@ MonoBehaviour:
   acceleration: 5
   rotationSpeed: 720
   slowdownTime: 0.1
-  endReachedDistance: 0.25
+  endReachedDistance: 0.05
   wallForce: 3
   wallDist: 1
   funnelSimplification: 1

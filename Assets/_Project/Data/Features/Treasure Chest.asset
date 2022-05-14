@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434822ae78fbf3144a3df00844973dd0, type: 3}
-  m_Name: Merchant
+  m_Name: Treasure Chest
   m_EditorClassIdentifier: 
-  Name: Merchant
-  Key: Merchant
-  Prefab: {fileID: 6128459891936242844, guid: a1e5728f9e439834c9523a725432949e, type: 3}
+  Name: Treasure Chest
+  Key: Treasure Chest
+  InteractionString: Open Treasure Chest
+  Prefab: {fileID: 0}

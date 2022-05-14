@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434822ae78fbf3144a3df00844973dd0, type: 3}
-  m_Name: Goblin Hideout
+  m_Name: Enchanter
   m_EditorClassIdentifier: 
-  Name: Goblin Hideout
-  Key: Goblin Hideout
-  Prefab: {fileID: 6128459891936242844, guid: c5248d100310d55408395ccc93a50845, type: 3}
+  Name: Enchanter
+  Key: Enchanter
+  InteractionString: Enter Enchanter
+  Prefab: {fileID: 0}

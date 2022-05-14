@@ -87,10 +87,21 @@ namespace Descending.Gui
             ((DungeonExitWindow) _windows[(int)GameWindows.Dungeon_Exit]).LoadDungeon(dungeon);
         }
 
-        public void OnInteractWithInn(Feature feature)
+        public void OnInteractWithFeature(Feature feature)
         {
             CLoseAll();
-            ((InnWindow) _windows[(int)GameWindows.Inn]).OnLoadInn((Inn)feature);
+            if(feature.GetType() == typeof(Inn))
+                ((InnWindow) _windows[(int)GameWindows.Inn]).OnLoadInn((Inn)feature);
+            else if(feature.GetType() == typeof(Chapel))
+                ((ChapelWindow) _windows[(int)GameWindows.Chapel]).OnLoadChapel((Chapel)feature);
+            else if(feature.GetType() == typeof(Market))
+                ((MarketWindow) _windows[(int)GameWindows.Market]).OnLoadMarket((Market)feature);
+            else if(feature.GetType() == typeof(Smith))
+                ((SmithWindow) _windows[(int)GameWindows.Smith]).OnLoadSmith((Smith)feature);
+            else if(feature.GetType() == typeof(Enchanter))
+                ((EnchanterWindow) _windows[(int)GameWindows.Enchanter]).OnLoadEnchanter((Enchanter)feature);
+            else if(feature.GetType() == typeof(TreasureChest))
+                ((TreasureWindow) _windows[(int)GameWindows.Treasure]).OnLoadTreasure((TreasureChest)feature);
         }
     }
 }

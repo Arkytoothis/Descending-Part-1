@@ -13,6 +13,7 @@ namespace Descending.Gui
         [SerializeField] private TMP_Text _treasureLabel = null;
         [SerializeField] private TMP_Text _coinsLabel = null;
         [SerializeField] private TMP_Text _gemsLabel = null;
+        [SerializeField] private TMP_Text _materialsLabel = null;
         [SerializeField] private TMP_Text _suppliesLabel = null;
         [SerializeField] private TMP_Text _lockLabel = null;
         [SerializeField] private TMP_Text _hiddenLabel = null;
@@ -21,7 +22,7 @@ namespace Descending.Gui
         [SerializeField] private Transform _itemWidgetsParent = null;
 
         private List<StockpileWidget> _widgets = null;
-        private Treasure _treasure = null;
+        private TreasureChest _treasure = null;
         
         public override void Setup()
         {
@@ -41,6 +42,11 @@ namespace Descending.Gui
             Time.timeScale = 1;
             _isOpen = false;
             _container.SetActive(false);
+
+            if (_treasure != null)
+            {
+                _treasure.EndInteraction();
+            }
         }
 
         public void CloseButtonClick()
@@ -60,7 +66,7 @@ namespace Descending.Gui
             Close();
         }
 
-        public void OnLoadTreasure(Treasure treasure)
+        public void OnLoadTreasure(TreasureChest treasure)
         {
             _treasure = treasure;
 
@@ -69,6 +75,7 @@ namespace Descending.Gui
             _treasureLabel.text = "Level " + _treasure.Level + " " + _treasure.name;
             _coinsLabel.text = "Coins " + _treasure.Coins;
             _gemsLabel.text = "Gems " + _treasure.Gems;
+            _materialsLabel.text = "Materials " + _treasure.Materials;
             _suppliesLabel.text = "Supplies " + _treasure.Supplies;
             _lockLabel.text = "Lock Level " + _treasure.LockLevel;
             _hiddenLabel.text = "Hidden Level " + _treasure.HiddenLevel;
