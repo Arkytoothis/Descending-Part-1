@@ -16,6 +16,8 @@ MonoBehaviour:
     keyData:
     - Imperial Village
     - Dungeon Entrance
+    - Inn
     valueData:
     - {fileID: 11400000, guid: 86e60b4253595b743a6660814924a7e3, type: 2}
     - {fileID: 11400000, guid: 5c775f28ca7d8494d8282ef96b0e7a99, type: 2}
+    - {fileID: 11400000, guid: dbba9e7a862f81144adff72f379c5e68, type: 2}

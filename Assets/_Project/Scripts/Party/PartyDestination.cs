@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Core;
+using Descending.World;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -11,6 +12,7 @@ namespace Descending
     {
         [SerializeField] private LayerMask _groundMask = new LayerMask();
         [SerializeField] private LayerMask _buildingMask = new LayerMask();
+        [SerializeField] private PartyMover _partyMover = null;
         //[SerializeField] private List<Texture2D> _cursors = null;
 
         private bool _raycastEnabled = true;
@@ -19,6 +21,7 @@ namespace Descending
         private void Start()
         {
             _camera = Camera.main;
+            _partyMover.SetPosition(transform.position);
         }
         
         private void Update()
@@ -48,8 +51,9 @@ namespace Descending
             {
                 if (Input.GetMouseButtonDown(1))
                 { 
-                    Debug.Log(hit.collider.gameObject.name);
+                    //Debug.Log(hit.collider.gameObject.name);
                     transform.position = hit.point;
+                    _partyMover.MoveTo(hit.point);
                 }
                 
                 return true;
@@ -65,8 +69,9 @@ namespace Descending
                 if (Input.GetMouseButtonDown(1))
                 { 
                     //_party.MoveTo(hit.point);
-                    Building building = hit.collider.gameObject.GetComponent<Building>();
-                    transform.position = building.InteractionTransform.position;
+                    Feature feature = hit.collider.gameObject.GetComponent<Feature>();
+                    transform.position = feature.InteractionTransform.position;
+                    _partyMover.MoveTo(feature.InteractionTransform.position);
                 }
                 
                 return true;

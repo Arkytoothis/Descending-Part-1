@@ -33,7 +33,7 @@ namespace Descending.Gui
                 _windows.Add(window);
             }
 
-            ((VillageWindow)_windows[(int) GameWindows.Village]).SetParty(party);
+            ((InnWindow)_windows[(int) GameWindows.Inn]).SetParty(party);
             
             CLoseAll();
         }
@@ -85,6 +85,12 @@ namespace Descending.Gui
         {
             CLoseAll();
             ((DungeonExitWindow) _windows[(int)GameWindows.Dungeon_Exit]).LoadDungeon(dungeon);
+        }
+
+        public void OnInteractWithInn(Feature feature)
+        {
+            CLoseAll();
+            ((InnWindow) _windows[(int)GameWindows.Inn]).OnLoadInn((Inn)feature);
         }
     }
 }

@@ -24,9 +24,8 @@ namespace Descension.Core
         public void Place()
         {
             Ray ray = new Ray(transform.position + new Vector3(0f, 100f, 0f), Vector3.down);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100f, _groundMask))
+            if (Physics.Raycast(ray, out RaycastHit hit, 1000f, _groundMask))
             {
                 transform.position = new Vector3(transform.position.x, hit.point.y - _yOffset, transform.position.z);
             }

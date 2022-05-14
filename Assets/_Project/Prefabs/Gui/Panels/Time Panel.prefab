@@ -652,7 +652,7 @@ RectTransform:
   m_Children:
   - {fileID: 5287444419732171272}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -700,7 +700,7 @@ MonoBehaviour:
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
   _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 493c007acb051d04eab670a404b81cf9, type: 2}
+  _event: {fileID: 11400000, guid: eb548d88f5ee7e045919aa64b4e03205, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -733,7 +733,7 @@ MonoBehaviour:
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
   _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: ea6a1e718d6d3354d929f9a178140f6d, type: 2}
+  _event: {fileID: 11400000, guid: 0c3c7c114b0f62e4e9f1483bb21c2054, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -766,7 +766,7 @@ MonoBehaviour:
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
   _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: d3d87534de441a041b610921b9f7d8c2, type: 2}
+  _event: {fileID: 11400000, guid: 98c96d8ff86d10d48a30f95fae0e69ef, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -799,7 +799,7 @@ MonoBehaviour:
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
   _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: c957b4448cfde8a45a27585e3cb8f84f, type: 2}
+  _event: {fileID: 11400000, guid: 0d7bba9c9bc8cb04e9c20f14ae7f5f05, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:

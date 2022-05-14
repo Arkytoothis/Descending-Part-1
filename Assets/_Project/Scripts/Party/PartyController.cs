@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Cinemachine;
 using Descending.Characters;
 using Descending.Combat;
 using Descending.Core;
@@ -13,12 +14,13 @@ namespace Descending.Party
 {
     public class PartyController : MonoBehaviour
     {
+        [SerializeField] private CinemachineVirtualCamera _camera = null;
         [SerializeField] private ResourcesController _resources = null;
-        [SerializeField] private PartyFormation _formation = null;
         [SerializeField] private Transform _heroesParent = null;
-        [SerializeField] private float _visionRadius = 20f;
-        [SerializeField] private float _fogOffset = -10f;
-        [SerializeField] private float _fogRevealDelay = 0.1f;
+        [SerializeField] private PartyMover _partyMover = null;
+        // [SerializeField] private float _visionRadius = 20f;
+        // [SerializeField] private float _fogOffset = -10f;
+        // [SerializeField] private float _fogRevealDelay = 0.1f;
         
         [SerializeField] private PartyControllerEvent onSyncParty = null;
         
@@ -26,7 +28,6 @@ namespace Descending.Party
         //[SerializeField] private VolumetricFog _fogOfWar = null;
 
         public PartyData PartyData => _partyData;
-        public PartyFormation Formation => _formation;
 
         public void Setup()
         {
@@ -34,12 +35,14 @@ namespace Descending.Party
             _partyData = new PartyData();
             _resources.AddCoins(100);
             _resources.AddGems(0);
+            _resources.AddMaterials(0);
             _resources.AddSupplies(10);
 
             _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Imperial"), Database.instance.Profession.GetProfession("Soldier"), true, true, 0, true), _heroesParent);
             _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Halfling"), Database.instance.Profession.GetProfession("Thief"), true, true, 1, true), _heroesParent);
             _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Islander"), Database.instance.Profession.GetProfession("Acolyte"), true, true, 2, true), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice"), true, true, 3, true), _heroesParent); 
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice"), true, true, 3, true), _heroesParent);
+            
         }
 
         public void Load()
@@ -59,6 +62,7 @@ namespace Descending.Party
 
             _resources.AddCoins(saveData.Coins);
             _resources.AddGems(saveData.Gems);
+            _resources.AddMaterials(saveData.Materials);
             _resources.AddSupplies(saveData.Supplies);
         }
 
@@ -73,34 +77,13 @@ namespace Descending.Party
             {
                 _partyData.AddHero(HeroBuilder.LoadHero(saveData[i], true, true), _heroesParent);
             }
-        }
-
-        private void SetFormation()
-        {
-            for (int i = 0; i < _partyData.Heroes.Count; i++)
-            {
-                _partyData.Heroes[i].transform.localPosition = _formation.Positions[i].position;
-            }
-        }
-
-        public void MoveToFormation()
-        {
-            for (int i = 0; i < _partyData.Heroes.Count; i++)
-            {
-                _partyData.Heroes[i].Pathfinder.EnablePathing();
-                _partyData.Heroes[i].Pathfinder.SetDestination(_formation.Positions[i].position);
-            }
-        }
-        
-        public void SetPosition(Vector3 position)
-        {
-            _formation.MoveTo(_partyData.Heroes[0].transform.position, position);
-            SetFormation();
+            
         }
 
         public void Select()
         {
             SyncParty();
+            SetCameraTarget(0);
         }
 
         public void SyncParty()
@@ -120,8 +103,8 @@ namespace Descending.Party
                 //_partyData.Heroes[i].BehaviorController.SetBehaviorActive(false);
             }
             
-            _formation.SetFlagActive(true);
-            MoveToFormation();
+            //_formation.SetFlagActive(true);
+            //MoveToFormation();
         }
 
         public void OnAddExperience(int experience)
@@ -135,6 +118,12 @@ namespace Descending.Party
         public void Save()
         {
             _resources.Save();
+        }
+
+        public void SetCameraTarget(int index)
+        {
+            _camera.m_Follow = _partyData.Heroes[index].transform;
+            _camera.m_LookAt = _partyData.Heroes[index].transform;
         }
     }
 }

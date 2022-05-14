@@ -59,15 +59,6 @@ public class OverworldManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Utilities.Exit();
-        }
-    }
-
     private void SpawnGui()
     {
         GameObject clone = Instantiate(_guiPrefab, _guiParent);

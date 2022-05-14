@@ -9,6 +9,7 @@ namespace Descending.Scene_Overworld.Gui
     {
         [SerializeField] private TMP_Text _coinsLabel = null;
         [SerializeField] private TMP_Text _gemsLabel = null;
+        [SerializeField] private TMP_Text _materialsLabel = null;
         [SerializeField] private TMP_Text _suppliesLabel = null;
         [SerializeField] private GameObject _container = null;
         
@@ -35,6 +36,11 @@ namespace Descending.Scene_Overworld.Gui
         public void OnSyncGems(int gems)
         {
             _gemsLabel.text = "Gems " + gems;
+        }
+        
+        public void OnSyncMaterials(int materials)
+        {
+            _materialsLabel.text = "Materials " + materials;
         }
         
         public void OnSyncSupplies(int supplies)

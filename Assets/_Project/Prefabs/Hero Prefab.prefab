@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 730076597174929734}
   - component: {fileID: 4254240643932058578}
   - component: {fileID: 877164865854061029}
+  - component: {fileID: 8867835860399646290}
   m_Layer: 0
   m_Name: Hero Prefab
   m_TagString: Hero
@@ -84,6 +85,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _worldModel: {fileID: 0}
+  _portraitModel: {fileID: 0}
 --- !u!54 &8348049720226259136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -164,7 +167,7 @@ MonoBehaviour:
   acceleration: 5
   rotationSpeed: 720
   slowdownTime: 0.1
-  endReachedDistance: 0.01
+  endReachedDistance: 0.25
   wallForce: 3
   wallDist: 1
   funnelSimplification: 1
@@ -197,6 +200,33 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8867835860399646290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752634011024786}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560112f876f5746c780eca0d404e7139, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 2
+  radiusBackingField: 0.5
+  heightBackingField: 2
+  centerBackingField: 1
+  locked: 0
+  lockWhenNotMoving: 1
+  agentTimeHorizon: 2
+  obstacleTimeHorizon: 2
+  maxNeighbours: 10
+  layer: 1
+  collidesWith: -1
+  wallAvoidForce: 1
+  wallAvoidFalloff: 1
+  priority: 0.5
+  debug: 1
 --- !u!1 &1113880544865384821
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +403,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -615,7 +644,6 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    serializedVersion: 2
     m_TransformParent: {fileID: 5234674199197591309}
     m_Modifications:
     - target: {fileID: 1228096456190437065, guid: db2eee72ffccde64b99ec5766768f411,
@@ -794,7 +822,6 @@ PrefabInstance:
       value: Vital Bar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: db2eee72ffccde64b99ec5766768f411, type: 3}
 --- !u!114 &7047570391168760711 stripped
 MonoBehaviour:

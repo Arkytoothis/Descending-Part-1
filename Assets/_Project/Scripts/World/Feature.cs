@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,14 @@ namespace Descending.World
     public abstract class Feature : MonoBehaviour
     {
         [SerializeField] private FeatureDefinition _definition = null;
+        [SerializeField] private Transform _interactionTransform = null;
 
         private int _threatLevel = 0;
+        protected bool _interacting = false;
         
+        public Transform InteractionTransform => _interactionTransform;
+        public int ThreatLevel => _threatLevel;
+
         public void Setup()
         {
         }

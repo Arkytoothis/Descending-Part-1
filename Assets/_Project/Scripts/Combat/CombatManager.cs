@@ -33,7 +33,7 @@ namespace Descending.Combat
             _combatStarted = true;
             _party = combatParameters.Party;
             _party.CombatStarted(combatParameters);
-            _party.Formation.SetFlagActive(false);
+            //_party.Formation.SetFlagActive(false);
             _encounter = combatParameters.Encounter;
             _encounter.SetCombatActive(false);
             
@@ -53,7 +53,7 @@ namespace Descending.Combat
                 _party.PartyData.Heroes[i].LifeBar.Hide();
             }
             
-            _party.MoveToFormation();
+            //_party.MoveToFormation();
         }
         
         public void OnEndCombat_Gui(bool b)

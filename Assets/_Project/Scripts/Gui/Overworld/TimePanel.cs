@@ -16,10 +16,10 @@ namespace Descending.Scene_Overworld.Gui
         
         public void Setup()
         {
-            //OnHourChanged(UniStormSystem.Instance.Hour);    
-            //OnDayChanged(UniStormSystem.Instance.Day);    
-            //OnMonthChanged(UniStormSystem.Instance.Month);    
-            //OnYearChanged(UniStormSystem.Instance.Year);    
+            OnHourChanged(UniStormSystem.Instance.Hour);    
+            OnDayChanged(UniStormSystem.Instance.Day);    
+            OnMonthChanged(UniStormSystem.Instance.Month);    
+            OnYearChanged(UniStormSystem.Instance.Year);    
         }
 
         public void Show()

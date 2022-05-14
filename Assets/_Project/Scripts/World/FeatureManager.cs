@@ -30,7 +30,7 @@ namespace Descending.World
             
             _spawners[0].Spawn("Imperial Village", _featuresParent);
             startPosition = _spawners[0].transform.position;
-            party.SetPosition(_spawners[0].transform.position);
+            //party.SetPosition(_spawners[0].transform.position);
             _spawners.RemoveAt(0);
             
             for (int i = 0; i < _spawners.Count; i++)
