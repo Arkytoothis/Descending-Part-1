@@ -8,7 +8,7 @@ namespace ScriptableObjectArchitecture
 	    fileName = "TreasureGameEvent.asset",
 	    menuName = SOArchitecture_Utility.GAME_EVENT + "Treasure Event",
 	    order = 120)]
-	public sealed class TreasureGameEvent : GameEventBase<Treasure>
+	public sealed class TreasureGameEvent : GameEventBase<TreasureChest>
 	{
 	}
 }

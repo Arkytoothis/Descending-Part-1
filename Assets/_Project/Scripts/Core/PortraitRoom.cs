@@ -5,7 +5,7 @@ using Descending.Core;
 using Descending.Party;
 using UnityEngine;
 
-namespace Reclamation.Core
+namespace Descending.Core
 {
     public class PortraitRoom : MonoBehaviour
     {

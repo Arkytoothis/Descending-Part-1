@@ -32,6 +32,11 @@ namespace Descending.Gui
             Time.timeScale = 1;
             _isOpen = false;
             _container.SetActive(false);
+
+            if (_dungeon != null)
+            {
+                _dungeon.EndInteraction();
+            }
         }
 
         public void CloseButtonClick()

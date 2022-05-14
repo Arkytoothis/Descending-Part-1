@@ -81,12 +81,6 @@ namespace Descending.Gui
             ((EncounterWindow) _windows[(int)GameWindows.Encounter]).LoadEncounter(encounter);
         }
 
-        public void OnTriggerExitWindow(Dungeon dungeon)
-        {
-            CLoseAll();
-            ((DungeonExitWindow) _windows[(int)GameWindows.Dungeon_Exit]).LoadDungeon(dungeon);
-        }
-
         public void OnInteractWithFeature(Feature feature)
         {
             CLoseAll();
@@ -102,6 +96,8 @@ namespace Descending.Gui
                 ((EnchanterWindow) _windows[(int)GameWindows.Enchanter]).OnLoadEnchanter((Enchanter)feature);
             else if(feature.GetType() == typeof(TreasureChest))
                 ((TreasureWindow) _windows[(int)GameWindows.Treasure]).OnLoadTreasure((TreasureChest)feature);
+            else if(feature.GetType() == typeof(Dungeon))
+                ((DungeonWindow) _windows[(int)GameWindows.Dungeon]).OnLoadDungeon((Dungeon)feature);
         }
     }
 }

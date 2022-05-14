@@ -12,12 +12,12 @@ namespace Descending.Party
         
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Treasure"))
-            {
-                Treasure treasure = other.GetComponent<Treasure>();
-                //_party.TreasurerEncountered(treasure);
-                onTreasureEncountered.Invoke(treasure);
-            }
+            // if (other.CompareTag("Treasure"))
+            // {
+            //     Treasure treasure = other.GetComponent<Treasure>();
+            //     //_party.TreasurerEncountered(treasure);
+            //     onTreasureEncountered.Invoke(treasure);
+            // }
         }
     }
 }

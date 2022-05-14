@@ -23,33 +23,20 @@ namespace Descending.Encounters
         [SerializeField] private Collider _triggerCollider = null;
         [SerializeField] private int _threatLevel = 0;
 
-        //[SerializeField] private GameObject _ring = null;
         [SerializeField] private Transform _enemiesParent = null;
         [SerializeField] private List<Transform> _formation = null;
         [SerializeField] private List<EnemyShort> _enemyData = null;
         [SerializeField] private List<Enemy> _enemies = null;
-        [SerializeField] private bool _setParent = true;
-
-        [SerializeField] private EncounterEvent onRegisterEncounter = null;   
+        [SerializeField] private bool _setParent = true;  
         
         private bool _isActive = false;
-        private Vector3 _combatCamPosition;
         
         public EncounterDifficulties Difficulty => _difficulty;
         public EnemyGroups Group => _group;
         public int ThreatLevel => _threatLevel;
         public bool IsActive => _isActive;
-        public Vector3 CombatCamPosition => _combatCamPosition;
         public List<Enemy> Enemies => _enemies;
         public bool SetParent => _setParent;
-
-        private void Awake()
-        {
-            //Debug.Log("Encounter.Awake");
-            onRegisterEncounter.Invoke(this);
-            
-            SetActive(false);
-        }
         
         public void Setup(EncounterDifficulties difficulty, EnemyGroups group, int threatLevel, List<EnemyShort> enemies)
         {
@@ -63,14 +50,11 @@ namespace Descending.Encounters
 
         public void SetCombatActive(bool active)
         {
-            //_ring.SetActive(active);
             _triggerCollider.enabled = active;
         }
 
         public void SpawnEnemies()
         {
-            ClearFLora();
-            
             for (int i = 0; i < _enemyData.Count; i++)
             {
                 EnemyDefinition definition = Database.instance.Enemies.GetEnemy(_enemyData[i].Key);
@@ -85,44 +69,6 @@ namespace Descending.Encounters
                 
                 _enemies.Add(enemy);
             }
-        }
-
-        private void ClearFLora()
-        {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 8f);
-            foreach (var hitCollider in hitColliders)
-            {
-                if (hitCollider.CompareTag("Flora"))
-                {
-                    Destroy(hitCollider.gameObject);
-                }
-            }
-        }
-
-        public void SetParentOnSpawn(bool setParent)
-        {
-            _setParent = setParent;
-        }
-        
-        public void SetActive(bool active)
-        {
-            _isActive = active;
-
-            SetEnemiesActive(_isActive);
-            //_ring.SetActive(_isActive);
-        }
-
-        private void SetEnemiesActive(bool active)
-        {
-            for (int i = 0; i < _enemies.Count; i++)
-            {
-                _enemies[i].gameObject.SetActive(active);
-            }
-        }
-
-        public void SetCombatCamPosition(Vector3 position)
-        {
-            _combatCamPosition = position;
         }
     }
 }

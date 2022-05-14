@@ -4,9 +4,9 @@ using Descending.World;
 namespace ScriptableObjectArchitecture
 {
 	[System.Serializable]
-	public sealed class TreasureReference : BaseReference<Treasure, TreasureVariable>
+	public sealed class TreasureReference : BaseReference<TreasureChest, TreasureVariable>
 	{
 	    public TreasureReference() : base() { }
-	    public TreasureReference(Treasure value) : base(value) { }
+	    public TreasureReference(TreasureChest value) : base(value) { }
 	}
 }

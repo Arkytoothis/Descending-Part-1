@@ -21,7 +21,6 @@ namespace Descending.Scene_Overworld.Gui
         [SerializeField] private GameObject _partyPrefab = null;
         [SerializeField] private GameObject _resourcesPrefab = null;
         [SerializeField] private GameObject _timePrefab = null;
-        [SerializeField] private GameObject _terrainPrefab = null;
         [SerializeField] private GameObject _combatPrefab = null;
 
         private GuiModes _mode = GuiModes.World;
@@ -29,7 +28,6 @@ namespace Descending.Scene_Overworld.Gui
         private PartyPanel _partyPanel = null;
         private ResourcesPanel _resourcesPanel = null;
         private TimePanel _timePanel = null;
-        private TerrainPanel _terrainPanel = null;
         private CombatPanel _combatPanel = null;
         
         public void Setup(PartyController party)
@@ -37,7 +35,6 @@ namespace Descending.Scene_Overworld.Gui
             SpawnPartyPanel();
             SpawnResourcesPanel();
             SpawnTimePanel();
-            SpawnCurrentTilePanel();
             SpawnCombatPanel();
             SetMode(GuiModes.World);
             
@@ -68,14 +65,12 @@ namespace Descending.Scene_Overworld.Gui
             _partyPanel.Show();
             _resourcesPanel.Show();
             _timePanel.Show();
-            _terrainPanel.Show();
         }
 
         private void CombatMode()
         {
             _resourcesPanel.Hide();
             _timePanel.Hide();
-            _terrainPanel.Hide();
             
             _partyPanel.Show();
             _combatPanel.Show();
@@ -100,13 +95,6 @@ namespace Descending.Scene_Overworld.Gui
             GameObject clone = Instantiate(_timePrefab, transform);
             _timePanel = clone.GetComponentInChildren<TimePanel>();
             _timePanel.Setup();
-        }
-
-        private void SpawnCurrentTilePanel()
-        {
-            GameObject clone = Instantiate(_terrainPrefab, transform);
-            _terrainPanel = clone.GetComponentInChildren<TerrainPanel>();
-            _terrainPanel.Setup();
         }
 
         private void SpawnTooltip()

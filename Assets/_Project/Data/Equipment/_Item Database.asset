@@ -28,6 +28,7 @@ MonoBehaviour:
     - Simple Vestments
     - Dagger
     - Long Sword
+    - Wood Shield
     valueData:
     - {fileID: 11400000, guid: 2ae505d62fdd6724d8de1ca2207b74d3, type: 2}
     - {fileID: 11400000, guid: 20b1b02d41a03ff4ab8e47ecf612ddf7, type: 2}
@@ -43,3 +44,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 469b9267b51fe344b893a303b82ef3cc, type: 2}
     - {fileID: 11400000, guid: 417326d4bb9808f4a861860f0448673b, type: 2}
     - {fileID: 11400000, guid: a76083b8c56594643aa0dc8158f08229, type: 2}
+    - {fileID: 11400000, guid: d945a7368b40b8844ae8609eceebef82, type: 2}

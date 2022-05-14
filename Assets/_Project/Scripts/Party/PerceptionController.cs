@@ -16,7 +16,6 @@ namespace Descending.Party
                 Encounter encounter = other.gameObject.GetComponent<Encounter>();
                 if (encounter.IsActive == false)
                 {
-                    encounter.SetActive(true);
                 }
             }
             // else if (other.CompareTag("Treasure"))
