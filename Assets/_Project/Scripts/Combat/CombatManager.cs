@@ -11,31 +11,26 @@ namespace Descending.Combat
 {
     public class CombatManager : MonoBehaviour
     {
+        [SerializeField] private CombatGrid _grid = null;
+        
         [SerializeField] private BoolEvent onEndCombat_Manager = null;
         
-        private PartyController _party = null;
-        private Encounter _encounter = null;
+        private CombatParameters _parameters = null;
         private bool _combatStarted = false;
-        
-        private void Update()
+
+        public void Setup()
         {
-            if (_encounter == null || _combatStarted == false) return;
-            
-            if (CheckForEndOfCombat() == true)
-            {
-                onEndCombat_Manager.Invoke(true);
-                EndCombat();
-            }
         }
 
         public void StartCombat(CombatParameters combatParameters)
         {
+            Debug.Log("Starting Combat");
             _combatStarted = true;
-            _party = combatParameters.Party;
-            _party.CombatStarted(combatParameters);
-            //_party.Formation.SetFlagActive(false);
-            _encounter = combatParameters.Encounter;
-            _encounter.SetCombatActive(false);
+            _parameters = combatParameters;
+            _parameters.Party.CombatStarted(combatParameters);
+
+            _grid.Setup(_parameters);
+            _grid.transform.position = _parameters.Encounter.transform.position;
             
             LoadHeroes();
             LoadEnemies();
@@ -43,17 +38,13 @@ namespace Descending.Combat
 
         private void EndCombat()
         {
-            _encounter.SetCombatActive(true);
-            Destroy(_encounter.gameObject);
-            _encounter = null;
+            Destroy(_parameters.Encounter.gameObject);
+            _parameters.Encounter = null;
             
-            for (int i = 0; i < _party.PartyData.Heroes.Count; i++)
+            for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
             {
-                //_party.PartyData.Heroes[i].BehaviorController.SetBehaviorActive(false);
-                _party.PartyData.Heroes[i].LifeBar.Hide();
+                _parameters.Party.PartyData.Heroes[i].LifeBar.Hide();
             }
-            
-            //_party.MoveToFormation();
         }
         
         public void OnEndCombat_Gui(bool b)
@@ -61,35 +52,52 @@ namespace Descending.Combat
             EndCombat();
         }
 
-        public void Setup()
-        {
-        }
-
         private void LoadHeroes()
         {
-            for (int i = 0; i < _party.PartyData.Heroes.Count; i++)
+            for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
             {
-                //_party.PartyData.Heroes[i].BehaviorController.SetBehaviorActive(true);
-                _party.PartyData.Heroes[i].LifeBar.Show();
+                _parameters.Party.PartyData.Heroes[i].LifeBar.Show();
+            }
+
+            StartCoroutine(SnapHeroes());
+        }
+
+        private IEnumerator SnapHeroes()
+        {
+            yield return new WaitForSeconds(0.1f);
+            
+            for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
+            {
+                _parameters.Party.PartyData.Heroes[i].SnapToTile();
             }
         }
 
         private void LoadEnemies()
         {
-            for (int i = 0; i < _encounter.Enemies.Count; i++)
+            for (int i = 0; i < _parameters.Encounter.Enemies.Count; i++)
              {
-                 _encounter.Enemies[i].SetInfoBarActive(true);
-                 _encounter.Enemies[i].SetBehaviorActive(true);
+                 _parameters.Encounter.Enemies[i].SetInfoBarActive(true);
              }
+
+            StartCoroutine(SnapEnemies());
+        }
+
+        private IEnumerator SnapEnemies()
+        {
+            yield return new WaitForSeconds(0.1f);
+            for (int i = 0; i < _parameters.Encounter.Enemies.Count; i++)
+            {
+                _parameters.Encounter.Enemies[i].SnapToTile();
+            }
         }
 
         private bool CheckForEndOfCombat()
         {
             bool allEnemiesKilled = true;
 
-            for (int i = 0; i < _encounter.Enemies.Count; i++)
+            for (int i = 0; i < _parameters.Encounter.Enemies.Count; i++)
             {
-                if (_encounter.Enemies[i].IsAlive() == true)
+                if (_parameters.Encounter.Enemies[i].IsAlive() == true)
                 {
                     allEnemiesKilled = false;
                 }

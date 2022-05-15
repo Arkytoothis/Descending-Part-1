@@ -327,16 +327,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _container: {fileID: 717662804827968349}
   _isOpen: 0
-  _heroWidgetPrefab: {fileID: 3033318932217931187, guid: 8b0205ba1efffe4489313c2f8ae44c6c, type: 3}
+  _heroWidgetPrefab: {fileID: 3033318932217931187, guid: 8b0205ba1efffe4489313c2f8ae44c6c,
+    type: 3}
   _heroWidgetsParent: {fileID: 4923624533358328776}
-  _enemyWidgetPrefab: {fileID: 3033318932217931187, guid: 1654b6a8cf680b64ca234b9fe1a4de1a, type: 3}
+  _enemyWidgetPrefab: {fileID: 3033318932217931187, guid: 1654b6a8cf680b64ca234b9fe1a4de1a,
+    type: 3}
   _enemyWidgetsParent: {fileID: 2244917719310575998}
   _nameLabel: {fileID: 5470857072114817867}
   _encounterDetailsLabel: {fileID: 7974079592585077938}
   onStartCombat:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 925f8a60b6412d6459e22ec60de2feff, type: 2}
+      - m_Target: {fileID: 11400000, guid: 7ded8b448ae151647aa25e2c31140d8d, type: 2}
         m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[Descending.Combat.CombatParameters,
           Descending
         m_MethodName: Raise
@@ -365,7 +367,7 @@ MonoBehaviour:
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
   _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 895f50bc75db1ed45b0e856ac5e10cf6, type: 2}
+  _event: {fileID: 11400000, guid: e2750c1585619e24d87527f43cdf7610, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -787,7 +789,8 @@ MonoBehaviour:
   m_text: Encounter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b3fb87002d14834ba4e64ca012bb765, type: 2}
-  m_sharedMaterial: {fileID: -8475765021590654541, guid: 0b3fb87002d14834ba4e64ca012bb765, type: 2}
+  m_sharedMaterial: {fileID: -8475765021590654541, guid: 0b3fb87002d14834ba4e64ca012bb765,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1785,7 +1788,8 @@ MonoBehaviour:
   m_text: Encounter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b3fb87002d14834ba4e64ca012bb765, type: 2}
-  m_sharedMaterial: {fileID: -8475765021590654541, guid: 0b3fb87002d14834ba4e64ca012bb765, type: 2}
+  m_sharedMaterial: {fileID: -8475765021590654541, guid: 0b3fb87002d14834ba4e64ca012bb765,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2232,7 +2236,8 @@ MonoBehaviour:
   m_text: 'Coins : 0    Gems : 0    Supplies : 0    Experience : 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0b3fb87002d14834ba4e64ca012bb765, type: 2}
-  m_sharedMaterial: {fileID: -8475765021590654541, guid: 0b3fb87002d14834ba4e64ca012bb765, type: 2}
+  m_sharedMaterial: {fileID: -8475765021590654541, guid: 0b3fb87002d14834ba4e64ca012bb765,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

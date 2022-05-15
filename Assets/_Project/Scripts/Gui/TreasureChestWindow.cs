@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Descending.Gui
 {
-    public class TreasureWindow : GameWindow
+    public class TreasureChestWindow : GameWindow
     {
         [SerializeField] private TMP_Text _treasureLabel = null;
         [SerializeField] private TMP_Text _coinsLabel = null;

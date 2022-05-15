@@ -38,8 +38,6 @@ namespace Descending.Encounters
                 string enemyKey = _enemyGroupLists[(int) group][rndIndex];
                 enemies.Add(new EnemyShort(enemyKey, threatLevel));
             }
-            
-            encounter.Setup(difficulty, group, threatLevel, enemies);
         }
     }
 }

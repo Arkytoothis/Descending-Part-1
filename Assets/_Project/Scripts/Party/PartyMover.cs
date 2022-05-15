@@ -14,7 +14,7 @@ namespace Descending
         {
             for (int i = 0; i < _partyController.PartyData.Heroes.Count; i++)
             {
-                _partyController.PartyData.Heroes[i].transform.localPosition = _formation.Positions[i].position;
+                _partyController.PartyData.Heroes[i].transform.position = _formation.Positions[i].position;
             }
         }
 
@@ -22,21 +22,21 @@ namespace Descending
         {
             for (int i = 0; i < _partyController.PartyData.Heroes.Count; i++)
             {
-                _partyController.PartyData.Heroes[i].Pathfinder.EnablePathing();
-                _partyController.PartyData.Heroes[i].Pathfinder.SetDestination(_formation.Positions[i].position);
+                //_partyController.PartyData.Heroes[i].Pathfinder.EnablePathing();
+                //_partyController.PartyData.Heroes[i].Pathfinder.SetDestination(_formation.Positions[i].position);
             }
         }
         
         public void SetPosition(Vector3 position)
         {
-            _formation.MoveTo(_partyController.PartyData.Heroes[0].transform.position, position);
+            //_formation.MoveTo(_partyController.PartyData.Heroes[0].transform.position, position);
             SetFormation();
         }
         
         public void MoveTo(Vector3 position)
         {
-            _formation.MoveTo(_partyController.PartyData.Heroes[0].transform.position, position);
-            MoveToFormation();
+            //_formation.MoveTo(_partyController.PartyData.Heroes[0].transform.position, position);
+            //MoveToFormation();
         }
     }
 }

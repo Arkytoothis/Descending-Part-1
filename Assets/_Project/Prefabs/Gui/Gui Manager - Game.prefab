@@ -162,7 +162,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7529584786702592938}
   - component: {fileID: 4794604626376908411}
-  - component: {fileID: 380711416096840089}
   - component: {fileID: 5815222441728994038}
   m_Layer: 5
   m_Name: Window Manager
@@ -216,40 +215,8 @@ MonoBehaviour:
   - {fileID: 717662804729297410, guid: d0916e4888a7f0c4e902f9b3cc44c099, type: 3}
   - {fileID: 717662804729297410, guid: 7a041e43a746e3e4e87a20f47ef248e7, type: 3}
   - {fileID: 717662804729297410, guid: 2ce9ef058cc8b7146ba17d79c2511b67, type: 3}
+  - {fileID: 717662804729297410, guid: a6113d872e856614983e323c6b26c593, type: 3}
   _gameWindowsParent: {fileID: 4941666523503857002}
---- !u!114 &380711416096840089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3752733974732399863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2a18de4340610e4e94476cfcb756088, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showDebugFields: 0
-  _enableGizmoDebugging: 1
-  _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 92f7ff8907dc6864cbc3b43354b6d463, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4794604626376908411}
-        m_TargetAssemblyTypeName: Descending.Gui.WindowManager, Descending
-        m_MethodName: OnEncounterTriggered
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _debugValue: {fileID: 0}
 --- !u!114 &5815222441728994038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,10 +263,8 @@ GameObject:
   - component: {fileID: 6809555031573758929}
   - component: {fileID: 6960461333835211096}
   - component: {fileID: 2448543420870460833}
-  - component: {fileID: 2509546105586476427}
-  - component: {fileID: 8074415598971404975}
-  - component: {fileID: 2711903861392354420}
-  - component: {fileID: 489404668395929061}
+  - component: {fileID: 1500694819433265136}
+  - component: {fileID: 1244104547426604117}
   m_Layer: 5
   m_Name: Gui Manager - Game
   m_TagString: Untagged
@@ -413,11 +378,42 @@ MonoBehaviour:
     type: 3}
   _timePrefab: {fileID: 5314068902415440910, guid: 7f319e0519df7c147ad2f452166e8bfb,
     type: 3}
-  _terrainPrefab: {fileID: 5432159311409307371, guid: eea19ec058f349d4ca483c09c9ac1a43,
-    type: 3}
   _combatPrefab: {fileID: 3828663291383760077, guid: c8875af4d4c6c5f4abda8ebe46d6f989,
     type: 3}
---- !u!114 &2509546105586476427
+--- !u!114 &1500694819433265136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6060749106354663499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a18de4340610e4e94476cfcb756088, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: d8a59a7b65af44340a1e0abc7387a3fd, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4794604626376908411}
+        m_TargetAssemblyTypeName: Descending.Gui.WindowManager, Descending
+        m_MethodName: OnEncounterTriggered
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: {fileID: 0}
+--- !u!114 &1244104547426604117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -433,7 +429,7 @@ MonoBehaviour:
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
   _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 925f8a60b6412d6459e22ec60de2feff, type: 2}
+  _event: {fileID: 11400000, guid: 7ded8b448ae151647aa25e2c31140d8d, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -452,102 +448,3 @@ MonoBehaviour:
   _debugValue:
     Party: {fileID: 0}
     Encounter: {fileID: 0}
---- !u!114 &8074415598971404975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6060749106354663499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 791e3eca91bfc2e41b38477d0ecfaf1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showDebugFields: 0
-  _enableGizmoDebugging: 1
-  _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 7d76b479fd5d2f549ac0b4fb657d54be, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2448543420870460833}
-        m_TargetAssemblyTypeName: Descending.Scene_Overworld.Gui.GuiManager, Descending
-        m_MethodName: OnCombatEnded_Gui
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _debugValue: 0
---- !u!114 &2711903861392354420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6060749106354663499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b7fa345761a30c4890894b7f0ca86d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showDebugFields: 0
-  _enableGizmoDebugging: 1
-  _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 77f03119b49d289479bef2b5d6464f9c, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4794604626376908411}
-        m_TargetAssemblyTypeName: Descending.Gui.WindowManager, Descending
-        m_MethodName: OnTriggerExitWindow
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _debugValue: {fileID: 0}
---- !u!114 &489404668395929061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6060749106354663499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 791e3eca91bfc2e41b38477d0ecfaf1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showDebugFields: 0
-  _enableGizmoDebugging: 1
-  _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 6bed919e88de98d43af2bea090951a70, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2448543420870460833}
-        m_TargetAssemblyTypeName: Descending.Scene_Overworld.Gui.GuiManager, Descending
-        m_MethodName: OnCombatEnded_Manager
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _debugValue: 0

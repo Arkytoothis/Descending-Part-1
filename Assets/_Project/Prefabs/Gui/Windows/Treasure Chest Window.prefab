@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 717662804729297417}
   - component: {fileID: 3547582444194339558}
   m_Layer: 5
-  m_Name: Treasure Window
+  m_Name: Treasure Chest Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

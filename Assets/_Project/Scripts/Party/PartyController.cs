@@ -6,6 +6,7 @@ using Cinemachine;
 using Descending.Characters;
 using Descending.Combat;
 using Descending.Core;
+using Pathfinding;
 using ScriptableObjectArchitecture;
 using Sirenix.Serialization;
 using UnityEngine;
@@ -17,7 +18,7 @@ namespace Descending.Party
         [SerializeField] private CinemachineVirtualCamera _camera = null;
         [SerializeField] private ResourcesController _resources = null;
         [SerializeField] private Transform _heroesParent = null;
-        [SerializeField] private PartyMover _partyMover = null;
+        [SerializeField] private RichAI _richAI = null;
         // [SerializeField] private float _visionRadius = 20f;
         // [SerializeField] private float _fogOffset = -10f;
         // [SerializeField] private float _fogRevealDelay = 0.1f;
@@ -95,17 +96,14 @@ namespace Descending.Party
 
         public void CombatStarted(CombatParameters parameters)
         {
+            _richAI.canMove = false;
+            _richAI.canSearch = false;
         }
         
         public void OnCombatEnded(bool b)
         {
-            for (int i = 0; i < _partyData.Heroes.Count; i++)
-            {
-                //_partyData.Heroes[i].BehaviorController.SetBehaviorActive(false);
-            }
-            
-            //_formation.SetFlagActive(true);
-            //MoveToFormation();
+            _richAI.canMove = true;
+            _richAI.canSearch = true;
         }
 
         public void OnAddExperience(int experience)
@@ -133,11 +131,11 @@ namespace Descending.Party
             {
                 if (i == leaderIndex)
                 {
-                    _partyData.Heroes[i].SetInteractionDetectorActive(true);
+                    //_partyData.Heroes[i].SetInteractionDetectorActive(true);
                 }
                 else
                 {
-                    _partyData.Heroes[i].SetInteractionDetectorActive(false);
+                    //_partyData.Heroes[i].SetInteractionDetectorActive(false);
                 }
             }
         }

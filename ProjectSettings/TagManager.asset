@@ -10,6 +10,7 @@ TagManager:
   - Treasure
   - Fire
   - Feature Interaction
+  - Combat Tile
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Combat Tile
   - 
   - 
   - 

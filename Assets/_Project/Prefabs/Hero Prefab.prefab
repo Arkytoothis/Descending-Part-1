@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 4571756472629890}
   - component: {fileID: 7324091225597021917}
   - component: {fileID: 8348049720226259136}
-  - component: {fileID: 2753265102976165933}
-  - component: {fileID: 730076597174929734}
-  - component: {fileID: 4254240643932058578}
-  - component: {fileID: 877164865854061029}
-  - component: {fileID: 8867835860399646290}
+  - component: {fileID: 352061493227363941}
+  - component: {fileID: 8092773830958745835}
+  - component: {fileID: 2999078322743986482}
+  - component: {fileID: -8008851654036865478}
   m_Layer: 0
   m_Name: Hero Prefab
   m_TagString: Hero
@@ -43,6 +42,7 @@ Transform:
   - {fileID: 6039500889397186834}
   - {fileID: 5234674199197591309}
   - {fileID: 1591733636261488975}
+  - {fileID: 8843614037828865044}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66,9 +66,10 @@ MonoBehaviour:
   _inventory: {fileID: 5767070582579735430}
   _worldMount: {fileID: 1442886663155689947}
   _portraitMount: {fileID: 6039500889397186834}
-  _pathfinder: {fileID: 4254240643932058578}
+  _pathfinder: {fileID: -8008851654036865478}
   _lifeBar: {fileID: 7047570391168760711}
   _hitEffectTransform: {fileID: 1591733636261488975}
+  _tileDetector: {fileID: 324813977517809556}
   onSyncHero:
     m_PersistentCalls:
       m_Calls:
@@ -101,7 +102,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2753265102976165933
+--- !u!136 &352061493227363941
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752634011024786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &8092773830958745835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +144,7 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
---- !u!114 &730076597174929734
+--- !u!114 &2999078322743986482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,15 +178,15 @@ MonoBehaviour:
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   acceleration: 5
-  rotationSpeed: 720
-  slowdownTime: 0.1
-  endReachedDistance: 0.05
+  rotationSpeed: 360
+  slowdownTime: 0.5
+  endReachedDistance: 0.01
   wallForce: 3
   wallDist: 1
-  funnelSimplification: 1
-  slowWhenNotFacingTarget: 0
+  funnelSimplification: 0
+  slowWhenNotFacingTarget: 1
   animCompatibility: {fileID: 0}
---- !u!114 &4254240643932058578
+--- !u!114 &-8008851654036865478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,48 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c901f7462fe0dff438556687ff2c4f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ai: {fileID: 730076597174929734}
---- !u!136 &877164865854061029
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752634011024786}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &8867835860399646290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752634011024786}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 560112f876f5746c780eca0d404e7139, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 2
-  radiusBackingField: 0.5
-  heightBackingField: 2
-  centerBackingField: 1
-  locked: 0
-  lockWhenNotMoving: 1
-  agentTimeHorizon: 2
-  obstacleTimeHorizon: 2
-  maxNeighbours: 10
-  layer: 1
-  collidesWith: -1
-  wallAvoidForce: 1
-  wallAvoidFalloff: 1
-  priority: 0.5
-  debug: 1
+  _ai: {fileID: 2999078322743986482}
 --- !u!1 &1113880544865384821
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +250,53 @@ MonoBehaviour:
   _stockpileSlots: 40
   _worldBody: {fileID: 0}
   _portraitBody: {fileID: 0}
+--- !u!1 &1231269255265702354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8843614037828865044}
+  - component: {fileID: 324813977517809556}
+  m_Layer: 0
+  m_Name: Tile Detector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8843614037828865044
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231269255265702354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4571756472629890}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &324813977517809556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231269255265702354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f38ecd5134928d49b9cc4bf4c907be3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileMask:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!1 &1579638671971941724
 GameObject:
   m_ObjectHideFlags: 0

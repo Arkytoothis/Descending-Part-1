@@ -27,7 +27,9 @@ namespace Descending.Encounters
         [SerializeField] private List<Transform> _formation = null;
         [SerializeField] private List<EnemyShort> _enemyData = null;
         [SerializeField] private List<Enemy> _enemies = null;
-        [SerializeField] private bool _setParent = true;  
+        [SerializeField] private bool _setParent = true;
+
+        [SerializeField] private EncounterEvent onTriggerEncounter = null;
         
         private bool _isActive = false;
         
@@ -37,20 +39,10 @@ namespace Descending.Encounters
         public bool IsActive => _isActive;
         public List<Enemy> Enemies => _enemies;
         public bool SetParent => _setParent;
-        
-        public void Setup(EncounterDifficulties difficulty, EnemyGroups group, int threatLevel, List<EnemyShort> enemies)
-        {
-            _difficulty = difficulty;
-            _group = group;
-            _threatLevel = threatLevel;
-            _enemyData = enemies;
-            
-            if (_threatLevel < 1) _threatLevel = 1;
-        }
 
-        public void SetCombatActive(bool active)
+        private void Start()
         {
-            _triggerCollider.enabled = active;
+            SpawnEnemies();
         }
 
         public void SpawnEnemies()
@@ -64,11 +56,15 @@ namespace Descending.Encounters
                 Animator animator = clone.GetComponentInChildren<Animator>();
                 Enemy enemy = clone.GetComponent<Enemy>();
                 enemy.Setup(definition, animator, _enemyData[i].Level);
-                enemy.gameObject.SetActive(false);
                 enemy.GetComponent<PlaceOnGround>().Place();
                 
                 _enemies.Add(enemy);
             }
+        }
+
+        public void Trigger()
+        {
+            onTriggerEncounter.Invoke(this);
         }
     }
 }

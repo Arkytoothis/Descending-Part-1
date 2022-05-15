@@ -9,6 +9,11 @@ namespace Descending.Characters
     {
         [SerializeField] private RichAI _ai = null;
 
+        public void SetAiActive(bool active)
+        {
+            _ai.enabled = active;
+        }
+        
         public void SetDestination(Vector3 destination)
         {
             _ai.destination = destination;
@@ -24,6 +29,11 @@ namespace Descending.Characters
         {
             _ai.canMove = false;
             _ai.canSearch = false;
+        }
+
+        public void TeleportTo(Vector3 position)
+        {
+            _ai.Teleport(position);
         }
     }
 }

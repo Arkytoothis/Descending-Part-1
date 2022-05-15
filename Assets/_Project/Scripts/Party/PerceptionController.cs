@@ -13,10 +13,11 @@ namespace Descending.Party
         {
             if (other.CompareTag("Encounter"))
             {
-                Encounter encounter = other.gameObject.GetComponent<Encounter>();
-                if (encounter.IsActive == false)
-                {
-                }
+                // Encounter encounter = other.gameObject.GetComponent<Encounter>();
+                // if (encounter.IsActive == false)
+                // {
+                //     encounter.Trigger();
+                // }
             }
             // else if (other.CompareTag("Treasure"))
             // {

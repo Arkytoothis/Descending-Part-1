@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DarkTonic.MasterAudio;
+using DarkTonic.MasterAudio.Examples;
 using Descending.Attributes;
+using Descending.Combat;
 using Descending.Core;
 using Descending.Enemies;
 using Descending.Equipment;
@@ -27,10 +29,10 @@ namespace Descending.Characters
         [SerializeField] private InventoryController _inventory = null;
         [SerializeField] private Transform _worldMount = null;
         [SerializeField] private Transform _portraitMount = null;
-        //[SerializeField] private BehaviorController _behaviorController = null;
         [SerializeField] private HeroPathfinder _pathfinder = null;
         [SerializeField] private VitalBar _lifeBar = null;
         [SerializeField] private Transform _hitEffectTransform = null;
+        [SerializeField] private TileDetector _tileDetector = null;
         
         [SerializeField] private IntEvent onSyncHero = null;
         
@@ -42,9 +44,8 @@ namespace Descending.Characters
         private BodyRenderer _worldRenderer = null;
         private BodyRenderer _portraitRenderer = null;
         private AnimationEvents _animationEvents = null;
-        private InteractionDetector _interactionDetector = null;
+        private CombatTile _currentTile = null;
         
-        //public BehaviorController BehaviorController => _behaviorController;
         public HeroData HeroData => _heroData;
         public AttributesController Attributes => _attributes;
         public SkillsController Skills => _skills;
@@ -52,7 +53,7 @@ namespace Descending.Characters
         public GameObject WorldModel => _worldModel;
         public GameObject PortraitModel => _portraitModel;
         public PortraitMount Portrait => _portrait;
-        public HeroPathfinder Pathfinder => _pathfinder;
+        //public HeroPathfinder Pathfinder => _pathfinder;
         public BodyRenderer WorldRenderer => _worldRenderer;
         public BodyRenderer PortraitRenderer => _portraitRenderer;
         public VitalBar LifeBar => _lifeBar;
@@ -79,7 +80,7 @@ namespace Descending.Characters
             _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
             _animationEvents.Setup(this);
 
-            _interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
+            //_interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
             
             _portraitModel = HeroBuilder.SpawnPortraitPrefab(gender, race, _portraitMount);
             
@@ -123,7 +124,7 @@ namespace Descending.Characters
             _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
             _animationEvents.Setup(this);
             
-            _interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
+            //_interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
             
             _portraitModel = HeroBuilder.SpawnPortraitPrefab(saveData.HeroData.Gender, race, _portraitMount);
             
@@ -186,7 +187,7 @@ namespace Descending.Characters
         public override void Death()
         {
             _worldAnimator.SetTrigger("isDead");
-            _pathfinder.DisablePathing();
+            //_pathfinder.DisablePathing();
             //_behaviorController.SetBehaviorActive(false);
         }
 
@@ -244,9 +245,16 @@ namespace Descending.Characters
             _animationEvents.SetTarget(enemyTarget);
         }
 
-        public void SetInteractionDetectorActive(bool active)
+        public void SnapToTile()
         {
-            _interactionDetector.gameObject.SetActive(active);
+            CombatTile tile = _tileDetector.RaycastForTile();   
+                
+            if (tile != null)
+            {
+                Debug.Log("Snapping Hero to Tile X: " + tile.X + " Y: " + tile.Y);
+                _pathfinder.SetAiActive(false);
+                _pathfinder.TeleportTo(tile.transform.position);
+            }
         }
     }
 

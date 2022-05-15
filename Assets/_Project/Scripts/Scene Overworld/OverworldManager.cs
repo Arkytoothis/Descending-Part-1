@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Descending.Combat;
 using Descending.Core;
 using Descending.Party;
 using Descending.Scene_Overworld.Gui;
@@ -11,20 +12,15 @@ namespace Descending.Scene_Overworld
 {
     public class OverworldManager : MonoBehaviour
     {
-        [SerializeField] private bool _loadData = true;
-
         [SerializeField] private Database _database = null;
-
-        // [SerializeField] private VolumetricFog _fogofWar = null;
-        // [SerializeField] private CombatManager _combatManager = null;
+        [SerializeField] private CombatManager _combatManager = null;
         [SerializeField] private PortraitRoom _portraitRoom = null;
-
-        // [SerializeField] private EncounterManager _encounterManager = null;
-        // [SerializeField] private TreasureManager _treasureManager = null;
-        [SerializeField] private bool _enableFoW = true;
         [SerializeField] private PartyController _partyController = null;
         [SerializeField] private GameObject _guiPrefab = null;
         [SerializeField] private Transform _guiParent = null;
+        [SerializeField] private bool _loadData = true;
+        [SerializeField] private bool _enableFoW = true;
+        // [SerializeField] private VolumetricFog _fogofWar = null;
 
         private GuiManager _gui = null;
 
@@ -48,11 +44,7 @@ namespace Descending.Scene_Overworld
 
             _portraitRoom.Setup(_partyController.PartyData);
             _partyController.Select();
-            //_worldGenerator.Generate();
-            //_encounterManager.Setup();
-            //_encounterManager.GenerateEncounters(_worldGenerator.StartPosition, _worldGenerator.ThreatModifier);
-            //_treasureManager.Setup(_worldGenerator.StartPosition, _worldGenerator.ThreatModifier);
-            //_combatManager.Setup();
+            _combatManager.Setup();
 
             if (_enableFoW == true)
             {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Characters;
+using Descending.Combat;
 using Descending.Core;
 using Descending.Equipment;
 using Descending.Gui;
@@ -25,8 +26,12 @@ namespace Descending.Enemies
         [SerializeField] private RichAI _ai = null;
         [SerializeField] private VitalBar _lifeBar = null;
         [SerializeField] private Transform _hitEffectTransform = null;
+        [SerializeField] private TileDetector _tileDetector = null;
+        [SerializeField] private EnemyPathfinder _pathfinder = null;
 
         [SerializeField] private IntEvent onAddExperience = null;
+        
+        private CombatTile _currentTile = null;
         
         public EnemyDefinition EnemyDefinition => _enemyDefinition;
         public AttributesController Attributes => _attributes;
@@ -127,6 +132,18 @@ namespace Descending.Enemies
             
             string swingSound = "sword_swing_" + Random.Range(1, 4);
             //MasterAudio.PlaySound3DAtTransform(swingSound, transform, .15f, 1f);
+        }
+
+        public void SnapToTile()
+        {
+            CombatTile tile = _tileDetector.RaycastForTile();   
+                
+            if (tile != null)
+            {
+                Debug.Log("Snapping Enemy to Tile X: " + tile.X + " Y: " + tile.Y);
+                _pathfinder.SetAiActive(false);
+                _pathfinder.TeleportTo(tile.transform.position);
+            }
         }
     }
 }

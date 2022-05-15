@@ -95,7 +95,9 @@ namespace Descending.Gui
             else if(feature.GetType() == typeof(Enchanter))
                 ((EnchanterWindow) _windows[(int)GameWindows.Enchanter]).OnLoadEnchanter((Enchanter)feature);
             else if(feature.GetType() == typeof(TreasureChest))
-                ((TreasureWindow) _windows[(int)GameWindows.Treasure]).OnLoadTreasure((TreasureChest)feature);
+                ((TreasureChestWindow) _windows[(int)GameWindows.Treasure]).OnLoadTreasure((TreasureChest)feature);
+            else if(feature.GetType() == typeof(TreasurePile))
+                ((TreasurePileWindow) _windows[(int)GameWindows.Treasure_Pile]).OnLoadTreasurePile((TreasurePile)feature);
             else if(feature.GetType() == typeof(Dungeon))
                 ((DungeonWindow) _windows[(int)GameWindows.Dungeon]).OnLoadDungeon((Dungeon)feature);
         }

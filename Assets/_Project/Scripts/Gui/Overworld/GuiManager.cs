@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Descending.Combat;
 using Descending.Core;
+using Descending.Encounters;
 using Descending.Gui;
 using Descending.Party;
 using Descending.World;
@@ -60,20 +61,20 @@ namespace Descending.Scene_Overworld.Gui
 
         private void WorldMode()
         {
-            _combatPanel.Hide();
-            
             _partyPanel.Show();
             _resourcesPanel.Show();
             _timePanel.Show();
+            
+            _combatPanel.Hide();
         }
 
         private void CombatMode()
         {
+            _combatPanel.Show();
+            
             _resourcesPanel.Hide();
             _timePanel.Hide();
-            
-            _partyPanel.Show();
-            _combatPanel.Show();
+            _partyPanel.Hide();
         }
 
         private void SpawnPartyPanel()
