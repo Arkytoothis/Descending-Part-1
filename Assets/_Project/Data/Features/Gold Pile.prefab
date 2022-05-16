@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 8300747812676274973}
   m_Layer: 20
   m_Name: Gold Pile
-  m_TagString: Untagged
+  m_TagString: Feature
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,8 +122,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _definition: {fileID: 11400000, guid: cbd55a3ae8d0e6a4dbe95defbe0426e9, type: 2}
   _interactionTransform: {fileID: 3646492217183697108}
-  _level: 0
+  _level: 1
+  _minCoins: 1
+  _maxCoins: 10
+  _minGems: 0
+  _maxGems: 0
+  _minMaterials: 0
+  _maxMaterials: 0
+  _minSupplies: 0
+  _maxSupplies: 0
   _coins: 0
+  _gems: 0
+  _materials: 0
+  _supplies: 0
   onInteractWithFeature:
     m_PersistentCalls:
       m_Calls:

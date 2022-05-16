@@ -11,11 +11,17 @@ namespace Descending.Combat
     {
         public PartyController Party = null;
         public Encounter Encounter = null;
+        public List<InitiativeData> InitiativeList = null;
 
         public CombatParameters(PartyController party, Encounter encounter)
         {
             Party = party;
             Encounter = encounter;
+        }
+
+        public void SetInitiativeList(List<InitiativeData> initiativeList)
+        {
+            InitiativeList = initiativeList;
         }
     }
 }

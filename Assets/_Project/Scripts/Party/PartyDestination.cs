@@ -70,10 +70,14 @@ namespace Descending
                 if (Input.GetMouseButtonDown(1))
                 {
                     Feature feature = hit.collider.gameObject.GetComponent<Feature>();
-                    transform.position = feature.InteractionTransform.position;
-                    _partyMover.MoveTo(feature.InteractionTransform.position);
+
+                    if (feature != null)
+                    {
+                        transform.position = feature.InteractionTransform.position;
+                        _partyMover.MoveTo(feature.InteractionTransform.position);
+                    }
                 }
-                
+
                 return true;
             }
 

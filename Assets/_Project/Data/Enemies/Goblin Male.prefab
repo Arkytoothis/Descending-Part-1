@@ -765,7 +765,7 @@ Animator:
   m_GameObject: {fileID: 308536578784932229}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b6ef2f4d0154b2747860a3332fa05f97, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ceff7b7c44f01d44a958d3be587a9742, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1846,6 +1846,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1212618785956967791, guid: 4f85cbd3837c0a846ba81527e308e7b5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1837557637577222008, guid: 4f85cbd3837c0a846ba81527e308e7b5,
         type: 3}
       propertyPath: m_RootOrder

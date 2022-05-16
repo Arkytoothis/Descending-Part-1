@@ -50,12 +50,9 @@ namespace Descending.Characters
         public AttributesController Attributes => _attributes;
         public SkillsController Skills => _skills;
         public InventoryController Inventory => _inventory;
-        public GameObject WorldModel => _worldModel;
         public GameObject PortraitModel => _portraitModel;
         public PortraitMount Portrait => _portrait;
-        //public HeroPathfinder Pathfinder => _pathfinder;
         public BodyRenderer WorldRenderer => _worldRenderer;
-        public BodyRenderer PortraitRenderer => _portraitRenderer;
         public VitalBar LifeBar => _lifeBar;
         public Transform HitEffectTransform => _hitEffectTransform;
 
@@ -79,8 +76,6 @@ namespace Descending.Characters
 
             _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
             _animationEvents.Setup(this);
-
-            //_interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
             
             _portraitModel = HeroBuilder.SpawnPortraitPrefab(gender, race, _portraitMount);
             
@@ -247,14 +242,20 @@ namespace Descending.Characters
 
         public void SnapToTile()
         {
-            CombatTile tile = _tileDetector.RaycastForTile();   
+            _currentTile = _tileDetector.RaycastForTile();   
                 
-            if (tile != null)
+            if (_currentTile != null)
             {
-                Debug.Log("Snapping Hero to Tile X: " + tile.X + " Y: " + tile.Y);
+                //Debug.Log("Snapping Hero to Tile X: " + tile.X + " Y: " + tile.Y);
                 _pathfinder.SetAiActive(false);
-                _pathfinder.TeleportTo(tile.transform.position);
+                _pathfinder.TeleportTo(_currentTile.transform.position);
             }
+        }
+
+        public void EndCombat()
+        {
+            _currentTile = null;
+            _pathfinder.SetAiActive(true);
         }
     }
 

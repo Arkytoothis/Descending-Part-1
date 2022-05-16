@@ -48,6 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _x: -1
   _y: -1
+  _baseColor: {r: 0.11000357, g: 0.112353, b: 0.2264151, a: 0.3882353}
+  _hoverColor: {r: 0, g: 1, b: 0.8580704, a: 1}
+  _renderer: {fileID: 480339222170660745}
 --- !u!65 &4276507801024572840
 BoxCollider:
   m_ObjectHideFlags: 0

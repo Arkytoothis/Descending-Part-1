@@ -115,7 +115,7 @@ namespace Descending.Scene_Overworld.Gui
         {
             if (parameters == null) return;
             
-            _combatPanel.Setup(parameters);
+            //_combatPanel.Setup(parameters);
             SetMode(GuiModes.Combat);
         }
 

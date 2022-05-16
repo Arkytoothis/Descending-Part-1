@@ -16,8 +16,10 @@ MonoBehaviour:
   _name: Short Bow
   _key: Short Bow
   _description: 
-  _equipModel: {fileID: 9033823261840413309, guid: 79432b82a6e0b3846b833a391dda7c30, type: 3}
-  _dropModel: {fileID: 9033823261840413309, guid: 33945e31e06409a43b495014a80c840a, type: 3}
+  _equipModel: {fileID: 9033823261840413309, guid: 79432b82a6e0b3846b833a391dda7c30,
+    type: 3}
+  _dropModel: {fileID: 9033823261840413309, guid: 33945e31e06409a43b495014a80c840a,
+    type: 3}
   _projectile: {fileID: 0}
   _category: 4
   _itemType: 11

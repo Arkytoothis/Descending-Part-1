@@ -72,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1527147172472988962}
   - component: {fileID: 1527147172472988963}
-  m_Layer: 22
+  m_Layer: 2
   m_Name: Encounter
   m_TagString: Encounter
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1527147173032885887}
   - component: {fileID: 1527147173032885880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Trigger Collider
   m_TagString: Encounter
   m_Icon: {fileID: 0}

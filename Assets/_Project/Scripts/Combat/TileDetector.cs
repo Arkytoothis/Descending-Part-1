@@ -17,12 +17,7 @@ namespace Descending.Combat
         {
             _camera = Camera.main;
         }
-
-        private void Update()
-        {
-            Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Vector3.down, Color.red);
-        }
-
+        
         public CombatTile RaycastForTile()
         {
             if (_raycastEnabled == false) return null;

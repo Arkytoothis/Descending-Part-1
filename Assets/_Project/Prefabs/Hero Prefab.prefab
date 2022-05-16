@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8092773830958745835}
   - component: {fileID: 2999078322743986482}
   - component: {fileID: -8008851654036865478}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hero Prefab
   m_TagString: Hero
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 4851048021332457531}
   - component: {fileID: 5892376135750750874}
   - component: {fileID: 466249573185385296}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Info Bar Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

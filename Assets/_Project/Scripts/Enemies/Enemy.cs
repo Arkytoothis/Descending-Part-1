@@ -140,7 +140,7 @@ namespace Descending.Enemies
                 
             if (tile != null)
             {
-                Debug.Log("Snapping Enemy to Tile X: " + tile.X + " Y: " + tile.Y);
+                //Debug.Log("Snapping Enemy to Tile X: " + tile.X + " Y: " + tile.Y);
                 _pathfinder.SetAiActive(false);
                 _pathfinder.TeleportTo(tile.transform.position);
             }

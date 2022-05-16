@@ -10,7 +10,7 @@ namespace Descending
         [SerializeField] private PartyController _partyController = null;
         [SerializeField] private PartyFormation _formation = null;
         
-        private void SetFormation()
+        public void ResetFormation()
         {
             for (int i = 0; i < _partyController.PartyData.Heroes.Count; i++)
             {
@@ -30,7 +30,7 @@ namespace Descending
         public void SetPosition(Vector3 position)
         {
             //_formation.MoveTo(_partyController.PartyData.Heroes[0].transform.position, position);
-            SetFormation();
+            ResetFormation();
         }
         
         public void MoveTo(Vector3 position)

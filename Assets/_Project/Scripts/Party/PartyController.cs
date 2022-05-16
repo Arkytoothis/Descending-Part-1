@@ -10,6 +10,7 @@ using Pathfinding;
 using ScriptableObjectArchitecture;
 using Sirenix.Serialization;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Descending.Party  
 {
@@ -18,7 +19,8 @@ namespace Descending.Party
         [SerializeField] private CinemachineVirtualCamera _camera = null;
         [SerializeField] private ResourcesController _resources = null;
         [SerializeField] private Transform _heroesParent = null;
-        [SerializeField] private RichAI _richAI = null;
+        [SerializeField] private AIPath _pathAi = null;
+        [SerializeField] private PartyMover _partyMover = null;
         // [SerializeField] private float _visionRadius = 20f;
         // [SerializeField] private float _fogOffset = -10f;
         // [SerializeField] private float _fogRevealDelay = 0.1f;
@@ -39,10 +41,10 @@ namespace Descending.Party
             _resources.AddMaterials(0);
             _resources.AddSupplies(10);
 
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Half Orc"), Database.instance.Profession.GetProfession("Soldier"), true, true, 0, true), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Wild Elf"), Database.instance.Profession.GetProfession("Scout"), true, true, 1, true), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Mountain Dwarf"), Database.instance.Profession.GetProfession("Acolyte"), true, true, 2, true), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice"), true, true, 3, true), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Half Orc"), Database.instance.Profession.GetProfession("Soldier"), true, true, 0, false), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Wild Elf"), Database.instance.Profession.GetProfession("Scout"), true, true, 1, false), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Mountain Dwarf"), Database.instance.Profession.GetProfession("Acolyte"), true, true, 2, false), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice"), true, true, 3, false), _heroesParent);
             SetLeader(0);
         }
 
@@ -96,14 +98,21 @@ namespace Descending.Party
 
         public void CombatStarted(CombatParameters parameters)
         {
-            _richAI.canMove = false;
-            _richAI.canSearch = false;
+            _pathAi.canMove = false;
+            _pathAi.canSearch = false;
         }
         
         public void OnCombatEnded(bool b)
         {
-            _richAI.canMove = true;
-            _richAI.canSearch = true;
+            _pathAi.canMove = true;
+            _pathAi.canSearch = true;
+
+            for (int i = 0; i < _partyData.Heroes.Count; i++)
+            {
+                _partyData.Heroes[i].EndCombat();
+            }
+            
+            _partyMover.ResetFormation();
         }
 
         public void OnAddExperience(int experience)
@@ -138,6 +147,11 @@ namespace Descending.Party
                     //_partyData.Heroes[i].SetInteractionDetectorActive(false);
                 }
             }
+        }
+
+        public void TeleportTo(Vector3 teleportPosition)
+        {
+            transform.position = teleportPosition;
         }
     }
 }

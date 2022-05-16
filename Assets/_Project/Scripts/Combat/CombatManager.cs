@@ -12,34 +12,42 @@ namespace Descending.Combat
     public class CombatManager : MonoBehaviour
     {
         [SerializeField] private CombatGrid _grid = null;
-        
+
+        [SerializeField] private CombatParametersEvent onSyncCombatParameters = null;
         [SerializeField] private BoolEvent onEndCombat_Manager = null;
         
         private CombatParameters _parameters = null;
         private bool _combatStarted = false;
-
+        
         public void Setup()
         {
         }
 
         public void StartCombat(CombatParameters combatParameters)
         {
-            Debug.Log("Starting Combat");
+            //Debug.Log("Starting Combat");
             _combatStarted = true;
             _parameters = combatParameters;
             _parameters.Party.CombatStarted(combatParameters);
 
-            _grid.Setup(_parameters);
-            _grid.transform.position = _parameters.Encounter.transform.position;
+            _grid.StartCombat(_parameters);
             
             LoadHeroes();
             LoadEnemies();
+            
+            RollInitiative();
+            
+            onSyncCombatParameters.Invoke(_parameters);
         }
 
         private void EndCombat()
         {
+            //Debug.Log("Ending Combat");
+            _parameters.Party.OnCombatEnded(true);
             Destroy(_parameters.Encounter.gameObject);
             _parameters.Encounter = null;
+            _parameters.InitiativeList.Clear();
+            _grid.EndCombat();
             
             for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
             {
@@ -69,6 +77,7 @@ namespace Descending.Combat
             for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
             {
                 _parameters.Party.PartyData.Heroes[i].SnapToTile();
+                //_parameters.Party.PartyData.Heroes[i].transform.LookAt(_parameters.Encounter.Enemies[0].transform, Vector3.up);
             }
         }
 
@@ -88,6 +97,7 @@ namespace Descending.Combat
             for (int i = 0; i < _parameters.Encounter.Enemies.Count; i++)
             {
                 _parameters.Encounter.Enemies[i].SnapToTile();
+                _parameters.Encounter.Enemies[i].transform.LookAt(_parameters.Party.PartyData.Heroes[0].transform, Vector3.up);
             }
         }
 
@@ -104,6 +114,29 @@ namespace Descending.Combat
             }
             
             return allEnemiesKilled;
+        }
+
+        private void RollInitiative()
+        {
+            //Debug.Log("Rolling Initiative");
+            var initiativeList = new List<InitiativeData>();
+
+            for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
+            {
+                int initiativeRoll = Random.Range(1, 101);
+                InitiativeData data = new InitiativeData(initiativeRoll, _parameters.Party.PartyData.Heroes[i]);
+                initiativeList.Add(data);
+            }
+
+            for (int i = 0; i < _parameters.Encounter.Enemies.Count; i++)
+            {
+                int initiativeRoll = Random.Range(1, 101);
+                InitiativeData data = new InitiativeData(initiativeRoll, _parameters.Encounter.Enemies[i]);
+                initiativeList.Add(data);
+            }
+            
+            initiativeList.Sort((p1,p2)=>p1.InitiativeRoll.CompareTo(p2.InitiativeRoll));
+            _parameters.SetInitiativeList(initiativeList);
         }
     }
 }

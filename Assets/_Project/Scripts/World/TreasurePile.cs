@@ -29,6 +29,9 @@ namespace Descending.World
         
         [SerializeField] private FeatureEvent onInteractWithFeature = null;
         [SerializeField] private IntEvent onAddCoins = null;
+        [SerializeField] private IntEvent onAddGems = null;
+        [SerializeField] private IntEvent onAddMaterials = null;
+        [SerializeField] private IntEvent onAddSupplies = null;
 
         public int Level => _level;
         public int Coins => _coins;
@@ -69,6 +72,9 @@ namespace Descending.World
         public void Loot()
         {
             onAddCoins.Invoke(_coins);
+            onAddGems.Invoke(_gems);
+            onAddMaterials.Invoke(_materials);
+            onAddSupplies.Invoke(_supplies);
             Destroy(gameObject);
         }
     }

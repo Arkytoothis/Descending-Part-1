@@ -16,9 +16,10 @@ MonoBehaviour:
   Key: Goblin Male
   ExpValue: 25
   Prefab: {fileID: 4302448175089489570, guid: 4cb5a6df198ac7b498e631442700576e, type: 3}
-  Icon: {fileID: 0}
+  Icon: {fileID: 1161443714384828998, guid: fe42c8b526e77e54ab91d0590272d9e8, type: 3}
   Group: 0
-  HitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  HitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   StartingVitals:
     keyData:
     - Armor

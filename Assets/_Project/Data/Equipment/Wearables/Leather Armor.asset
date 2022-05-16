@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d2d22a7a059c74e99c5fdf18519606, type: 3}
   m_Name: Leather Armor
   m_EditorClassIdentifier: 
-  _icon: {fileID: 21300000, guid: 672ee451bdfb37c4d837b60583cb131a, type: 3}
+  _icon: {fileID: 21300000, guid: 6701985fcf5ca3f43bce71bd1ee5bc1c, type: 3}
   _name: Leather Armor
   _key: Leather Armor
   _description: 
@@ -54,6 +54,8 @@ MonoBehaviour:
     _minDamage: 0
     _maxDamage: 0
     _animatorOverride: {fileID: 0}
+    HitSounds: []
+    MissSounds: []
   _wearableData:
     _hasData: 1
     _armor: 0
