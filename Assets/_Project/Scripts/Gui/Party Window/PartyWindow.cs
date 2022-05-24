@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Descending.Characters;
 using Descending.Core;
 using Descending.Party;
+using ScriptableObjectArchitecture;
 using UnityEngine;
 
 namespace Descending.Gui.Party_Window
@@ -16,9 +17,12 @@ namespace Descending.Gui.Party_Window
         [SerializeField] private SkillsPanel _skillsPanel = null;
         [SerializeField] private PortraitPanel _portraitPanel = null;
         [SerializeField] private EquipmentPanel _equipmentPanel = null;
+        [SerializeField] private AbilitiesPanel _abilitiesPanel = null;
+
+        [SerializeField] private ItemEvent onHideTooltip = null;
         
         private List<PartyWidget> _partyWidgets = null;
-        [SerializeField] private PartyController _party = null;
+        private PartyController _party = null;
         
         public override void Setup()
         {
@@ -38,6 +42,7 @@ namespace Descending.Gui.Party_Window
             Time.timeScale = 1;
             _isOpen = false;
             _container.SetActive(false);
+            onHideTooltip.Invoke(null);
         }
 
         public void CloseButtonClick()
@@ -58,6 +63,7 @@ namespace Descending.Gui.Party_Window
                 GameObject clone = Instantiate(_partyWidgetPrefab, _partyWidgetsParent);
                 PartyWidget widget = clone.GetComponent<PartyWidget>();
                 widget.DisplayHero(this, _party.PartyData.Heroes[i]);
+                _partyWidgets.Add(widget);
             }
         }
 
@@ -68,6 +74,7 @@ namespace Descending.Gui.Party_Window
             _skillsPanel.SelectHero(hero);
             _portraitPanel.SelectHero(hero);
             _equipmentPanel.SelectHero(hero);
+            _abilitiesPanel.SelectHero(hero);
         }
     }
 }

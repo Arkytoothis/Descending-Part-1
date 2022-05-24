@@ -19,8 +19,6 @@ namespace Descending.Scene_Overworld
         [SerializeField] private GameObject _guiPrefab = null;
         [SerializeField] private Transform _guiParent = null;
         [SerializeField] private bool _loadData = true;
-        [SerializeField] private bool _enableFoW = true;
-        // [SerializeField] private VolumetricFog _fogofWar = null;
 
         private GuiManager _gui = null;
 
@@ -31,7 +29,7 @@ namespace Descending.Scene_Overworld
 
         void Start()
         {
-            SpawnGui();
+            SpawnGui(); 
 
             if (_loadData == false)
             {
@@ -45,15 +43,6 @@ namespace Descending.Scene_Overworld
             _portraitRoom.Setup(_partyController.PartyData);
             _partyController.Select();
             _combatManager.Setup();
-
-            if (_enableFoW == true)
-            {
-                //_fogofWar.gameObject.SetActive(true);
-            }
-            else
-            {
-                //_fogofWar.gameObject.SetActive(false);
-            }
         }
 
         private void SpawnGui()

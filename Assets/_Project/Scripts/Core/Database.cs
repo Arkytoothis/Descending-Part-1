@@ -1,4 +1,5 @@
-﻿using Descending.Attributes;
+﻿using Descending.Abilities;
+using Descending.Attributes;
 using Descending.Enemies;
 using Descending.Equipment;
 using Descending.Equipment.Enchantments;
@@ -11,6 +12,7 @@ namespace Descending.Core
     [CreateAssetMenu(menuName = "Descending/Database/Database")]
     public class Database : SingletonScriptableObject<Database>
     {
+        [SerializeField] private AbilityDatabase _abilities = null;
         [SerializeField] private AttributeDatabase _attributes = null;
         [SerializeField] private SkillDatabase _skills = null;
         [SerializeField] private RaceDatabase _races = null;
@@ -33,7 +35,8 @@ namespace Descending.Core
         [SerializeField] private Sprite _blankSprite = null;
 
         private bool _initialized = false;
-        
+
+        public AbilityDatabase Abilities => _abilities;
         public AttributeDatabase Attributes => _attributes;
         public SkillDatabase Skills => _skills;
         public RaceDatabase Races => _races;

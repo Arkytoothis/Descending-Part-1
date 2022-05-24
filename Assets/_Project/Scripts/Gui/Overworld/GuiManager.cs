@@ -103,6 +103,7 @@ namespace Descending.Scene_Overworld.Gui
             GameObject clone = Instantiate(_tooltipPrefab, null);
             _tooltip = clone.GetComponentInChildren<Tooltip>();
             _tooltip.Setup();
+            _tooltip.transform.SetAsLastSibling();
         }
 
         private void SpawnCombatPanel()

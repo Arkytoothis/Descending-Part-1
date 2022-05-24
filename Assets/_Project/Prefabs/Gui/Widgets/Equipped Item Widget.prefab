@@ -322,7 +322,7 @@ MonoBehaviour:
   onDisplayItemTooltip:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 993eb562534fc994eb7bb389c53a904c, type: 2}
+      - m_Target: {fileID: 11400000, guid: 665cc9474a6e7c24fae3cba9067db604, type: 2}
         m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[Descending.Equipment.Item,
           Descending
         m_MethodName: Raise

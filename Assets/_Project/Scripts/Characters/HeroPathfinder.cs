@@ -7,28 +7,19 @@ namespace Descending.Characters
 {
     public class HeroPathfinder : MonoBehaviour
     {
-        [SerializeField] private RichAI _ai = null;
+        [SerializeField] private AIPath _ai = null;
+        [SerializeField] private AIDestinationSetter _destinationSetter = null;
 
         public void SetAiActive(bool active)
         {
-            _ai.enabled = active;
-        }
-        
-        public void SetDestination(Vector3 destination)
-        {
-            _ai.destination = destination;
-        }
-        
-        public void EnablePathing()
-        {
-            _ai.canMove = true;
-            _ai.canSearch = true;
+            //_ai.enabled = active;
+            _ai.canMove = active;
+            _ai.canSearch = active;
         }
 
-        public void DisablePathing()
+        public void SetTarget(Transform target)
         {
-            _ai.canMove = false;
-            _ai.canSearch = false;
+            _destinationSetter.target = target;
         }
 
         public void TeleportTo(Vector3 position)

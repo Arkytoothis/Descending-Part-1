@@ -378,7 +378,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -1300}
+  m_AnchoredPosition: {x: 498, y: -1381}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &6447936710078538880
@@ -466,7 +466,7 @@ MonoBehaviour:
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
   _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: 993eb562534fc994eb7bb389c53a904c, type: 2}
+  _event: {fileID: 11400000, guid: 665cc9474a6e7c24fae3cba9067db604, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -1539,7 +1539,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 32000
   m_TargetDisplay: 0

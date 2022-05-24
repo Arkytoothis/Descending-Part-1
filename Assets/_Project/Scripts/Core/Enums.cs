@@ -123,4 +123,70 @@ namespace Descending.Core
         Hero, Enemy,
         Number, None
     }
+
+    public enum CursorTypes
+    {
+        Gui,
+        Number, None
+    }
+    
+    public enum AbilityEffectType
+    {
+        Buff_Attribute, Buff_Skill, Damage, Damage_Over_Time, Debuff_Attribute, Debuff_Skill, Restore, Restore_Over_Time, Stun, Taunt, Weapon_Attack,
+        Number, None
+    }
+
+    public enum AbilityEffectAffects
+    {
+        User, Target, Both,
+        Number, None
+    }
+
+    public enum AbilityType
+    {
+        Power, Spell, Trait, Positive_Quirk, Neutral_Quirk, Negative_Quirk, Wound, Number, None
+    }
+
+    public enum CanUseAbilityResult
+    {
+        Can_Use_Ability, Cannot_Use_Ability_Actions, Cannot_Use_Ability_Range, Cannot_Use_Ability_Resource,
+        Number, None
+    }
+
+    public enum AbilityTryResultType
+    {
+        Can_Use, Cannot_Use_Resource, Cannot_Use_Wrong_Mode,
+        Number, None
+    }
+    
+    public enum SpellSchoolType
+    {
+        Fire, Air, Water, Earth, Life, Death, Order, Chaos, Number, None
+    }
+
+    public enum AreaType
+    { 
+        Single, Sphere, Rectangle, Cone, Beam, Number, None 
+    }
+
+    public enum DurationType
+    { 
+        Instant, Permanent, Seconds, Number, None 
+    }
+
+    public enum RangeType
+    { 
+        Self, Distance, Touch, Weapon, Number, None 
+    }
+
+    public enum TargetType
+    { 
+        Self, Any, Friend, Enemy, Number, None 
+    }
+
+    public enum SavingThrowResultType
+    {
+        Ignore, Three_Quarter_Result, Half_Result, Quarter_Result, 
+        Number, None
+    }
 }

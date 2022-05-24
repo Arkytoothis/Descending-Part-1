@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Descending.Abilities;
 using UnityEngine;
 using TMPro;
 using Descending.Equipment;
@@ -123,34 +124,34 @@ namespace Descending.Gui
             }
         }
 
-        // public void DisplayAbility(Ability ability)
-        // {
-        //     if (ability != null && ability.Empty == false)
-        //     {
-        //         SetupFull();
-        //         _icon.sprite = ability.Definition.Details.Icon;
-        //         _title.text = ability.DisplayName();
-        //         _title.color = GetTitleColor(ability);
-        //         _description.text = ability.Definition.Details.Description;  
-        //         _details.text = ability.GetTooltipText();
-        //
-        //         _encumbranceIcon.enabled = false;
-        //         _encumbranceLabel.enabled = false;
-        //         _encumbranceLabel.text = "";
-        //         _goldIcon.enabled = false;
-        //         _goldLabel.enabled = false;
-        //         _goldLabel.text = "";
-        //         _gemsIcon.enabled = false;
-        //         _gemsLabel.enabled = false;
-        //         _gemsLabel.text = "";
-        //
-        //         Show();
-        //     }
-        //     else
-        //     {
-        //         Hide();
-        //     }
-        // }
+        public void DisplayAbility(Ability ability)
+        {
+            if (ability != null && ability.Empty == false)
+            {
+                SetupFull();
+                _icon.sprite = ability.Definition.Details.Icon;
+                _title.text = ability.DisplayName();
+                //_title.color = GetTitleColor(ability);
+                _description.text = ability.Definition.Details.Description;  
+                _details.text = ability.GetTooltipText();
+        
+                _encumbranceIcon.enabled = false;
+                _encumbranceLabel.enabled = false;
+                _encumbranceLabel.text = "";
+                _goldIcon.enabled = false;
+                _goldLabel.enabled = false;
+                _goldLabel.text = "";
+                _gemsIcon.enabled = false;
+                _gemsLabel.enabled = false;
+                _gemsLabel.text = "";
+        
+                Show();
+            }
+            else
+            {
+                Hide();
+            }
+        }
 
         // public void SetData(PlayerController pc)
         // {
@@ -228,33 +229,34 @@ namespace Descending.Gui
 
         private void Show()
         {
-            StartCoroutine(DelayedOpen());
+            Open();
         }
 
+        public void Open()
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
+            _canvasGroup.alpha = 1f;
+        }
+        
         public IEnumerator DelayedOpen()
         {
             yield return new WaitForSecondsRealtime(_openDelay);
-            //_isShown = true;
             LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
-            //_canvasGroup.DOFade(1f, _openSpeed).SetUpdate(true);
         }
 
         public IEnumerator DelayedClose()
         {
             yield return new WaitForSecondsRealtime(_closeDelay);
-            //_isShown = false;
             LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
-            //_canvasGroup.DOFade(0f, _closeSpeed).SetUpdate(true);
         }
 
         public void Hide()
         {
-            StartCoroutine(DelayedClose());
+            Close();
         }
 
         public void Close()
         {
-            //_isShown = false;
             _canvasGroup.alpha = 0f;
         }
 

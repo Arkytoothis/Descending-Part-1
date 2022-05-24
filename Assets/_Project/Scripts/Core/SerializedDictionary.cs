@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Descending.Abilities;
 using Descending.Attributes;
 using Descending.Equipment;
 using Descending.Equipment.Enchantments;
@@ -142,6 +143,11 @@ namespace Descending.Core
     
     [Serializable]
     public class FeatureDefinitionDictionary : SerializedDictionary<string, FeatureDefinition>
+    {
+    }
+    
+    [Serializable]
+    public class AbilityDefinitionDictionary : SerializedDictionary<string, AbilityDefinition>
     {
     }
 }

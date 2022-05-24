@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Descending.Encounters;
-using Descending.Party;
 using ScriptableObjectArchitecture;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -77,7 +75,6 @@ namespace Descending.Combat
             for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
             {
                 _parameters.Party.PartyData.Heroes[i].SnapToTile();
-                //_parameters.Party.PartyData.Heroes[i].transform.LookAt(_parameters.Encounter.Enemies[0].transform, Vector3.up);
             }
         }
 

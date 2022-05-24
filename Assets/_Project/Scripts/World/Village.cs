@@ -10,5 +10,15 @@ namespace Descending.World
         {
             Debug.Log("Interacting with " + Definition.Name);
         }
+
+        public override void Highlight()
+        {
+            
+        }
+
+        public override void Unhighlight()
+        {
+            
+        }
     }
 }

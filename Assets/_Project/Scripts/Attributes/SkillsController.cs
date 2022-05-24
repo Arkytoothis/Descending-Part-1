@@ -45,6 +45,11 @@ namespace Descending.Attributes
                 _skills[skill.Key].Increase(1);
             }
         }
+
+        public bool ContainsSkills(SkillDefinition skill)
+        {
+            return _skills.ContainsKey(skill.Key);
+        }
         
         public Skill GetSkill(string key)
         {

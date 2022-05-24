@@ -32,5 +32,7 @@ namespace Descending.World
         public FeatureDefinition Definition => _definition;
 
         public abstract void Interact();
+        public abstract void Highlight();
+        public abstract void Unhighlight();
     }
 }

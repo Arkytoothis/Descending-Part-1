@@ -23,5 +23,15 @@ namespace Descending.World
         {
             _interacting = false;
         }
+
+        public override void Highlight()
+        {
+            
+        }
+
+        public override void Unhighlight()
+        {
+            
+        }
     }
 }

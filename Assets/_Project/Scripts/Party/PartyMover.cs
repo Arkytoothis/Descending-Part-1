@@ -18,25 +18,21 @@ namespace Descending
             }
         }
 
-        public void MoveToFormation()
+        public void SetPathingTargets()
         {
             for (int i = 0; i < _partyController.PartyData.Heroes.Count; i++)
             {
-                //_partyController.PartyData.Heroes[i].Pathfinder.EnablePathing();
-                //_partyController.PartyData.Heroes[i].Pathfinder.SetDestination(_formation.Positions[i].position);
-            }
+                _partyController.PartyData.Heroes[i].Pathfinder.SetTarget(_formation.Positions[i]);
+            }    
         }
         
         public void SetPosition(Vector3 position)
         {
-            //_formation.MoveTo(_partyController.PartyData.Heroes[0].transform.position, position);
             ResetFormation();
         }
         
         public void MoveTo(Vector3 position)
         {
-            //_formation.MoveTo(_partyController.PartyData.Heroes[0].transform.position, position);
-            //MoveToFormation();
         }
     }
 }

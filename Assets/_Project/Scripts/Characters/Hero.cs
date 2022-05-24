@@ -2,14 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DarkTonic.MasterAudio;
-using DarkTonic.MasterAudio.Examples;
 using Descending.Attributes;
 using Descending.Combat;
 using Descending.Core;
 using Descending.Enemies;
 using Descending.Equipment;
 using Descending.Gui;
-using Descending.Party;
 using ScriptableObjectArchitecture;
 using UnityEngine;
 using AttributesController = Descending.Attributes.AttributesController;
@@ -27,6 +25,8 @@ namespace Descending.Characters
         [SerializeField] private AttributesController _attributes = null;
         [SerializeField] private SkillsController _skills = null;
         [SerializeField] private InventoryController _inventory = null;
+        [SerializeField] private AbilityController _abilities = null;
+        
         [SerializeField] private Transform _worldMount = null;
         [SerializeField] private Transform _portraitMount = null;
         [SerializeField] private HeroPathfinder _pathfinder = null;
@@ -50,11 +50,13 @@ namespace Descending.Characters
         public AttributesController Attributes => _attributes;
         public SkillsController Skills => _skills;
         public InventoryController Inventory => _inventory;
+        public AbilityController Abilities => _abilities;
         public GameObject PortraitModel => _portraitModel;
         public PortraitMount Portrait => _portrait;
         public BodyRenderer WorldRenderer => _worldRenderer;
         public VitalBar LifeBar => _lifeBar;
         public Transform HitEffectTransform => _hitEffectTransform;
+        public HeroPathfinder Pathfinder => _pathfinder;
 
         private void Awake()
         {
@@ -94,7 +96,8 @@ namespace Descending.Characters
             _attributes.Setup(race, profession);
             _skills.Setup(_attributes, race, profession);
             _inventory.Setup(_worldRenderer, _portraitRenderer, gender, race, profession, equipWeapons);
-
+            _abilities.Setup(_heroData.Name, race, profession, _skills);
+            
             if (enabledInfoBar == true)
             {
                 _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
@@ -138,6 +141,8 @@ namespace Descending.Characters
             _attributes.LoadData(saveData.AttributeData);
             _skills.LoadData(saveData.SkillData);
             _inventory.LoadData(_worldRenderer, _portraitRenderer, saveData.HeroData.Gender, saveData.InventoryData, true);
+            _abilities.Setup(saveData.HeroData.Name, race, profession, _skills);
+            
             _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
         }
 
@@ -212,12 +217,6 @@ namespace Descending.Characters
         public override void MeleeAttack()
         {
             _worldAnimator.SetTrigger("Attack");
-
-            // if (Random.Range(0, 100) < 50)
-            // {
-            //     string attackSound = _heroData.RaceDefinition.GetAttackSound(_heroData.Gender);
-            //     MasterAudio.PlaySound3DAtTransform(attackSound, transform, .3f, 1f);
-            // }
             
             string swingSound = _inventory.GetEquippedWeapon().ItemDefinition.GetMissSound();
             MasterAudio.PlaySound3DAtTransform(swingSound, transform, .15f, 1f);

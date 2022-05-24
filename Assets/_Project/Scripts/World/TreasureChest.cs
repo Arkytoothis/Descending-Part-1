@@ -72,5 +72,15 @@ namespace Descending.World
             onAddSupplies.Invoke(_supplies);
             Destroy(gameObject);
         }
+
+        public override void Highlight()
+        {
+            
+        }
+
+        public override void Unhighlight()
+        {
+            
+        }
     }
 }
