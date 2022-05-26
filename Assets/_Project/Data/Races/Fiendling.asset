@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Fiendling
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 4131508251138218162, guid: 2fd667bbf7837514bb006eb0fccb4879, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: f74e02a8851d43746907e62369cac68d, type: 3}
+  _prefabMale: {fileID: 4131508251138218162, guid: 2fd667bbf7837514bb006eb0fccb4879,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: f74e02a8851d43746907e62369cac68d,
+    type: 3}
   _key: Fiendling
   _name: Fiendling
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: 1
   _hairAllowed: 1
   _eyebrowsAllowed: 1
-  _beardAllowed: 0
-  _beardChance: 0
+  _maleBeardChance: 0
+  _femaleBeardChance: 0
   _skinColors:
   - {r: 0.31132078, g: 0.036712352, b: 0.04559818, a: 0}
   - {r: 0.3490566, g: 0.09385012, b: 0.10478754, a: 0}

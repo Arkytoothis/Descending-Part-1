@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Shadow Elf
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 4650479350452713856, guid: e3837471ef4f2384c8d1e4e54931e5dc, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: 9994b6422bf65474bb0219aa41425e39, type: 3}
+  _prefabMale: {fileID: 4650479350452713856, guid: e3837471ef4f2384c8d1e4e54931e5dc,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: 9994b6422bf65474bb0219aa41425e39,
+    type: 3}
   _key: Shadow Elf
   _name: Shadow Elf
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: 2
   _hairAllowed: 1
   _eyebrowsAllowed: 1
-  _beardAllowed: 0
-  _beardChance: 0
+  _maleBeardChance: 0
+  _femaleBeardChance: 0
   _skinColors:
   - {r: 0.058205754, g: 0.090192534, b: 0.11320752, a: 0}
   - {r: 0.06999823, g: 0.08929843, b: 0.103773594, a: 0}

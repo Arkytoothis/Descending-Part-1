@@ -21,8 +21,8 @@ namespace Descending.Attributes
         [SerializeField] private int _earIndex = 0;
         [SerializeField] private bool _hairAllowed = true;
         [SerializeField] private bool _eyebrowsAllowed = true;
-        [SerializeField] private bool _beardAllowed = true;
-        [SerializeField] private int _beardChance = 75;
+        [FormerlySerializedAs("_beardChance")] [SerializeField] private int _maleBeardChance = 75;
+        [SerializeField] private int _femaleBeardChance = 75;
         [SerializeField] private List<Color> _skinColors = null;
         [SerializeField] private List<Color> _eyeColors = null;
         [SerializeField] private List<Color> _hairColors = null;
@@ -50,7 +50,8 @@ namespace Descending.Attributes
         public StartingSkillDictionary StartingSkills => _startingSkills;
         public List<Resistance> Resistances => _resistances;
         public bool Unlocked { get => _unlocked; set => _unlocked = value; }
-        public int BeardChance => _beardChance;
+        public int MaleBeardChance => _maleBeardChance;
+        public int FemaleBeardChance => _femaleBeardChance;
         public GameObject PrefabMale => _prefabMale;
         public GameObject PrefabFemale => _prefabFemale;
         public ParticleSystem HitEffect => _hitEffect;
@@ -67,18 +68,16 @@ namespace Descending.Attributes
             set => _name = value;
         }
 
-        public int EarIndex { get => _earIndex; }
-        public bool HairAllowed { get => _hairAllowed; }
-        public bool EyebrowsAllowed { get => _eyebrowsAllowed; }
-        public bool BeardAllowed { get => _beardAllowed; }
-
-        public List<Color> SkinColors { get => _skinColors; }
-        public List<Color> EyeColors { get => _eyeColors; }
-        public List<Color> ScarColors { get => _scarColors; }
-        public List<Color> StubbleColors { get => _stubbleColors; }
-        public List<Color> HairColors { get => _hairColors; }
-        public List<Color> TattooColors { get => _tattooColors; }
-        public Sprite Icon { get => _icon; }
+        public int EarIndex => _earIndex;
+        public bool HairAllowed => _hairAllowed;
+        public bool EyebrowsAllowed => _eyebrowsAllowed;
+        public List<Color> SkinColors => _skinColors;
+        public List<Color> EyeColors => _eyeColors;
+        public List<Color> ScarColors => _scarColors;
+        public List<Color> StubbleColors => _stubbleColors;
+        public List<Color> HairColors => _hairColors;
+        public List<Color> TattooColors => _tattooColors;
+        public Sprite Icon => _icon;
         public float ExpModifier => _expModifier;
 
         public string GetAttackSound(Genders gender)

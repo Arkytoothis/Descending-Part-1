@@ -74,7 +74,8 @@ namespace Descending.Combat
             
             for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
             {
-                _parameters.Party.PartyData.Heroes[i].SnapToTile();
+                CombatTile tile = _parameters.Party.PartyData.Heroes[i].SnapToTile();
+                tile.SetGameEntity(_parameters.Party.PartyData.Heroes[i]);
             }
         }
 
@@ -93,7 +94,8 @@ namespace Descending.Combat
             yield return new WaitForSeconds(0.1f);
             for (int i = 0; i < _parameters.Encounter.Enemies.Count; i++)
             {
-                _parameters.Encounter.Enemies[i].SnapToTile();
+                CombatTile tile = _parameters.Encounter.Enemies[i].SnapToTile();
+                tile.SetGameEntity(_parameters.Encounter.Enemies[i]);
                 _parameters.Encounter.Enemies[i].transform.LookAt(_parameters.Party.PartyData.Heroes[0].transform, Vector3.up);
             }
         }

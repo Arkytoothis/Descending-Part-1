@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Descending.Characters;
+using Descending.Enemies;
+using ScriptableObjectArchitecture;
 using UnityEngine;
 
 namespace Descending.Combat
@@ -13,8 +16,14 @@ namespace Descending.Combat
         [SerializeField] private Color _hoverColor = Color.white;
         [SerializeField] private MeshRenderer _renderer = null;
 
+        [SerializeField] private CombatTileEvent onDisplayCombatTile = null;
+        
+        private GameEntity _entity = null;
+        
         public int X => _x;
         public int Y => _y;
+        public GameEntity Entity => _entity;
+
 
         public void Setup(int x, int y)
         {
@@ -25,11 +34,18 @@ namespace Descending.Combat
         private void OnMouseEnter()
         {
             _renderer.material.SetColor("_BaseColor", _hoverColor);
+            onDisplayCombatTile.Invoke(this);
         }
 
         private void OnMouseExit()
         {
             _renderer.material.SetColor("_BaseColor", _baseColor);
+            onDisplayCombatTile.Invoke(null);
+        }
+
+        public void SetGameEntity(GameEntity entity)
+        {
+            _entity = entity;
         }
     }
 }

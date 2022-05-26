@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Descending.Attributes;
 using Descending.Characters;
 using Descending.Enemies;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using UnityEditor.Experimental;
 
 namespace Descending.Core
 {
@@ -240,6 +242,11 @@ namespace Descending.Core
             {
                 return Genders.Female;
             }
+        }
+
+        public static RaceDefinition GetRandomRace()
+        {
+            return RandomValues(Database.instance.Races.Races);
         }
 
         private static System.Random rng = new System.Random();

@@ -22,7 +22,7 @@ MonoBehaviour:
     type: 3}
   _projectile: {fileID: 0}
   _category: 4
-  _itemType: 10
+  _itemType: 15
   _nameFormat: 0
   _equipmentSlot: 0
   _renderSlots: []

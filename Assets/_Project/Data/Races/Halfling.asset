@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Halfling
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 4131508251138218162, guid: fe471b3d982d86f4887871dc0b6c659d, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: d9798da96602c1643adffae28a81d88a, type: 3}
+  _prefabMale: {fileID: 4131508251138218162, guid: fe471b3d982d86f4887871dc0b6c659d,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: d9798da96602c1643adffae28a81d88a,
+    type: 3}
   _key: Halfling
   _name: Halfling
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: -1
   _hairAllowed: 1
   _eyebrowsAllowed: 1
-  _beardAllowed: 1
-  _beardChance: 75
+  _maleBeardChance: 75
+  _femaleBeardChance: 0
   _skinColors:
   - {r: 0.8207547, g: 0.6846181, b: 0.56910825, a: 0}
   - {r: 0.9245283, g: 0.8249071, b: 0.73700607, a: 0}

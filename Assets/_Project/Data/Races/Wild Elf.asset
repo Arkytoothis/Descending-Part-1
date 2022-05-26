@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Wild Elf
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 4650479350452713856, guid: f27a4f365dbad6240b47c25a0a7f3d9e, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: 2e8eec0abe639d64da8eac0a75b7f3cd, type: 3}
+  _prefabMale: {fileID: 4650479350452713856, guid: f27a4f365dbad6240b47c25a0a7f3d9e,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: 2e8eec0abe639d64da8eac0a75b7f3cd,
+    type: 3}
   _key: Wild Elf
   _name: Wild Elf
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: 2
   _hairAllowed: 1
   _eyebrowsAllowed: 1
-  _beardAllowed: 0
-  _beardChance: 0
+  _maleBeardChance: 0
+  _femaleBeardChance: 0
   _skinColors:
   - {r: 0.8773585, g: 0.78169215, b: 0.5835262, a: 0}
   - {r: 0.8679245, g: 0.74644, b: 0.495372, a: 0}

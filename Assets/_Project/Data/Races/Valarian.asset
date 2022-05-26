@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Valarian
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 7314011582384213635, guid: dbbe9d431ac9823479b94f0c2cbf5792, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: 9a867ccf3f4d13543b66b5892788a3e4, type: 3}
+  _prefabMale: {fileID: 7314011582384213635, guid: dbbe9d431ac9823479b94f0c2cbf5792,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: 9a867ccf3f4d13543b66b5892788a3e4,
+    type: 3}
   _key: Valarian
   _name: Valarian
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: -1
   _hairAllowed: 1
   _eyebrowsAllowed: 0
-  _beardAllowed: 0
-  _beardChance: 10
+  _maleBeardChance: 10
+  _femaleBeardChance: 0
   _skinColors:
   - {r: 0.9528302, g: 0.93617415, b: 0.92136884, a: 0}
   - {r: 0.9811321, g: 0.936877, b: 0.9024564, a: 0}

@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Islander
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 9033140972532851377, guid: c869918c41d7cda428e0252586ecbe39, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: be82565b3f69ea5459cc80a6500167ba, type: 3}
+  _prefabMale: {fileID: 9033140972532851377, guid: c869918c41d7cda428e0252586ecbe39,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: be82565b3f69ea5459cc80a6500167ba,
+    type: 3}
   _key: Islander
   _name: Islander
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: -1
   _hairAllowed: 1
   _eyebrowsAllowed: 1
-  _beardAllowed: 1
-  _beardChance: 75
+  _maleBeardChance: 75
+  _femaleBeardChance: 0
   _skinColors:
   - {r: 0.5849056, g: 0.4427315, b: 0.31728372, a: 0}
   - {r: 0.6509434, g: 0.5295312, b: 0.4267978, a: 0}

@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Giantkin
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 4650479350452713856, guid: ce4fee4d371b3af4dad9bad1b4cae754, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: f609e2705d6544c408ba9138ed8a36fa, type: 3}
+  _prefabMale: {fileID: 4650479350452713856, guid: ce4fee4d371b3af4dad9bad1b4cae754,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: f609e2705d6544c408ba9138ed8a36fa,
+    type: 3}
   _key: Giantkin
   _name: Giantkin
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: 0
   _hairAllowed: 0
   _eyebrowsAllowed: 0
-  _beardAllowed: 0
-  _beardChance: 0
+  _maleBeardChance: 0
+  _femaleBeardChance: 0
   _skinColors:
   - {r: 0.5660378, g: 0.55468655, b: 0.5259879, a: 0}
   - {r: 0.6037736, g: 0.5619082, b: 0.46422216, a: 0}

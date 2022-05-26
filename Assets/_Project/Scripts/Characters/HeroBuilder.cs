@@ -10,24 +10,26 @@ namespace Descending.Characters
 {
     public static class HeroBuilder
     {
-        public static Hero BuildHero(Genders gender, RaceDefinition race, ProfessionDefinition profession, bool pathingEnabled, bool equipWeapons, int listIndex, bool enableInfoBar)
+        public static Hero BuildHero(Genders gender, RaceDefinition race, ProfessionDefinition profession, bool pathingEnabled, bool equipWeapons, int listIndex, bool enableInfoBar, bool enablePortrait)
         {
             GameObject clone = GameObject.Instantiate(Database.instance.HeroPrefab, null);
 
             Hero hero = clone.GetComponent<Hero>();
-
             if (pathingEnabled == false)
             {
-                GameObject.Destroy(hero.GetComponent<RVOController>());
-                GameObject.Destroy(hero.GetComponent<RichAI>());
-                GameObject.Destroy(hero.GetComponent<Seeker>());
+                //hero.GetComponent<RVOController>().enabled = false;
+                //hero.GetComponent<RichAI>().enabled = false;
+                //hero.GetComponent<Seeker>().enabled = false;
+                // GameObject.Destroy(hero.GetComponent<RVOController>());
+                // GameObject.Destroy(hero.GetComponent<RichAI>());
+                // GameObject.Destroy(hero.GetComponent<Seeker>());
             }
             
-            hero.Setup(gender, race, profession, equipWeapons, listIndex, enableInfoBar);
+            hero.Setup(gender, race, profession, equipWeapons, listIndex, enableInfoBar, enablePortrait);
             
             return hero;
         }
-        public static Hero LoadHero(HeroSaveData saveData, bool pathingEnabled, bool equipWeapons)
+        public static Hero LoadHero(HeroSaveData saveData, bool pathingEnabled, bool equipWeapons, bool enablePortrait)
         {
             GameObject clone = GameObject.Instantiate(Database.instance.HeroPrefab, null);
 
@@ -35,12 +37,15 @@ namespace Descending.Characters
 
             if (pathingEnabled == false)
             {
-                GameObject.Destroy(hero.GetComponent<RVOController>());
-                GameObject.Destroy(hero.GetComponent<RichAI>());
-                GameObject.Destroy(hero.GetComponent<Seeker>());
+                //hero.GetComponent<RVOController>().enabled = false;
+                //hero.GetComponent<RichAI>().enabled = false;
+                //hero.GetComponent<Seeker>().enabled = false;
+                // GameObject.Destroy(hero.GetComponent<RVOController>());
+                // GameObject.Destroy(hero.GetComponent<RichAI>());
+                // GameObject.Destroy(hero.GetComponent<Seeker>());
             }
             
-            hero.Load(saveData, equipWeapons);
+            hero.Load(saveData, equipWeapons, enablePortrait);
             
             return hero;
         }

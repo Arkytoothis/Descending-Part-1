@@ -102,7 +102,7 @@ MonoBehaviour:
     _prefixEnchantment: 
     _suffixEnchantment: 
   - _itemKey: Hand Axe
-    _materialKey: Wood
+    _materialKey: Iron
     _qualityKey: 
     _prefixEnchantment: 
     _suffixEnchantment: 

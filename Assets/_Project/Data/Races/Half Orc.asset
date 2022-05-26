@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Half Orc
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 4650479350452713856, guid: f5acc501d1bf6e04ea3e0a51f394d491, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: 47dd2684bbab4884e89dbefead9e1907, type: 3}
+  _prefabMale: {fileID: 4650479350452713856, guid: f5acc501d1bf6e04ea3e0a51f394d491,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: 47dd2684bbab4884e89dbefead9e1907,
+    type: 3}
   _key: Half Orc
   _name: Half Orc
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
-  _earIndex: 0
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
+  _earIndex: 1
   _hairAllowed: 1
   _eyebrowsAllowed: 1
-  _beardAllowed: 1
-  _beardChance: 75
+  _maleBeardChance: 75
+  _femaleBeardChance: 50
   _skinColors:
   - {r: 0.6671414, g: 0.754717, b: 0.60875756, a: 0}
   - {r: 0.5430104, g: 0.6415094, b: 0.4750801, a: 0}
@@ -138,7 +141,7 @@ MonoBehaviour:
     - _skill: {fileID: 11400000, guid: 720b46637f1c9884b833b3bfd8cda44f, type: 2}
       _minimumValue: 1
       _maximumValue: 1
-    - _skill: {fileID: 11400000, guid: 1ad452ef32d60fb4c9332267dec467eb, type: 2}
+    - _skill: {fileID: 11400000, guid: 6d0aa7da46df74b4ea8f5ac8f672e2df, type: 2}
       _minimumValue: 1
       _maximumValue: 1
   _resistances: []

@@ -41,10 +41,10 @@ namespace Descending.Party
             _resources.AddMaterials(0);
             _resources.AddSupplies(10);
 
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Half Orc"), Database.instance.Profession.GetProfession("Soldier"), true, true, 0, false), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Wild Elf"), Database.instance.Profession.GetProfession("Scout"), true, true, 1, false), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Mountain Dwarf"), Database.instance.Profession.GetProfession("Acolyte"), true, true, 2, false), _heroesParent);
-            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice"), true, true, 3, false), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Half Orc"), Database.instance.Profession.GetProfession("Soldier"), true, true, 0, false, true), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Wild Elf"), Database.instance.Profession.GetProfession("Scout"), true, true, 1, false, true), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Mountain Dwarf"), Database.instance.Profession.GetProfession("Acolyte"), true, true, 2, false, true), _heroesParent);
+            _partyData.AddHero(HeroBuilder.BuildHero(Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice"), true, true, 3, false, true), _heroesParent);
             
             _partyMover.SetPathingTargets();
             SetLeader(0);
@@ -81,7 +81,7 @@ namespace Descending.Party
 
             for (int i = 0; i < saveData.Count; i++)
             {
-                _partyData.AddHero(HeroBuilder.LoadHero(saveData[i], true, true), _heroesParent);
+                _partyData.AddHero(HeroBuilder.LoadHero(saveData[i], true, true, true), _heroesParent);
             }
             
         }

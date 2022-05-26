@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skills:
     keyData:
-    - Blade Weapons
-    - Blunt Weapons
+    - Blades
+    - Maces
     - Bows
     - Firearms
     - Leadership
@@ -42,6 +42,7 @@ MonoBehaviour:
     - Survival
     - Awareness
     - Armor
+    - Axes
     valueData:
     - {fileID: 11400000, guid: 1ad452ef32d60fb4c9332267dec467eb, type: 2}
     - {fileID: 11400000, guid: fdb551caa9a6da743a82c394c18ecb5d, type: 2}
@@ -71,4 +72,5 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ba7d9bb26d07d2a47aa5fe696fd187f9, type: 2}
     - {fileID: 11400000, guid: e9dc8595bb9f83b48ad34eefc2aa30a8, type: 2}
     - {fileID: 11400000, guid: 1e77ccd78b0ac224b86db88b2c0f5680, type: 2}
+    - {fileID: 11400000, guid: 6d0aa7da46df74b4ea8f5ac8f672e2df, type: 2}
   _skillCategoryColors: []

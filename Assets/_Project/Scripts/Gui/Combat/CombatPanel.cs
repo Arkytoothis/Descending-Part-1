@@ -14,6 +14,7 @@ namespace Descending.Scene_Overworld.Gui
         [SerializeField] private TMP_Text _statusLabel = null;
         [SerializeField] private TMP_Text _heroesLabel = null;
         [SerializeField] private TMP_Text _enemiesLabel = null;
+        [SerializeField] private TMP_Text _mouseTile = null;
         [SerializeField] private InitiativePanel _initiativePanel = null;
         
         [SerializeField] private BoolEvent onEndCombat_Gui = null;
@@ -72,6 +73,24 @@ namespace Descending.Scene_Overworld.Gui
             }
 
             return enemyLife;
+        }
+
+        public void DisplayMouseTile(CombatTile tile)
+        {
+            if (tile != null)
+            {
+                string text = "X: " + tile.X + " Y: " + tile.Y;
+                if (tile.Entity != null)
+                {
+                    text += "\n" + tile.Entity.GetName();
+                }
+
+                _mouseTile.SetText(text);
+            }
+            else
+            {
+                _mouseTile.SetText("");
+            }
         }
     }
 }

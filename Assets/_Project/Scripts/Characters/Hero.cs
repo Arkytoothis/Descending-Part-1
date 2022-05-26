@@ -68,7 +68,7 @@ namespace Descending.Characters
             _worldAnimator.SetFloat("Blend", _rigidbody.velocity.magnitude);
         }
 
-        public void Setup(Genders gender, RaceDefinition race, ProfessionDefinition profession, bool equipWeapons, int listIndex, bool enabledInfoBar)
+        public void Setup(Genders gender, RaceDefinition race, ProfessionDefinition profession, bool equipWeapons, int listIndex, bool enabledInfoBar, bool enablePortrait)
         {
             _worldModel = HeroBuilder.SpawnWorldPrefab(gender, race, _worldMount);
             _worldRenderer = _worldModel.GetComponent<BodyRenderer>();
@@ -78,24 +78,27 @@ namespace Descending.Characters
 
             _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
             _animationEvents.Setup(this);
-            
-            _portraitModel = HeroBuilder.SpawnPortraitPrefab(gender, race, _portraitMount);
-            
-            var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
-            foreach (var child in children)
+
+            if (enablePortrait == true)
             {
-                child.gameObject.layer = LayerMask.NameToLayer("PortraitLight");
+                _portraitModel = HeroBuilder.SpawnPortraitPrefab(gender, race, _portraitMount);
+
+                var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
+                foreach (var child in children)
+                {
+                    child.gameObject.layer = LayerMask.NameToLayer("PortraitLight");
+                }
+
+                _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
+                _portraitRenderer.SetupBody(gender, race, profession, _worldRenderer);
+                Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
+                portraitAnimator.runtimeAnimatorController = _portraitController;
             }
-            
-            _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
-            _portraitRenderer.SetupBody(gender, race, profession, _worldRenderer);
-            Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
-            portraitAnimator.runtimeAnimatorController = _portraitController;
-            
+
             _heroData.Setup(gender, race, profession, _worldModel.GetComponent<BodyRenderer>(), listIndex);
             _attributes.Setup(race, profession);
             _skills.Setup(_attributes, race, profession);
-            _inventory.Setup(_worldRenderer, _portraitRenderer, gender, race, profession, equipWeapons);
+            _inventory.Setup(_worldRenderer, _portraitRenderer, gender, race, profession, equipWeapons, enablePortrait);
             _abilities.Setup(_heroData.Name, race, profession, _skills);
             
             if (enabledInfoBar == true)
@@ -109,7 +112,7 @@ namespace Descending.Characters
             }
         }
 
-        public void Load(HeroSaveData saveData, bool equipWeapons)
+        public void Load(HeroSaveData saveData, bool equipWeapons, bool enablePortrait)
         {
             RaceDefinition race = Database.instance.Races.GetRace(saveData.HeroData.RaceKey);
             ProfessionDefinition profession = Database.instance.Profession.GetProfession(saveData.HeroData.ProfessionKey);
@@ -123,24 +126,27 @@ namespace Descending.Characters
             _animationEvents.Setup(this);
             
             //_interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
-            
-            _portraitModel = HeroBuilder.SpawnPortraitPrefab(saveData.HeroData.Gender, race, _portraitMount);
-            
-            var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
-            foreach (var child in children)
+
+            if (enablePortrait == true)
             {
-                child.gameObject.layer = LayerMask.NameToLayer("PortraitLight");
+                _portraitModel = HeroBuilder.SpawnPortraitPrefab(saveData.HeroData.Gender, race, _portraitMount);
+
+                var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
+                foreach (var child in children)
+                {
+                    child.gameObject.layer = LayerMask.NameToLayer("PortraitLight");
+                }
+
+                _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
+                _portraitRenderer.LoadBody(saveData);
+                Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
+                portraitAnimator.runtimeAnimatorController = _portraitController;
             }
-            
-            _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
-            _portraitRenderer.LoadBody(saveData);
-            Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
-            portraitAnimator.runtimeAnimatorController = _portraitController;
-            
+
             _heroData.LoadData(saveData.HeroData, _worldRenderer);
             _attributes.LoadData(saveData.AttributeData);
             _skills.LoadData(saveData.SkillData);
-            _inventory.LoadData(_worldRenderer, _portraitRenderer, saveData.HeroData.Gender, saveData.InventoryData, true);
+            _inventory.LoadData(_worldRenderer, _portraitRenderer, saveData.HeroData.Gender, saveData.InventoryData, enablePortrait);
             _abilities.Setup(saveData.HeroData.Name, race, profession, _skills);
             
             _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
@@ -239,7 +245,7 @@ namespace Descending.Characters
             _animationEvents.SetTarget(enemyTarget);
         }
 
-        public void SnapToTile()
+        public CombatTile SnapToTile()
         {
             _currentTile = _tileDetector.RaycastForTile();   
                 
@@ -249,6 +255,8 @@ namespace Descending.Characters
                 _pathfinder.SetAiActive(false);
                 _pathfinder.TeleportTo(_currentTile.transform.position);
             }
+
+            return _currentTile;
         }
 
         public void EndCombat()

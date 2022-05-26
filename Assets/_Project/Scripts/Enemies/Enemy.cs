@@ -134,7 +134,7 @@ namespace Descending.Enemies
             //MasterAudio.PlaySound3DAtTransform(swingSound, transform, .15f, 1f);
         }
 
-        public void SnapToTile()
+        public CombatTile SnapToTile()
         {
             CombatTile tile = _tileDetector.RaycastForTile();   
                 
@@ -144,6 +144,8 @@ namespace Descending.Enemies
                 _pathfinder.SetAiActive(false);
                 _pathfinder.TeleportTo(tile.transform.position);
             }
+
+            return tile;
         }
     }
 }

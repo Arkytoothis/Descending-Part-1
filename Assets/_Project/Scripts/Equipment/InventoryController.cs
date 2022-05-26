@@ -28,7 +28,7 @@ namespace Descending.Equipment
         public Item[] Stockpile => _stockpile;
         public int StockpileSlots => _stockpileSlots;
 
-        public void Setup(BodyRenderer worldBody, BodyRenderer portraitBody, Genders gender, RaceDefinition race, ProfessionDefinition profession, bool equipWeapons)
+        public void Setup(BodyRenderer worldBody, BodyRenderer portraitBody, Genders gender, RaceDefinition race, ProfessionDefinition profession, bool equipWeapons, bool portraitEquip)
         {
             _worldBody = worldBody;
             _portraitBody = portraitBody;
@@ -64,7 +64,7 @@ namespace Descending.Equipment
                 }
                 else
                 {
-                    EquipItem(item);
+                    EquipItem(item, portraitEquip);
                 }
             }
         }
@@ -143,7 +143,7 @@ namespace Descending.Equipment
             _stockpile[index] = null;
         }
         
-        public void LoadData(BodyRenderer worldBody, BodyRenderer portraitBody, Genders gender, InventorySaveData saveData, bool equipWeapons)
+        public void LoadData(BodyRenderer worldBody, BodyRenderer portraitBody, Genders gender, InventorySaveData saveData, bool portraitEquip)
         {
             _worldBody = worldBody;
             _portraitBody = portraitBody;
@@ -165,11 +165,11 @@ namespace Descending.Equipment
             {
                 if (saveData.EquippedItems[i].Key == "" || saveData.EquippedItems[i].ItemDefinition.Key == "") continue;
                 
-                EquipItem(saveData.EquippedItems[i]);
+                EquipItem(saveData.EquippedItems[i], portraitEquip);
             }
         }
 
-        public void EquipItem(Item item)
+        public void EquipItem(Item item,bool portraitEquip)
         {
             //Debug.Log("Name: " + item.Name + " Slot: " + item.EquipmentSlot);
             if (_equippedItems[(int) item.EquipmentSlot] == null)
@@ -177,7 +177,11 @@ namespace Descending.Equipment
                 //Debug.Log("Equipping");
                 _equippedItems[(int) item.EquipmentSlot] = new Item(item);
                 _worldBody.EquipItem(item);
-                _portraitBody.EquipItem(item);
+
+                if (portraitEquip == true)
+                {
+                    _portraitBody.EquipItem(item);
+                }
             }
             else
             {
@@ -185,7 +189,11 @@ namespace Descending.Equipment
                 PickupItem(_equippedItems[(int) item.EquipmentSlot]);
                 _equippedItems[(int) item.EquipmentSlot] = new Item(item);
                 _worldBody.EquipItem(item);
-                _portraitBody.EquipItem(item);
+
+                if (portraitEquip == true)
+                {
+                    _portraitBody.EquipItem(item);
+                }
             }
         }
 

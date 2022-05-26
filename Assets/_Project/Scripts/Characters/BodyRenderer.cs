@@ -97,7 +97,9 @@ namespace Descending.Characters
             if(race.EyebrowsAllowed == true)
                 SetPartEnabled(BodyParts.Eyebrows, _eyebrowIndex, true);
 
-            if (gender == Genders.Male && Random.Range(0, 100) < race.BeardChance)
+            if (gender == Genders.Male && Random.Range(0, 100) < race.MaleBeardChance)
+                SetPartEnabled(BodyParts.Facial_Hair, _facialHairIndex, true);
+            else if (gender == Genders.Female && Random.Range(0, 100) < race.FemaleBeardChance)
                 SetPartEnabled(BodyParts.Facial_Hair, _facialHairIndex, true);
 
             SetPartEnabled(BodyParts.Torso, 0, true);
@@ -149,7 +151,7 @@ namespace Descending.Characters
             if(race.EyebrowsAllowed == true)
                 SetPartEnabled(BodyParts.Eyebrows, _eyebrowIndex, true);
 
-            if (saveData.HeroData.Gender == Genders.Male && Random.Range(0, 100) < race.BeardChance)
+            if (saveData.HeroData.Gender == Genders.Male && Random.Range(0, 100) < race.MaleBeardChance)
                 SetPartEnabled(BodyParts.Facial_Hair, _facialHairIndex, true);
 
             SetPartEnabled(BodyParts.Torso, 0, true);
