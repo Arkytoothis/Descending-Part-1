@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Descending.Combat;
 using Descending.Core;
-using Descending.Encounters;
 using Descending.Gui;
 using Descending.Party;
-using Descending.World;
 using UnityEngine;
 
 namespace Descending.Scene_Overworld.Gui

@@ -10,6 +10,8 @@ namespace Descending.Scene_MainMenu.Gui
         [SerializeField] private PartyPanel _partyPanel = null;
         
         [SerializeField] private BoolEvent onGenerateParty = null;
+        [SerializeField] private BoolEvent onGenerateFavoriteParty = null;
+        [SerializeField] private BoolEvent onStartGame = null;
         
         public void Setup()
         {
@@ -19,6 +21,16 @@ namespace Descending.Scene_MainMenu.Gui
         public void RandomizeParty_ButtonClick()
         {
             onGenerateParty.Invoke(true);
+        }
+
+        public void GenerateFavoriteParty_ButtonClick()
+        {
+            onGenerateFavoriteParty.Invoke(true);
+        }
+
+        public void StartGame_ButtonClick()
+        {
+            onStartGame.Invoke(true);
         }
     }
 }

@@ -10,7 +10,6 @@ using Pathfinding;
 using ScriptableObjectArchitecture;
 using Sirenix.Serialization;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Descending.Party  
 {

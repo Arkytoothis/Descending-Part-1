@@ -46,6 +46,22 @@ namespace Descending.Scene_MainMenu
             SyncParty();
         }
 
+        public void GenerateFavoriteParty(bool b)
+        {
+            _partyManager.GenerateFavoriteParty();
+            SyncParty();
+        }
+
+        public void StartGame(bool b)
+        {
+            Debug.Log("Starting Game");
+        }
+
+        public void Exit(bool b)
+        {
+            Debug.Log("Exiting");
+        }
+
         private void SyncParty()
         {
             onSyncParty.Invoke(_partyManager);

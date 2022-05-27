@@ -6,7 +6,6 @@ using Descending.Encounters;
 using Descending.Party;
 using Descending.World;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Descending.Gui
 {

@@ -33,6 +33,18 @@ namespace Descending.Scene_MainMenu
             SpawnHero(5, Utilities.GetRandomGender(), Utilities.GetRandomRace(), Database.instance.Profession.GetProfession("Apprentice"));   
         }
 
+        public void GenerateFavoriteParty()
+        {
+            _heroes.Clear();
+            
+            SpawnHero(0, Utilities.GetRandomGender(), Database.instance.Races.GetRace("Half Orc"), Database.instance.Profession.GetProfession("Soldier"));  
+            SpawnHero(1, Utilities.GetRandomGender(), Database.instance.Races.GetRace("Imperial"), Database.instance.Profession.GetProfession("Mercenary")); 
+            SpawnHero(2, Utilities.GetRandomGender(), Database.instance.Races.GetRace("Halfling"), Database.instance.Profession.GetProfession("Thief")); 
+            SpawnHero(3, Utilities.GetRandomGender(), Database.instance.Races.GetRace("Wild Elf"), Database.instance.Profession.GetProfession("Scout")); 
+            SpawnHero(4, Utilities.GetRandomGender(), Database.instance.Races.GetRace("Mountain Dwarf"), Database.instance.Profession.GetProfession("Acolyte")); 
+            SpawnHero(5, Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice"));   
+        }
+
         private void SpawnHero(int index, Genders gender, RaceDefinition race, ProfessionDefinition profession)
         {
             _partyMounts[index].ClearTransform();

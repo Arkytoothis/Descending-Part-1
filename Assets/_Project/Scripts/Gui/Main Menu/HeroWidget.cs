@@ -25,20 +25,30 @@ namespace Descending.Scene_MainMenu.Gui
             string vitalsNames = "";
             string vitalsValues = "";
             
-            foreach (var characteristicKvp in hero.Attributes.Characteristics)
-            {
-                characteristicsNames += characteristicKvp.Value.Key + "\n";
-                characteristicsValues += characteristicKvp.Value.Maximum + "\n";
-            }
+            characteristicsNames += "Might\n";
+            characteristicsValues += hero.Attributes.Characteristics["Might"].Maximum + "\n";
+            characteristicsNames += "Finesse" + "\n";
+            characteristicsValues += hero.Attributes.Characteristics["Finesse"].Maximum + "\n";
+            characteristicsNames += "Endurance" + "\n";
+            characteristicsValues += hero.Attributes.Characteristics["Endurance"].Maximum + "\n";
+            characteristicsNames += "Intellect" + "\n";
+            characteristicsValues += hero.Attributes.Characteristics["Intellect"].Maximum + "\n";
+            characteristicsNames += "Spirit" + "\n";
+            characteristicsValues += hero.Attributes.Characteristics["Spirit"].Maximum + "\n";
+            characteristicsNames += "Perception" + "\n";
+            characteristicsValues += hero.Attributes.Characteristics["Perception"].Maximum + "\n";
             
             _characteristicsNamesLabel.SetText(characteristicsNames);
             _characteristicsValuesLabel.SetText(characteristicsValues);
-            
-            foreach (var vitalKvp in hero.Attributes.Vitals)
-            {
-                vitalsNames += vitalKvp.Value.Key + "\n";
-                vitalsValues += vitalKvp.Value.Maximum + "\n";
-            }
+
+            vitalsNames += "Armor\n";
+            vitalsValues += hero.Attributes.Vitals["Armor"].Maximum + "\n";
+            vitalsNames += "Life\n";
+            vitalsValues += hero.Attributes.Vitals["Life"].Maximum + "\n";
+            vitalsNames += "Stamina\n";
+            vitalsValues += hero.Attributes.Vitals["Stamina"].Maximum + "\n";
+            vitalsNames += "Magic\n";
+            vitalsValues += hero.Attributes.Vitals["Magic"].Maximum + "\n";
             
             _vitalsNamesLabel.SetText(vitalsNames);
             _vitalsValuesLabel.SetText(vitalsValues);
