@@ -7,6 +7,7 @@ using Descending.Party;
 using Descending.Scene_Overworld.Gui;
 using Descending.World;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Descending.Scene_Overworld
 {
@@ -55,6 +56,8 @@ namespace Descending.Scene_Overworld
         public void EnterDungeon(Dungeon dungeon)
         {
             Debug.Log("Starting Dungeon");
+            _partyController.Save();
+            SceneManager.LoadScene((int) GameScenes.Underground);
         }
     }
 }

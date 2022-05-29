@@ -32,6 +32,7 @@ namespace Descending.Characters
         [SerializeField] private Color _defaultStubbleColor = Color.white;
         [SerializeField] private Color _defaultHairColor = Color.white;
         [SerializeField] private Color _defaultEyeColor = Color.white;
+        [SerializeField] private Color _defaultTattooColor = Color.black;
         
         [SerializeField] private Transform _closeCameraMount = null;
         [SerializeField] private Transform _farCameraMount = null;
@@ -46,6 +47,7 @@ namespace Descending.Characters
         private int _facialHairIndex = -1;
         private int _eyebrowIndex = -1;
         private int _skinColorIndex = -1;
+        private int _tattooColorIndex = -1;
         private int _hairColorIndex = -1;
         private int _eyeColorIndex = -1;
 
@@ -56,6 +58,7 @@ namespace Descending.Characters
         public int FacialHairIndex => _facialHairIndex;
         public int EyebrowIndex => _eyebrowIndex;
         public int SkinColorIndex => _skinColorIndex;
+        public int TattooColorIndex => _tattooColorIndex;
         public int HairColorIndex => _hairColorIndex;
         public int EyeColorIndex => _eyeColorIndex;
 
@@ -69,6 +72,7 @@ namespace Descending.Characters
             _hairColorIndex = Random.Range(0, race.HairColors.Count);
             _eyeColorIndex = Random.Range(0, race.EyeColors.Count);
             _skinColorIndex = Random.Range(0, race.SkinColors.Count);
+            _tattooColorIndex = Random.Range(0, race.TattooColors.Count);
         }
 
         public void LoadDetails(HeroSaveData saveData)
@@ -80,6 +84,7 @@ namespace Descending.Characters
             _hairColorIndex = saveData.HeroData.HairColorIndex;
             _eyeColorIndex = saveData.HeroData.EyeColorIndex;
             _skinColorIndex = saveData.HeroData.SkinColorIndex;
+            _tattooColorIndex = saveData.HeroData.TattooColorIndex;
         }
         
         public void SetupBody(Genders gender, RaceDefinition race, ProfessionDefinition profession, BodyRenderer worldRenderer = null)
@@ -116,12 +121,12 @@ namespace Descending.Characters
             if (_gender == Genders.Male)
             {
                 SetSkinColorInstance(race.SkinColors[_skinColorIndex], race.ScarColors[_skinColorIndex],
-                    race.StubbleColors[_skinColorIndex]);
+                    race.StubbleColors[_skinColorIndex], race.TattooColors[_tattooColorIndex]);
             }
             else if (_gender == Genders.Female)
             {
                 SetSkinColorInstance(race.SkinColors[_skinColorIndex], race.ScarColors[_skinColorIndex],
-                    race.SkinColors[_skinColorIndex]);
+                    race.SkinColors[_skinColorIndex], race.TattooColors[_tattooColorIndex]);
             }
 
             SetHairColorInstance(race.HairColors[_hairColorIndex]);
@@ -168,12 +173,12 @@ namespace Descending.Characters
             if (_gender == Genders.Male)
             {
                 SetSkinColorInstance(race.SkinColors[_skinColorIndex], race.ScarColors[_skinColorIndex],
-                    race.StubbleColors[_skinColorIndex]);
+                    race.StubbleColors[_skinColorIndex], race.TattooColors[_tattooColorIndex]);
             }
             else if (_gender == Genders.Female)
             {
                 SetSkinColorInstance(race.SkinColors[_skinColorIndex], race.ScarColors[_skinColorIndex],
-                    race.SkinColors[_skinColorIndex]);
+                    race.SkinColors[_skinColorIndex], race.TattooColors[_tattooColorIndex]);
             }
 
             SetHairColorInstance(race.HairColors[_hairColorIndex]);
@@ -226,11 +231,11 @@ namespace Descending.Characters
             HideAll();
             if(_gender == Genders.Male)
             {
-                SetSkinColorShared(_defaultSkinColor, _defaultScarColor, _defaultStubbleColor);
+                SetSkinColorShared(_defaultSkinColor, _defaultScarColor, _defaultStubbleColor, _defaultTattooColor);
             }
             else if (_gender == Genders.Female)
             {
-                SetSkinColorShared(_defaultSkinColor, _defaultScarColor, _defaultSkinColor);
+                SetSkinColorShared(_defaultSkinColor, _defaultScarColor, _defaultSkinColor, _defaultTattooColor);
             }
             
             SetHairColorShared(_defaultHairColor);            
@@ -265,13 +270,14 @@ namespace Descending.Characters
                 SetChildrenEnabled((BodyParts)i, true);
             }
         }
-        private void SetSkinColorInstance(Color skinColor, Color scarColor, Color stubbleColor)
+        private void SetSkinColorInstance(Color skinColor, Color scarColor, Color stubbleColor, Color tattooColor)
         {
             foreach (Transform child in _partsList[(int) BodyParts.Head])
             {
                 SetColorInstance(child.gameObject, "_Color_Skin", skinColor);
                 SetColorInstance(child.gameObject, "_Color_Scar", scarColor);
                 SetColorInstance(child.gameObject, "_Color_Stubble", stubbleColor);
+                SetColorInstance(child.gameObject, "_Color_BodyArt", tattooColor);
             }
 
             foreach (Transform child in _partsList[(int) BodyParts.Ears])
@@ -308,13 +314,14 @@ namespace Descending.Characters
                 SetColorInstance(child.gameObject, "_Color_Skin", skinColor);
         }
         
-        private void SetSkinColorShared(Color skinColor, Color scarColor, Color stubbleColor)
+        private void SetSkinColorShared(Color skinColor, Color scarColor, Color stubbleColor, Color tattooColor)
         {
             foreach (Transform child in _partsList[(int) BodyParts.Head])
             {
                 SetColorShared(child.gameObject, "_Color_Skin", skinColor);
                 SetColorShared(child.gameObject, "_Color_Scar", scarColor);
                 SetColorShared(child.gameObject, "_Color_Stubble", stubbleColor);
+                SetColorShared(child.gameObject, "_Color_BodyArt", tattooColor);
             }
             
             foreach (Transform child in _partsList[(int)BodyParts.Ears])

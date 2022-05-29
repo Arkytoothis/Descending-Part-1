@@ -56,6 +56,7 @@ namespace Descending
                     _partyMover.MoveTo(hit.point);
                 }
                 
+                Cursor.SetCursor(_cursors[(int)CursorTypes.Terrain], Vector2.zero, CursorMode.Auto);
                 return true;
             }
 

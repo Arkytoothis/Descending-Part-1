@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Plains Dwarf
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 4131508251138218162, guid: 1db054904a069c64fb2fc0067a99e966, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: ede3ae0432697b748b98b8fec07b0db9, type: 3}
+  _prefabMale: {fileID: 4131508251138218162, guid: 1db054904a069c64fb2fc0067a99e966,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: ede3ae0432697b748b98b8fec07b0db9,
+    type: 3}
   _key: Plains Dwarf
   _name: Plains Dwarf
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: -1
   _hairAllowed: 1
   _eyebrowsAllowed: 1
-  _beardAllowed: 1
-  _beardChance: 100
+  _maleBeardChance: 100
+  _femaleBeardChance: 75
   _skinColors:
   - {r: 0.8207547, g: 0.6272728, b: 0.5149074, a: 0}
   - {r: 0.6886792, g: 0.5192998, b: 0.4190548, a: 0}
@@ -41,7 +44,7 @@ MonoBehaviour:
   - {r: 0.21698111, g: 0.14380117, b: 0.070621215, a: 0}
   - {r: 0.254717, g: 0.24630652, b: 0.24630652, a: 0}
   _tattooColors:
-  - {r: 0.13207549, g: 0.06911648, b: 0.01059096, a: 0}
+  - {r: 0.24528301, g: 0.15152906, b: 0.063634746, a: 0}
   _scarColors:
   - {r: 0.8867924, g: 0.63715416, b: 0.48940903, a: 0}
   - {r: 0.8018868, g: 0.55827284, b: 0.41985583, a: 0}

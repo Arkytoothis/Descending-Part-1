@@ -33,6 +33,7 @@ namespace Descending
         
         public void MoveTo(Vector3 position)
         {
+            SetPathingTargets();
         }
     }
 }

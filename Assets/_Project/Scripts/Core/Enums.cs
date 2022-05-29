@@ -126,7 +126,7 @@ namespace Descending.Core
 
     public enum CursorTypes
     {
-        Gui,
+        Gui, Terrain,
         Number, None
     }
     

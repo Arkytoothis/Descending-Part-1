@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0.00077715196, b: 0.009433985, a: 1}
+  m_AmbientSkyColor: {r: 0.012148449, g: 0.012148449, b: 0.066037714, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.54
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0, g: 0, b: 0.13333334, a: 1}
+  m_SubtractiveShadowColor: {r: 0.16073334, g: 0.16073334, b: 0.26415092, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -155,6 +155,7 @@ Transform:
   m_Children:
   - {fileID: 1804334035}
   - {fileID: 2147481553}
+  - {fileID: 1446870021}
   - {fileID: 1235507480}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -475,7 +476,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1235507480}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &618029291
 MonoBehaviour:
@@ -852,7 +853,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1235507480}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &944080427
 Rigidbody:
@@ -1006,8 +1007,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
-  m_LocalRotation: {x: 0.52573115, y: 0.000000016352738, z: -0.000000010106548, w: 0.85065085}
-  m_LocalPosition: {x: -205.87056, y: 0.8445959, z: -105.404724}
+  m_LocalRotation: {x: 0.52573115, y: -0.000000014636622, z: 0.00000000904593, w: 0.85065085}
+  m_LocalPosition: {x: -205.87056, y: 2.997056, z: -106.48096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1281,12 +1282,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1332780796}
-  - {fileID: 1446870021}
   - {fileID: 1950406989}
   - {fileID: 944080426}
   - {fileID: 618029290}
   m_Father: {fileID: 366535185}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1235507481
 MonoBehaviour:
@@ -1876,8 +1876,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1235507480}
-  m_RootOrder: 1
+  m_Father: {fileID: 366535185}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1449208417
 GameObject:
@@ -2012,7 +2012,7 @@ MonoBehaviour:
   _guiPrefab: {fileID: 6060749106354663499, guid: b00b553905271674f866e8901b255062,
     type: 3}
   _guiParent: {fileID: 919196145}
-  _loadData: 0
+  _loadData: 1
 --- !u!114 &1470712063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2286,7 +2286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 11.72206, z: -5.86103}
+  m_FollowOffset: {x: 0, y: 13.87452, z: -6.93726}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2358,8 +2358,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617518527}
-  m_LocalRotation: {x: 0.52573115, y: 0.000000016352738, z: -0.000000010106548, w: 0.85065085}
-  m_LocalPosition: {x: -205.87056, y: 0.8445959, z: -105.404724}
+  m_LocalRotation: {x: 0.52573115, y: -0.000000014636622, z: 0.00000000904593, w: 0.85065085}
+  m_LocalPosition: {x: -205.87056, y: 2.997056, z: -106.48096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2704,7 +2704,7 @@ Transform:
   - {fileID: 1370252526}
   - {fileID: 915516330}
   m_Father: {fileID: 1235507480}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1950406990
 MonoBehaviour:
@@ -3081,6 +3081,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1048576
   _partyMover: {fileID: 1235507481}
+  _cursors:
+  - {fileID: 2800000, guid: ba62a3bc87a57ab468f2d33da19dce2c, type: 3}
+  - {fileID: 2800000, guid: 34fd17be52cfb47459c607a50b988259, type: 3}
 --- !u!1001 &6750303340691709836
 PrefabInstance:
   m_ObjectHideFlags: 0

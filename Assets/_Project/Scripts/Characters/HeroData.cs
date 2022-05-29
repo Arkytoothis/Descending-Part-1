@@ -115,6 +115,7 @@ namespace Descending.Characters
         [SerializeField] private int _facialHairIndex = -1;
         [SerializeField] private int _eyebrowIndex = -1;
         [SerializeField] private int _skinColorIndex = -1;
+        [SerializeField] private int _tattooColorIndex = -1;
         [SerializeField] private int _hairColorIndex = -1;
         [SerializeField] private int _eyeColorIndex = -1;
         
@@ -134,6 +135,7 @@ namespace Descending.Characters
         public int SkinColorIndex => _skinColorIndex;
         public int HairColorIndex => _hairColorIndex;
         public int EyeColorIndex => _eyeColorIndex;
+        public int TattooColorIndex => _tattooColorIndex;
 
         public HeroDataSaveData(Hero hero)
         {
@@ -154,6 +156,7 @@ namespace Descending.Characters
             _skinColorIndex = hero.WorldRenderer.SkinColorIndex;
             _hairColorIndex = hero.WorldRenderer.HairColorIndex;
             _eyeColorIndex = hero.WorldRenderer.EyeColorIndex;
+            _tattooColorIndex = hero.WorldRenderer.TattooColorIndex;
         }
     }
 }
