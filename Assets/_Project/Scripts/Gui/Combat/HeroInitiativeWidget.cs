@@ -9,7 +9,8 @@ namespace Descending.Gui.Combat
 {
     public class HeroInitiativeWidget : InitiativeWidget, IPointerClickHandler
     {
-        [SerializeField] protected RawImage _portrait = null;
+        [SerializeField] private RawImage _portrait = null;
+        [SerializeField] private Color _selectedColor = Color.blue;
         
         private Hero _hero = null;
         private int _initiativeRoll = 0;
@@ -30,6 +31,38 @@ namespace Descending.Gui.Combat
         public void OnPointerClick(PointerEventData eventData)
         {
             
+        }
+        
+        public override void Select()
+        {
+            if (_hero != null)
+            {
+                _border.color = _selectedColor;
+                _selected = true;
+            }
+        }
+
+        public override void Deselect()
+        {
+            _border.color = _baseColor;
+            _selected = false;
+        }
+
+        public override void Highlight()
+        {
+            _border.color = _hoverColor;
+        }
+
+        public override void Unhighlight()
+        {
+            if (_selected == true)
+            {
+                _border.color = _selectedColor;
+            }
+            else
+            {
+                _border.color = _baseColor;
+            }
         }
     }
 }

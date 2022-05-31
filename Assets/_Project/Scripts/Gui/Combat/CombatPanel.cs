@@ -92,5 +92,11 @@ namespace Descending.Scene_Overworld.Gui
                 _mouseTile.SetText("");
             }
         }
+
+        public void OnSelectInitiative(int index)
+        {
+            //Debug.Log("Selecting Initiative " + index);
+            _initiativePanel.SelectWidget(index);
+        }
     }
 }

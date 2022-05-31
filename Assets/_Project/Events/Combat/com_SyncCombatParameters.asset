@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ac06ab82a06b4f438b6308bd0019967, type: 3}
-  m_Name: game_StartCombat
+  m_Name: com_SyncCombatParameters
   m_EditorClassIdentifier: 
   _debugValue:
     Party: {fileID: 0}

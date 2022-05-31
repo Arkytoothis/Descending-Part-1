@@ -55,7 +55,7 @@ namespace Descending.Encounters
                 
                 Animator animator = clone.GetComponentInChildren<Animator>();
                 Enemy enemy = clone.GetComponent<Enemy>();
-                enemy.Setup(definition, animator, _enemyData[i].Level);
+                enemy.Setup(definition, animator, _enemyData[i].Level, i);
                 enemy.GetComponent<PlaceOnGround>().Place();
                 
                 _enemies.Add(enemy);

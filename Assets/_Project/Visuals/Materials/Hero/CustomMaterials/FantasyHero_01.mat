@@ -149,7 +149,7 @@ Material:
     - _Tattoo_Amount: 1
     - __dirty: 0
     m_Colors:
-    - _Color_BodyArt: {r: 0.16981131, g: 0.071254164, b: 0, a: 0}
+    - _Color_BodyArt: {r: 0, g: 0, b: 0, a: 1}
     - _Color_Eyes: {r: 0.21484515, g: 0.27260178, b: 0.6415094, a: 1}
     - _Color_Hair: {r: 0.2830189, g: 0.14918277, b: 0.038714856, a: 1}
     - _Color_Leather_Primary: {r: 0.282353, g: 0.2078432, b: 0.1647059, a: 0}

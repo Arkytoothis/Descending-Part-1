@@ -31,6 +31,9 @@ namespace Descending.Gui.Party_Window
             DisplayVital(hero.Attributes.GetVital("Life"));
             DisplayVital(hero.Attributes.GetVital("Stamina"));
             DisplayVital(hero.Attributes.GetVital("Magic"));
+            DisplayVital(hero.Attributes.GetVital("Actions"));
+            DisplayVital(hero.Attributes.GetVital("Quick Actions"));
+            DisplayVital(hero.Attributes.GetVital("Movement"));
             
             DisplayStatisticPercentage(hero.Attributes.GetStatistic("Aim"));
             DisplayStatisticPercentage(hero.Attributes.GetStatistic("Attack"));

@@ -54,9 +54,11 @@ namespace Descending.Characters
         public GameObject PortraitModel => _portraitModel;
         public PortraitMount Portrait => _portrait;
         public BodyRenderer WorldRenderer => _worldRenderer;
+        public BodyRenderer PortraitRenderer => _portraitRenderer;
         public VitalBar LifeBar => _lifeBar;
         public Transform HitEffectTransform => _hitEffectTransform;
         public HeroPathfinder Pathfinder => _pathfinder;
+        public CombatTile CurrentTile => _currentTile;
 
         private void Awake()
         {
@@ -104,7 +106,7 @@ namespace Descending.Characters
             if (enabledInfoBar == true)
             {
                 _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
-                _lifeBar.Show();
+                _lifeBar.Hide();
             }
             else
             {
@@ -112,7 +114,7 @@ namespace Descending.Characters
             }
         }
 
-        public void Load(HeroSaveData saveData, bool equipWeapons, bool enablePortrait)
+        public void Load(HeroSaveData saveData, bool equipWeapons, bool enabledInfoBar, bool enablePortrait)
         {
             RaceDefinition race = Database.instance.Races.GetRace(saveData.HeroData.RaceKey);
             ProfessionDefinition profession = Database.instance.Profession.GetProfession(saveData.HeroData.ProfessionKey);
@@ -148,8 +150,16 @@ namespace Descending.Characters
             _skills.LoadData(saveData.SkillData);
             _inventory.LoadData(_worldRenderer, _portraitRenderer, saveData.HeroData.Gender, saveData.InventoryData, enablePortrait);
             _abilities.Setup(saveData.HeroData.Name, race, profession, _skills);
-            
-            _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
+
+            if (enabledInfoBar == true)
+            {
+                _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
+                _lifeBar.Hide();
+            }
+            else
+            {
+                _lifeBar.Hide();
+            }
         }
 
         public void SetPortrait(PortraitMount portrait)
@@ -259,10 +269,39 @@ namespace Descending.Characters
             return _currentTile;
         }
 
+        public void SnapToTile(CombatTile tile)
+        {
+            _currentTile = tile;   
+                
+            if (_currentTile != null)
+            {
+                //Debug.Log("Snapping Hero to Tile X: " + tile.X + " Y: " + tile.Y);
+                _pathfinder.SetAiActive(false);
+                _pathfinder.TeleportTo(_currentTile.transform.position);
+            }
+        }
+
         public void EndCombat()
         {
             _currentTile = null;
             _pathfinder.SetAiActive(true);
+        }
+
+        public void Select()
+        {
+            if (_currentTile != null)
+            {
+                _currentTile.SelectHero();
+                _currentTile.HighlightMove();
+            }
+        }
+
+        public void Deselect()
+        {
+            if (_currentTile != null)
+            {
+                _currentTile.Deselect();
+            }
         }
     }
 

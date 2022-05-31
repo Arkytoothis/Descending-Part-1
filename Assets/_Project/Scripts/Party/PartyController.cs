@@ -20,15 +20,11 @@ namespace Descending.Party
         [SerializeField] private Transform _heroesParent = null;
         [SerializeField] private AIPath _pathAi = null;
         [SerializeField] private PartyMover _partyMover = null;
-        // [SerializeField] private float _visionRadius = 20f;
-        // [SerializeField] private float _fogOffset = -10f;
-        // [SerializeField] private float _fogRevealDelay = 0.1f;
-        
-        [SerializeField] private PartyControllerEvent onSyncParty = null;
-        
         [SerializeField] private PartyData _partyData = null;
-        //[SerializeField] private VolumetricFog _fogOfWar = null;
+        [SerializeField] private WorldRaycaster _worldRaycaster = null;
+        [SerializeField] private CombatRaycaster _combatRaycaster = null;
 
+        [SerializeField] private PartyControllerEvent onSyncParty = null;
         public PartyData PartyData => _partyData;
 
         public void Setup()
@@ -47,6 +43,9 @@ namespace Descending.Party
             
             _partyMover.SetPathingTargets();
             SetLeader(0);
+
+            _worldRaycaster.enabled = true;
+            _combatRaycaster.enabled = false;
         }
 
         public void Load()
@@ -56,6 +55,9 @@ namespace Descending.Party
             LoadResources();
             LoadParty();
             SetLeader(0);
+
+            _worldRaycaster.enabled = true;
+            _combatRaycaster.enabled = false;
         }
 
         private void LoadResources()
@@ -80,7 +82,7 @@ namespace Descending.Party
 
             for (int i = 0; i < saveData.Count; i++)
             {
-                _partyData.AddHero(HeroBuilder.LoadHero(saveData[i], true, true, true), _heroesParent);
+                _partyData.AddHero(HeroBuilder.LoadHero(saveData[i], true, true, false, true), _heroesParent);
             }
             
         }
@@ -101,19 +103,21 @@ namespace Descending.Party
         {
             _pathAi.canMove = false;
             _pathAi.canSearch = false;
+            _worldRaycaster.enabled = false;
+            _combatRaycaster.enabled = true;
         }
         
         public void OnCombatEnded(bool b)
         {
             _pathAi.canMove = true;
             _pathAi.canSearch = true;
+            _worldRaycaster.enabled = true;
+            _combatRaycaster.enabled = false;
 
             for (int i = 0; i < _partyData.Heroes.Count; i++)
             {
                 _partyData.Heroes[i].EndCombat();
             }
-            
-            //_partyMover.ResetFormation();
         }
 
         public void OnAddExperience(int experience)

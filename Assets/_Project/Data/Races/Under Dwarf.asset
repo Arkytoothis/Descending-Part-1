@@ -13,17 +13,20 @@ MonoBehaviour:
   m_Name: Under Dwarf
   m_EditorClassIdentifier: 
   _unlocked: 1
-  _prefabMale: {fileID: 4131508251138218162, guid: 0f57ef4f38a818a44afce302d9af8771, type: 3}
-  _prefabFemale: {fileID: 7314011582384213635, guid: d17ff8f94fec69e45a5a00638614b978, type: 3}
+  _prefabMale: {fileID: 4131508251138218162, guid: 0f57ef4f38a818a44afce302d9af8771,
+    type: 3}
+  _prefabFemale: {fileID: 7314011582384213635, guid: d17ff8f94fec69e45a5a00638614b978,
+    type: 3}
   _key: Under Dwarf
   _name: Under Dwarf
   _icon: {fileID: 0}
-  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  _hitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   _earIndex: -1
   _hairAllowed: 1
   _eyebrowsAllowed: 1
-  _beardAllowed: 1
-  _beardChance: 100
+  _maleBeardChance: 100
+  _femaleBeardChance: 75
   _skinColors:
   - {r: 0.6792453, g: 0.6390498, b: 0.60555357, a: 0}
   - {r: 0.8301887, g: 0.799273, b: 0.7714489, a: 0}
@@ -81,6 +84,9 @@ MonoBehaviour:
     - Magic
     - Stamina
     - Armor
+    - Actions
+    - Movement
+    - Quick Actions
     valueData:
     - _vital: {fileID: 11400000, guid: 830a4ee13042db94685c95be9ea29b88, type: 2}
       _minimumValue: 5
@@ -94,6 +100,15 @@ MonoBehaviour:
     - _vital: {fileID: 11400000, guid: 18bfe6f4bec976d459ba326b0cd6405e, type: 2}
       _minimumValue: 0
       _maximumValue: 0
+    - _vital: {fileID: 11400000, guid: 8c1538e43236dbc4daa5bcf57e73ad8d, type: 2}
+      _minimumValue: 2
+      _maximumValue: 2
+    - _vital: {fileID: 11400000, guid: 11b75e951a232f740b8cf12b8a2e8ebb, type: 2}
+      _minimumValue: 4
+      _maximumValue: 4
+    - _vital: {fileID: 11400000, guid: 938b431383d8eb94fb991d5892d95063, type: 2}
+      _minimumValue: 1
+      _maximumValue: 1
   _startingStatistics:
     keyData:
     - Aim

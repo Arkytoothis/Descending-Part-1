@@ -47,11 +47,11 @@ namespace Descending.Gui
             {
                 _portraitImage.texture = _hero.Portrait.RtClose;
             }
-
-            foreach (var vitalKvp in _hero.Attributes.Vitals)
-            {
-                _vitalWidgets[vitalKvp.Key].SetValues(vitalKvp.Value.Current, vitalKvp.Value.Maximum, false);
-            }
+            
+            _vitalWidgets["Armor"].SetValues(_hero.Attributes.GetVital("Armor").Current, _hero.Attributes.GetVital("Armor").Maximum, false);
+            _vitalWidgets["Life"].SetValues(_hero.Attributes.GetVital("Life").Current, _hero.Attributes.GetVital("Life").Maximum, false);
+            _vitalWidgets["Stamina"].SetValues(_hero.Attributes.GetVital("Stamina").Current, _hero.Attributes.GetVital("Stamina").Maximum, false);
+            _vitalWidgets["Magic"].SetValues(_hero.Attributes.GetVital("Magic").Current, _hero.Attributes.GetVital("Magic").Maximum, false);
             
             _experienceBar.SetValues(_hero.HeroData.Experience, _hero.HeroData.ExpToNextLevel, false);
         }

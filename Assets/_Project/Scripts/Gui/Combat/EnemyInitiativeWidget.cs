@@ -10,6 +10,7 @@ namespace Descending.Gui.Combat
     public class EnemyInitiativeWidget : InitiativeWidget, IPointerClickHandler
     {
         [SerializeField] protected Image _portrait = null;
+        [SerializeField] private Color _selectedColor = Color.blue;
         
         private Enemy _enemy = null;
         private int _initiativeRoll = 0;
@@ -26,6 +27,38 @@ namespace Descending.Gui.Combat
         public void OnPointerClick(PointerEventData eventData)
         {
             
+        }
+
+        public override void Select()
+        {
+            if (_enemy != null)
+            {
+                _border.color = _selectedColor;
+                _selected = true;
+            }
+        }
+
+        public override void Deselect()
+        {
+            _border.color = _baseColor;
+            _selected = false;
+        }
+
+        public override void Highlight()
+        {
+            _border.color = _hoverColor;
+        }
+
+        public override void Unhighlight()
+        {
+            if (_selected == true)
+            {
+                _border.color = _selectedColor;
+            }
+            else
+            {
+                _border.color = _baseColor;
+            }
         }
     }
 }

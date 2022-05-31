@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Core;
+using ScriptableObjectArchitecture;
 using UnityEngine;
 
 namespace Descending.Combat
@@ -36,6 +37,11 @@ namespace Descending.Combat
             }
         }
 
+        public CombatTile GetTile(int x, int y)
+        {
+            return _tiles[x, y];
+        }
+        
         public void StartCombat(CombatParameters parameters)
         {
             Vector3 position = parameters.Party.transform.position;
@@ -59,6 +65,50 @@ namespace Descending.Combat
         private void Hide()
         {
             _container.SetActive(false);
+        }
+
+        public void HighlightMoveRange(Vector3 position, float range)
+        {
+            ClearAll();
+            
+            for (int y = 0; y < _gridHeight; y++)
+            {
+                for (int x = 0; x < _gridWidth; x++)
+                {
+                    if (Vector3.Distance(position, _tiles[x, y].transform.position) <= range)
+                    {
+                        if (_tiles[x, y].Entity == null)
+                        {
+                            _tiles[x, y].HighlightMove();
+                        }
+                    }
+                }
+            }
+        }
+
+        public void HighlightAttackRange(Vector3 position, float range)
+        {
+            for (int y = 0; y < _gridHeight; y++)
+            {
+                for (int x = 0; x < _gridWidth; x++)
+                {
+                    if (Vector3.Distance(position, _tiles[x, y].transform.position) <= range)
+                    {
+                        _tiles[x,y].HighlightAttack();
+                    }
+                }
+            }
+        }
+
+        public void ClearAll()
+        {
+            for (int y = 0; y < _gridHeight; y++)
+            {
+                for (int x = 0; x < _gridWidth; x++)
+                {
+                    _tiles[x,y].Clear();
+                }
+            }
         }
     }
 }

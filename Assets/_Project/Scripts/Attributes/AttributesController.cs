@@ -64,6 +64,11 @@ namespace Descending.Attributes
         
         public void CalculateAttributes(int level, RaceDefinition race)
         {
+            foreach (var vitalKvp in _vitals)
+            {
+                Debug.Log(vitalKvp.Key);
+            }
+            
             _vitals["Life"].Setup(Random.Range(race.StartingVitals["Life"].MinimumValue, race.StartingVitals["Life"].MinimumValue + 1) + 
                                   (_characteristics["Endurance"].Maximum + _characteristics["Might"].Maximum) / 2);
             _vitals["Stamina"].Setup(Random.Range(race.StartingVitals["Stamina"].MinimumValue, race.StartingVitals["Stamina"].MinimumValue + 1) + 
@@ -71,6 +76,10 @@ namespace Descending.Attributes
             _vitals["Magic"].Setup(Random.Range(race.StartingVitals["Magic"].MinimumValue, race.StartingVitals["Magic"].MinimumValue + 1) + 
                                   (_characteristics["Intellect"].Maximum + _characteristics["Spirit"].Maximum) / 2);
 
+            _vitals["Actions"].Setup(Random.Range(race.StartingVitals["Actions"].MinimumValue, race.StartingVitals["Actions"].MinimumValue + 1));
+            _vitals["Quick Actions"].Setup(Random.Range(race.StartingVitals["Quick Actions"].MinimumValue, race.StartingVitals["Quick Actions"].MinimumValue + 1));
+            _vitals["Movement"].Setup(Random.Range(race.StartingVitals["Movement"].MinimumValue, race.StartingVitals["Movement"].MinimumValue + 1));
+            
             _statistics["Attack"].Setup(Random.Range(race.StartingStatistics["Attack"].MinimumValue, race.StartingStatistics["Attack"].MinimumValue + 1) + 
                                         _characteristics["Might"].Maximum + _characteristics["Perception"].Maximum);
             _statistics["Aim"].Setup(Random.Range(race.StartingStatistics["Aim"].MinimumValue, race.StartingStatistics["Aim"].MinimumValue + 1) + 

@@ -11,6 +11,8 @@ TagManager:
   - Fire
   - Feature Interaction
   - Combat Tile
+  - Combat Collider Hero
+  - Combat Collider Enemy
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - 
   - 
   - Combat Tile
-  - 
-  - 
+  - Hero
+  - Enemy
   - 
   - 
   - 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using ScriptableObjectArchitecture;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,14 +12,25 @@ namespace Descending.Combat
     {
         [SerializeField] private CombatGrid _grid = null;
 
+        [SerializeField] private CinemachineVirtualCamera _camera = null;
         [SerializeField] private CombatParametersEvent onSyncCombatParameters = null;
         [SerializeField] private BoolEvent onEndCombat_Manager = null;
+        [SerializeField] private IntEvent onSelectInitiative = null;
         
         private CombatParameters _parameters = null;
         private bool _combatStarted = false;
+        private int _currentInitiativeIndex = -1;
         
         public void Setup()
         {
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartCoroutine(ProcessTurn(0.1f));
+            }
         }
 
         public void StartCombat(CombatParameters combatParameters)
@@ -27,7 +39,7 @@ namespace Descending.Combat
             _combatStarted = true;
             _parameters = combatParameters;
             _parameters.Party.CombatStarted(combatParameters);
-
+            
             _grid.StartCombat(_parameters);
             
             LoadHeroes();
@@ -36,8 +48,50 @@ namespace Descending.Combat
             RollInitiative();
             
             onSyncCombatParameters.Invoke(_parameters);
+            StartCoroutine(ProcessTurn(0.1f));
         }
 
+        private IEnumerator ProcessTurn(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            _currentInitiativeIndex++;
+
+            if (_currentInitiativeIndex >= _parameters.InitiativeList.Count) _currentInitiativeIndex = 0;
+            
+            if (_parameters.InitiativeList[_currentInitiativeIndex].Hero != null)
+            {
+                ProcessHeroTurn();
+            }
+            else if (_parameters.InitiativeList[_currentInitiativeIndex].Enemy != null)
+            {
+                ProcessEnemyTurn();
+            }
+            
+            onSelectInitiative.Invoke(_currentInitiativeIndex);
+        }
+
+        private void ProcessEnemyTurn()
+        {
+            _grid.HighlightMoveRange(_parameters.InitiativeList[_currentInitiativeIndex].Enemy.transform.position, 3);
+            //_grid.HighlightAttackRange(_parameters.InitiativeList[_currentInitiativeIndex].Enemy.transform.position, 1.5f);
+            SelectEnemy(_parameters.InitiativeList[_currentInitiativeIndex].Enemy.ListIndex);
+            _camera.m_Follow = _parameters.InitiativeList[_currentInitiativeIndex].Enemy.transform;
+            _camera.m_LookAt = _parameters.InitiativeList[_currentInitiativeIndex].Enemy.transform;
+            
+            StartCoroutine(ProcessTurn(1f));
+        }
+
+        private void ProcessHeroTurn()
+        {
+            int movement = _parameters.InitiativeList[_currentInitiativeIndex].Hero.Attributes.GetVital("Movement").Current;
+                
+            _grid.HighlightMoveRange(_parameters.InitiativeList[_currentInitiativeIndex].Hero.transform.position, movement);
+            //_grid.HighlightAttackRange(_parameters.InitiativeList[_currentInitiativeIndex].Hero.transform.position, 1.5f);
+            SelectHero(_parameters.InitiativeList[_currentInitiativeIndex].Hero.HeroData.ListIndex);
+            _camera.m_Follow = _parameters.InitiativeList[_currentInitiativeIndex].Hero.transform;
+            _camera.m_LookAt = _parameters.InitiativeList[_currentInitiativeIndex].Hero.transform;
+        }
+        
         private void EndCombat()
         {
             //Debug.Log("Ending Combat");
@@ -51,6 +105,8 @@ namespace Descending.Combat
             {
                 _parameters.Party.PartyData.Heroes[i].LifeBar.Hide();
             }
+            
+            _parameters.Party.SetCameraTarget(0);
         }
         
         public void OnEndCombat_Gui(bool b)
@@ -71,7 +127,7 @@ namespace Descending.Combat
         private IEnumerator SnapHeroes()
         {
             yield return new WaitForSeconds(0.1f);
-            
+
             for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
             {
                 CombatTile tile = _parameters.Party.PartyData.Heroes[i].SnapToTile();
@@ -136,6 +192,51 @@ namespace Descending.Combat
             
             initiativeList.Sort((p1,p2)=>p1.InitiativeRoll.CompareTo(p2.InitiativeRoll));
             _parameters.SetInitiativeList(initiativeList);
+        }
+
+        public void SelectHero(int index)
+        {
+            DeselectEnemies();
+            DeselectHeroes();
+            _parameters.Party.PartyData.Heroes[index].Select();
+        }
+
+        public void SelectEnemy(int index)
+        {
+            DeselectEnemies();
+            DeselectHeroes();
+            _parameters.Encounter.Enemies[index].Select();
+        }
+
+        private void DeselectHeroes()
+        {
+            for (int i = 0; i < _parameters.Party.PartyData.Heroes.Count; i++)
+            {
+                _parameters.Party.PartyData.Heroes[i].Deselect();
+            }
+        }
+
+        private void DeselectEnemies()
+        {
+            for (int i = 0; i < _parameters.Encounter.Enemies.Count; i++)
+            {
+                _parameters.Encounter.Enemies[i].Deselect();
+            }
+        }
+
+        public void MoveToTile(CombatTile tile)
+        {
+            //Debug.Log("Moving to tile X: " + tile.X + " Y: " + tile.Y);
+            _parameters.InitiativeList[_currentInitiativeIndex].Hero.CurrentTile.SetGameEntity(null);
+            
+            if (_parameters.InitiativeList[_currentInitiativeIndex].Hero != null)
+            {
+                _parameters.InitiativeList[_currentInitiativeIndex].Hero.SnapToTile(tile);
+                tile.SetGameEntity(_parameters.InitiativeList[_currentInitiativeIndex].Hero);
+                
+                _grid.HighlightMoveRange(_parameters.InitiativeList[_currentInitiativeIndex].Hero.CurrentTile.transform.position, 3);
+                //_grid.HighlightAttackRange(_parameters.InitiativeList[_currentInitiativeIndex].Hero.CurrentTile.transform.position, 1.5f);
+            }
         }
     }
 }

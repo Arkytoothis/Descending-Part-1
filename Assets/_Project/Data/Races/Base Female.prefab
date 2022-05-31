@@ -32050,6 +32050,8 @@ Transform:
   - {fileID: 3006788985506639622}
   - {fileID: 3015276662091324582}
   - {fileID: 760781198250189845}
+  - {fileID: 3498359666210350762}
+  - {fileID: 4165114602402723020}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32091,8 +32093,9 @@ MonoBehaviour:
   _defaultStubbleColor: {r: 0.754717, g: 0.6554208, b: 0.5802777, a: 1}
   _defaultHairColor: {r: 0.2830189, g: 0.14918277, b: 0.038714856, a: 1}
   _defaultEyeColor: {r: 0.21484515, g: 0.27260178, b: 0.6415094, a: 1}
-  _closeCameraMount: {fileID: 0}
-  _farCameraMount: {fileID: 0}
+  _defaultTattooColor: {r: 0, g: 0, b: 0, a: 1}
+  _closeCameraMount: {fileID: 3498359666210350762}
+  _farCameraMount: {fileID: 4165114602402723020}
   _rightHandMount: {fileID: 2231834635366321356}
   _leftHandMount: {fileID: 8518593658091998126}
 --- !u!114 &2013510976381411390
@@ -43555,6 +43558,37 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 25
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1040012653072262079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4165114602402723020}
+  m_Layer: 0
+  m_Name: Far Camera Mount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4165114602402723020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040012653072262079}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 1.08, z: 2.126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4571756472629890}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1143891377463297526
 GameObject:
   m_ObjectHideFlags: 0
@@ -44063,6 +44097,37 @@ Transform:
   m_Father: {fileID: 327832250715338859}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3863337651517889318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3498359666210350762}
+  m_Layer: 0
+  m_Name: Close Camera Mount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3498359666210350762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863337651517889318}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 1.61, z: 0.83}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4571756472629890}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &4825307433523826481
 GameObject:
   m_ObjectHideFlags: 0

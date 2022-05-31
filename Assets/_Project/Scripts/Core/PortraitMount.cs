@@ -18,9 +18,9 @@ namespace Descending.Core
         [SerializeField] RenderTexture _rtClose = null;
         [SerializeField] RenderTexture _rtFar = null;
 
-        public RenderTexture RtClose { get => _rtClose; }
-        public RenderTexture RtFar { get => _rtFar; }
-        public GameObject Model { get => _model; }
+        public RenderTexture RtClose => _rtClose;
+        public RenderTexture RtFar => _rtFar;
+        public GameObject Model => _model;
 
         public void Setup(Hero hero)
         {
@@ -28,10 +28,12 @@ namespace Descending.Core
             _camClose.targetTexture = _rtClose;
             _rtFar = new RenderTexture(680, 1000, 32);
             _camFar.targetTexture = _rtFar;
-
             SetModel(hero);
+
+            hero.PortraitRenderer.MountCloseCamera(_camClose);
+            hero.PortraitRenderer.MountFarCamera(_camFar);
             StartCoroutine(RefreshWithDelay());
-            DisableFarCamera();
+            StartCoroutine(RefreshWithDelayFar());
         }
 
         public void SetModel(Hero hero)
@@ -42,7 +44,11 @@ namespace Descending.Core
         
                 hero.SetPortrait(this);
                 hero.PortraitModel.transform.SetParent(_modelMount, false);
+                hero.PortraitRenderer.MountCloseCamera(_camClose);
+                hero.PortraitRenderer.MountFarCamera(_camFar);
+                
                 StartCoroutine(RefreshWithDelay());
+                StartCoroutine(RefreshWithDelayFar());
             }
         }
 

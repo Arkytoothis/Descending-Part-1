@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 386081684}
   - component: {fileID: 386081683}
   - component: {fileID: 386081685}
+  - component: {fileID: 386081686}
   m_Layer: 0
   m_Name: Combat Manager
   m_TagString: Untagged
@@ -442,6 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grid: {fileID: 1510074784}
+  _camera: {fileID: 1617518529}
   onSyncCombatParameters:
     m_PersistentCalls:
       m_Calls:
@@ -463,6 +465,22 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 0c44736c5fc3b6b4680df5378e12d947, type: 2}
         m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[System.Boolean,
+          mscorlib
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSelectInitiative:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 736421c91878add4b95736e5f3c9a2fb, type: 2}
+        m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[System.Int32,
           mscorlib
         m_MethodName: Raise
         m_Mode: 0
@@ -507,6 +525,39 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _debugValue: 0
+--- !u!114 &386081686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386081681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4335d422bb762234db991733fc7af536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: c404851e3120a17408525bf18132b761, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 386081684}
+        m_TargetAssemblyTypeName: Descending.Combat.CombatManager, Descending
+        m_MethodName: MoveToTile
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: {fileID: 0}
 --- !u!1001 &399153298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -990,7 +1041,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707693427}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0, z: 0}
+  m_LocalPosition: {x: -0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1187,6 +1238,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1527147172695030147}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &862319628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 862319630}
+  - component: {fileID: 862319629}
+  m_Layer: 0
+  m_Name: Combat Raycaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &862319629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862319628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199cbd69af64e2f47b8ce0b64ec4cc1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  _heroMask:
+    serializedVersion: 2
+    m_Bits: 32768
+  _cursors:
+  - {fileID: 2800000, guid: ba62a3bc87a57ab468f2d33da19dce2c, type: 3}
+  - {fileID: 2800000, guid: 34fd17be52cfb47459c607a50b988259, type: 3}
+  onMoveToTile:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c404851e3120a17408525bf18132b761, type: 2}
+        m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[Descending.Combat.CombatTile,
+          Descending
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &862319630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862319628}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1235507480}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &915516329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1332,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915516329}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: -2.24}
+  m_LocalPosition: {x: 0.7, y: 0, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1544,8 +1664,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
-  m_LocalRotation: {x: 0.5257311, y: 0.000000021954934, z: -0.000000013568895, w: 0.85065085}
-  m_LocalPosition: {x: -205.87056, y: 9.122536, z: -109.54369}
+  m_LocalRotation: {x: 0.5257311, y: -0.000000022551745, z: 0.000000013937743, w: 0.85065085}
+  m_LocalPosition: {x: -205.87056, y: -0.94902325, z: -104.50791}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2036,6 +2156,7 @@ Transform:
   - {fileID: 1950406989}
   - {fileID: 944080426}
   - {fileID: 618029290}
+  - {fileID: 862319630}
   m_Father: {fileID: 366535185}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2142,6 +2263,10 @@ MonoBehaviour:
   _heroesParent: {fileID: 1446870021}
   _pathAi: {fileID: 1235507488}
   _partyMover: {fileID: 1235507481}
+  _partyData:
+    _heroes: []
+  _worldRaycaster: {fileID: 2147481554}
+  _combatRaycaster: {fileID: 862319629}
   onSyncParty:
     m_PersistentCalls:
       m_Calls:
@@ -2158,8 +2283,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _partyData:
-    _heroes: []
 --- !u!114 &1235507488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2727,7 +2850,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1370252525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0, z: -2.24}
+  m_LocalPosition: {x: -0.7, y: 0, z: -2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2777,7 +2900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412572924}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 0}
+  m_LocalPosition: {x: 0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2864,7 +2987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449208417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0, z: -1.12}
+  m_LocalPosition: {x: -0.7, y: 0, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3160,7 +3283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 20, z: -10}
+  m_FollowOffset: {x: 0, y: 9.928441, z: -4.964221}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3232,8 +3355,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617518527}
-  m_LocalRotation: {x: 0.5257311, y: 0.000000021954934, z: -0.000000013568895, w: 0.85065085}
-  m_LocalPosition: {x: -205.87056, y: 9.122536, z: -109.54369}
+  m_LocalRotation: {x: 0.5257311, y: -0.000000022551745, z: 0.000000013937743, w: 0.85065085}
+  m_LocalPosition: {x: -205.87056, y: -0.94902325, z: -104.50791}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3393,7 +3516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1732587062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: -1.12}
+  m_LocalPosition: {x: 0.7, y: 0, z: -1.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3526,7 +3649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1804334034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 214.2, y: 20.23, z: 150}
+  m_LocalPosition: {x: 235.6, y: 20.23, z: 131.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4397,7 +4520,7 @@ GameObject:
   - component: {fileID: 2147481553}
   - component: {fileID: 2147481554}
   m_Layer: 0
-  m_Name: Party Destination
+  m_Name: World Raycaster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

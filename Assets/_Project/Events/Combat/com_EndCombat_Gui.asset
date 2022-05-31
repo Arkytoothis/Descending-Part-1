@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac06ab82a06b4f438b6308bd0019967, type: 3}
-  m_Name: game_SyncCombatParameters
+  m_Script: {fileID: 11500000, guid: cbe4d59e612f226418a9f7ddf54c95bf, type: 3}
+  m_Name: com_EndCombat_Gui
   m_EditorClassIdentifier: 
-  _debugValue:
-    Party: {fileID: 0}
-    Encounter: {fileID: 0}
+  _debugValue: 0

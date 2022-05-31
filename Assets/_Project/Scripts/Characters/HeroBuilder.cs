@@ -29,7 +29,7 @@ namespace Descending.Characters
             
             return hero;
         }
-        public static Hero LoadHero(HeroSaveData saveData, bool pathingEnabled, bool equipWeapons, bool enablePortrait)
+        public static Hero LoadHero(HeroSaveData saveData, bool pathingEnabled, bool equipWeapons, bool enableInfoBar, bool enablePortrait)
         {
             GameObject clone = GameObject.Instantiate(Database.instance.HeroPrefab, null);
 
@@ -45,7 +45,7 @@ namespace Descending.Characters
                 // GameObject.Destroy(hero.GetComponent<Seeker>());
             }
             
-            hero.Load(saveData, equipWeapons, enablePortrait);
+            hero.Load(saveData, equipWeapons, enableInfoBar, enablePortrait);
             
             return hero;
         }

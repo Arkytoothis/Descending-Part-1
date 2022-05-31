@@ -48,5 +48,19 @@ namespace Descending.Scene_Overworld.Gui
                 }
             }
         }
+
+        public void SelectWidget(int index)
+        {
+            DeselectWidgets();
+            _widgets[index].Select();
+        }
+
+        private void DeselectWidgets()
+        {
+            for (int i = 0; i < _widgets.Count; i++)
+            {
+                _widgets[i].Deselect();
+            }
+        }
     }
 }

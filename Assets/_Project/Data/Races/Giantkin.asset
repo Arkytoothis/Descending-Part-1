@@ -82,6 +82,9 @@ MonoBehaviour:
     - Magic
     - Stamina
     - Armor
+    - Actions
+    - Movement
+    - Quick Actions
     valueData:
     - _vital: {fileID: 11400000, guid: 830a4ee13042db94685c95be9ea29b88, type: 2}
       _minimumValue: 10
@@ -95,6 +98,15 @@ MonoBehaviour:
     - _vital: {fileID: 11400000, guid: 18bfe6f4bec976d459ba326b0cd6405e, type: 2}
       _minimumValue: 0
       _maximumValue: 0
+    - _vital: {fileID: 11400000, guid: 8c1538e43236dbc4daa5bcf57e73ad8d, type: 2}
+      _minimumValue: 2
+      _maximumValue: 2
+    - _vital: {fileID: 11400000, guid: 11b75e951a232f740b8cf12b8a2e8ebb, type: 2}
+      _minimumValue: 4
+      _maximumValue: 4
+    - _vital: {fileID: 11400000, guid: 938b431383d8eb94fb991d5892d95063, type: 2}
+      _minimumValue: 1
+      _maximumValue: 1
   _startingStatistics:
     keyData:
     - Aim

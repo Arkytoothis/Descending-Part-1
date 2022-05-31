@@ -32,14 +32,17 @@ namespace Descending.Enemies
         [SerializeField] private IntEvent onAddExperience = null;
         
         private CombatTile _currentTile = null;
+        private int _listIndex = -1;
         
         public EnemyDefinition EnemyDefinition => _enemyDefinition;
         public AttributesController Attributes => _attributes;
         public int Level => _level;
         public Transform HitEffectTransform => _hitEffectTransform;
+        public int ListIndex => _listIndex;
 
-        public void Setup(EnemyDefinition definition, Animator animator, int level)
+        public void Setup(EnemyDefinition definition, Animator animator, int level, int index)
         {
+            _listIndex = index;
             _enemyDefinition = definition;
             _animator = animator;
             _level = level;
@@ -146,6 +149,22 @@ namespace Descending.Enemies
             }
 
             return tile;
+        }
+
+        public void Select()
+        {
+            if (_currentTile != null)
+            {
+                _currentTile.SelectEnemy();
+            }
+        }
+
+        public void Deselect()
+        {
+            if (_currentTile != null)
+            {
+                _currentTile.Deselect();
+            }
         }
     }
 }
