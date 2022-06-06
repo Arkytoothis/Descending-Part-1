@@ -216,6 +216,11 @@ namespace Descending.Equipment
         {
             return _equippedItems[(int) EquipmentSlot.Right_Hand].GetWeaponData();
         }
+
+        public string GetRandomWalkSound()
+        {
+            return _equippedItems[(int) EquipmentSlot.Armor].GetWearableData().GetRandomWalkSound();
+        }
     }
 
     [System.Serializable]

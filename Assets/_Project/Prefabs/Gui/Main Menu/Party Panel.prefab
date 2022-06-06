@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3973702725378416947}
   - component: {fileID: 2652158980165341545}
   - component: {fileID: 7961599974825690112}
+  - component: {fileID: 6383875238565766110}
   m_Layer: 5
   m_Name: Favorite Party Button
   m_TagString: Untagged
@@ -134,6 +135,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6383875238565766110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208441308155386198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d305ddb30a900e14aa45437d875ff69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clickSound: UI Tight 22
 --- !u!1 &4901915452305217103
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +617,7 @@ GameObject:
   - component: {fileID: 7817806981894908151}
   - component: {fileID: 1634397184295763635}
   - component: {fileID: 7421723810067463416}
+  - component: {fileID: 1592493550524125292}
   m_Layer: 5
   m_Name: Start Game Button
   m_TagString: Untagged
@@ -725,6 +740,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1592493550524125292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296861705966421787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d305ddb30a900e14aa45437d875ff69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clickSound: UI Tight 02
 --- !u!1 &7988442156003014776
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +964,7 @@ GameObject:
   - component: {fileID: 8729804181852669641}
   - component: {fileID: 2132728940730209987}
   - component: {fileID: 6216131886160462384}
+  - component: {fileID: 6233451945736555609}
   m_Layer: 5
   m_Name: Generate Party Button
   m_TagString: Untagged
@@ -1058,3 +1087,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6233451945736555609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8202887297012499540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d305ddb30a900e14aa45437d875ff69f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clickSound: UI Tight 22

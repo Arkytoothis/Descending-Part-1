@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using DarkTonic.MasterAudio;
 using UnityEngine;
 
 namespace Descending.Equipment
@@ -14,18 +15,18 @@ namespace Descending.Equipment
         [SerializeField] private int _block = 0;
         [SerializeField] private int _spellDefense = 0;
         [SerializeField] private int _perceptionModifier = 0;
+        [SerializeField, SoundGroup] protected string[] _walkSounds = null;
 
         [SerializeField] private WearableType _wearableType = WearableType.None;
         [SerializeField] private HeadCoverType _headCoverType = HeadCoverType.None;
 
-        public bool HasData { get => _hasData; }
-        public int Armor { get => _armor; }
-        public int Block { get => _block; }
-        public int SpellDefense { get => _spellDefense; }
-        public int PerceptionModifier { get => _perceptionModifier; }
-
-        public WearableType WearableType { get => _wearableType; }
-        public HeadCoverType HeadCoverType { get => _headCoverType; }
+        public bool HasData => _hasData;
+        public int Armor => _armor;
+        public int Block => _block;
+        public int SpellDefense => _spellDefense;
+        public int PerceptionModifier => _perceptionModifier;
+        public WearableType WearableType => _wearableType;
+        public HeadCoverType HeadCoverType => _headCoverType;
 
         public WearableData(WearableData wearableData)
         {
@@ -59,6 +60,11 @@ namespace Descending.Equipment
             sb.Append("\n");
 
             return sb.ToString();
+        }
+
+        public string GetRandomWalkSound()
+        {
+            return _walkSounds[Random.Range(0, _walkSounds.Length)];
         }
     }
 }

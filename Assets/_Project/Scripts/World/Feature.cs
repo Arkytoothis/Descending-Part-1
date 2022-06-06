@@ -15,6 +15,7 @@ namespace Descending.World
         
         public Transform InteractionTransform => _interactionTransform;
         public int ThreatLevel => _threatLevel;
+        public bool Interacting => _interacting;
 
         public void Setup()
         {
@@ -34,5 +35,10 @@ namespace Descending.World
         public abstract void Interact();
         public abstract void Highlight();
         public abstract void Unhighlight();
+
+        public void SetInteracting(bool interacting)
+        {
+            _interacting = interacting;
+        }
     }
 }

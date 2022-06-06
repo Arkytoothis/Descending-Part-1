@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Descending.Characters;
 using Descending.Core;
-using ScriptableObjectArchitecture;
+using Descending.Scene_Overworld.Gui;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -18,14 +18,16 @@ namespace Descending.Gui
         [SerializeField] private VitalBarDictionary _vitalWidgets = null;
         [SerializeField] private VitalBar _experienceBar = null;
         [SerializeField] private Image _border = null;
-        
-        [SerializeField] private IntEvent onSetLeader = null;
+        [SerializeField] private Color _selectedColor = Color.white;
+        [SerializeField] private Color _deselectedColor = Color.white;
 
         private Hero _hero = null;
         private int _index = -1;
+        private PartyPanel _partyPanel = null;
         
-        public void SetHero(Hero hero, int index)
+        public void SetHero(PartyPanel partyPanel, Hero hero, int index)
         {
+            _partyPanel = partyPanel;
             _hero = hero;
             _index = index;
 
@@ -35,7 +37,7 @@ namespace Descending.Gui
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            onSetLeader.Invoke(_index);
+            _partyPanel.SelectHero(_index);
         }
 
         public void SyncData()
@@ -58,12 +60,20 @@ namespace Descending.Gui
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            _border.enabled = true;
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            _border.enabled = false;
+        }
+
+        public void Select()
+        {
+            _border.color = _selectedColor;
+        }
+
+        public void Deselect()
+        {
+            _border.color = _deselectedColor;
         }
     }
 }

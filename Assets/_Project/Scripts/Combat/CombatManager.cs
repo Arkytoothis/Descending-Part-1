@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using DarkTonic.MasterAudio;
 using ScriptableObjectArchitecture;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,7 +12,8 @@ namespace Descending.Combat
     public class CombatManager : MonoBehaviour
     {
         [SerializeField] private CombatGrid _grid = null;
-
+        [SerializeField, Playlist] private string _combatPlaylist = "";
+        [SerializeField, Playlist] private string _defaultPlaylist = "";
         [SerializeField] private CinemachineVirtualCamera _camera = null;
         [SerializeField] private CombatParametersEvent onSyncCombatParameters = null;
         [SerializeField] private BoolEvent onEndCombat_Manager = null;
@@ -36,6 +38,7 @@ namespace Descending.Combat
         public void StartCombat(CombatParameters combatParameters)
         {
             //Debug.Log("Starting Combat");
+            MasterAudio.StartPlaylist(_combatPlaylist);
             _combatStarted = true;
             _parameters = combatParameters;
             _parameters.Party.CombatStarted(combatParameters);
@@ -95,6 +98,7 @@ namespace Descending.Combat
         private void EndCombat()
         {
             //Debug.Log("Ending Combat");
+            MasterAudio.StartPlaylist(_defaultPlaylist);
             _parameters.Party.OnCombatEnded(true);
             Destroy(_parameters.Encounter.gameObject);
             _parameters.Encounter = null;

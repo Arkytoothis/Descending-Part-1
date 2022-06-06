@@ -67,22 +67,22 @@ namespace Descending.Characters
 
         private void Update()
         {
-            _worldAnimator.SetFloat("Blend", _rigidbody.velocity.magnitude);
+            //_worldAnimator.SetFloat("Blend", _rigidbody.velocity.magnitude);
         }
 
         public void Setup(Genders gender, RaceDefinition race, ProfessionDefinition profession, bool equipWeapons, int listIndex, bool enabledInfoBar, bool enablePortrait)
         {
-            _worldModel = HeroBuilder.SpawnWorldPrefab(gender, race, _worldMount);
-            _worldRenderer = _worldModel.GetComponent<BodyRenderer>();
-            _worldRenderer.SetupBody(gender, race, profession);
-            _worldAnimator = _worldModel.GetComponent<Animator>();
-            _worldAnimator.runtimeAnimatorController = _worldController;
+            // _worldModel = HeroBuilder.SpawnWorldPrefab(gender, race, _worldMount);
+            // _worldRenderer = _worldModel.GetComponent<BodyRenderer>();
+            // _worldRenderer.SetupBody(gender, race, profession);
+            // _worldAnimator = _worldModel.GetComponent<Animator>();
+            // _worldAnimator.runtimeAnimatorController = _worldController;
+            //
+            // _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
+            // _animationEvents.Setup(this);
 
-            _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
-            _animationEvents.Setup(this);
-
-            if (enablePortrait == true)
-            {
+            //if (enablePortrait == true)
+            //{
                 _portraitModel = HeroBuilder.SpawnPortraitPrefab(gender, race, _portraitMount);
 
                 var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
@@ -92,15 +92,15 @@ namespace Descending.Characters
                 }
 
                 _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
-                _portraitRenderer.SetupBody(gender, race, profession, _worldRenderer);
+                _portraitRenderer.SetupBody(gender, race, profession, _portraitRenderer);
                 Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
                 portraitAnimator.runtimeAnimatorController = _portraitController;
-            }
+            //}
 
-            _heroData.Setup(gender, race, profession, _worldModel.GetComponent<BodyRenderer>(), listIndex);
+            _heroData.Setup(gender, race, profession, _portraitRenderer, listIndex);
             _attributes.Setup(race, profession);
             _skills.Setup(_attributes, race, profession);
-            _inventory.Setup(_worldRenderer, _portraitRenderer, gender, race, profession, equipWeapons, enablePortrait);
+            _inventory.Setup(_portraitRenderer, _portraitRenderer, gender, race, profession, equipWeapons, enablePortrait);
             _abilities.Setup(_heroData.Name, race, profession, _skills);
             
             if (enabledInfoBar == true)

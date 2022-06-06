@@ -37,7 +37,7 @@ namespace Descending.Scene_Overworld.Gui
             SpawnCombatPanel();
             SetMode(GuiModes.World);
             
-            _windowManager.Setup(party);
+            _windowManager.Setup();
             _windowManager.transform.SetAsLastSibling();
             _inputManager.SetWindowManager(_windowManager);
             

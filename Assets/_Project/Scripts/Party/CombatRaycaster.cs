@@ -64,7 +64,7 @@ namespace Descending
                     }
                 }
 
-                Cursor.SetCursor(_cursors[(int) CursorTypes.Terrain], Vector2.zero, CursorMode.Auto);
+                //Cursor.SetCursor(_cursors[(int) CursorTypes.Terrain], Vector2.zero, CursorMode.Auto);
                 return true;
             }
 
@@ -80,7 +80,7 @@ namespace Descending
                     Debug.Log(hit.collider.gameObject.name + " clicked");
                 }
 
-                Cursor.SetCursor(_cursors[(int) CursorTypes.Terrain], Vector2.zero, CursorMode.Auto);
+                //Cursor.SetCursor(_cursors[(int) CursorTypes.Terrain], Vector2.zero, CursorMode.Auto);
                 return true;
             }
 

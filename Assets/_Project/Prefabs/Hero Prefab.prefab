@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -8008851654036865478}
   - component: {fileID: 5215428422861143836}
   - component: {fileID: 5515684912362917052}
+  - component: {fileID: 649795413636532634}
   m_Layer: 2
   m_Name: Hero Prefab
   m_TagString: Hero
@@ -203,6 +204,20 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
+--- !u!136 &649795413636532634
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752634011024786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &555268600921857025
 GameObject:
   m_ObjectHideFlags: 0

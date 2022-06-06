@@ -151,6 +151,7 @@ PlayerSettings:
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
+  resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
@@ -766,7 +767,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    Standalone: PHY3D_ENABLED;ODIN_INSPECTOR;ODIN_INSPECTOR_3;UNISTORM_PRESENT;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;MOREMOUNTAINS_FEEDBACKS;MOREMOUNTAINS_TOOLS;MOREMOUNTAINS_CINEMACHINE_INSTALLED;MOREMOUNTAINS_TOOLS_FOR_MMFEEDBACKS;MOREMOUNTAINS_TEXTMESHPRO_INSTALLED
+    Standalone: PHY3D_ENABLED;ODIN_INSPECTOR;ODIN_INSPECTOR_3;UNISTORM_PRESENT;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;MOREMOUNTAINS_FEEDBACKS;MOREMOUNTAINS_TOOLS;MOREMOUNTAINS_CINEMACHINE_INSTALLED;MOREMOUNTAINS_TOOLS_FOR_MMFEEDBACKS;MOREMOUNTAINS_TEXTMESHPRO_INSTALLED;STARTER_ASSETS_PACKAGES_CHECKED;MAPMAGIC2;MM_NATIVE
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -854,7 +855,7 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

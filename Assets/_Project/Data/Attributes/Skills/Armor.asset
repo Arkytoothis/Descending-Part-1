@@ -16,3 +16,14 @@ MonoBehaviour:
   _name: Armor
   _key: Armor
   _skillCategory: 1
+  _tree:
+    rid: 5891232885669888000
+  references:
+    version: 2
+    RefIds:
+    - rid: 5891232885669888000
+      type: {class: AbilityTree, ns: Descending.Abilities, asm: Descending}
+      data:
+        _entries:
+        - _ability: {fileID: 0}
+          _pointsRequired: 0

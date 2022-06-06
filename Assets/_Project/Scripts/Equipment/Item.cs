@@ -455,6 +455,18 @@ namespace Descending.Equipment
             }
         }
 
+        public WearableData GetWearableData()
+        {
+            if (ItemDefinition.WearableData != null && ItemDefinition.WearableData.HasData == true)
+            {
+                return ItemDefinition.WearableData;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public void CalculateValue()
         {
             ItemDefinition definition = Database.instance.Items.GetItem(_definitionKey);

@@ -56,7 +56,7 @@ namespace Descending
                     _partyMover.MoveTo(hit.point);
                 }
                 
-                Cursor.SetCursor(_cursors[(int)CursorTypes.Terrain], Vector2.zero, CursorMode.Auto);
+                //Cursor.SetCursor(_cursors[(int)CursorTypes.Terrain], Vector2.zero, CursorMode.Auto);
                 return true;
             }
 
@@ -70,7 +70,6 @@ namespace Descending
                 Feature feature = hit.collider.gameObject.GetComponent<Feature>();
                 if (feature != null)
                 {
-                    
                     if (Input.GetMouseButtonDown(1))
                     {
                         transform.position = feature.InteractionTransform.position;

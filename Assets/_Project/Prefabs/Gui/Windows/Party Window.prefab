@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 717662804729297417}
   - component: {fileID: 168411722287880216}
   - component: {fileID: 7220739169438907897}
+  - component: {fileID: 7654574540530376962}
   m_Layer: 5
   m_Name: Party Window
   m_TagString: Untagged
@@ -263,6 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _container: {fileID: 717662804827968349}
+  _openSound: Page 01
+  _closeSound: Page 02
   _isOpen: 0
   _partyWidgetPrefab: {fileID: 8446428262123434811, guid: 5b7acea5ced12ff489acbfee025d84a1,
     type: 3}
@@ -322,6 +325,40 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _debugValue: {fileID: 0}
+--- !u!114 &7654574540530376962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717662804729297410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78dbc74eb6dfeb945a47fd3f14796c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: c0770e35b724bec4b9351f3eefe00b5d, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 168411722287880216}
+        m_TargetAssemblyTypeName: Descending.Gui.Party_Window.PartyWindow, Descending
+        m_MethodName: OnSyncPartyData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue:
+    _heroes: []
 --- !u!1 &717662804827968349
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,9 +4976,9 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 20
-  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0

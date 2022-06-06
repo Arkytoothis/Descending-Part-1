@@ -53,7 +53,7 @@ MonoBehaviour:
   _hoverColor: {r: 0, g: 1.4980392, b: 1.2941177, a: 0.5803922}
   _selectedHeroColor: {r: 0, g: 3.5648696, b: 0, a: 0.5372549}
   _selectedEnemyColor: {r: 1, g: 0, b: 0, a: 1}
-  _highlightMoveColor: {r: 0, g: 0.020439148, b: 1, a: 0.11764706}
+  _highlightMoveColor: {r: 0, g: 0.020439148, b: 1, a: 0.078431375}
   _highlightAttackColor: {r: 0.7490196, g: 0, b: 0, a: 0.15686275}
   _borderRenderer: {fileID: 480339222170660745}
   _centerRenderer: {fileID: 7419726209967182016}

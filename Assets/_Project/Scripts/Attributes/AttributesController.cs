@@ -62,13 +62,8 @@ namespace Descending.Attributes
             _statistics = Attribute.ConvertToDictionary(saveData.Statistics);
         }
         
-        public void CalculateAttributes(int level, RaceDefinition race)
+        private void CalculateAttributes(int level, RaceDefinition race)
         {
-            foreach (var vitalKvp in _vitals)
-            {
-                Debug.Log(vitalKvp.Key);
-            }
-            
             _vitals["Life"].Setup(Random.Range(race.StartingVitals["Life"].MinimumValue, race.StartingVitals["Life"].MinimumValue + 1) + 
                                   (_characteristics["Endurance"].Maximum + _characteristics["Might"].Maximum) / 2);
             _vitals["Stamina"].Setup(Random.Range(race.StartingVitals["Stamina"].MinimumValue, race.StartingVitals["Stamina"].MinimumValue + 1) + 

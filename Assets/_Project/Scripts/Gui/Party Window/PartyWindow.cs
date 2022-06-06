@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DarkTonic.MasterAudio;
 using Descending.Characters;
 using Descending.Core;
 using Descending.Party;
@@ -23,6 +24,7 @@ namespace Descending.Gui.Party_Window
         
         private List<PartyWidget> _partyWidgets = null;
         private PartyController _party = null;
+        private PartyData _partyData = null;
         
         public override void Setup()
         {
@@ -31,10 +33,11 @@ namespace Descending.Gui.Party_Window
 
         public override void Open()
         {
-            SelectHero(_party.PartyData.Heroes[0]);
+            SelectHero(_partyData.Heroes[0]);
             Time.timeScale = 0;
             _isOpen = true;
             _container.SetActive(true);
+            //MasterAudio.PlaySound(_openSound, 1f);
         }
 
         public override void Close()
@@ -43,6 +46,7 @@ namespace Descending.Gui.Party_Window
             _isOpen = false;
             _container.SetActive(false);
             onHideTooltip.Invoke(null);
+            //MasterAudio.PlaySound(_closeSound, 1f);
         }
 
         public void CloseButtonClick()
@@ -66,9 +70,33 @@ namespace Descending.Gui.Party_Window
                 _partyWidgets.Add(widget);
             }
         }
+        
+        public void OnSyncPartyData(PartyData partyData)
+        {
+            _partyData = partyData;
+            if (_partyData == null) return;
+
+            _partyWidgets = new List<PartyWidget>();
+            _partyWidgetsParent.ClearTransform();
+
+            for (int i = 0; i < _partyData.Heroes.Count; i++)
+            {
+                GameObject clone = Instantiate(_partyWidgetPrefab, _partyWidgetsParent);
+                PartyWidget widget = clone.GetComponent<PartyWidget>();
+                widget.DisplayHero(this, _partyData.Heroes[i]);
+                _partyWidgets.Add(widget);
+            }
+        }
 
         public void SelectHero(Hero hero)
         {
+            for (int i = 0; i < _partyWidgets.Count; i++)
+            {
+                _partyWidgets[i].Deselect();
+            }
+            
+            _partyWidgets[hero.HeroData.ListIndex].Select();
+            
             _detailsPanel.SelectHero(hero);
             _attributesPanel.SelectHero(hero);
             _skillsPanel.SelectHero(hero);

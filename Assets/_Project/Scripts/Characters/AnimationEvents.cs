@@ -29,14 +29,14 @@ namespace Descending.Characters
 
         public void FootR()
         {
-            string sound = "footstep_grass_walk_" + Random.Range(1, 11);
-            MasterAudio.PlaySound3DAtTransform(sound, transform, .1f, 1f);
+            //string sound = _hero.Inventory.GetRandomWalkSound();
+            //MasterAudio.PlaySound3DAtTransform(sound, transform, 0.5f, 1f);
         }
 
         public void FootL()
         {
-            string sound = "footstep_grass_walk_" + Random.Range(1, 11);
-            MasterAudio.PlaySound3DAtTransform(sound, transform, .1f, 1f);
+            //string sound = _hero.Inventory.GetRandomWalkSound();
+            //MasterAudio.PlaySound3DAtTransform(sound, transform, 0.5f, 1f);
         }
 
         public void Land()

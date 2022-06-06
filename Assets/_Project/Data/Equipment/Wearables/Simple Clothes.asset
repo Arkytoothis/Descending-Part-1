@@ -62,6 +62,26 @@ MonoBehaviour:
     _block: 0
     _spellDefense: 0
     _perceptionModifier: 0
+    _walkSounds:
+    - Light Armor Grass Walking 2_01
+    - Light Armor Grass Walking 2_02
+    - Light Armor Grass Walking 2_03
+    - Light Armor Grass Walking 2_04
+    - Light Armor Grass Walking 2_05
+    - Light Armor Grass Walking 2_06
+    - Light Armor Grass Walking 2_07
+    - Light Armor Grass Walking 2_08
+    - Light Armor Grass Walking 2_09
+    - Light Armor Grass Walking 2_10
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
     _wearableType: 1
     _headCoverType: 5
   _accessoryData:

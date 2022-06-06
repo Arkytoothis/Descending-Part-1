@@ -16,3 +16,14 @@ MonoBehaviour:
   _name: Blades
   _key: Blades
   _skillCategory: 0
+  _tree:
+    rid: 5891232885669888002
+  references:
+    version: 2
+    RefIds:
+    - rid: 5891232885669888002
+      type: {class: AbilityTree, ns: Descending.Abilities, asm: Descending}
+      data:
+        _entries:
+        - _ability: {fileID: 11400000, guid: 6e353315e204a764498c009f9faf53fb, type: 2}
+          _pointsRequired: 0

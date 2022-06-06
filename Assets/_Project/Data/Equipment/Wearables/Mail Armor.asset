@@ -62,6 +62,17 @@ MonoBehaviour:
     _block: 0
     _spellDefense: 0
     _perceptionModifier: 0
+    _walkSounds:
+    - Heavy Armor Grass Walking 3_01
+    - Heavy Armor Grass Walking 3_02
+    - Heavy Armor Grass Walking 3_03
+    - Heavy Armor Grass Walking 3_04
+    - Heavy Armor Grass Walking 3_05
+    - Heavy Armor Grass Walking 3_06
+    - Heavy Armor Grass Walking 3_07
+    - Heavy Armor Grass Walking 3_08
+    - Heavy Armor Grass Walking 3_09
+    - Heavy Armor Grass Walking 3_10
     _wearableType: 1
     _headCoverType: 5
   _accessoryData:

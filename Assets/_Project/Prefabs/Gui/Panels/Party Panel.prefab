@@ -55,7 +55,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 100
+  m_Spacing: 25
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -111,8 +111,8 @@ GameObject:
   - component: {fileID: 4606988336703701756}
   - component: {fileID: 8415018624350353673}
   - component: {fileID: 7660991856042048027}
-  - component: {fileID: 3117877797220373210}
   - component: {fileID: 810735210902395432}
+  - component: {fileID: 2921802742183032217}
   m_Layer: 5
   m_Name: Party Panel
   m_TagString: Untagged
@@ -134,7 +134,7 @@ RectTransform:
   m_Children:
   - {fileID: 4171277503724204116}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -165,39 +165,6 @@ MonoBehaviour:
     type: 3}
   _heroWidgetsParent: {fileID: 8241223857707883526}
   _container: {fileID: 5081928192417332116}
---- !u!114 &3117877797220373210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6281745347862190077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78d52405c3dedf4d871ffe8cc5a1804, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _showDebugFields: 0
-  _enableGizmoDebugging: 1
-  _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 0}
-  _event: {fileID: 11400000, guid: e2750c1585619e24d87527f43cdf7610, type: 2}
-  _response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7660991856042048027}
-        m_TargetAssemblyTypeName: Descending.Scene_Overworld.Gui.PartyPanel, Descending
-        m_MethodName: OnSetPartyController
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _debugValue: {fileID: 0}
 --- !u!114 &810735210902395432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,3 +198,37 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _debugValue: 0
+--- !u!114 &2921802742183032217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281745347862190077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78dbc74eb6dfeb945a47fd3f14796c5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: c0770e35b724bec4b9351f3eefe00b5d, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7660991856042048027}
+        m_TargetAssemblyTypeName: Descending.Scene_Overworld.Gui.PartyPanel, Descending
+        m_MethodName: OnSyncPartyData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue:
+    _heroes: []

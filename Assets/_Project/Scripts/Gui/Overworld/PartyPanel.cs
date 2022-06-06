@@ -15,6 +15,7 @@ namespace Descending.Scene_Overworld.Gui
         [SerializeField] private GameObject _container = null;
         
         private PartyController _party = null;
+        private PartyData _partyData = null;
         private List<HeroWidget> _heroWidgets = null;
         
         public void Setup()
@@ -46,23 +47,53 @@ namespace Descending.Scene_Overworld.Gui
             {
                 GameObject clone = Instantiate(_heroWidgetPrefab, _heroWidgetsParent);
                 HeroWidget widget = clone.GetComponent<HeroWidget>();
-                widget.SetHero(_party.PartyData.Heroes[i], i);
+                widget.SetHero(this, _party.PartyData.Heroes[i], i);
                 
                 _heroWidgets.Add(widget);
             }
         }
 
-        private void SyncParty()
+
+        public void OnSyncPartyData(PartyData partyData)
         {
-            for (int i = 0; i < _party.PartyData.Heroes.Count; i++)
+            //Debug.Log("Party Synced - PartyPanel");
+            _partyData = partyData;
+
+            if (_partyData == null) return;
+
+            _heroWidgets.Clear();
+            _heroWidgetsParent.ClearTransform();
+            
+            for (int i = 0; i < _partyData.Heroes.Count; i++)
             {
-                _heroWidgets[i].SetHero(_party.PartyData.Heroes[i], i);
+                GameObject clone = Instantiate(_heroWidgetPrefab, _heroWidgetsParent);
+                HeroWidget widget = clone.GetComponent<HeroWidget>();
+                widget.SetHero(this, _partyData.Heroes[i], i);
+                
+                _heroWidgets.Add(widget);
             }
+            
+            SelectHero(0);
         }
 
         public void OnSyncHero(int index)
         {
             _heroWidgets[index].SyncData();
+        }
+
+        public void SelectHero(int index)
+        {
+            for (int i = 0; i < _heroWidgets.Count; i++)
+            {
+                _heroWidgets[i].Deselect();
+            }
+            
+            _heroWidgets[index].Select();
+        }
+
+        public void OnSetLeader(int index)
+        {
+            SelectHero(index);
         }
     }
 }

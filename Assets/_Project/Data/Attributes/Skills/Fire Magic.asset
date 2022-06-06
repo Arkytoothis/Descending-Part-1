@@ -16,3 +16,14 @@ MonoBehaviour:
   _name: Fire Magic
   _key: Fire Magic
   _skillCategory: 1
+  _tree:
+    rid: 5891232885669888001
+  references:
+    version: 2
+    RefIds:
+    - rid: 5891232885669888001
+      type: {class: AbilityTree, ns: Descending.Abilities, asm: Descending}
+      data:
+        _entries:
+        - _ability: {fileID: 11400000, guid: c2b68dd7030cc574492a0cff170584ef, type: 2}
+          _pointsRequired: 1

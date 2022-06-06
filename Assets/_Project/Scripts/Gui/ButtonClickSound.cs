@@ -12,7 +12,7 @@ namespace Descending.Gui
         
         public void OnPointerClick(PointerEventData eventData)
         {
-            MasterAudio.PlaySound(_clickSound);
+            //MasterAudio.PlaySound(_clickSound);
         }
     }
 }

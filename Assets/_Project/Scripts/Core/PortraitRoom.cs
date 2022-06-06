@@ -32,13 +32,13 @@ namespace Descending.Core
             }
         }
 
-        // public void OnSyncParty(PartyData partyData)
-        // {
-        //     Debug.Log("Party Synced - Portrait Room");
-        //     for (int i = 0; i < partyData.Heroes.Count; i++)
-        //     {
-        //         _portraits[i].SetModel(partyData.Heroes[i]);
-        //     }
-        // }
+        public void OnSyncParty(PartyData partyData)
+        {
+            Debug.Log("Party Synced - Portrait Room");
+            for (int i = 0; i < partyData.Heroes.Count; i++)
+            {
+                _portraits[i].SetModel(partyData.Heroes[i]);
+            }
+        }
     }
 }
