@@ -23,7 +23,6 @@ namespace Descending.Gui.Party_Window
         [SerializeField] private ItemEvent onHideTooltip = null;
         
         private List<PartyWidget> _partyWidgets = null;
-        private PartyController _party = null;
         private PartyData _partyData = null;
         
         public override void Setup()
@@ -52,23 +51,6 @@ namespace Descending.Gui.Party_Window
         public void CloseButtonClick()
         {
             Close();
-        }
-
-        public void OnSyncParty(PartyController party)
-        {
-            _party = party;
-            if (_party == null) return;
-
-            _partyWidgets = new List<PartyWidget>();
-            _partyWidgetsParent.ClearTransform();
-
-            for (int i = 0; i < _party.PartyData.Heroes.Count; i++)
-            {
-                GameObject clone = Instantiate(_partyWidgetPrefab, _partyWidgetsParent);
-                PartyWidget widget = clone.GetComponent<PartyWidget>();
-                widget.DisplayHero(this, _party.PartyData.Heroes[i]);
-                _partyWidgets.Add(widget);
-            }
         }
         
         public void OnSyncPartyData(PartyData partyData)

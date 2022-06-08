@@ -195,4 +195,8 @@ namespace Descending.Core
         Ignore, Three_Quarter_Result, Half_Result, Quarter_Result, 
         Number, None
     }
+    public enum LookModes
+    {
+        Look, Cursor, Number, None
+    }
 }

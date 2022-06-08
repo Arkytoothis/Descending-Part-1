@@ -26,12 +26,10 @@ namespace Descending.Enemies
         [SerializeField] private RichAI _ai = null;
         [SerializeField] private VitalBar _lifeBar = null;
         [SerializeField] private Transform _hitEffectTransform = null;
-        [SerializeField] private TileDetector _tileDetector = null;
         [SerializeField] private EnemyPathfinder _pathfinder = null;
 
         [SerializeField] private IntEvent onAddExperience = null;
         
-        private CombatTile _currentTile = null;
         private int _listIndex = -1;
         
         public EnemyDefinition EnemyDefinition => _enemyDefinition;
@@ -135,36 +133,6 @@ namespace Descending.Enemies
             
             string swingSound = "sword_swing_" + Random.Range(1, 4);
             //MasterAudio.PlaySound3DAtTransform(swingSound, transform, .15f, 1f);
-        }
-
-        public CombatTile SnapToTile()
-        {
-            CombatTile tile = _tileDetector.RaycastForTile();   
-                
-            if (tile != null)
-            {
-                //Debug.Log("Snapping Enemy to Tile X: " + tile.X + " Y: " + tile.Y);
-                _pathfinder.SetAiActive(false);
-                _pathfinder.TeleportTo(tile.transform.position);
-            }
-
-            return tile;
-        }
-
-        public void Select()
-        {
-            if (_currentTile != null)
-            {
-                _currentTile.SelectEnemy();
-            }
-        }
-
-        public void Deselect()
-        {
-            if (_currentTile != null)
-            {
-                _currentTile.Deselect();
-            }
         }
     }
 }

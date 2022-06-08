@@ -19,12 +19,12 @@ namespace Descending.World
             _features = new List<Feature>();
         }
 
-        public void Setup(PartyController party, ref Vector3 startPosition, float threatModifier)
+        public void Setup(ref Vector3 startPosition, float threatModifier)
         {
-            SpawnFeatures(party, ref startPosition, threatModifier);
+            SpawnFeatures(ref startPosition, threatModifier);
         }
 
-        private void SpawnFeatures(PartyController party, ref Vector3 startPosition, float threatModifier)
+        private void SpawnFeatures(ref Vector3 startPosition, float threatModifier)
         {
             _spawners.Sort((u1, u2) => u1.transform.position.y.CompareTo(u2.transform.position.y));
             

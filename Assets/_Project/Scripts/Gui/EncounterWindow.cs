@@ -20,9 +20,9 @@ namespace Descending.Gui
         [SerializeField] private TMP_Text _nameLabel = null;
         [SerializeField] private TMP_Text _encounterDetailsLabel = null;
 
-        [SerializeField] private CombatParametersEvent onStartCombat = null;
+        //[SerializeField] private CombatParametersEvent onStartCombat = null;
         
-        private PartyController _party = null;
+        private PartyData _partyData = null;
         private Encounter _encounter = null;
         private List<HeroEncounterWidget> _heroWidgets = null;
         private List<EnemyEncounterWidget> _enemyWidgets = null;
@@ -56,7 +56,7 @@ namespace Descending.Gui
         public void LoadEncounter(Encounter encounter)
         {
             _encounter = encounter;
-            if (encounter == null || _party == null) return;
+            if (encounter == null || _partyData == null) return;
             
             _nameLabel.text = encounter.name;
             _encounterDetailsLabel.text = "Threat Level " + encounter.ThreatLevel + " " + encounter.Difficulty + " " + encounter.Group + " encounter";
@@ -65,11 +65,11 @@ namespace Descending.Gui
             _enemyWidgetsParent.ClearTransform();
             _enemyWidgets.Clear();
             
-            for (int i = 0; i < _party.PartyData.Heroes.Count; i++)
+            for (int i = 0; i < _partyData.Heroes.Count; i++)
             {
                 GameObject clone = Instantiate(_heroWidgetPrefab, _heroWidgetsParent);
                 HeroEncounterWidget widget = clone.GetComponent<HeroEncounterWidget>();
-                widget.Setup(_party.PartyData.Heroes[i]);
+                widget.Setup(_partyData.Heroes[i]);
                 _heroWidgets.Add(widget);
             }
             
@@ -86,7 +86,7 @@ namespace Descending.Gui
 
         public void StartCombatButtonClick()
         {
-            onStartCombat.Invoke(new CombatParameters(_party, _encounter));
+            //onStartCombat.Invoke(new CombatParameters(_party, _encounter));
             _encounter = null;
             Close();
         }
@@ -111,9 +111,9 @@ namespace Descending.Gui
             Close();
         }
 
-        public void OnSyncParty(PartyController party)
+        public void OnSyncParty(PartyData partyData)
         {
-            _party = party;
+            _partyData = partyData;
         }
     }
 }

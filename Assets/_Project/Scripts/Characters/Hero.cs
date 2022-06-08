@@ -32,7 +32,6 @@ namespace Descending.Characters
         [SerializeField] private HeroPathfinder _pathfinder = null;
         [SerializeField] private VitalBar _lifeBar = null;
         [SerializeField] private Transform _hitEffectTransform = null;
-        [SerializeField] private TileDetector _tileDetector = null;
         
         [SerializeField] private IntEvent onSyncHero = null;
         
@@ -44,7 +43,6 @@ namespace Descending.Characters
         private BodyRenderer _worldRenderer = null;
         private BodyRenderer _portraitRenderer = null;
         private AnimationEvents _animationEvents = null;
-        private CombatTile _currentTile = null;
         
         public HeroData HeroData => _heroData;
         public AttributesController Attributes => _attributes;
@@ -58,7 +56,6 @@ namespace Descending.Characters
         public VitalBar LifeBar => _lifeBar;
         public Transform HitEffectTransform => _hitEffectTransform;
         public HeroPathfinder Pathfinder => _pathfinder;
-        public CombatTile CurrentTile => _currentTile;
 
         private void Awake()
         {
@@ -253,55 +250,6 @@ namespace Descending.Characters
         public void SetTarget(Enemy enemyTarget)
         {
             _animationEvents.SetTarget(enemyTarget);
-        }
-
-        public CombatTile SnapToTile()
-        {
-            _currentTile = _tileDetector.RaycastForTile();   
-                
-            if (_currentTile != null)
-            {
-                //Debug.Log("Snapping Hero to Tile X: " + tile.X + " Y: " + tile.Y);
-                _pathfinder.SetAiActive(false);
-                _pathfinder.TeleportTo(_currentTile.transform.position);
-            }
-
-            return _currentTile;
-        }
-
-        public void SnapToTile(CombatTile tile)
-        {
-            _currentTile = tile;   
-                
-            if (_currentTile != null)
-            {
-                //Debug.Log("Snapping Hero to Tile X: " + tile.X + " Y: " + tile.Y);
-                _pathfinder.SetAiActive(false);
-                _pathfinder.TeleportTo(_currentTile.transform.position);
-            }
-        }
-
-        public void EndCombat()
-        {
-            _currentTile = null;
-            _pathfinder.SetAiActive(true);
-        }
-
-        public void Select()
-        {
-            if (_currentTile != null)
-            {
-                _currentTile.SelectHero();
-                _currentTile.HighlightMove();
-            }
-        }
-
-        public void Deselect()
-        {
-            if (_currentTile != null)
-            {
-                _currentTile.Deselect();
-            }
         }
     }
 

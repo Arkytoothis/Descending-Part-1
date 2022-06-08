@@ -14,7 +14,6 @@ namespace Descending.Scene_Overworld.Gui
         [SerializeField] private Transform _heroWidgetsParent = null;
         [SerializeField] private GameObject _container = null;
         
-        private PartyController _party = null;
         private PartyData _partyData = null;
         private List<HeroWidget> _heroWidgets = null;
         
@@ -32,27 +31,6 @@ namespace Descending.Scene_Overworld.Gui
         {
             _container.SetActive(false);
         }
-
-        public void OnSetPartyController(PartyController party)
-        {
-            //Debug.Log("Party Synced - PartyPanel");
-            _party = party;
-
-            if (_party == null) return;
-
-            _heroWidgets.Clear();
-            _heroWidgetsParent.ClearTransform();
-            
-            for (int i = 0; i < _party.PartyData.Heroes.Count; i++)
-            {
-                GameObject clone = Instantiate(_heroWidgetPrefab, _heroWidgetsParent);
-                HeroWidget widget = clone.GetComponent<HeroWidget>();
-                widget.SetHero(this, _party.PartyData.Heroes[i], i);
-                
-                _heroWidgets.Add(widget);
-            }
-        }
-
 
         public void OnSyncPartyData(PartyData partyData)
         {

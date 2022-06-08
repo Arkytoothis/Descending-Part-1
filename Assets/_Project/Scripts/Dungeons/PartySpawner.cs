@@ -8,11 +8,16 @@ namespace Descending.Dungeons
 {
     public class PartySpawner : MonoBehaviour
     {
-        [SerializeField] private Vector3Event onRegisterSpawnPosition = null;
-
-        private void Start()
+        [SerializeField] private GameObjectEvent onRegisterSpawner = null;
+        
+        private void Awake()
         {
-            onRegisterSpawnPosition.Invoke(transform.position);
+            onRegisterSpawner.Invoke(gameObject);
+        }
+
+        public void SpawnParty(GameObject partyObject)
+        {
+            partyObject.transform.position = transform.position;
         }
     }
 }

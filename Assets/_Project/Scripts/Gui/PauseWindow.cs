@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Core;
+using ScriptableObjectArchitecture;
 using UnityEngine;
 
 namespace Descending.Gui
 {
     public class PauseWindow : GameWindow
     {
+        [SerializeField] private LookModesEvent onSetLookMode = null;
+        
         public override void Setup()
         {
             Close();
@@ -24,6 +27,7 @@ namespace Descending.Gui
             Time.timeScale = 1;
             _isOpen = false;
             _container.SetActive(false);
+            onSetLookMode.Invoke(LookModes.Look);
         }
 
         public void ResumeButtonClick()

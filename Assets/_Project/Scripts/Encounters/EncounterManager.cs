@@ -17,7 +17,7 @@ namespace Descending.Encounters
         
         public void RegisterEncounter(Encounter encounter)
         {
-            //Debug.Log("Registering Encounter");
+            Debug.Log("Registering Encounter");
             _encounters.Add(encounter);
 
             if (encounter.SetParent)

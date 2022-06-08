@@ -51,7 +51,7 @@ namespace Descending.Characters
         {
             if (_enemyTarget != null)
             {
-                AttackCalculator.ProcessAttack(_hero, _enemyTarget);
+                //AttackCalculator.ProcessAttack(_hero, _enemyTarget);
             }
         }
 

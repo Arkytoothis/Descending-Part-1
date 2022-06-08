@@ -3,10 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Descending.Core;
 using Descending.Encounters;
-using Descending.Party;
 using Descending.World;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Descending.Gui
 {
@@ -96,24 +94,34 @@ namespace Descending.Gui
             //     ((EnchanterWindow) _windows[(int)GameWindows.Enchanter]).OnLoadEnchanter((Enchanter)feature);
             // else if(feature.GetType() == typeof(TreasurePile))
             //     ((TreasurePileWindow) _windows[(int)GameWindows.Treasure_Pile]).OnLoadTreasurePile((TreasurePile)feature);
-            if(feature.GetType() == typeof(TreasureChest))
-                ((TreasureChestWindow) _windows[(int)GameWindows.Treasure]).OnLoadTreasure((TreasureChest)feature);
-            else if(feature.GetType() == typeof(Dungeon))
-                ((DungeonWindow) _windows[(int)GameWindows.Dungeon]).OnLoadDungeon((Dungeon)feature);
+            // if(feature.GetType() == typeof(TreasureChest))
+            //     ((TreasureChestWindow) _windows[(int)GameWindows.Treasure]).OnLoadTreasure((TreasureChest)feature);
+            // else if(feature.GetType() == typeof(Dungeon))
+            //     ((DungeonWindow) _windows[(int)GameWindows.Dungeon]).OnLoadDungeon((Dungeon)feature);
         }
 
-        private void Update()
+        public void OnTogglePartyWindow(bool b)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (_windows[(int) GameWindows.Party].IsOpen)
             {
-                if (_windows[(int) GameWindows.Party].IsOpen)
-                {
-                    _windows[(int) GameWindows.Party].Close();
-                }
-                else
-                {
-                    _windows[(int)GameWindows.Party].Open();
-                }
+                _windows[(int) GameWindows.Party].Close();
+            }
+            else
+            {
+                _windows[(int)GameWindows.Party].Open();
+            }
+        }
+
+        public void OnTogglePauseWindow(bool b)
+        {
+            if (_windows[(int) GameWindows.Pause].IsOpen)
+            {
+                _windows[(int) GameWindows.Pause].Close();
+            }
+            else
+            {
+                CLoseAll();
+                _windows[(int)GameWindows.Pause].Open();
             }
         }
     }

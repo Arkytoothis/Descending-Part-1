@@ -29,6 +29,7 @@ namespace Descending.Encounters
         [SerializeField] private List<Enemy> _enemies = null;
         [SerializeField] private bool _setParent = true;
 
+        [SerializeField] private EncounterEvent onRegisterEncounter = null;
         [SerializeField] private EncounterEvent onTriggerEncounter = null;
         
         private bool _isActive = false;
@@ -39,6 +40,11 @@ namespace Descending.Encounters
         public bool IsActive => _isActive;
         public List<Enemy> Enemies => _enemies;
         public bool SetParent => _setParent;
+
+        private void Awake()
+        {
+            onRegisterEncounter.Invoke(this);
+        }
 
         private void Start()
         {
@@ -64,6 +70,7 @@ namespace Descending.Encounters
 
         public void Trigger()
         {
+            Debug.Log("Encounter Triggered");
             onTriggerEncounter.Invoke(this);
         }
     }

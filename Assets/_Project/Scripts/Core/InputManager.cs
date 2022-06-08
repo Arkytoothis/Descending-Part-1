@@ -1,50 +1,71 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Descending.Gui;
+using Descending.Scene_Overworld;
+using ScriptableObjectArchitecture;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Descending.Core
 {
     public class InputManager : MonoBehaviour
     {
-        private WindowManager _windowManager = null;
+        [SerializeField] private bool _partyWindowOpen = false;
+        [SerializeField] private bool _pauseWindowOpen = false;
+        [SerializeField] private WorldRaycaster _worldRaycaster = null;
         
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (_windowManager.IsAnyWindowOpen() == true)
-                {
-                    _windowManager.CLoseAll();
-                }
-                else if (_windowManager.IsWindowOpen((int) GameWindows.Pause) == false)
-                {
-                    _windowManager.OpenWindow((int) GameWindows.Pause);
-                }
-            }
+        [SerializeField] private BoolEvent onToggleMenuWindow = null;
+        [SerializeField] private BoolEvent onTogglePartyWindow = null;
+        [SerializeField] private LookModesEvent onSetLookMode = null;
 
-            if (Input.GetKeyDown(KeyCode.C))
+        public void OnTogglePartyWindow(InputAction.CallbackContext value)
+        {
+            if (value.performed)
             {
-                if (_windowManager.IsWindowOpen((int) GameWindows.Party) == true)
-                {
-                    _windowManager.CloseWindow((int) GameWindows.Party); 
-                }
-                else if (_windowManager.IsAnyWindowOpen() == true)
-                {
-                    _windowManager.CLoseAll();
-                    _windowManager.OpenWindow((int) GameWindows.Party);
-                }
-                else
-                {
-                    _windowManager.OpenWindow((int) GameWindows.Party);
-                }
+                Debug.Log("Toggling Party Window");
+                onTogglePartyWindow.Invoke(true);
+                // if (Cursor.lockState == CursorLockMode.None)
+                // {
+                //     SetModeLook();
+                // }
+                // else if (Cursor.lockState == CursorLockMode.Locked)
+                // {
+                //     SetModeCursor();
+                // }
             }
         }
 
-        public void SetWindowManager(WindowManager windowManager)
+        public void OnTogglePauseWindow(InputAction.CallbackContext value)
         {
-            _windowManager = windowManager;
+            if (value.performed)
+            {
+                Debug.Log("Toggling Pause Window");
+                onToggleMenuWindow.Invoke(true);
+                // if (Cursor.lockState == CursorLockMode.None)
+                // {
+                //     SetModeLook();
+                // }
+                // else if (Cursor.lockState == CursorLockMode.Locked)
+                // {
+                //     SetModeCursor();
+                // }
+            }
         }
+        
+        // private void SetModeCursor()
+        // {
+        //     onSetLookMode.Invoke(LookModes.Cursor);
+        //     Cursor.lockState = CursorLockMode.None;
+        //     Cursor.visible = true;
+        //     _worldRaycaster.SetCrosshairActive(false);
+        // }
+        //
+        // private void SetModeLook()
+        // {
+        //     onSetLookMode.Invoke(LookModes.Look);
+        //     Cursor.lockState = CursorLockMode.Locked;
+        //     Cursor.visible = false;
+        //     _worldRaycaster.SetCrosshairActive(true);
+        // }
     }
 }

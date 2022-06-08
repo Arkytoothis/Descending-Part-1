@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Encounters;
-using ScriptableObjectArchitecture;
 using UnityEngine;
 
 namespace Descending.Party
@@ -9,12 +9,17 @@ namespace Descending.Party
     public class EncounterDetector : MonoBehaviour
     {
         private void OnTriggerEnter(Collider other)
-         {
-             if (other.CompareTag("Encounter"))
-             {
-                 Encounter encounter = other.GetComponentInParent<Encounter>();
-                 encounter.Trigger();
-             }
+        {
+            Debug.Log(other.name);
+            if (other.gameObject.CompareTag("Encounter"))
+            {
+                Debug.Log("Encounter Detected");
+                Encounter encounter = other.gameObject.GetComponentInParent<Encounter>();
+                if (encounter != null)
+                {
+                    encounter.Trigger();
+                }
+            }
         }
     }
 }

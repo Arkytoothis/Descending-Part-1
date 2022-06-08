@@ -11,21 +11,9 @@ namespace Descending.Dungeons
     {
         [SerializeField] private UndergroundManager _undergroundManager = null;
 
-        private Vector3 _startPosition;
         protected override void Run(DungeonGenerator generator)
         {
-            //_undergroundManager.GenerateEncounters();
-            //_undergroundManager.GenerateTreasures();
-            //_undergroundManager.SetupParty();
-            StartCoroutine(AstarScan());
-        }
-
-        private IEnumerator AstarScan()
-        {
-            yield return new WaitForSeconds(0.2f);
-        
-            //Debug.Log("Astar.active.Scan()");
-            AstarPath.active.Scan();
+            _undergroundManager.SetupParty();
         }
     }
 }
