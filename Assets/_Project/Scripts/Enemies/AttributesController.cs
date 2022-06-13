@@ -50,6 +50,9 @@ namespace Descending.Enemies
                                      (_attributes["Endurance"].Maximum + _attributes["Spirit"].Maximum) / 2);
             _vitals["Magic"].Setup(Random.Range(enemyDefinition.StartingVitals["Magic"].MinimumValue, enemyDefinition.StartingVitals["Magic"].MinimumValue + 1) + 
                                    (_attributes["Intellect"].Maximum + _attributes["Spirit"].Maximum) / 2);
+            
+            _vitals["Actions"].Setup(Random.Range(enemyDefinition.StartingVitals["Actions"].MinimumValue, enemyDefinition.StartingVitals["Actions"].MinimumValue + 1));
+            _vitals["Quick Actions"].Setup(Random.Range(enemyDefinition.StartingVitals["Quick Actions"].MinimumValue, enemyDefinition.StartingVitals["Quick Actions"].MinimumValue + 1));
         }
         
         public void LoadData(List<Attribute> attributes, List<Resistance> resistances)
@@ -65,7 +68,7 @@ namespace Descending.Enemies
 
         public Attribute GetAttribute(string key)
         {
-            return _statistics[key];
+            return _attributes[key];
         }
 
         public Attribute GetVital(string key)

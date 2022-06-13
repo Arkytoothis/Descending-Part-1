@@ -10,14 +10,13 @@ namespace Descending.Party
     {
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log(other.name);
             if (other.gameObject.CompareTag("Encounter"))
             {
-                Debug.Log("Encounter Detected");
                 Encounter encounter = other.gameObject.GetComponentInParent<Encounter>();
                 if (encounter != null)
                 {
-                    encounter.Trigger();
+                    if(encounter.IsActive)
+                        encounter.Trigger();
                 }
             }
         }

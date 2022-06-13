@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Core;
-using Descending.Scene_Overworld.Gui;
+using Descending.Encounters;
+using Descending.Gui;
+using Descending.Party;
+using Descending.World;
 using UnityEngine;
 
 namespace Descending.Scene_Overworld
@@ -13,12 +16,15 @@ namespace Descending.Scene_Overworld
         [SerializeField] private GameObject _guiPrefab = null;
         [SerializeField] private PartyManager _partyManager = null;
         [SerializeField] private PortraitRoom _portraitRoom = null;
+        [SerializeField] private WorldGenerator _worldGenerator = null;
 
         private GuiManager _gui = null;
         
         private void Awake()
         {
             _database.Setup();
+            EncounterGenerator.Setup();
+            _worldGenerator.Generate(_partyManager);
         }
 
         private void Start()

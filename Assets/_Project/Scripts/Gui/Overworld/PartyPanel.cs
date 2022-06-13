@@ -6,7 +6,7 @@ using Descending.Gui;
 using Descending.Party;
 using UnityEngine;
 
-namespace Descending.Scene_Overworld.Gui
+namespace Descending.Gui
 {
     public class PartyPanel : MonoBehaviour
     {

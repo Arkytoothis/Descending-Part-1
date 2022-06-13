@@ -73,7 +73,6 @@ namespace Descending.Attributes
 
             _vitals["Actions"].Setup(Random.Range(race.StartingVitals["Actions"].MinimumValue, race.StartingVitals["Actions"].MinimumValue + 1));
             _vitals["Quick Actions"].Setup(Random.Range(race.StartingVitals["Quick Actions"].MinimumValue, race.StartingVitals["Quick Actions"].MinimumValue + 1));
-            _vitals["Movement"].Setup(Random.Range(race.StartingVitals["Movement"].MinimumValue, race.StartingVitals["Movement"].MinimumValue + 1));
             
             _statistics["Attack"].Setup(Random.Range(race.StartingStatistics["Attack"].MinimumValue, race.StartingStatistics["Attack"].MinimumValue + 1) + 
                                         _characteristics["Might"].Maximum + _characteristics["Perception"].Maximum);

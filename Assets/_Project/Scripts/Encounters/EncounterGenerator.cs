@@ -24,7 +24,7 @@ namespace Descending.Encounters
             }
         }
         
-        public static void BuildEncounter(Encounter encounter, int threatLevel)
+        public static void BuildEncounter(Encounter encounter)
         {
             EncounterDifficulties difficulty = (EncounterDifficulties) Random.Range(0, (int) EncounterDifficulties.Number);
             EnemyGroups group = (EnemyGroups) Random.Range(0, (int) EnemyGroups.Number);
@@ -36,8 +36,10 @@ namespace Descending.Encounters
             {
                 int rndIndex = Random.Range(0, _enemyGroupLists[(int) group].Count);
                 string enemyKey = _enemyGroupLists[(int) group][rndIndex];
-                enemies.Add(new EnemyShort(enemyKey, threatLevel));
+                enemies.Add(new EnemyShort(enemyKey, 1));
             }
+
+            encounter.SetupData(difficulty, group, enemies);
         }
     }
 }

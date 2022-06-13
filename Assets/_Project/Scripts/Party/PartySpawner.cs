@@ -1,19 +1,25 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjectArchitecture;
 using UnityEngine;
 
-namespace Descending
+namespace Descending.Party
 {
     public class PartySpawner : MonoBehaviour
     {
-        [SerializeField] private Transform _partyTransform = null;
-        [SerializeField] private Transform _destinationTransform = null;
-
-        private void Start()
+        [SerializeField] private float _heightOffset = -0.5f;
+        
+        [SerializeField] private PartySpawnerEvent onRegisterSpawner = null;
+        
+        private void Awake()
         {
-            _partyTransform.position = transform.position;
-            _destinationTransform.position = transform.position;
+            onRegisterSpawner.Invoke(this);
+        }
+
+        public void SpawnParty(GameObject partyObject)
+        {
+            partyObject.transform.position = new Vector3(transform.position.x, transform.position.y + _heightOffset, transform.position.z);
         }
     }
 }

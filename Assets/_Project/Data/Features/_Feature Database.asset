@@ -15,15 +15,19 @@ MonoBehaviour:
   _data:
     keyData:
     - Dungeon Entrance
-    - Inn
-    - Chapel
-    - Enchanter
-    - Smith
-    - Market
+    - Dwelling
+    - Obelisk
+    - Lair
+    - Boss Dungeon
+    - Camp
+    - Village
+    - Oracle
     valueData:
     - {fileID: 11400000, guid: 5c775f28ca7d8494d8282ef96b0e7a99, type: 2}
-    - {fileID: 11400000, guid: dbba9e7a862f81144adff72f379c5e68, type: 2}
-    - {fileID: 11400000, guid: 8d343dd659436a145b0862e970598442, type: 2}
-    - {fileID: 11400000, guid: 3a21e4499d0e46442a85ded5e3d73e07, type: 2}
-    - {fileID: 11400000, guid: 04fec83336df5bb458d76d7e025f112c, type: 2}
-    - {fileID: 11400000, guid: 3bdf49cfd9d75da4aa80acd9b2dfbbe9, type: 2}
+    - {fileID: 11400000, guid: 7887b05eeadad3a44a5cbe1b9ff94f9c, type: 2}
+    - {fileID: 11400000, guid: 052d63cdc739b1947a3c4158ebe8a339, type: 2}
+    - {fileID: 11400000, guid: 2f86b8c5de91c684db601d022b5d1026, type: 2}
+    - {fileID: 11400000, guid: 66176cc6ef0cf63489a7a8b6025be297, type: 2}
+    - {fileID: 11400000, guid: b913af5d63d3ca04c9f0d54e61255520, type: 2}
+    - {fileID: 11400000, guid: e7c90a84e73c47849975184742f533a7, type: 2}
+    - {fileID: 11400000, guid: 269396a2eeeb0334d8f2591491e44812, type: 2}

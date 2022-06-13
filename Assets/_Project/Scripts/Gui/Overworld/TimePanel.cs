@@ -4,7 +4,7 @@ using TMPro;
 using UniStorm;
 using UnityEngine;
 
-namespace Descending.Scene_Overworld.Gui
+namespace Descending.Gui
 {
     public class TimePanel : MonoBehaviour
     {

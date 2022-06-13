@@ -34,7 +34,6 @@ MonoBehaviour:
     - Magic
     - Stamina
     - Actions
-    - Movement
     - Quick Actions
     valueData:
     - {fileID: 11400000, guid: 830a4ee13042db94685c95be9ea29b88, type: 2}
@@ -42,7 +41,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9fa349d9418adc04ab224349214b8932, type: 2}
     - {fileID: 11400000, guid: 4f295c83c100d964fa1d833bbac3e725, type: 2}
     - {fileID: 11400000, guid: 8c1538e43236dbc4daa5bcf57e73ad8d, type: 2}
-    - {fileID: 11400000, guid: 11b75e951a232f740b8cf12b8a2e8ebb, type: 2}
     - {fileID: 11400000, guid: 938b431383d8eb94fb991d5892d95063, type: 2}
   _statistics:
     keyData:

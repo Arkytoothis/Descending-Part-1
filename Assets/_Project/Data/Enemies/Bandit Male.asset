@@ -18,13 +18,16 @@ MonoBehaviour:
   Prefab: {fileID: 4302448175089489570, guid: 4a0f91db36295f746ad46a135acf6bb4, type: 3}
   Icon: {fileID: 0}
   Group: 3
-  HitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5, type: 3}
+  HitEffect: {fileID: 198615267133080452, guid: 17868f2bfcb8edd46be115911a5ffda5,
+    type: 3}
   StartingVitals:
     keyData:
     - Armor
     - Life
     - Magic
     - Stamina
+    - Actions
+    - Quick Actions
     valueData:
     - _vital: {fileID: 11400000, guid: 18bfe6f4bec976d459ba326b0cd6405e, type: 2}
       _minimumValue: 0
@@ -38,6 +41,12 @@ MonoBehaviour:
     - _vital: {fileID: 11400000, guid: 4f295c83c100d964fa1d833bbac3e725, type: 2}
       _minimumValue: 10
       _maximumValue: 20
+    - _vital: {fileID: 11400000, guid: 8c1538e43236dbc4daa5bcf57e73ad8d, type: 2}
+      _minimumValue: 1
+      _maximumValue: 1
+    - _vital: {fileID: 11400000, guid: 938b431383d8eb94fb991d5892d95063, type: 2}
+      _minimumValue: 1
+      _maximumValue: 1
   StartingStatistic:
     keyData: []
     valueData: []

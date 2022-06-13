@@ -2,7 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Core;
-using Descending.Scene_Overworld.Gui;
+using Descending.Gui;
+using Descending.Party;
 using DunGen;
 using UnityEngine;
 

@@ -15,4 +15,4 @@ MonoBehaviour:
   Name: Dungeon Entrance
   Key: Dungeon Entrance
   InteractionString: Enter Dungeon
-  Prefab: {fileID: 432510027395610332, guid: 3054fc1e8c526cc4b843f8845cdfdbe5, type: 3}
+  Prefab: {fileID: 3669219363688804876, guid: c1161e2f7f6aa4342bb1b021af9e309f, type: 3}

@@ -199,4 +199,10 @@ namespace Descending.Core
     {
         Look, Cursor, Number, None
     }
+    
+    public enum EncounterDifficulties
+    {
+        Easy, Standard, Hard, 
+        Number, None
+    }
 }

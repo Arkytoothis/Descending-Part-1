@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace Descending.Scene_Overworld.Gui
+namespace Descending.Gui
 {
     public class ResourcesPanel : MonoBehaviour
     {

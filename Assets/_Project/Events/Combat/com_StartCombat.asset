@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac06ab82a06b4f438b6308bd0019967, type: 3}
+  m_Script: {fileID: 11500000, guid: d672de152b135e74f9c892d26daaf5e6, type: 3}
   m_Name: com_StartCombat
   m_EditorClassIdentifier: 
   _debugValue:
-    Party: {fileID: 0}
-    Encounter: {fileID: 0}
+    _partyManager: {fileID: 0}
+    _encounter: {fileID: 0}

@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Descending.Combat;
 using Descending.Core;
+using Descending.Party;
+using ScriptableObjectArchitecture;
 using UnityEngine;
 
 namespace Descending.Encounters
@@ -8,37 +11,26 @@ namespace Descending.Encounters
     public class EncounterManager : MonoBehaviour
     {
         [SerializeField] private Transform _encountersParent = null;
+        [SerializeField] private PartyManager _partyManager = null;
         
+        [SerializeField] private BoolEvent onSetPartyMovementEnabled = null;
+        [SerializeField] private CombatParametersEvent onStartCombat = null;
+
+        private Encounter _currentEncounter = null;
         private List<Encounter> _encounters = new List<Encounter>();
         
-        public void Setup()
+        public void OnRegisterEncounter(Encounter encounter)
         {
-        }
-        
-        public void RegisterEncounter(Encounter encounter)
-        {
-            Debug.Log("Registering Encounter");
+            //Debug.Log("Registering Encounter");
+            EncounterGenerator.BuildEncounter(encounter);
+            encounter.transform.SetParent(_encountersParent, true);
             _encounters.Add(encounter);
-
-            if (encounter.SetParent)
-            {
-                encounter.transform.SetParent(_encountersParent, true);
-            }
-        }
-
-        public void GenerateEncounters(Vector3 startPosition, float threatModifier)
-        {
-            //Debug.Log("Generating Encounters");
-            for (int i = 0; i < _encounters.Count; i++)
-            {
-                float distance = Vector3.Distance(startPosition, _encounters[i].transform.position);
-                EncounterGenerator.BuildEncounter(_encounters[i], (int)(distance / threatModifier));
-                _encounters[i].SpawnEnemies();
-            }
         }
 
         public void OnCombatEnded(bool b)
         {
+            Destroy(_currentEncounter.gameObject);
+            
             for (int i = 0; i < _encounters.Count; i++)
             {
                 if (_encounters[i] == null)
@@ -46,6 +38,9 @@ namespace Descending.Encounters
                     _encounters.RemoveAt(i);
                 }
             }
+            
+            _currentEncounter = null;
+            onSetPartyMovementEnabled.Invoke(true);
         }
 
         private void Clear()
@@ -57,6 +52,14 @@ namespace Descending.Encounters
             }
             
             _encounters.Clear();
+        }
+
+        public void OnEncounterTriggered(Encounter encounter)
+        {
+            _currentEncounter = encounter;
+            _currentEncounter.Setup(_partyManager);
+            onSetPartyMovementEnabled.Invoke(false);
+            onStartCombat.Invoke(new CombatParameters(_partyManager, encounter));
         }
     }
 }
