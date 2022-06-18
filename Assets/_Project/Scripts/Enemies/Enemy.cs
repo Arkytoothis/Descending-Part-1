@@ -2,12 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Characters;
-using Descending.Combat;
 using Descending.Core;
 using Descending.Equipment;
 using Descending.Gui;
-using Pathfinding;
-using Pathfinding.RVO;
+using HighlightPlus;
 using ScriptableObjectArchitecture;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -21,22 +19,17 @@ namespace Descending.Enemies
         [SerializeField] private int _level = 0;
         [SerializeField] private AttributesController _attributes = null;
         [SerializeField] private Collider _collider = null;
-        [SerializeField] private RVOController _rvoController = null;
-        //[SerializeField] private BehaviorController _behavior = null;
-        [SerializeField] private RichAI _ai = null;
         [SerializeField] private VitalBar _lifeBar = null;
         [SerializeField] private Transform _hitEffectTransform = null;
-        [SerializeField] private EnemyPathfinder _pathfinder = null;
-
-        [SerializeField] private IntEvent onAddExperience = null;
+        [SerializeField] private HighlightEffect _highlightEffect = null;
         
-        private int _listIndex = -1;
+        [SerializeField] private IntEvent onAddExperience = null;
+        [SerializeField] private IntEvent onHighlightEnemy_Gui = null;
         
         public EnemyDefinition EnemyDefinition => _enemyDefinition;
         public AttributesController Attributes => _attributes;
         public int Level => _level;
         public Transform HitEffectTransform => _hitEffectTransform;
-        public int ListIndex => _listIndex;
 
         public void Setup(EnemyDefinition definition, Animator animator, int level, int index)
         {
@@ -47,7 +40,11 @@ namespace Descending.Enemies
             _attributes.Setup(_enemyDefinition);    
             _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
             SetInfoBarActive(false);
-            //_behavior.SetBehaviorActive(false);
+        }
+
+        public void SetInitiativeIndex(int index)
+        {
+            _initiativeIndex = index;
         }
         
         public override string GetName()
@@ -84,9 +81,6 @@ namespace Descending.Enemies
             //Debug.Log(GetName() + " has died");
             _animator.SetTrigger("isDead");
             _collider.enabled = false;
-            _rvoController.enabled = false;
-            _ai.enabled = false;
-            //_behavior.SetBehaviorActive(false);
             onAddExperience.Invoke(_enemyDefinition.ExpValue);
         }
 
@@ -106,11 +100,6 @@ namespace Descending.Enemies
         public void SetInfoBarActive(bool active)
         {
             _lifeBar.gameObject.SetActive(active);
-        }
-
-        public void SetBehaviorActive(bool active)
-        {
-            //_behavior.SetBehaviorActive(active);
         }
         
         public override int RollDamage()
@@ -133,6 +122,38 @@ namespace Descending.Enemies
             
             string swingSound = "sword_swing_" + Random.Range(1, 4);
             //MasterAudio.PlaySound3DAtTransform(swingSound, transform, .15f, 1f);
+        }
+
+        private void OnMouseEnter()
+        {
+            _highlightEffect.highlighted = true;
+            onHighlightEnemy_Gui.Invoke(_initiativeIndex);
+        }
+
+        private void OnMouseExit()
+        {
+            _highlightEffect.highlighted = false;
+            onHighlightEnemy_Gui.Invoke(-1);
+        }
+
+        public void Highlight()
+        {
+            _highlightEffect.highlighted = true;
+        }
+
+        public void Unhighlight()
+        {
+            _highlightEffect.highlighted = false;
+        }
+
+        public override void UseActions(int amount)
+        {
+            _attributes.Vitals["Actions"].Damage(amount);
+        }
+
+        public override void UseQuickActions(int amount)
+        {
+            _attributes.Vitals["Quick Actions"].Damage(amount);
         }
     }
 }

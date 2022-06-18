@@ -9,5 +9,14 @@ namespace Descending.Abilities
     {
         [SerializeField] private AbilityDefinition _ability = null;
         [SerializeField] private int _pointsRequired = 0;
+
+        public AbilityDefinition Ability => _ability;
+        public int PointsRequired => _pointsRequired;
+
+        public AbilityTreeEntry(AbilityDefinition ability, int pointsRequired)
+        {
+            _ability = ability;
+            _pointsRequired = pointsRequired;
+        }
     }
 }

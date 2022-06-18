@@ -109,6 +109,11 @@ namespace Descending.Attributes
         {
             return _statistics[key];
         }
+
+        public void RefreshActions()
+        {
+            GetVital("Actions").Refresh();
+        }
     }
 
     [System.Serializable]

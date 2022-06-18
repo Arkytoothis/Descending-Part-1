@@ -26,8 +26,8 @@ namespace Descending.Gui
         [SerializeField] private GameObject _header = null;
         [SerializeField] private float _openDelay = 0.15f;
         [SerializeField] private float _closeDelay = 0.15f;
-        [SerializeField] private float _openSpeed = 0.1f;
-        [SerializeField] private float _closeSpeed = 0.1f;
+        //[SerializeField] private float _openSpeed = 0.1f;
+        //[SerializeField] private float _closeSpeed = 0.1f;
         //[SerializeField] private Canvas _canvas = null;
         //[SerializeField] private Vector3 _offset = Vector3.zero;
         //[SerializeField] private float _padding = 25f;

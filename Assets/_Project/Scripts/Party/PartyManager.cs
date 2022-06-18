@@ -12,7 +12,6 @@ namespace Descending.Party
     {
         [SerializeField] private GameObject _partyObject = null;
         [SerializeField] private PartySpawner _spawner = null;
-
         [SerializeField] private PartyDataEvent onSyncPartyData = null;
 
         private PartyData _partyData = null;

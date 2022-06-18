@@ -9,11 +9,16 @@ namespace Descending.Characters
     public abstract class GameEntity : MonoBehaviour
     {
         protected bool _isAlive = false;
+        protected int _listIndex = -1;
+        protected int _initiativeIndex = -1;
 
-        public bool IsAlive1 => _isAlive;
+        public int ListIndex => _listIndex;
+        public int InitiativeIndex => _initiativeIndex;
 
         public abstract string GetName();
         public abstract void Damage(string attribute, int amount, DamageTypeDefinition damageType);
+        public abstract void UseActions(int amount);
+        public abstract void UseQuickActions(int amount);
         public abstract void Restore(string attribute, int amount);
         public abstract void Death();
         public abstract bool IsAlive();
@@ -22,5 +27,15 @@ namespace Descending.Characters
         public abstract void UseAccessory(int index);
         public abstract int RollDamage();
         public abstract void MeleeAttack();
+
+        public void SetListIndex(int index)
+        {
+            _listIndex = index;
+        }
+
+        public void SetInitiativeIndex(int index)
+        {
+            _initiativeIndex = index;
+        }
     }
 }

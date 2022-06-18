@@ -14,20 +14,32 @@ namespace Descending.Gui.Combat
         
         private Hero _hero = null;
         private int _initiativeRoll = 0;
+        private int _initiativeIndex = 0;
         
-        public void SetHero(int index, Hero hero, int initiativeRoll)
+        public void SetHero(int index, Hero hero, int initiativeIndex, int initiativeRoll)
         {
             _index = index;
             _hero = hero;
             _initiativeRoll = initiativeRoll;
-            _nameLabel.text = _hero.HeroData.Name.ShortName;
-
+            _initiativeIndex = initiativeIndex;
+            _nameLabel.text = _hero.HeroData.Name.FirstName;
+            _initiativeLabel.text = initiativeIndex + " - " + initiativeRoll;
+            _lifeBar.SetValues(hero.Attributes.GetVital("Life").Current, hero.Attributes.GetVital("Life").Maximum, false);
+            
             if (_hero.Portrait != null)
             {
                 _portrait.texture = _hero.Portrait.RtClose;
             }
+            
+            Unhighlight();
+            Deselect();
         }
 
+        public void SyncData()
+        {
+            _lifeBar.SetValues(_hero.Attributes.GetVital("Life").Current, _hero.Attributes.GetVital("Life").Maximum, false);
+        }
+        
         public void OnPointerClick(PointerEventData eventData)
         {
             

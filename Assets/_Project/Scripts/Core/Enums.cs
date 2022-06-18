@@ -126,13 +126,13 @@ namespace Descending.Core
 
     public enum CursorTypes
     {
-        Gui, Interact,
+        Gui, Interact, Enemy,
         Number, None
     }
 
     public enum CrosshairTypes
     {
-        Default, Interact,
+        Default, Interact, Enemy,
         Number, None
     }
     

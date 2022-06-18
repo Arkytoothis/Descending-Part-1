@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Den.Tools;
 using Descending.Core;
+using Descending.Encounters;
 using Descending.Party;
 using MapMagic.Core;
 using MapMagic.Products;
@@ -13,6 +14,7 @@ namespace Descending.World
 {
     public class WorldGenerator : MonoBehaviour
     {
+        [SerializeField] private EncounterManager _encounterManager = null;
         [SerializeField] private float _threatModifier = 10f;
         [SerializeField] private MapMagicObject _mapMagic = null;
         [SerializeField] private bool _randomize = true;
@@ -90,6 +92,9 @@ namespace Descending.World
                 }
                 
                 ClearSpawners();
+                
+                _encounterManager.CalculateTreatLevels(_partyManager.PartyObject.transform.position, _threatModifier);
+                _partyManager.PartyObject.GetComponent<FirstPersonController>().UseGravity = true;
             }
         }
 

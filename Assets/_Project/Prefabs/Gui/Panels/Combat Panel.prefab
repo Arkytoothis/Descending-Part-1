@@ -704,6 +704,8 @@ GameObject:
   - component: {fileID: 1533790261899618325}
   - component: {fileID: 8140634228171557187}
   - component: {fileID: 5001535155352663873}
+  - component: {fileID: 5242913623370313214}
+  - component: {fileID: 5784183269369815610}
   m_Layer: 5
   m_Name: Initiative Panel
   m_TagString: Untagged
@@ -761,6 +763,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2690823330784543859}
   m_CullTransparentMesh: 1
+--- !u!114 &5242913623370313214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690823330784543859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094217878ac039741aa004dbc1f81b20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: 2a7e6275d1e47fa4fb892ecfd8f7f5bb, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8140634228171557187}
+        m_TargetAssemblyTypeName: Descending.Gui.InitiativePanel, Descending
+        m_MethodName: OnHighlightEnemy_Gui
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: 0
+--- !u!114 &5784183269369815610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2690823330784543859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791e3eca91bfc2e41b38477d0ecfaf1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: d5c846ee29c342d45ac9402d0dacce43, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8140634228171557187}
+        m_TargetAssemblyTypeName: Descending.Gui.InitiativePanel, Descending
+        m_MethodName: OnSyncCombatData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: 0
 --- !u!1 &3024314724687778606
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +840,7 @@ GameObject:
   - component: {fileID: 309580155938485682}
   - component: {fileID: 5057286298265075397}
   - component: {fileID: 1774675692230581747}
+  - component: {fileID: 5156101160109380395}
   m_Layer: 5
   m_Name: Current Entity Panel
   m_TagString: Untagged
@@ -837,6 +906,39 @@ MonoBehaviour:
   _lifeBar: {fileID: 1483472156350258498}
   _staminaBar: {fileID: 7800725225016143533}
   _magicBar: {fileID: 7117848737674872875}
+--- !u!114 &5156101160109380395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3024314724687778606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791e3eca91bfc2e41b38477d0ecfaf1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: d5c846ee29c342d45ac9402d0dacce43, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1774675692230581747}
+        m_TargetAssemblyTypeName: Descending.Gui.CurrentEntityPanel, Descending
+        m_MethodName: OnSyncData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: 0
 --- !u!1 &3828663291383760077
 GameObject:
   m_ObjectHideFlags: 0

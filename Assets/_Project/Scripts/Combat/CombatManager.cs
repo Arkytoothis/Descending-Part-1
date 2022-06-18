@@ -14,7 +14,9 @@ namespace Descending.Combat
     public class CombatManager : MonoBehaviour
     {
         [SerializeField] private InitiativeDataListEvent onSyncInitiativeList = null;
+        [SerializeField] private BoolEvent onSyncCombatData = null;
         [SerializeField] private IntEvent onProcessInitiative = null;
+        [SerializeField] private BoolEvent onSetEnemyClickEnabled = null;
         
         private PartyManager _partyManager = null;
         private Encounter _encounter = null;
@@ -31,10 +33,10 @@ namespace Descending.Combat
 
         public void OnStartCombat(CombatParameters parameters)
         {
-            Debug.Log("Starting Combat");
+            //Debug.Log("Starting Combat");
             _partyManager = parameters.PartyManager;
             _encounter = parameters.Encounter;
-            _currentInitiative = 0;
+            _currentInitiative = -1;
             RollInitiative();
             ProcessTurn();
         }
@@ -57,11 +59,28 @@ namespace Descending.Combat
                 _initiativeList.Add(data);
             }
             
+            _initiativeList.Sort((a, b) => a.InitiativeRoll.CompareTo(b.InitiativeRoll));
+
+            for (int i = 0; i < _initiativeList.Count; i++)
+            {
+                if (_initiativeList[i].Hero != null)
+                {
+                    _initiativeList[i].Hero.SetInitiativeIndex(i); 
+                }
+                else if (_initiativeList[i].Enemy != null)
+                {
+                    _initiativeList[i].Enemy.SetInitiativeIndex(i); 
+                }
+            }
+                
+            
             onSyncInitiativeList.Invoke(new InitiativeDataList(_initiativeList));
         }
 
         private void ProcessTurn()
         {
+            NextInitiative();
+            
             if (_initiativeList[_currentInitiative].Hero != null)
             {
                 ProcessHeroTurn();
@@ -71,6 +90,11 @@ namespace Descending.Combat
                 ProcessEnemyTurn();
             }
             
+            RefreshActions();
+        }
+
+        private void NextInitiative()
+        {
             _currentInitiative++;
             if (_currentInitiative >= _initiativeList.Count)
             {
@@ -78,8 +102,24 @@ namespace Descending.Combat
             }
         }
 
+        private void RefreshActions()
+        {
+            for (int i = 0; i < _initiativeList.Count; i++)
+            {
+                if (_initiativeList[i].Hero != null)
+                {
+                    _initiativeList[i].Hero.Attributes.RefreshActions();
+                }
+                else if (_initiativeList[i].Enemy != null)
+                {
+                    _initiativeList[i].Enemy.Attributes.RefreshActions();
+                }
+            }
+        }
+        
         private void ProcessHeroTurn()
         {
+            onSetEnemyClickEnabled.Invoke(true);
             Hero hero = _initiativeList[_currentInitiative].Hero;
             Debug.Log("Processing Hero: " + hero.HeroData.Name.ShortName);
             onProcessInitiative.Invoke(_currentInitiative);
@@ -87,6 +127,7 @@ namespace Descending.Combat
 
         private void ProcessEnemyTurn()
         {
+            onSetEnemyClickEnabled.Invoke(false);
             Enemy enemy = _initiativeList[_currentInitiative].Enemy;
             Debug.Log("Processing Enemy: " + enemy.EnemyDefinition.Name);
             onProcessInitiative.Invoke(_currentInitiative);
@@ -99,6 +140,31 @@ namespace Descending.Combat
             yield return new WaitForSeconds(1f);
             
             ProcessTurn();
+        }
+
+        public void OnEnemyClicked_Left(Enemy enemy)
+        {
+            Hero hero = GetCurrentHero();
+            //Debug.Log(hero.HeroData.Name.ShortName + " attacked " + enemy.EnemyDefinition.Name);
+            AttackData attackData = AttackCalculator.ProcessAttack(hero, enemy);
+            
+            onSyncCombatData.Invoke(true);
+        }
+
+        public void OnEnemyClicked_Right(Enemy enemy)
+        {
+            Hero hero = GetCurrentHero();
+            Debug.Log(hero.HeroData.Name.ShortName + " right clicked " + enemy.EnemyDefinition.Name);
+        }
+
+        private Hero GetCurrentHero()
+        {
+            return _initiativeList[_currentInitiative].Hero;
+        }
+
+        private Enemy GetCurrentEnemy()
+        {
+            return _initiativeList[_currentInitiative].Enemy;
         }
     }
 }

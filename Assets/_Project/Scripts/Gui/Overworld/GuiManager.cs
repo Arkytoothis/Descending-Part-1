@@ -20,7 +20,7 @@ namespace Descending.Gui
 
         [SerializeField] private BoolEvent onEndCombat = null;
 
-        private PartyManager _partyManager = null;
+        //private PartyManager _partyManager = null;
         private PartyPanel _partyPanel = null;
         private ResourcesPanel _resourcesPanel = null;
         private TimePanel _timePanel = null;
@@ -87,11 +87,6 @@ namespace Descending.Gui
         {
             WorldMode();
             onEndCombat.Invoke(true);
-        }
-
-        public void OnCombatEnded(bool b)
-        {
-            EndCombat();
         }
 
         private void WorldMode()

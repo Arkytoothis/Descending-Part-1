@@ -15,7 +15,6 @@ namespace Descending.Encounters
     {
         [SerializeField] private EncounterDifficulties _difficulty = EncounterDifficulties.None;
         [SerializeField] private EnemyGroups _group = EnemyGroups.None;
-        [SerializeField] private Collider _triggerCollider = null;
         [SerializeField] private int _threatLevel = 0;
 
         [SerializeField] private Transform _enemiesParent = null;
@@ -42,14 +41,11 @@ namespace Descending.Encounters
             onRegisterEncounter.Invoke(this);
         }
 
-        private void Start()
-        {
-            //SpawnEnemies();
-        }
-
-        public void Setup(PartyManager partyManager)
+        public void Setup(PartyManager partyManager, int threatLevel)
         {
             _partyManager = partyManager;
+            _threatLevel = threatLevel;
+            name = "Encounter: Threat:" + _threatLevel;
         }
         
         public void SpawnEnemies()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5446460760898743335}
   - component: {fileID: 5446460760898743332}
+  - component: {fileID: 49705368}
   m_Layer: 0
   m_Name: World Raycaster
   m_TagString: Untagged
@@ -48,14 +49,85 @@ MonoBehaviour:
   _interactableMask:
     serializedVersion: 2
     m_Bits: 16777216
+  _enemyMask:
+    serializedVersion: 2
+    m_Bits: 65536
   _crosshair: {fileID: 5446460760968404546}
   _interactableDistance: 5
+  _enemyDistance: 10
   _cursorTextures:
   - {fileID: 2800000, guid: ba62a3bc87a57ab468f2d33da19dce2c, type: 3}
   - {fileID: 2800000, guid: 34fd17be52cfb47459c607a50b988259, type: 3}
+  - {fileID: 2800000, guid: 145d5330bd529c34b9e822188360a058, type: 3}
   _crosshairSprites:
   - {fileID: 21300000, guid: 7f290a23ea70ec34cb70a1e883f16019, type: 3}
   - {fileID: 21300000, guid: b95edf6572c79654ca7b5dabf6121da7, type: 3}
+  - {fileID: 21300000, guid: 1b5d8e4d2c7cdf8469fc8aad48f9b29f, type: 3}
+  onEnemyClicked_Left:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 4864a402ca738d64d8e5d8e53f0a1870, type: 2}
+        m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[Descending.Enemies.Enemy,
+          Descending
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onEnemyClicked_Right:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: a0ad5f279640f084284dd587c7f56ead, type: 2}
+        m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[Descending.Enemies.Enemy,
+          Descending
+        m_MethodName: Raise
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &49705368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446460760898743334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791e3eca91bfc2e41b38477d0ecfaf1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 0}
+  _event: {fileID: 11400000, guid: a2e04e3d96af23442bbd18abdd866257, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5446460760898743332}
+        m_TargetAssemblyTypeName: Descending.Party.WorldRaycaster, Descending
+        m_MethodName: OnSetEnemyClickEnabled
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _debugValue: 0
 --- !u!1 &5446460760968404572
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Descending.World;
+using Descending.Party;
 using ScriptableObjectArchitecture;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,13 +10,13 @@ namespace Descending.Core
 {
     public class InputManager : MonoBehaviour
     {
-        [SerializeField] private bool _partyWindowOpen = false;
-        [SerializeField] private bool _pauseWindowOpen = false;
-        [SerializeField] private WorldRaycaster _worldRaycaster = null;
+        //[SerializeField] private bool _partyWindowOpen = false;
+        //[SerializeField] private bool _pauseWindowOpen = false;
+        //[SerializeField] private WorldRaycaster _worldRaycaster = null;
         
         [SerializeField] private BoolEvent onToggleMenuWindow = null;
         [SerializeField] private BoolEvent onTogglePartyWindow = null;
-        [SerializeField] private LookModesEvent onSetLookMode = null;
+        //[SerializeField] private LookModesEvent onSetLookMode = null;
 
         public void OnTogglePartyWindow(InputAction.CallbackContext value)
         {

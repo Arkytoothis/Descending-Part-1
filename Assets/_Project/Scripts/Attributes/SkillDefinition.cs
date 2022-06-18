@@ -19,7 +19,7 @@ namespace Descending.Attributes
 
         [SerializeField, BoxGroup("Split/Details")]
         private SkillCategory _skillCategory = SkillCategory.None;
-        [SerializeReference] private AbilityTree _tree = null;
+        //[SerializeReference] private AbilityTree _tree = null;
         
         public string Name => _name;
         public string Key => _key;

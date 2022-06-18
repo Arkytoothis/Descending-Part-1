@@ -57,7 +57,7 @@ namespace Descending.Gui
 
         public void OnProcessInitiative(int initiativeIndex)
         {   
-            Debug.Log("Processing Initiative " + initiativeIndex);
+            //Debug.Log("Processing Initiative " + initiativeIndex);
             _initiativePanel.ProcessInitiative(initiativeIndex);
 
             if (_initiativeList.List[initiativeIndex].Hero != null)

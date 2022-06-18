@@ -75,6 +75,11 @@ namespace Descending.Attributes
             if (_current > _maximum) _current = _maximum;
         }
 
+        public void Refresh()
+        {
+            _current = _maximum;
+        }
+
         public static AttributeDictionary ConvertToDictionary(List<Attribute> list)
         {
             AttributeDictionary dictionary = new AttributeDictionary();

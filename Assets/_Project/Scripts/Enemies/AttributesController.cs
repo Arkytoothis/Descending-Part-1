@@ -86,6 +86,11 @@ namespace Descending.Enemies
             _statistics = Attribute.ConvertToDictionary(saveData.Attributes);
             _vitals = Attribute.ConvertToDictionary(saveData.Vitals);
         }
+        
+        public void RefreshActions()
+        {
+            GetVital("Actions").Refresh();
+        }
     }
 
     [System.Serializable]

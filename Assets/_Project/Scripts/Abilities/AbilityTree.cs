@@ -8,5 +8,7 @@ namespace Descending.Abilities
     public class AbilityTree
     {
         [SerializeField] private List<AbilityTreeEntry> _entries = null;
+
+        public List<AbilityTreeEntry> Entries => _entries;
     }
 }

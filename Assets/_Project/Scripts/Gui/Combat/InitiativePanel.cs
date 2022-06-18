@@ -17,6 +17,7 @@ namespace Descending.Gui
         [SerializeField] private GameObject _enemyWidgetPrefab = null;
         [SerializeField] private Transform _initiativeWidgetsParent = null;
 
+        private InitiativeDataList _dataList = null;
         private List<InitiativeWidget> _widgets = null;
 
         public void Setup()
@@ -26,15 +27,15 @@ namespace Descending.Gui
         
         public void StartCombat(PartyManager partyManager, Encounter encounter)
         {
-            Debug.Log("Starting Combat");
+            //Debug.Log("Starting Combat");
         }
 
         public void SyncInitiativeList(InitiativeDataList dataList)
         {
-            Debug.Log("Syncing Initiative");
+            //Debug.Log("Syncing Initiative");
+            _dataList = dataList;
             _widgets.Clear();
             _initiativeWidgetsParent.ClearTransform();
-            dataList.List.Sort((a, b) => a.InitiativeRoll.CompareTo(b.InitiativeRoll));
             
             for (int i = 0; i < dataList.List.Count; i++)
             {
@@ -42,15 +43,30 @@ namespace Descending.Gui
                 {
                     GameObject clone = Instantiate(_heroWidgetPrefab, _initiativeWidgetsParent);
                     HeroInitiativeWidget widget = clone.GetComponent<HeroInitiativeWidget>();
-                    widget.SetHero(i, dataList.List[i].Hero, dataList.List[i].InitiativeRoll);
+                    widget.SetHero(i, dataList.List[i].Hero, dataList.List[i].Hero.InitiativeIndex, dataList.List[i].InitiativeRoll);
                     _widgets.Add(widget);
                 }
                 else if (dataList.List[i].Enemy != null)
                 {
                     GameObject clone = Instantiate(_enemyWidgetPrefab, _initiativeWidgetsParent);
                     EnemyInitiativeWidget widget = clone.GetComponent<EnemyInitiativeWidget>();
-                    widget.SetEnemy(i, dataList.List[i].Enemy, dataList.List[i].InitiativeRoll);
+                    widget.SetEnemy(i, dataList.List[i].Enemy, dataList.List[i].Enemy.InitiativeIndex, dataList.List[i].InitiativeRoll);
                     _widgets.Add(widget);
+                }
+            }
+        }
+
+        public void OnSyncCombatData(bool b)
+        {
+            for (int i = 0; i < _dataList.List.Count; i++)
+            {
+                if (_dataList.List[i].Hero != null)
+                {
+                    ((HeroInitiativeWidget)_widgets[i]).SyncData();
+                }
+                else if (_dataList.List[i].Enemy != null)
+                {
+                    ((EnemyInitiativeWidget)_widgets[i]).SyncData();
                 }
             }
         }
@@ -63,6 +79,21 @@ namespace Descending.Gui
             }
             
             _widgets[initiative].Select();
+        }
+
+        public void OnHighlightEnemy_Gui(int index)
+        {
+            for (int i = 0; i < _widgets.Count; i++)
+            {
+                if (_widgets[i].Type == InitiativeWidgetsTypes.Enemy)
+                    _widgets[i].Unhighlight();
+            }
+
+            if (index > -1)
+            {
+                if (_widgets[index].Type == InitiativeWidgetsTypes.Enemy)
+                    _widgets[index].Highlight();
+            }
         }
     }
 }

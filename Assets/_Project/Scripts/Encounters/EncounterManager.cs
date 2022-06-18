@@ -12,18 +12,23 @@ namespace Descending.Encounters
     {
         [SerializeField] private Transform _encountersParent = null;
         [SerializeField] private PartyManager _partyManager = null;
+        [SerializeField] private List<Transform> _formationPositions = null;
         
         [SerializeField] private BoolEvent onSetPartyMovementEnabled = null;
         [SerializeField] private CombatParametersEvent onStartCombat = null;
 
         private Encounter _currentEncounter = null;
         private List<Encounter> _encounters = new List<Encounter>();
+
+        public void Setup()
+        {
+        }
         
         public void OnRegisterEncounter(Encounter encounter)
         {
             //Debug.Log("Registering Encounter");
-            EncounterGenerator.BuildEncounter(encounter);
             encounter.transform.SetParent(_encountersParent, true);
+            EncounterGenerator.BuildEncounter(encounter);
             _encounters.Add(encounter);
         }
 
@@ -54,12 +59,38 @@ namespace Descending.Encounters
             _encounters.Clear();
         }
 
+        public void CalculateTreatLevels(Vector3 startPosition, float threatModifier)
+        {
+            for (int i = 0; i < _encounters.Count; i++)
+            {
+                int threatLevel = (int)(Vector3.Distance(_encounters[i].transform.position, startPosition) / threatModifier); 
+                _encounters[i].Setup(_partyManager, threatLevel);
+            }
+        }
+        
         public void OnEncounterTriggered(Encounter encounter)
         {
             _currentEncounter = encounter;
-            _currentEncounter.Setup(_partyManager);
+
+            for (int i = 0; i < _currentEncounter.Enemies.Count; i++)
+            {
+                _currentEncounter.Enemies[i].transform.position = _formationPositions[i].position;
+            }
+            
             onSetPartyMovementEnabled.Invoke(false);
             onStartCombat.Invoke(new CombatParameters(_partyManager, encounter));
+        }
+
+        public void OnHighlightEnemy_World(int index)
+        {
+            for (int i = 0; i < _currentEncounter.Enemies.Count; i++)
+            {
+                _currentEncounter.Enemies[i].Unhighlight();
+            } 
+            if (index > -1)
+            {
+                _currentEncounter.Enemies[index].Highlight();
+            }
         }
     }
 }

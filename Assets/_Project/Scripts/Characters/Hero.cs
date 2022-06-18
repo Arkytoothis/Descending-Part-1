@@ -190,6 +190,18 @@ namespace Descending.Characters
             SyncData();
         }
 
+        public override void UseActions(int amount)
+        {
+            _attributes.Vitals["Actions"].Damage(amount);
+            SyncData();
+        }
+
+        public override void UseQuickActions(int amount)
+        {
+            _attributes.Vitals["Quick Actions"].Damage(amount);
+            SyncData();
+        }
+
         public override void Restore(string attribute, int amount)
         {
             _attributes.Vitals["Life"].Restore(amount);

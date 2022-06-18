@@ -17,6 +17,7 @@ namespace Descending.Scene_Overworld
         [SerializeField] private PartyManager _partyManager = null;
         [SerializeField] private PortraitRoom _portraitRoom = null;
         [SerializeField] private WorldGenerator _worldGenerator = null;
+        [SerializeField] private EncounterManager _encounterManager = null;
 
         private GuiManager _gui = null;
         
@@ -25,6 +26,7 @@ namespace Descending.Scene_Overworld
             _database.Setup();
             EncounterGenerator.Setup();
             _worldGenerator.Generate(_partyManager);
+            _encounterManager.Setup();
         }
 
         private void Start()

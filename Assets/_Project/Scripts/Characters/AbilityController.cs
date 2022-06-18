@@ -11,7 +11,7 @@ namespace Descending.Characters
     {
         [SerializeField] private List<Ability> _memorizedPowers = null;
         [SerializeField] private List<Ability> _memorizedSpells = null;
-        [SerializeField] private List<Ability> _traits = null;
+        //[SerializeField] private List<Ability> _traits = null;
 
         public List<Ability> MemorizedPowers => _memorizedPowers;
         public List<Ability> MemorizedSpells => _memorizedSpells;
