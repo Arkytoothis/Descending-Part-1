@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49036e61e86227e4385792501bce21df, type: 3}
-  m_Name: Quick Actions
+  m_Script: {fileID: 11500000, guid: cbe4d59e612f226418a9f7ddf54c95bf, type: 3}
+  m_Name: game_SetPartyWindowOpen
   m_EditorClassIdentifier: 
-  _name: Quick Actions
-  _key: Quick Actions
-  _color: {r: 1, g: 1, b: 1, a: 1}
-  _darkColor: {r: 1, g: 1, b: 1, a: 1}
+  _debugValue: 0

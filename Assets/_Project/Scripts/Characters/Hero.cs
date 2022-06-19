@@ -247,6 +247,16 @@ namespace Descending.Characters
             MasterAudio.PlaySound3DAtTransform(swingSound, transform, .15f, 1f);
         }
 
+        public override void SetListIndex(int index)
+        {
+            _listIndex = index;
+        }
+
+        public override void SetInitiativeIndex(int index)
+        {
+            _initiativeIndex = index;
+        }
+
         public void AddExperience(int experience)
         {
             experience += (int)(experience * _heroData.RaceDefinition.ExpModifier);

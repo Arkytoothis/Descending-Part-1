@@ -27,15 +27,7 @@ namespace Descending.Characters
         public abstract void UseAccessory(int index);
         public abstract int RollDamage();
         public abstract void MeleeAttack();
-
-        public void SetListIndex(int index)
-        {
-            _listIndex = index;
-        }
-
-        public void SetInitiativeIndex(int index)
-        {
-            _initiativeIndex = index;
-        }
+        public abstract void SetListIndex(int index);
+        public abstract void SetInitiativeIndex(int index);
     }
 }

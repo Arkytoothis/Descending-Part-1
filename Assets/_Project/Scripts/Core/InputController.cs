@@ -31,6 +31,8 @@ namespace Descending.Core
 
 		private bool _moveEnabled = true;
 		private bool _lookEnabled = true;
+		private bool _pauseWindowOpen = false;
+		private bool _partyWindowOpen = false;
 		
 		public Vector2 Move => _move;
 		public Vector2 Look => _look;
@@ -95,15 +97,14 @@ namespace Descending.Core
 			{
 				//Debug.Log("Toggling Party Window");
 				onTogglePartyWindow.Invoke(true);
-				if (_lookMode == LookModes.Cursor)
-				{
-				    SetModeLook();
-				}
-				else if (_lookMode == LookModes.Look)
-				{
-				    SetModeCursor();
-				}
+				CheckWindowState(_partyWindowOpen);
 			}
+		}
+
+		public void OnSetPartyWindowOpen(bool open)
+		{
+			_partyWindowOpen = open;
+			CheckWindowState(_partyWindowOpen);
 		}
 
 		public void OnTogglePauseWindow(InputAction.CallbackContext value)
@@ -112,21 +113,32 @@ namespace Descending.Core
 			{
 				//Debug.Log("Toggling Pause Window");
 				onToggleMenuWindow.Invoke(true);
-				if (_lookMode == LookModes.Cursor)
-				{
-				    SetModeLook();
-				}
-				else if (_lookMode == LookModes.Look)
-				{
-				    SetModeCursor();
-				}
+				CheckWindowState(_pauseWindowOpen);
 			}
 		}
+		
+		public void OnSetPauseWindowOpen(bool open)
+		{
+			_pauseWindowOpen = open;
+			CheckWindowState(_pauseWindowOpen);
+		}
 
+		private void CheckWindowState(bool openState)
+		{
+			if (openState == false)
+			{
+				SetModeLook();
+			}
+			else
+			{
+				SetModeCursor();
+			}
+		}
+		
 		private void SetModeCursor()
 		{
 			_lookMode = LookModes.Cursor;
-			SetCursorState(false);
+			SetCursorState(CursorLockMode.None);
 			Cursor.visible = true;
 			_worldRaycaster.SetCrosshairActive(false);
 		}
@@ -134,7 +146,7 @@ namespace Descending.Core
 		private void SetModeLook()
 		{
 			_lookMode = LookModes.Look;
-			SetCursorState(true);
+			SetCursorState(CursorLockMode.Locked);
 			Cursor.visible = false;
 			_worldRaycaster.SetCrosshairActive(true);
 		}
@@ -161,12 +173,12 @@ namespace Descending.Core
 		
 		private void OnApplicationFocus(bool hasFocus)
 		{
-			SetCursorState(_cursorLocked);
+			SetCursorState(CursorLockMode.Locked);
 		}
 
-		private void SetCursorState(bool newState)
+		private void SetCursorState(CursorLockMode lockState)
 		{
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+			Cursor.lockState = lockState;
 		}
 
 		public void OnSetLookMode(LookModes lookMode)

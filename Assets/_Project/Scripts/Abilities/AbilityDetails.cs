@@ -25,6 +25,7 @@ namespace Descending.Abilities
         [SerializeField] private int _resourceAmount = 0;
         [SerializeField] private SkillDefinition _skill = null;
         [SerializeField] private int _minimumSkill = 0;
+        [SerializeField] private int _actionsToUse = 1;
         
         public string Name => _name;
         public string Key => _key;
@@ -36,14 +37,18 @@ namespace Descending.Abilities
         public int ResourceAmount => _resourceAmount;
         public SkillDefinition Skill => _skill;
         public int MinimumSkill => _minimumSkill;
+        public int ActionsToUse => _actionsToUse;
 
         public string GetTooltipText()
         {
             StringBuilder sb = new StringBuilder();
 
+            sb.Append("Ability Type ").Append(_abilityType).Append("\n");
             sb.Append("Cooldown ").Append(_cooldown).Append("\n");
             sb.Append("Description ").Append(_description).Append("\n");
             sb.Append("Resource ").Append(_resourceAttribute.Name).Append(" ").Append(_resourceAmount).Append("\n\n");
+            sb.Append("Skill ").Append(_skill.Name).Append(" ").Append(_minimumSkill).Append("\n\n");
+            sb.Append("Actions ").Append(_actionsToUse).Append("\n");
 
             return sb.ToString();
         }

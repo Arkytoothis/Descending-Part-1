@@ -9,6 +9,9 @@ namespace Descending.Gui
     public class PauseWindow : GameWindow
     {
         [SerializeField] private LookModesEvent onSetLookMode = null;
+        [SerializeField] private BoolEvent onPartyLookEnabled = null;
+        [SerializeField] private BoolEvent onPartyMovementEnabled = null;
+        [SerializeField] private BoolEvent onSetPauseWindowOpenState = null;
         
         public override void Setup()
         {
@@ -17,17 +20,22 @@ namespace Descending.Gui
 
         public override void Open()
         {
-            Time.timeScale = 0;
             _isOpen = true;
+            onSetPauseWindowOpenState.Invoke(_isOpen);
             _container.SetActive(true);
+            onSetLookMode.Invoke(LookModes.Cursor);
+            onPartyLookEnabled.Invoke(false);
+            onPartyMovementEnabled.Invoke(false);
         }
 
         public override void Close()
         {
-            Time.timeScale = 1;
             _isOpen = false;
+            onSetPauseWindowOpenState.Invoke(_isOpen);
             _container.SetActive(false);
             onSetLookMode.Invoke(LookModes.Look);
+            onPartyLookEnabled.Invoke(true);
+            onPartyMovementEnabled.Invoke(true);
         }
 
         public void ResumeButtonClick()

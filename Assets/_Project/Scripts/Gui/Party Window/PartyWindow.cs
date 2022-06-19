@@ -19,8 +19,13 @@ namespace Descending.Gui.Party_Window
         [SerializeField] private PortraitPanel _portraitPanel = null;
         [SerializeField] private EquipmentPanel _equipmentPanel = null;
         [SerializeField] private AbilitiesPanel _abilitiesPanel = null;
+        [SerializeField] private ActionsPanel _actionsPanel = null;
 
         [SerializeField] private ItemEvent onHideTooltip = null;
+        [SerializeField] private LookModesEvent onSetLookMode = null;
+        [SerializeField] private BoolEvent onPartyLookEnabled = null;
+        [SerializeField] private BoolEvent onPartyMovementEnabled = null;
+        [SerializeField] private BoolEvent onSetPartyWindowOpenState = null;
         
         private List<PartyWidget> _partyWidgets = null;
         private PartyData _partyData = null;
@@ -33,19 +38,25 @@ namespace Descending.Gui.Party_Window
         public override void Open()
         {
             SelectHero(_partyData.Heroes[0]);
-            Time.timeScale = 0;
             _isOpen = true;
+            onSetPartyWindowOpenState.Invoke(_isOpen);
             _container.SetActive(true);
-            //MasterAudio.PlaySound(_openSound, 1f);
+            onSetLookMode.Invoke(LookModes.Cursor);
+            onPartyLookEnabled.Invoke(false);
+            onPartyMovementEnabled.Invoke(false);
+            MasterAudio.PlaySound(_openSound, 1f);
         }
 
         public override void Close()
         {
-            Time.timeScale = 1;
             _isOpen = false;
+            onSetPartyWindowOpenState.Invoke(_isOpen);
             _container.SetActive(false);
             onHideTooltip.Invoke(null);
-            //MasterAudio.PlaySound(_closeSound, 1f);
+            onSetLookMode.Invoke(LookModes.Look);
+            onPartyLookEnabled.Invoke(true);
+            onPartyMovementEnabled.Invoke(true);
+            MasterAudio.PlaySound(_closeSound, 1f);
         }
 
         public void CloseButtonClick()
@@ -85,6 +96,7 @@ namespace Descending.Gui.Party_Window
             _portraitPanel.SelectHero(hero);
             _equipmentPanel.SelectHero(hero);
             _abilitiesPanel.SelectHero(hero);
+            _actionsPanel.SelectHero(hero);
         }
     }
 }

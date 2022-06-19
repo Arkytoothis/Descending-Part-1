@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Descending.Abilities;
 using Descending.Characters;
 using Descending.Encounters;
 using Descending.Enemies;
@@ -165,6 +166,18 @@ namespace Descending.Combat
         private Enemy GetCurrentEnemy()
         {
             return _initiativeList[_currentInitiative].Enemy;
+        }
+
+        public void OnAbilitySelected(Ability ability)
+        {
+            if (ability == null)
+            {
+                Debug.Log("ability == null");
+            }
+            else
+            {
+                Debug.Log(ability.Definition.Details.Name + " selected");
+            }
         }
     }
 }

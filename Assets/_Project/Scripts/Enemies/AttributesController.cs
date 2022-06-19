@@ -52,7 +52,6 @@ namespace Descending.Enemies
                                    (_attributes["Intellect"].Maximum + _attributes["Spirit"].Maximum) / 2);
             
             _vitals["Actions"].Setup(Random.Range(enemyDefinition.StartingVitals["Actions"].MinimumValue, enemyDefinition.StartingVitals["Actions"].MinimumValue + 1));
-            _vitals["Quick Actions"].Setup(Random.Range(enemyDefinition.StartingVitals["Quick Actions"].MinimumValue, enemyDefinition.StartingVitals["Quick Actions"].MinimumValue + 1));
         }
         
         public void LoadData(List<Attribute> attributes, List<Resistance> resistances)

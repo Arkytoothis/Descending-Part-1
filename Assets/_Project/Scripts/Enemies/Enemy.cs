@@ -42,7 +42,12 @@ namespace Descending.Enemies
             SetInfoBarActive(false);
         }
 
-        public void SetInitiativeIndex(int index)
+        public override void SetListIndex(int index)
+        {
+            _listIndex = index;
+        }
+
+        public override void SetInitiativeIndex(int index)
         {
             _initiativeIndex = index;
         }

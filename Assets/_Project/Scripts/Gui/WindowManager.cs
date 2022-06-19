@@ -30,8 +30,6 @@ namespace Descending.Gui
                 
                 _windows.Add(window);
             }
-
-            //((InnWindow)_windows[(int) GameWindows.Inn]).SetParty(party);
             
             CLoseAll();
         }
@@ -71,33 +69,6 @@ namespace Descending.Gui
             }
 
             return false;
-        }
-
-        public void OnEncounterTriggered(Encounter encounter)
-        {
-            CLoseAll();
-            //((EncounterWindow) _windows[(int)GameWindows.Encounter]).LoadEncounter(encounter);
-        }
-
-        public void OnInteractWithFeature(Feature feature)
-        {
-            CLoseAll();
-            // if(feature.GetType() == typeof(Inn))
-            //     ((InnWindow) _windows[(int)GameWindows.Inn]).OnLoadInn((Inn)feature);
-            // else if(feature.GetType() == typeof(Chapel))
-            //     ((ChapelWindow) _windows[(int)GameWindows.Chapel]).OnLoadChapel((Chapel)feature);
-            // else if(feature.GetType() == typeof(Market))
-            //     ((MarketWindow) _windows[(int)GameWindows.Market]).OnLoadMarket((Market)feature);
-            // else if(feature.GetType() == typeof(Smith))
-            //     ((SmithWindow) _windows[(int)GameWindows.Smith]).OnLoadSmith((Smith)feature);
-            // else if(feature.GetType() == typeof(Enchanter))
-            //     ((EnchanterWindow) _windows[(int)GameWindows.Enchanter]).OnLoadEnchanter((Enchanter)feature);
-            // else if(feature.GetType() == typeof(TreasurePile))
-            //     ((TreasurePileWindow) _windows[(int)GameWindows.Treasure_Pile]).OnLoadTreasurePile((TreasurePile)feature);
-            // if(feature.GetType() == typeof(TreasureChest))
-            //     ((TreasureChestWindow) _windows[(int)GameWindows.Treasure]).OnLoadTreasure((TreasureChest)feature);
-            // else if(feature.GetType() == typeof(Dungeon))
-            //     ((DungeonWindow) _windows[(int)GameWindows.Dungeon]).OnLoadDungeon((Dungeon)feature);
         }
 
         public void OnTogglePartyWindow(bool b)

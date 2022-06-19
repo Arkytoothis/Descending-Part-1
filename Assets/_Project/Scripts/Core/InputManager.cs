@@ -10,10 +10,6 @@ namespace Descending.Core
 {
     public class InputManager : MonoBehaviour
     {
-        //[SerializeField] private bool _partyWindowOpen = false;
-        //[SerializeField] private bool _pauseWindowOpen = false;
-        //[SerializeField] private WorldRaycaster _worldRaycaster = null;
-        
         [SerializeField] private BoolEvent onToggleMenuWindow = null;
         [SerializeField] private BoolEvent onTogglePartyWindow = null;
         //[SerializeField] private LookModesEvent onSetLookMode = null;
@@ -24,14 +20,6 @@ namespace Descending.Core
             {
                 Debug.Log("Toggling Party Window");
                 onTogglePartyWindow.Invoke(true);
-                // if (Cursor.lockState == CursorLockMode.None)
-                // {
-                //     SetModeLook();
-                // }
-                // else if (Cursor.lockState == CursorLockMode.Locked)
-                // {
-                //     SetModeCursor();
-                // }
             }
         }
 
@@ -41,31 +29,7 @@ namespace Descending.Core
             {
                 Debug.Log("Toggling Pause Window");
                 onToggleMenuWindow.Invoke(true);
-                // if (Cursor.lockState == CursorLockMode.None)
-                // {
-                //     SetModeLook();
-                // }
-                // else if (Cursor.lockState == CursorLockMode.Locked)
-                // {
-                //     SetModeCursor();
-                // }
             }
         }
-        
-        // private void SetModeCursor()
-        // {
-        //     onSetLookMode.Invoke(LookModes.Cursor);
-        //     Cursor.lockState = CursorLockMode.None;
-        //     Cursor.visible = true;
-        //     _worldRaycaster.SetCrosshairActive(false);
-        // }
-        //
-        // private void SetModeLook()
-        // {
-        //     onSetLookMode.Invoke(LookModes.Look);
-        //     Cursor.lockState = CursorLockMode.Locked;
-        //     Cursor.visible = false;
-        //     _worldRaycaster.SetCrosshairActive(true);
-        // }
     }
 }

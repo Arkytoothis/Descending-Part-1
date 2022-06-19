@@ -13,12 +13,17 @@ namespace Descending.Characters
         [SerializeField] private List<Ability> _memorizedSpells = null;
         //[SerializeField] private List<Ability> _traits = null;
 
+        [SerializeField] private List<ActionConfig> _actionConfigs = null;
+        
         public List<Ability> MemorizedPowers => _memorizedPowers;
         public List<Ability> MemorizedSpells => _memorizedSpells;
+        public List<ActionConfig> ActionConfigs => _actionConfigs;
 
         public void Setup(FantasyName heroName, RaceDefinition race, ProfessionDefinition profession, SkillsController skills)
         {
+            _actionConfigs = new List<ActionConfig>();
             FindStartingAbilities(heroName, race, profession, skills);
+            LoadActionConfigs();
         }
 
         private void FindStartingAbilities(FantasyName heroName, RaceDefinition race, ProfessionDefinition profession, SkillsController skills)
@@ -37,6 +42,25 @@ namespace Descending.Characters
                     }
                 }
             }
+        }
+
+        private void LoadActionConfigs()
+        {
+            for (int i = 0; i < _memorizedPowers.Count; i++)
+            {
+                AddAbility(_memorizedPowers[i]);
+            }
+            
+            for (int i = 0; i < _memorizedSpells.Count; i++)
+            {
+                AddAbility(_memorizedSpells[i]);
+            }
+        }
+
+        private void AddAbility(Ability ability)
+        {
+            //Debug.Log("Adding " + ability.Definition.Details.Name);
+            _actionConfigs.Add(new ActionConfig(ability));
         }
     }
 }
