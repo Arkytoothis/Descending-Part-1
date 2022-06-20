@@ -51,10 +51,6 @@ namespace Descending.Scene_MainMenu.Gui
             vitalsValues += hero.Attributes.Vitals["Magic"].Maximum + "\n";
             vitalsNames += "Actions\n";
             vitalsValues += hero.Attributes.Vitals["Actions"].Maximum + "\n";
-            vitalsNames += "Quick Actions\n";
-            vitalsValues += hero.Attributes.Vitals["Quick Actions"].Maximum + "\n";
-            vitalsNames += "Movement\n";
-            vitalsValues += hero.Attributes.Vitals["Movement"].Maximum + "\n";
             
             _vitalsNamesLabel.SetText(vitalsNames);
             _vitalsValuesLabel.SetText(vitalsValues);

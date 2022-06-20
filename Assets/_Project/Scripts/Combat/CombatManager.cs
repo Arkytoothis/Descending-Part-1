@@ -14,6 +14,8 @@ namespace Descending.Combat
 {
     public class CombatManager : MonoBehaviour
     {
+        [SerializeField] private WorldRaycaster _raycaster = null;
+        
         [SerializeField] private InitiativeDataListEvent onSyncInitiativeList = null;
         [SerializeField] private BoolEvent onSyncCombatData = null;
         [SerializeField] private IntEvent onProcessInitiative = null;
@@ -35,6 +37,7 @@ namespace Descending.Combat
         public void OnStartCombat(CombatParameters parameters)
         {
             //Debug.Log("Starting Combat");
+            _raycaster.SetRaycastMode(RaycastModes.Combat);
             _partyManager = parameters.PartyManager;
             _encounter = parameters.Encounter;
             _currentInitiative = -1;
@@ -177,6 +180,8 @@ namespace Descending.Combat
             else
             {
                 Debug.Log(ability.Definition.Details.Name + " selected");
+                _raycaster.SetAbility(ability);
+                _raycaster.SetRaycastMode(RaycastModes.Ability);
             }
         }
     }

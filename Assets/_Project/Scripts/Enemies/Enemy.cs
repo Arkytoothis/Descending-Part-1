@@ -155,10 +155,5 @@ namespace Descending.Enemies
         {
             _attributes.Vitals["Actions"].Damage(amount);
         }
-
-        public override void UseQuickActions(int amount)
-        {
-            _attributes.Vitals["Quick Actions"].Damage(amount);
-        }
     }
 }

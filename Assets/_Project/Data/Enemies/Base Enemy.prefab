@@ -163,7 +163,7 @@ MonoBehaviour:
   onAddExperience:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: aa3a7759fa9368a40b1cc91eab8dba6f, type: 2}
+      - m_Target: {fileID: 11400000, guid: d5fcd0dbc5145784098533c9d0269f00, type: 2}
         m_TargetAssemblyTypeName: ScriptableObjectArchitecture.GameEventBase`1[[System.Int32,
           mscorlib
         m_MethodName: Raise

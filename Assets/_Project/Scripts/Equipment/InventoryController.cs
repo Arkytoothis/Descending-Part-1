@@ -17,7 +17,6 @@ namespace Descending.Equipment
         
         [SerializeField] private int _accessorySlots = 2;
         [SerializeField] private int _stockpileSlots = 40;
-        [SerializeField] private BodyRenderer _worldBody = null;
         [SerializeField] private BodyRenderer _portraitBody = null;
 
         private Genders _gender = Genders.None;
@@ -28,9 +27,8 @@ namespace Descending.Equipment
         public Item[] Stockpile => _stockpile;
         public int StockpileSlots => _stockpileSlots;
 
-        public void Setup(BodyRenderer worldBody, BodyRenderer portraitBody, Genders gender, RaceDefinition race, ProfessionDefinition profession, bool equipWeapons, bool portraitEquip)
+        public void Setup(BodyRenderer portraitBody, Genders gender, RaceDefinition race, ProfessionDefinition profession)
         {
-            _worldBody = worldBody;
             _portraitBody = portraitBody;
             
             _gender = gender;
@@ -57,15 +55,7 @@ namespace Descending.Equipment
             for (int i = 0; i < profession.StartingItems.Count; i++)
             {
                 Item item = ItemGenerator.GenerateItem(profession.StartingItems[i]);
-
-                if (item.ItemDefinition.Category == ItemCategory.Weapons && equipWeapons == false)
-                {
-                    continue;
-                }
-                else
-                {
-                    EquipItem(item, portraitEquip);
-                }
+                EquipItem(item);
             }
         }
 
@@ -88,21 +78,6 @@ namespace Descending.Equipment
                 }
             }
         }
-
-        // public bool HasIngredients(RecipeDefinition recipe)
-        // {
-        //     bool hasIngredients = true;
-        //     
-        //     foreach (RecipeIngredient recipeIngredient in recipe.Ingredients)
-        //     {
-        //         if (HasItem(recipeIngredient.Ingredient, recipeIngredient.IngredientAmount) == false)
-        //         {
-        //             hasIngredients = false;
-        //         }
-        //     }
-        //     
-        //     return hasIngredients;
-        // }
 
         public bool HasItem(ItemDefinition item, int amount)
         {
@@ -143,9 +118,8 @@ namespace Descending.Equipment
             _stockpile[index] = null;
         }
         
-        public void LoadData(BodyRenderer worldBody, BodyRenderer portraitBody, Genders gender, InventorySaveData saveData, bool portraitEquip)
+        public void LoadData(BodyRenderer portraitBody, Genders gender, InventorySaveData saveData)
         {
-            _worldBody = worldBody;
             _portraitBody = portraitBody;
             _gender = gender;
             _equippedItems = new Item[saveData.EquippedItems.Length];
@@ -165,35 +139,25 @@ namespace Descending.Equipment
             {
                 if (saveData.EquippedItems[i].Key == "" || saveData.EquippedItems[i].ItemDefinition.Key == "") continue;
                 
-                EquipItem(saveData.EquippedItems[i], portraitEquip);
+                EquipItem(saveData.EquippedItems[i]);
             }
         }
 
-        public void EquipItem(Item item,bool portraitEquip)
+        public void EquipItem(Item item)
         {
-            //Debug.Log("Name: " + item.Name + " Slot: " + item.EquipmentSlot);
+            Debug.Log("Name: " + item.Name + " Slot: " + item.EquipmentSlot);
             if (_equippedItems[(int) item.EquipmentSlot] == null)
             {
                 //Debug.Log("Equipping");
                 _equippedItems[(int) item.EquipmentSlot] = new Item(item);
-                _worldBody.EquipItem(item);
-
-                if (portraitEquip == true)
-                {
-                    _portraitBody.EquipItem(item);
-                }
+                _portraitBody.EquipItem(item);
             }
             else
             {
                 //Debug.Log("Swapping");
                 PickupItem(_equippedItems[(int) item.EquipmentSlot]);
                 _equippedItems[(int) item.EquipmentSlot] = new Item(item);
-                _worldBody.EquipItem(item);
-
-                if (portraitEquip == true)
-                {
-                    _portraitBody.EquipItem(item);
-                }
+                _portraitBody.EquipItem(item);
             }
         }
 
@@ -221,6 +185,21 @@ namespace Descending.Equipment
         {
             return _equippedItems[(int) EquipmentSlot.Armor].GetWearableData().GetRandomWalkSound();
         }
+
+        // public bool HasIngredients(RecipeDefinition recipe)
+        // {
+        //     bool hasIngredients = true;
+        //     
+        //     foreach (RecipeIngredient recipeIngredient in recipe.Ingredients)
+        //     {
+        //         if (HasItem(recipeIngredient.Ingredient, recipeIngredient.IngredientAmount) == false)
+        //         {
+        //             hasIngredients = false;
+        //         }
+        //     }
+        //     
+        //     return hasIngredients;
+        // }
     }
 
     [System.Serializable]

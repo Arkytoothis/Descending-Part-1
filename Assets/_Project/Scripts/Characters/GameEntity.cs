@@ -18,7 +18,6 @@ namespace Descending.Characters
         public abstract string GetName();
         public abstract void Damage(string attribute, int amount, DamageTypeDefinition damageType);
         public abstract void UseActions(int amount);
-        public abstract void UseQuickActions(int amount);
         public abstract void Restore(string attribute, int amount);
         public abstract void Death();
         public abstract bool IsAlive();

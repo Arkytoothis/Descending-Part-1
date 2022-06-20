@@ -48,7 +48,7 @@ namespace Descending.Scene_MainMenu
         {
             _partyMounts[index].ClearTransform();
                 
-            Hero hero = HeroBuilder.BuildHero(gender, race, profession, false, true, index, false, false);
+            Hero hero = HeroBuilder.BuildHero(gender, race, profession, index);
             hero.transform.SetParent(_partyMounts[index], false);
 
             return hero;

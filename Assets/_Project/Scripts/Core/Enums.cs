@@ -126,7 +126,7 @@ namespace Descending.Core
 
     public enum CursorTypes
     {
-        Gui, Interact, Enemy,
+        Gui, Interact, Enemy, Ability_Invalid, Ability_Valid,
         Number, None
     }
 
@@ -150,7 +150,7 @@ namespace Descending.Core
 
     public enum AbilityType
     {
-        Power, Spell, Trait, Positive_Quirk, Neutral_Quirk, Negative_Quirk, Wound, Number, None
+        Power, Spell, Trait, Number, None
     }
 
     public enum CanUseAbilityResult
@@ -170,31 +170,26 @@ namespace Descending.Core
         Fire, Air, Water, Earth, Life, Death, Order, Chaos, Number, None
     }
 
-    public enum AreaType
-    { 
-        Single, Sphere, Rectangle, Cone, Beam, Number, None 
-    }
-
     public enum DurationType
     { 
         Instant, Permanent, Seconds, Number, None 
     }
 
-    public enum RangeType
+    public enum RangeTypes
     { 
         Self, Distance, Touch, Weapon, Number, None 
     }
 
-    public enum TargetType
+    public enum TargetTypes
     { 
-        Self, Any, Friend, Enemy, Number, None 
+        Self, Friend, Enemy, Ground, Any, Number, None 
     }
 
-    public enum SavingThrowResultType
-    {
-        Ignore, Three_Quarter_Result, Half_Result, Quarter_Result, 
-        Number, None
+    public enum AreaTypes
+    { 
+        Single, Party, Group, Sphere, Rectangle, Cone, Beam, Number, None 
     }
+    
     public enum LookModes
     {
         Look, Cursor, Number, None

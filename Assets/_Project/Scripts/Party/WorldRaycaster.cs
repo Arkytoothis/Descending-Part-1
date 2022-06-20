@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Descending.Abilities;
 using Descending.Core;
 using Descending.Enemies;
 using Descending.Interactables;
@@ -11,7 +12,7 @@ using UnityEngine.UI;
 
 namespace Descending.Party
 {
-    public enum RaycastModes { World, Combat, Number, None }
+    public enum RaycastModes { World, Combat, Ability, Number, None }
     
     public class WorldRaycaster : MonoBehaviour
     {
@@ -30,32 +31,46 @@ namespace Descending.Party
         private bool _enemyClickEnabled = false;
         private Camera _camera = null;
         private RaycastModes _mode = RaycastModes.None;
+        private Ability _currentAbility = null;
         
         private void Start()
         {
             _camera = Camera.main;
+            _mode = RaycastModes.World;
         }
-        
+
         private void Update()
         {
             if (_raycastEnabled == false) return;
             if (EventSystem.current.IsPointerOverGameObject() == true)
             {
-                Cursor.SetCursor(_cursorTextures[(int)CursorTypes.Gui], Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(_cursorTextures[(int) CursorTypes.Gui], Vector2.zero, CursorMode.Auto);
                 return;
             }
-            
+
             if (Utilities.IsMouseInWindow() == false)
             {
                 Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                 return;
             }
 
-            if (RaycastForInteractable(GetRay()) == true) return;
-            if (RaycastForEnemy(GetRay()) == true) return;
+            if (Input.GetMouseButtonDown(1) && _mode == RaycastModes.Ability)
+            {
+                _mode = RaycastModes.Combat;
+            }
+            
+            if (_mode == RaycastModes.World || _mode == RaycastModes.Combat)
+            {
+                if (RaycastForInteractable(GetRay()) == true) return;
+                if (RaycastForEnemy(GetRay()) == true) return;
 
-            Cursor.SetCursor(_cursorTextures[(int)CursorTypes.Gui], Vector2.zero, CursorMode.Auto);
-            _crosshair.sprite = _crosshairSprites[(int) CrosshairTypes.Default];
+                Cursor.SetCursor(_cursorTextures[(int) CursorTypes.Gui], Vector2.zero, CursorMode.Auto);
+                _crosshair.sprite = _crosshairSprites[(int) CrosshairTypes.Default];
+            }
+            else
+            {
+                if (RaycastForAbilityTarget(GetRay()) == true) return;
+            }
         }
 
         bool RaycastForInteractable(Ray ray)
@@ -95,15 +110,54 @@ namespace Descending.Party
                     {
                         onEnemyClicked_Left.Invoke(enemy);
                     }
-                    else if (_enemyClickEnabled == true && Input.GetMouseButtonDown(1))
-                    {
-                        onEnemyClicked_Right.Invoke(enemy);
-                    }
+                    // else if (_enemyClickEnabled == true && Input.GetMouseButtonDown(1))
+                    // {
+                    //     onEnemyClicked_Right.Invoke(enemy);
+                    // }
                     
                     return true;
                 }
             }
 
+            return false;
+        }
+
+        bool RaycastForAbilityTarget(Ray ray)
+        {
+            if (_currentAbility != null && Physics.Raycast(ray, out RaycastHit hit, 100f))
+            {
+                if (_currentAbility.Definition.Details.TargetType == TargetTypes.Enemy)
+                {
+                    Enemy enemy = hit.collider.gameObject.GetComponent<Enemy>();
+
+                    if (enemy != null)
+                    {
+                        Cursor.SetCursor(_cursorTextures[(int) CursorTypes.Ability_Valid], Vector2.zero, CursorMode.Auto);
+
+                        if (Input.GetMouseButtonDown(0))
+                        {
+                            Debug.Log("Using " + _currentAbility.Definition.Details.Name + " on " + enemy.GetName());
+                        }
+
+                        return true;
+                    }
+                }
+                //     Cursor.SetCursor(_cursorTextures[(int) CursorTypes.Abil], Vector2.zero, CursorMode.Auto);
+                //     _crosshair.sprite = _crosshairSprites[(int) CrosshairTypes.Enemy];
+                //
+                //     if(_enemyClickEnabled == true && Input.GetMouseButtonDown(0))
+                //     {
+                //         onEnemyClicked_Left.Invoke(enemy);
+                //     }
+                //     else if (_enemyClickEnabled == true && Input.GetMouseButtonDown(1))
+                //     {
+                //         onEnemyClicked_Right.Invoke(enemy);
+                //     }
+                //    
+            }
+
+            Cursor.SetCursor(_cursorTextures[(int) CursorTypes.Ability_Invalid], Vector2.zero, CursorMode.Auto);
+            
             return false;
         }
 
@@ -130,6 +184,16 @@ namespace Descending.Party
         public void OnSetEnemyClickEnabled(bool enable)
         {
             _enemyClickEnabled = enable;
+        }
+
+        public void SetRaycastMode(RaycastModes mode)
+        {
+            _mode = mode;
+        }
+
+        public void SetAbility(Ability ability)
+        {
+            _currentAbility = ability;
         }
     }
 }

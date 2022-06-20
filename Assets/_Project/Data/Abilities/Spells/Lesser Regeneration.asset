@@ -24,6 +24,10 @@ MonoBehaviour:
     _resourceAmount: 0
     _skill: {fileID: 11400000, guid: f073537271aff5a44ae78dd2784261e1, type: 2}
     _minimumSkill: 1
+    _actionsToUse: 1
+    _targetType: 1
+    _areaType: 0
+    _rangeType: 2
   _effects:
     rid: -2
   references:

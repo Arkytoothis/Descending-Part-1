@@ -148,15 +148,15 @@ namespace Descending.Characters
             _expToNextLevel = hero.HeroData.ExpToNextLevel;
 
             _listIndex = hero.HeroData.ListIndex;
-            _headIndex = hero.WorldRenderer.HeadIndex;
-            _hairIndex = hero.WorldRenderer.HairIndex;
-            _earIndex = hero.WorldRenderer.EarIndex;
-            _facialHairIndex = hero.WorldRenderer.FacialHairIndex;
-            _eyebrowIndex = hero.WorldRenderer.EyebrowIndex;
-            _skinColorIndex = hero.WorldRenderer.SkinColorIndex;
-            _hairColorIndex = hero.WorldRenderer.HairColorIndex;
-            _eyeColorIndex = hero.WorldRenderer.EyeColorIndex;
-            _tattooColorIndex = hero.WorldRenderer.TattooColorIndex;
+            _headIndex = hero.PortraitRenderer.HeadIndex;
+            _hairIndex = hero.PortraitRenderer.HairIndex;
+            _earIndex = hero.PortraitRenderer.EarIndex;
+            _facialHairIndex = hero.PortraitRenderer.FacialHairIndex;
+            _eyebrowIndex = hero.PortraitRenderer.EyebrowIndex;
+            _skinColorIndex = hero.PortraitRenderer.SkinColorIndex;
+            _hairColorIndex = hero.PortraitRenderer.HairColorIndex;
+            _eyeColorIndex = hero.PortraitRenderer.EyeColorIndex;
+            _tattooColorIndex = hero.PortraitRenderer.TattooColorIndex;
         }
     }
 }

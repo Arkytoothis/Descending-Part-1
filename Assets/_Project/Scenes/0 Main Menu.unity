@@ -275,7 +275,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388229531}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
@@ -527,7 +527,7 @@ MonoBehaviour:
   _optionsCamera: {fileID: 809929398}
   _database: {fileID: 11400000, guid: 5874bd79491989c448258aa7a65cd105, type: 2}
   _partyManager: {fileID: 1786456717}
-  _guiPrefab: {fileID: 1265881149768550739, guid: 452c34642c9e88041ab6b9c464d057fb,
+  _guiPrefab: {fileID: 566386197930698864, guid: eb3d64e55bbd5be4ead3d569c2200f4d,
     type: 3}
   onSyncParty:
     m_PersistentCalls:
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809929397}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910575363}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
@@ -1453,7 +1453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   m_LocalRotation: {x: 0.032734342, y: 0, z: 0, w: 0.9994641}
-  m_LocalPosition: {x: 9.86, y: 2.51, z: -5.03}
+  m_LocalPosition: {x: -10.25, y: 2.51, z: -5.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

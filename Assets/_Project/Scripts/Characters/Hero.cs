@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DarkTonic.MasterAudio;
 using Descending.Attributes;
-using Descending.Combat;
 using Descending.Core;
-using Descending.Enemies;
 using Descending.Equipment;
 using Descending.Gui;
 using ScriptableObjectArchitecture;
@@ -18,7 +16,6 @@ namespace Descending.Characters
 {
     public class Hero : GameEntity
     {
-        [SerializeField] private RuntimeAnimatorController _worldController = null;
         [SerializeField] private RuntimeAnimatorController _portraitController = null;
         
         [SerializeField] private HeroData _heroData = null;
@@ -27,22 +24,14 @@ namespace Descending.Characters
         [SerializeField] private InventoryController _inventory = null;
         [SerializeField] private AbilityController _abilities = null;
         
-        [SerializeField] private Transform _worldMount = null;
         [SerializeField] private Transform _portraitMount = null;
-        [SerializeField] private HeroPathfinder _pathfinder = null;
-        [SerializeField] private VitalBar _lifeBar = null;
         [SerializeField] private Transform _hitEffectTransform = null;
         
         [SerializeField] private IntEvent onSyncHero = null;
         
-        private GameObject _worldModel = null;
         private GameObject _portraitModel = null;
         private PortraitMount _portrait = null;
-        private Rigidbody _rigidbody = null;
-        private Animator _worldAnimator = null;
-        private BodyRenderer _worldRenderer = null;
         private BodyRenderer _portraitRenderer = null;
-        private AnimationEvents _animationEvents = null;
         
         public HeroData HeroData => _heroData;
         public AttributesController Attributes => _attributes;
@@ -51,15 +40,11 @@ namespace Descending.Characters
         public AbilityController Abilities => _abilities;
         public GameObject PortraitModel => _portraitModel;
         public PortraitMount Portrait => _portrait;
-        public BodyRenderer WorldRenderer => _worldRenderer;
         public BodyRenderer PortraitRenderer => _portraitRenderer;
-        public VitalBar LifeBar => _lifeBar;
         public Transform HitEffectTransform => _hitEffectTransform;
-        public HeroPathfinder Pathfinder => _pathfinder;
 
         private void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody>();
         }
 
         private void Update()
@@ -67,96 +52,51 @@ namespace Descending.Characters
             //_worldAnimator.SetFloat("Blend", _rigidbody.velocity.magnitude);
         }
 
-        public void Setup(Genders gender, RaceDefinition race, ProfessionDefinition profession, bool equipWeapons, int listIndex, bool enabledInfoBar, bool enablePortrait)
+        public void Setup(Genders gender, RaceDefinition race, ProfessionDefinition profession, int listIndex)
         {
-            // _worldModel = HeroBuilder.SpawnWorldPrefab(gender, race, _worldMount);
-            // _worldRenderer = _worldModel.GetComponent<BodyRenderer>();
-            // _worldRenderer.SetupBody(gender, race, profession);
-            // _worldAnimator = _worldModel.GetComponent<Animator>();
-            // _worldAnimator.runtimeAnimatorController = _worldController;
-            //
-            // _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
-            // _animationEvents.Setup(this);
+            _portraitModel = HeroBuilder.SpawnPortraitPrefab(gender, race, _portraitMount);
 
-            //if (enablePortrait == true)
-            //{
-                _portraitModel = HeroBuilder.SpawnPortraitPrefab(gender, race, _portraitMount);
+            var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
+            foreach (var child in children)
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("PortraitLight");
+            }
 
-                var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
-                foreach (var child in children)
-                {
-                    child.gameObject.layer = LayerMask.NameToLayer("PortraitLight");
-                }
-
-                _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
-                _portraitRenderer.SetupBody(gender, race, profession, _portraitRenderer);
-                Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
-                portraitAnimator.runtimeAnimatorController = _portraitController;
-            //}
+            _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
+            _portraitRenderer.SetupBody(gender, race, profession);
+            Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
+            portraitAnimator.runtimeAnimatorController = _portraitController;
 
             _heroData.Setup(gender, race, profession, _portraitRenderer, listIndex);
             _attributes.Setup(race, profession);
             _skills.Setup(_attributes, race, profession);
-            _inventory.Setup(_portraitRenderer, _portraitRenderer, gender, race, profession, equipWeapons, enablePortrait);
+            _inventory.Setup(_portraitRenderer, gender, race, profession);
             _abilities.Setup(_heroData.Name, race, profession, _skills);
-            
-            if (enabledInfoBar == true)
-            {
-                _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
-                _lifeBar.Hide();
-            }
-            else
-            {
-                _lifeBar.Hide();
-            }
         }
 
-        public void Load(HeroSaveData saveData, bool equipWeapons, bool enabledInfoBar, bool enablePortrait)
+        public void Load(HeroSaveData saveData)
         {
             RaceDefinition race = Database.instance.Races.GetRace(saveData.HeroData.RaceKey);
             ProfessionDefinition profession = Database.instance.Profession.GetProfession(saveData.HeroData.ProfessionKey);
-            _worldModel = HeroBuilder.SpawnWorldPrefab(saveData.HeroData.Gender, race, _worldMount);
-            _worldRenderer = _worldModel.GetComponent<BodyRenderer>();
-            _worldRenderer.LoadBody(saveData);
-            _worldAnimator = _worldModel.GetComponent<Animator>();
-            _worldAnimator.runtimeAnimatorController = _worldController;
 
-            _animationEvents = _worldModel.GetComponentInChildren<AnimationEvents>();
-            _animationEvents.Setup(this);
-            
-            //_interactionDetector = _worldModel.GetComponentInChildren<InteractionDetector>();
+            _portraitModel = HeroBuilder.SpawnPortraitPrefab(saveData.HeroData.Gender, race, _portraitMount);
 
-            if (enablePortrait == true)
+            var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
+            foreach (var child in children)
             {
-                _portraitModel = HeroBuilder.SpawnPortraitPrefab(saveData.HeroData.Gender, race, _portraitMount);
-
-                var children = _portraitModel.GetComponentsInChildren<Transform>(includeInactive: true);
-                foreach (var child in children)
-                {
-                    child.gameObject.layer = LayerMask.NameToLayer("PortraitLight");
-                }
-
-                _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
-                _portraitRenderer.LoadBody(saveData);
-                Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
-                portraitAnimator.runtimeAnimatorController = _portraitController;
+                child.gameObject.layer = LayerMask.NameToLayer("PortraitLight");
             }
 
-            _heroData.LoadData(saveData.HeroData, _worldRenderer);
+            _portraitRenderer = _portraitModel.GetComponent<BodyRenderer>();
+            _portraitRenderer.LoadBody(saveData);
+            Animator portraitAnimator = _portraitModel.GetComponent<Animator>();
+            portraitAnimator.runtimeAnimatorController = _portraitController;
+
+            _heroData.LoadData(saveData.HeroData, _portraitRenderer);
             _attributes.LoadData(saveData.AttributeData);
             _skills.LoadData(saveData.SkillData);
-            _inventory.LoadData(_worldRenderer, _portraitRenderer, saveData.HeroData.Gender, saveData.InventoryData, enablePortrait);
+            _inventory.LoadData(_portraitRenderer, saveData.HeroData.Gender, saveData.InventoryData);
             _abilities.Setup(saveData.HeroData.Name, race, profession, _skills);
-
-            if (enabledInfoBar == true)
-            {
-                _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
-                _lifeBar.Hide();
-            }
-            else
-            {
-                _lifeBar.Hide();
-            }
         }
 
         public void SetPortrait(PortraitMount portrait)
@@ -174,12 +114,10 @@ namespace Descending.Characters
             if (IsAlive() == false) return;
             
             _attributes.Vitals["Life"].Damage(amount);
-            _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
             
             if (_attributes.Vitals["Life"].Current <= 0)
             {
                 Death();
-                _lifeBar.gameObject.SetActive(false);
             }
             else
             {
@@ -196,22 +134,15 @@ namespace Descending.Characters
             SyncData();
         }
 
-        public override void UseQuickActions(int amount)
-        {
-            _attributes.Vitals["Quick Actions"].Damage(amount);
-            SyncData();
-        }
-
         public override void Restore(string attribute, int amount)
         {
             _attributes.Vitals["Life"].Restore(amount);
-            _lifeBar.SetValues(_attributes.GetVital("Life").Current, _attributes.GetVital("Life").Maximum, false);
             SyncData();
         }
 
         public override void Death()
         {
-            _worldAnimator.SetTrigger("isDead");
+            //_worldAnimator.SetTrigger("isDead");
             //_pathfinder.DisablePathing();
             //_behaviorController.SetBehaviorActive(false);
         }
@@ -241,7 +172,7 @@ namespace Descending.Characters
 
         public override void MeleeAttack()
         {
-            _worldAnimator.SetTrigger("Attack");
+            //_worldAnimator.SetTrigger("Attack");
             
             string swingSound = _inventory.GetEquippedWeapon().ItemDefinition.GetMissSound();
             MasterAudio.PlaySound3DAtTransform(swingSound, transform, .15f, 1f);
@@ -261,17 +192,11 @@ namespace Descending.Characters
         {
             experience += (int)(experience * _heroData.RaceDefinition.ExpModifier);
             _heroData.AddExperience(experience);
-            SyncData();
         }
 
         private void SyncData()
         {
             onSyncHero.Invoke(_heroData.ListIndex);
-        }
-
-        public void SetTarget(Enemy enemyTarget)
-        {
-            _animationEvents.SetTarget(enemyTarget);
         }
     }
 

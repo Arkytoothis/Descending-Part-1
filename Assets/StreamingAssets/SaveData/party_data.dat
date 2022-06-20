@@ -13,12 +13,12 @@
                     "$id": 3,
                     "$type": "3|Descending.Characters.FantasyName, Descending",
                     "gender": 3,
-                    "title": "Lord",
-                    "firstName": "Gwargong",
+                    "title": "",
+                    "firstName": "Frizban",
                     "nickName": "",
-                    "lastName": "Ironmurk",
-                    "postfix": "V",
-                    "land": "Fantar Hills"
+                    "lastName": "Ironbite",
+                    "postfix": "the Virtuous",
+                    "land": "Drunthor Vale"
                 },
                 "_gender": 0,
                 "_raceKey": "Half Orc",
@@ -27,15 +27,15 @@
                 "_experience": 0,
                 "_expToNextLevel": 1000,
                 "_listIndex": 0,
-                "_headIndex": 13,
-                "_hairIndex": 11,
+                "_headIndex": 22,
+                "_hairIndex": 16,
                 "_earIndex": 1,
-                "_facialHairIndex": 2,
-                "_eyebrowIndex": 5,
+                "_facialHairIndex": 0,
+                "_eyebrowIndex": 6,
                 "_skinColorIndex": 2,
                 "_tattooColorIndex": 0,
-                "_hairColorIndex": 0,
-                "_eyeColorIndex": 0
+                "_hairColorIndex": 1,
+                "_eyeColorIndex": 1
             },
             "_attributesSaveData": {
                 "$id": 4,
@@ -49,8 +49,8 @@
                             "$id": 6,
                             "$type": "6|Descending.Attributes.Attribute, Descending",
                             "_key": "Endurance",
-                            "_current": 21,
-                            "_maximum": 21,
+                            "_current": 25,
+                            "_maximum": 25,
                             "_modifier": 0,
                             "_spent": 0
                         },
@@ -58,8 +58,8 @@
                             "$id": 7,
                             "$type": 6,
                             "_key": "Spirit",
-                            "_current": 13,
-                            "_maximum": 13,
+                            "_current": 14,
+                            "_maximum": 14,
                             "_modifier": 0,
                             "_spent": 0
                         },
@@ -76,8 +76,8 @@
                             "$id": 9,
                             "$type": 6,
                             "_key": "Perception",
-                            "_current": 19,
-                            "_maximum": 19,
+                            "_current": 14,
+                            "_maximum": 14,
                             "_modifier": 0,
                             "_spent": 0
                         },
@@ -85,8 +85,8 @@
                             "$id": 10,
                             "$type": 6,
                             "_key": "Might",
-                            "_current": 29,
-                            "_maximum": 29,
+                            "_current": 25,
+                            "_maximum": 25,
                             "_modifier": 0,
                             "_spent": 0
                         },
@@ -94,8 +94,8 @@
                             "$id": 11,
                             "$type": 6,
                             "_key": "Finesse",
-                            "_current": 15,
-                            "_maximum": 15,
+                            "_current": 12,
+                            "_maximum": 12,
                             "_modifier": 0,
                             "_spent": 0
                         }
@@ -104,7 +104,7 @@
                 "_vitals": {
                     "$id": 12,
                     "$type": 5,
-                    "$rlength": 7,
+                    "$rlength": 6,
                     "$rcontent": [
                         {
                             "$id": 13,
@@ -128,8 +128,8 @@
                             "$id": 15,
                             "$type": 6,
                             "_key": "Magic",
-                            "_current": 13,
-                            "_maximum": 13,
+                            "_current": 14,
+                            "_maximum": 14,
                             "_modifier": 0,
                             "_spent": 0
                         },
@@ -137,8 +137,8 @@
                             "$id": 16,
                             "$type": 6,
                             "_key": "Stamina",
-                            "_current": 27,
-                            "_maximum": 27,
+                            "_current": 29,
+                            "_maximum": 29,
                             "_modifier": 0,
                             "_spent": 0
                         },
@@ -154,48 +154,39 @@
                         {
                             "$id": 18,
                             "$type": 6,
-                            "_key": "Movement",
-                            "_current": 4,
-                            "_maximum": 4,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 19,
-                            "$type": 6,
                             "_key": "Quick Actions",
-                            "_current": 1,
-                            "_maximum": 1,
+                            "_current": 0,
+                            "_maximum": 0,
                             "_modifier": 0,
                             "_spent": 0
                         }
                     ]
                 },
                 "_statistics": {
-                    "$id": 20,
+                    "$id": 19,
                     "$type": 5,
                     "$rlength": 7,
                     "$rcontent": [
                         {
-                            "$id": 21,
+                            "$id": 20,
                             "$type": 6,
                             "_key": "Aim",
-                            "_current": 34,
-                            "_maximum": 34,
+                            "_current": 26,
+                            "_maximum": 26,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 21,
+                            "$type": 6,
+                            "_key": "Attack",
+                            "_current": 39,
+                            "_maximum": 39,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 22,
-                            "$type": 6,
-                            "_key": "Attack",
-                            "_current": 48,
-                            "_maximum": 48,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 23,
                             "$type": 6,
                             "_key": "Block",
                             "_current": 50,
@@ -204,38 +195,38 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 24,
+                            "$id": 23,
                             "$type": 6,
                             "_key": "Dodge",
-                            "_current": 34,
-                            "_maximum": 34,
+                            "_current": 26,
+                            "_maximum": 26,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 24,
+                            "$type": 6,
+                            "_key": "Focus",
+                            "_current": 26,
+                            "_maximum": 26,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 25,
                             "$type": 6,
-                            "_key": "Focus",
-                            "_current": 25,
-                            "_maximum": 25,
+                            "_key": "Speed",
+                            "_current": 26,
+                            "_maximum": 26,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 26,
                             "$type": 6,
-                            "_key": "Speed",
-                            "_current": 34,
-                            "_maximum": 34,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 27,
-                            "$type": 6,
                             "_key": "Willpower",
-                            "_current": 34,
-                            "_maximum": 34,
+                            "_current": 39,
+                            "_maximum": 39,
                             "_modifier": 0,
                             "_spent": 0
                         }
@@ -243,15 +234,15 @@
                 }
             },
             "_skillsSaveData": {
-                "$id": 28,
+                "$id": 27,
                 "$type": "7|Descending.Attributes.SkillsSaveData, Descending",
                 "_skills": {
-                    "$id": 29,
+                    "$id": 28,
                     "$type": "8|System.Collections.Generic.List`1[[Descending.Attributes.Skill, Descending]], mscorlib",
                     "$rlength": 5,
                     "$rcontent": [
                         {
-                            "$id": 30,
+                            "$id": 29,
                             "$type": "9|Descending.Attributes.Skill, Descending",
                             "_key": "Armor",
                             "_current": 2,
@@ -260,7 +251,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 31,
+                            "$id": 30,
                             "$type": 9,
                             "_key": "Fire Magic",
                             "_current": 1,
@@ -269,7 +260,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 32,
+                            "$id": 31,
                             "$type": 9,
                             "_key": "Axes",
                             "_current": 1,
@@ -278,7 +269,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 33,
+                            "$id": 32,
                             "$type": 9,
                             "_key": "Blades",
                             "_current": 1,
@@ -287,7 +278,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 34,
+                            "$id": 33,
                             "$type": 9,
                             "_key": "Shields",
                             "_current": 1,
@@ -299,15 +290,15 @@
                 }
             },
             "_inventorySaveData": {
-                "$id": 35,
+                "$id": 34,
                 "$type": "10|Descending.Equipment.InventorySaveData, Descending",
                 "_equippedItems": {
-                    "$id": 36,
+                    "$id": 35,
                     "$type": "11|Descending.Equipment.Item[], Descending",
                     "$rlength": 10,
                     "$rcontent": [
                         {
-                            "$id": 37,
+                            "$id": 36,
                             "$type": "12|Descending.Equipment.Item, Descending",
                             "_name": "Long Sword",
                             "_definitionKey": "Long Sword",
@@ -317,7 +308,7 @@
                             "_nameFormat": 0,
                             "_equipmentSlot": 0,
                             "_renderSlots": {
-                                "$id": 38,
+                                "$id": 37,
                                 "$type": "13|System.Collections.Generic.List`1[[Descending.Equipment.RenderSlot, Descending]], mscorlib",
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -337,7 +328,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 39,
+                            "$id": 38,
                             "$type": 12,
                             "_name": "Wood Shield",
                             "_definitionKey": "Wood Shield",
@@ -347,7 +338,7 @@
                             "_nameFormat": 0,
                             "_equipmentSlot": 1,
                             "_renderSlots": {
-                                "$id": 40,
+                                "$id": 39,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -367,7 +358,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 41,
+                            "$id": 40,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -377,7 +368,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 42,
+                                "$id": 41,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -397,7 +388,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 43,
+                            "$id": 42,
                             "$type": 12,
                             "_name": "Mail Armor",
                             "_definitionKey": "Mail Armor",
@@ -407,30 +398,30 @@
                             "_nameFormat": 1,
                             "_equipmentSlot": 3,
                             "_renderSlots": {
-                                "$id": 44,
+                                "$id": 43,
                                 "$type": 13,
                                 "$rlength": 4,
                                 "$rcontent": [
                                     {
-                                        "$id": 45,
+                                        "$id": 44,
                                         "$type": "14|Descending.Equipment.RenderSlot, Descending",
                                         "_bodyPart": 18,
                                         "_index": 12
                                     },
                                     {
-                                        "$id": 46,
+                                        "$id": 45,
                                         "$type": 14,
                                         "_bodyPart": 19,
                                         "_index": 12
                                     },
                                     {
-                                        "$id": 47,
+                                        "$id": 46,
                                         "$type": 14,
                                         "_bodyPart": 20,
                                         "_index": 12
                                     },
                                     {
-                                        "$id": 48,
+                                        "$id": 47,
                                         "$type": 14,
                                         "_bodyPart": 25,
                                         "_index": 6
@@ -451,7 +442,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 49,
+                            "$id": 48,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -461,7 +452,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 50,
+                                "$id": 49,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -481,7 +472,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 51,
+                            "$id": 50,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -491,7 +482,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 52,
+                                "$id": 51,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -511,7 +502,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 53,
+                            "$id": 52,
                             "$type": 12,
                             "_name": "Leather Boots",
                             "_definitionKey": "Leather Boots",
@@ -521,18 +512,18 @@
                             "_nameFormat": 1,
                             "_equipmentSlot": 6,
                             "_renderSlots": {
-                                "$id": 54,
+                                "$id": 53,
                                 "$type": 13,
                                 "$rlength": 2,
                                 "$rcontent": [
                                     {
-                                        "$id": 55,
+                                        "$id": 54,
                                         "$type": 14,
                                         "_bodyPart": 26,
                                         "_index": 19
                                     },
                                     {
-                                        "$id": 56,
+                                        "$id": 55,
                                         "$type": 14,
                                         "_bodyPart": 27,
                                         "_index": 19
@@ -553,7 +544,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 57,
+                            "$id": 56,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -563,7 +554,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 58,
+                                "$id": 57,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -583,7 +574,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 59,
+                            "$id": 58,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -593,7 +584,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 60,
+                                "$id": 59,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -613,7 +604,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 61,
+                            "$id": 60,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -623,7 +614,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 62,
+                                "$id": 61,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -645,12 +636,12 @@
                     ]
                 },
                 "_accessories": {
-                    "$id": 63,
+                    "$id": 62,
                     "$type": 11,
                     "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 64,
+                            "$id": 63,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -660,7 +651,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 65,
+                                "$id": 64,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -680,7 +671,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 66,
+                            "$id": 65,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -690,7 +681,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 67,
+                                "$id": 66,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -710,7 +701,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 68,
+                            "$id": 67,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -720,7 +711,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 69,
+                                "$id": 68,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -740,7 +731,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 70,
+                            "$id": 69,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -750,7 +741,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 71,
+                                "$id": 70,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -770,7 +761,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 72,
+                            "$id": 71,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -780,7 +771,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 73,
+                                "$id": 72,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -800,7 +791,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 74,
+                            "$id": 73,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -810,7 +801,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 75,
+                                "$id": 74,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -835,21 +826,21 @@
             }
         },
         {
-            "$id": 76,
+            "$id": 75,
             "$type": 1,
             "_heroSaveData": {
-                "$id": 77,
+                "$id": 76,
                 "$type": 2,
                 "_name": {
-                    "$id": 78,
+                    "$id": 77,
                     "$type": 3,
                     "gender": 3,
                     "title": "",
-                    "firstName": "Evithuri",
+                    "firstName": "Sliben",
                     "nickName": "",
-                    "lastName": "Smokesinner",
-                    "postfix": "III",
-                    "land": "Corger"
+                    "lastName": "Dreadlust",
+                    "postfix": "the Boneless",
+                    "land": "Lonther"
                 },
                 "_gender": 0,
                 "_raceKey": "Imperial",
@@ -858,35 +849,35 @@
                 "_experience": 0,
                 "_expToNextLevel": 1000,
                 "_listIndex": 1,
-                "_headIndex": 0,
-                "_hairIndex": 9,
+                "_headIndex": 12,
+                "_hairIndex": 0,
                 "_earIndex": -1,
-                "_facialHairIndex": 7,
-                "_eyebrowIndex": 0,
-                "_skinColorIndex": 1,
+                "_facialHairIndex": 0,
+                "_eyebrowIndex": 4,
+                "_skinColorIndex": 2,
                 "_tattooColorIndex": 0,
-                "_hairColorIndex": 0,
+                "_hairColorIndex": 4,
                 "_eyeColorIndex": 0
             },
             "_attributesSaveData": {
-                "$id": 79,
+                "$id": 78,
                 "$type": 4,
                 "_characteristics": {
-                    "$id": 80,
+                    "$id": 79,
                     "$type": 5,
                     "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 81,
+                            "$id": 80,
                             "$type": 6,
                             "_key": "Endurance",
-                            "_current": 19,
-                            "_maximum": 19,
+                            "_current": 18,
+                            "_maximum": 18,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 82,
+                            "$id": 81,
                             "$type": 6,
                             "_key": "Spirit",
                             "_current": 13,
@@ -895,34 +886,34 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 83,
+                            "$id": 82,
                             "$type": 6,
                             "_key": "Intellect",
-                            "_current": 16,
-                            "_maximum": 16,
+                            "_current": 12,
+                            "_maximum": 12,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 83,
+                            "$type": 6,
+                            "_key": "Perception",
+                            "_current": 15,
+                            "_maximum": 15,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 84,
                             "$type": 6,
-                            "_key": "Perception",
-                            "_current": 19,
-                            "_maximum": 19,
+                            "_key": "Might",
+                            "_current": 15,
+                            "_maximum": 15,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 85,
-                            "$type": 6,
-                            "_key": "Might",
-                            "_current": 18,
-                            "_maximum": 18,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 86,
                             "$type": 6,
                             "_key": "Finesse",
                             "_current": 20,
@@ -933,21 +924,21 @@
                     ]
                 },
                 "_vitals": {
-                    "$id": 87,
+                    "$id": 86,
                     "$type": 5,
-                    "$rlength": 7,
+                    "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 88,
+                            "$id": 87,
                             "$type": 6,
                             "_key": "Life",
-                            "_current": 23,
-                            "_maximum": 23,
+                            "_current": 21,
+                            "_maximum": 21,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 89,
+                            "$id": 88,
                             "$type": 6,
                             "_key": "Armor",
                             "_current": 0,
@@ -956,25 +947,25 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 90,
+                            "$id": 89,
                             "$type": 6,
                             "_key": "Magic",
-                            "_current": 19,
-                            "_maximum": 19,
+                            "_current": 17,
+                            "_maximum": 17,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 90,
+                            "$type": 6,
+                            "_key": "Stamina",
+                            "_current": 20,
+                            "_maximum": 20,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 91,
-                            "$type": 6,
-                            "_key": "Stamina",
-                            "_current": 21,
-                            "_maximum": 21,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 92,
                             "$type": 6,
                             "_key": "Actions",
                             "_current": 2,
@@ -983,90 +974,81 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 93,
-                            "$type": 6,
-                            "_key": "Movement",
-                            "_current": 4,
-                            "_maximum": 4,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 94,
+                            "$id": 92,
                             "$type": 6,
                             "_key": "Quick Actions",
-                            "_current": 1,
-                            "_maximum": 1,
+                            "_current": 0,
+                            "_maximum": 0,
                             "_modifier": 0,
                             "_spent": 0
                         }
                     ]
                 },
                 "_statistics": {
-                    "$id": 95,
+                    "$id": 93,
                     "$type": 5,
                     "$rlength": 7,
                     "$rcontent": [
                         {
-                            "$id": 96,
+                            "$id": 94,
                             "$type": 6,
                             "_key": "Aim",
-                            "_current": 39,
-                            "_maximum": 39,
+                            "_current": 35,
+                            "_maximum": 35,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 95,
+                            "$type": 6,
+                            "_key": "Attack",
+                            "_current": 30,
+                            "_maximum": 30,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 96,
+                            "$type": 6,
+                            "_key": "Block",
+                            "_current": 33,
+                            "_maximum": 33,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 97,
                             "$type": 6,
-                            "_key": "Attack",
-                            "_current": 37,
-                            "_maximum": 37,
+                            "_key": "Dodge",
+                            "_current": 35,
+                            "_maximum": 35,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 98,
                             "$type": 6,
-                            "_key": "Block",
-                            "_current": 37,
-                            "_maximum": 37,
+                            "_key": "Focus",
+                            "_current": 25,
+                            "_maximum": 25,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 99,
                             "$type": 6,
-                            "_key": "Dodge",
-                            "_current": 39,
-                            "_maximum": 39,
+                            "_key": "Speed",
+                            "_current": 35,
+                            "_maximum": 35,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 100,
                             "$type": 6,
-                            "_key": "Focus",
-                            "_current": 29,
-                            "_maximum": 29,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 101,
-                            "$type": 6,
-                            "_key": "Speed",
-                            "_current": 39,
-                            "_maximum": 39,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 102,
-                            "$type": 6,
                             "_key": "Willpower",
-                            "_current": 32,
-                            "_maximum": 32,
+                            "_current": 31,
+                            "_maximum": 31,
                             "_modifier": 0,
                             "_spent": 0
                         }
@@ -1074,15 +1056,15 @@
                 }
             },
             "_skillsSaveData": {
-                "$id": 103,
+                "$id": 101,
                 "$type": 7,
                 "_skills": {
-                    "$id": 104,
+                    "$id": 102,
                     "$type": 8,
                     "$rlength": 5,
                     "$rcontent": [
                         {
-                            "$id": 105,
+                            "$id": 103,
                             "$type": 9,
                             "_key": "Leadership",
                             "_current": 1,
@@ -1091,7 +1073,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 106,
+                            "$id": 104,
                             "$type": 9,
                             "_key": "Bartering",
                             "_current": 1,
@@ -1100,7 +1082,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 107,
+                            "$id": 105,
                             "$type": 9,
                             "_key": "Blades",
                             "_current": 2,
@@ -1109,7 +1091,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 108,
+                            "$id": 106,
                             "$type": 9,
                             "_key": "Armor",
                             "_current": 1,
@@ -1118,7 +1100,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 109,
+                            "$id": 107,
                             "$type": 9,
                             "_key": "Thrown Weapons",
                             "_current": 1,
@@ -1130,15 +1112,15 @@
                 }
             },
             "_inventorySaveData": {
-                "$id": 110,
+                "$id": 108,
                 "$type": 10,
                 "_equippedItems": {
-                    "$id": 111,
+                    "$id": 109,
                     "$type": 11,
                     "$rlength": 10,
                     "$rcontent": [
                         {
-                            "$id": 112,
+                            "$id": 110,
                             "$type": 12,
                             "_name": "Battle Axe",
                             "_definitionKey": "Battle Axe",
@@ -1148,7 +1130,7 @@
                             "_nameFormat": 0,
                             "_equipmentSlot": 0,
                             "_renderSlots": {
-                                "$id": 113,
+                                "$id": 111,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -1163,6 +1145,36 @@
                             "_usesLeft": 0,
                             "_rarityKey": "Common",
                             "_materialKey": "Iron",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 112,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 113,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
@@ -1200,6 +1212,30 @@
                         {
                             "$id": 116,
                             "$type": 12,
+                            "_name": "Mail Armor",
+                            "_definitionKey": "Mail Armor",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 3,
+                            "_nameFormat": 1,
+                            "_equipmentSlot": 3,
+                            "_renderSlots": $iref:43,
+                            "_materialAllowed": 14,
+                            "_stackSize": 1,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "Common",
+                            "_materialKey": "Iron",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 117,
+                            "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
                             "_description": "",
@@ -1208,7 +1244,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 117,
+                                "$id": 118,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -1223,30 +1259,6 @@
                             "_usesLeft": 0,
                             "_rarityKey": "",
                             "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 118,
-                            "$type": 12,
-                            "_name": "Mail Armor",
-                            "_definitionKey": "Mail Armor",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 3,
-                            "_nameFormat": 1,
-                            "_equipmentSlot": 3,
-                            "_renderSlots": $iref:44,
-                            "_materialAllowed": 14,
-                            "_stackSize": 1,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "Common",
-                            "_materialKey": "Iron",
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
@@ -1284,6 +1296,30 @@
                         {
                             "$id": 121,
                             "$type": 12,
+                            "_name": "Leather Boots",
+                            "_definitionKey": "Leather Boots",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 3,
+                            "_nameFormat": 1,
+                            "_equipmentSlot": 6,
+                            "_renderSlots": $iref:53,
+                            "_materialAllowed": 14,
+                            "_stackSize": 1,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "Common",
+                            "_materialKey": "Hide",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 122,
+                            "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
                             "_description": "",
@@ -1292,7 +1328,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 122,
+                                "$id": 123,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -1307,30 +1343,6 @@
                             "_usesLeft": 0,
                             "_rarityKey": "",
                             "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 123,
-                            "$type": 12,
-                            "_name": "Leather Boots",
-                            "_definitionKey": "Leather Boots",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 3,
-                            "_nameFormat": 1,
-                            "_equipmentSlot": 6,
-                            "_renderSlots": $iref:54,
-                            "_materialAllowed": 14,
-                            "_stackSize": 1,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "Common",
-                            "_materialKey": "Hide",
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
@@ -1394,9 +1406,16 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        },
+                        }
+                    ]
+                },
+                "_accessories": {
+                    "$id": 128,
+                    "$type": 11,
+                    "$rlength": 6,
+                    "$rcontent": [
                         {
-                            "$id": 128,
+                            "$id": 129,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -1406,7 +1425,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 129,
+                                "$id": 130,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -1424,14 +1443,7 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        }
-                    ]
-                },
-                "_accessories": {
-                    "$id": 130,
-                    "$type": 11,
-                    "$rlength": 6,
-                    "$rcontent": [
+                        },
                         {
                             "$id": 131,
                             "$type": 12,
@@ -1581,36 +1593,6 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 141,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 142,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
                         }
                     ]
                 },
@@ -1618,21 +1600,21 @@
             }
         },
         {
-            "$id": 143,
+            "$id": 141,
             "$type": 1,
             "_heroSaveData": {
-                "$id": 144,
+                "$id": 142,
                 "$type": 2,
                 "_name": {
-                    "$id": 145,
+                    "$id": 143,
                     "$type": 3,
                     "gender": 3,
-                    "title": "Sire",
-                    "firstName": "Zarbright",
+                    "title": "",
+                    "firstName": "Bardr",
                     "nickName": "",
-                    "lastName": "Flamelust",
-                    "postfix": "",
-                    "land": "Lanker"
+                    "lastName": "Flamemoon",
+                    "postfix": "the Red",
+                    "land": "Certar Vale"
                 },
                 "_gender": 0,
                 "_raceKey": "Halfling",
@@ -1641,96 +1623,96 @@
                 "_experience": 0,
                 "_expToNextLevel": 1000,
                 "_listIndex": 2,
-                "_headIndex": 8,
-                "_hairIndex": 18,
+                "_headIndex": 14,
+                "_hairIndex": 19,
                 "_earIndex": -1,
-                "_facialHairIndex": 0,
-                "_eyebrowIndex": 9,
+                "_facialHairIndex": 12,
+                "_eyebrowIndex": 6,
                 "_skinColorIndex": 1,
                 "_tattooColorIndex": 0,
-                "_hairColorIndex": 3,
-                "_eyeColorIndex": 0
+                "_hairColorIndex": 1,
+                "_eyeColorIndex": 2
             },
             "_attributesSaveData": {
-                "$id": 146,
+                "$id": 144,
                 "$type": 4,
                 "_characteristics": {
-                    "$id": 147,
+                    "$id": 145,
                     "$type": 5,
                     "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 148,
+                            "$id": 146,
                             "$type": 6,
                             "_key": "Endurance",
-                            "_current": 16,
-                            "_maximum": 16,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 149,
-                            "$type": 6,
-                            "_key": "Spirit",
-                            "_current": 19,
-                            "_maximum": 19,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 150,
-                            "$type": 6,
-                            "_key": "Intellect",
-                            "_current": 14,
-                            "_maximum": 14,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 151,
-                            "$type": 6,
-                            "_key": "Perception",
-                            "_current": 22,
-                            "_maximum": 22,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 152,
-                            "$type": 6,
-                            "_key": "Might",
-                            "_current": 14,
-                            "_maximum": 14,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 153,
-                            "$type": 6,
-                            "_key": "Finesse",
-                            "_current": 24,
-                            "_maximum": 24,
-                            "_modifier": 0,
-                            "_spent": 0
-                        }
-                    ]
-                },
-                "_vitals": {
-                    "$id": 154,
-                    "$type": 5,
-                    "$rlength": 7,
-                    "$rcontent": [
-                        {
-                            "$id": 155,
-                            "$type": 6,
-                            "_key": "Life",
                             "_current": 20,
                             "_maximum": 20,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 156,
+                            "$id": 147,
+                            "$type": 6,
+                            "_key": "Spirit",
+                            "_current": 18,
+                            "_maximum": 18,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 148,
+                            "$type": 6,
+                            "_key": "Intellect",
+                            "_current": 13,
+                            "_maximum": 13,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 149,
+                            "$type": 6,
+                            "_key": "Perception",
+                            "_current": 20,
+                            "_maximum": 20,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 150,
+                            "$type": 6,
+                            "_key": "Might",
+                            "_current": 13,
+                            "_maximum": 13,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 151,
+                            "$type": 6,
+                            "_key": "Finesse",
+                            "_current": 26,
+                            "_maximum": 26,
+                            "_modifier": 0,
+                            "_spent": 0
+                        }
+                    ]
+                },
+                "_vitals": {
+                    "$id": 152,
+                    "$type": 5,
+                    "$rlength": 6,
+                    "$rcontent": [
+                        {
+                            "$id": 153,
+                            "$type": 6,
+                            "_key": "Life",
+                            "_current": 21,
+                            "_maximum": 21,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 154,
                             "$type": 6,
                             "_key": "Armor",
                             "_current": 0,
@@ -1739,25 +1721,25 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 157,
+                            "$id": 155,
                             "$type": 6,
                             "_key": "Magic",
-                            "_current": 21,
-                            "_maximum": 21,
+                            "_current": 20,
+                            "_maximum": 20,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 158,
+                            "$id": 156,
                             "$type": 6,
                             "_key": "Stamina",
-                            "_current": 32,
-                            "_maximum": 32,
+                            "_current": 34,
+                            "_maximum": 34,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 159,
+                            "$id": 157,
                             "$type": 6,
                             "_key": "Actions",
                             "_current": 2,
@@ -1766,32 +1748,23 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 160,
-                            "$type": 6,
-                            "_key": "Movement",
-                            "_current": 4,
-                            "_maximum": 4,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 161,
+                            "$id": 158,
                             "$type": 6,
                             "_key": "Quick Actions",
-                            "_current": 1,
-                            "_maximum": 1,
+                            "_current": 0,
+                            "_maximum": 0,
                             "_modifier": 0,
                             "_spent": 0
                         }
                     ]
                 },
                 "_statistics": {
-                    "$id": 162,
+                    "$id": 159,
                     "$type": 5,
                     "$rlength": 7,
                     "$rcontent": [
                         {
-                            "$id": 163,
+                            "$id": 160,
                             "$type": 6,
                             "_key": "Aim",
                             "_current": 46,
@@ -1800,25 +1773,25 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 164,
+                            "$id": 161,
                             "$type": 6,
                             "_key": "Attack",
-                            "_current": 36,
-                            "_maximum": 36,
+                            "_current": 33,
+                            "_maximum": 33,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 165,
+                            "$id": 162,
                             "$type": 6,
                             "_key": "Block",
-                            "_current": 30,
-                            "_maximum": 30,
+                            "_current": 33,
+                            "_maximum": 33,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 166,
+                            "$id": 163,
                             "$type": 6,
                             "_key": "Dodge",
                             "_current": 46,
@@ -1827,16 +1800,16 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 167,
+                            "$id": 164,
                             "$type": 6,
                             "_key": "Focus",
-                            "_current": 33,
-                            "_maximum": 33,
+                            "_current": 31,
+                            "_maximum": 31,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 168,
+                            "$id": 165,
                             "$type": 6,
                             "_key": "Speed",
                             "_current": 46,
@@ -1845,11 +1818,11 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 169,
+                            "$id": 166,
                             "$type": 6,
                             "_key": "Willpower",
-                            "_current": 35,
-                            "_maximum": 35,
+                            "_current": 38,
+                            "_maximum": 38,
                             "_modifier": 0,
                             "_spent": 0
                         }
@@ -1857,15 +1830,15 @@
                 }
             },
             "_skillsSaveData": {
-                "$id": 170,
+                "$id": 167,
                 "$type": 7,
                 "_skills": {
-                    "$id": 171,
+                    "$id": 168,
                     "$type": 8,
                     "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 172,
+                            "$id": 169,
                             "$type": 9,
                             "_key": "Stealth",
                             "_current": 2,
@@ -1874,7 +1847,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 173,
+                            "$id": 170,
                             "$type": 9,
                             "_key": "Maces",
                             "_current": 1,
@@ -1883,7 +1856,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 174,
+                            "$id": 171,
                             "$type": 9,
                             "_key": "Crafting",
                             "_current": 1,
@@ -1892,7 +1865,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 175,
+                            "$id": 172,
                             "$type": 9,
                             "_key": "Thrown Weapons",
                             "_current": 1,
@@ -1901,7 +1874,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 176,
+                            "$id": 173,
                             "$type": 9,
                             "_key": "Locks",
                             "_current": 1,
@@ -1910,7 +1883,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 177,
+                            "$id": 174,
                             "$type": 9,
                             "_key": "Traps",
                             "_current": 1,
@@ -1922,15 +1895,15 @@
                 }
             },
             "_inventorySaveData": {
-                "$id": 178,
+                "$id": 175,
                 "$type": 10,
                 "_equippedItems": {
-                    "$id": 179,
+                    "$id": 176,
                     "$type": 11,
                     "$rlength": 10,
                     "$rcontent": [
                         {
-                            "$id": 180,
+                            "$id": 177,
                             "$type": 12,
                             "_name": "Dagger",
                             "_definitionKey": "Dagger",
@@ -1940,7 +1913,7 @@
                             "_nameFormat": 0,
                             "_equipmentSlot": 0,
                             "_renderSlots": {
-                                "$id": 181,
+                                "$id": 178,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -1960,7 +1933,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 182,
+                            "$id": 179,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -1970,7 +1943,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 183,
+                                "$id": 180,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -1990,7 +1963,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 184,
+                            "$id": 181,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -2000,7 +1973,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 185,
+                                "$id": 182,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2020,7 +1993,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 186,
+                            "$id": 183,
                             "$type": 12,
                             "_name": "Leather Armor",
                             "_definitionKey": "Leather Armor",
@@ -2030,30 +2003,30 @@
                             "_nameFormat": 1,
                             "_equipmentSlot": 3,
                             "_renderSlots": {
-                                "$id": 187,
+                                "$id": 184,
                                 "$type": 13,
                                 "$rlength": 4,
                                 "$rcontent": [
                                     {
-                                        "$id": 188,
+                                        "$id": 185,
                                         "$type": 14,
                                         "_bodyPart": 18,
                                         "_index": 13
                                     },
                                     {
-                                        "$id": 189,
+                                        "$id": 186,
                                         "$type": 14,
                                         "_bodyPart": 19,
                                         "_index": 9
                                     },
                                     {
-                                        "$id": 190,
+                                        "$id": 187,
                                         "$type": 14,
                                         "_bodyPart": 20,
                                         "_index": 9
                                     },
                                     {
-                                        "$id": 191,
+                                        "$id": 188,
                                         "$type": 14,
                                         "_bodyPart": 25,
                                         "_index": 13
@@ -2074,7 +2047,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 192,
+                            "$id": 189,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -2084,7 +2057,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 193,
+                                "$id": 190,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2099,6 +2072,60 @@
                             "_usesLeft": 0,
                             "_rarityKey": "",
                             "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 191,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 192,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 193,
+                            "$type": 12,
+                            "_name": "Leather Boots",
+                            "_definitionKey": "Leather Boots",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 3,
+                            "_nameFormat": 1,
+                            "_equipmentSlot": 6,
+                            "_renderSlots": $iref:53,
+                            "_materialAllowed": 14,
+                            "_stackSize": 1,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "Common",
+                            "_materialKey": "Hide",
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
@@ -2136,30 +2163,6 @@
                         {
                             "$id": 196,
                             "$type": 12,
-                            "_name": "Leather Boots",
-                            "_definitionKey": "Leather Boots",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 3,
-                            "_nameFormat": 1,
-                            "_equipmentSlot": 6,
-                            "_renderSlots": $iref:54,
-                            "_materialAllowed": 14,
-                            "_stackSize": 1,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "Common",
-                            "_materialKey": "Hide",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 197,
-                            "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
                             "_description": "",
@@ -2168,7 +2171,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 198,
+                                "$id": 197,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2188,7 +2191,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 199,
+                            "$id": 198,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -2198,7 +2201,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 200,
+                                "$id": 199,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2216,7 +2219,14 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        },
+                        }
+                    ]
+                },
+                "_accessories": {
+                    "$id": 200,
+                    "$type": 11,
+                    "$rlength": 6,
+                    "$rcontent": [
                         {
                             "$id": 201,
                             "$type": 12,
@@ -2246,16 +2256,9 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        }
-                    ]
-                },
-                "_accessories": {
-                    "$id": 203,
-                    "$type": 11,
-                    "$rlength": 6,
-                    "$rcontent": [
+                        },
                         {
-                            "$id": 204,
+                            "$id": 203,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -2265,7 +2268,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 205,
+                                "$id": 204,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2285,7 +2288,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 206,
+                            "$id": 205,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -2295,7 +2298,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 207,
+                                "$id": 206,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2315,7 +2318,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 208,
+                            "$id": 207,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -2325,7 +2328,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 209,
+                                "$id": 208,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2345,7 +2348,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 210,
+                            "$id": 209,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -2355,7 +2358,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 211,
+                                "$id": 210,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2375,7 +2378,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 212,
+                            "$id": 211,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -2385,37 +2388,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 213,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 214,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 215,
+                                "$id": 212,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2440,21 +2413,21 @@
             }
         },
         {
-            "$id": 216,
+            "$id": 213,
             "$type": 1,
             "_heroSaveData": {
-                "$id": 217,
+                "$id": 214,
                 "$type": 2,
                 "_name": {
-                    "$id": 218,
+                    "$id": 215,
                     "$type": 3,
                     "gender": 3,
-                    "title": "",
-                    "firstName": "Simonexto",
+                    "title": "Sire",
+                    "firstName": "Harvord",
                     "nickName": "",
-                    "lastName": "Doommurk",
+                    "lastName": "Smokesinner",
                     "postfix": "",
-                    "land": "Cortor Coast"
+                    "land": "Cormyr Coast"
                 },
                 "_gender": 0,
                 "_raceKey": "Wild Elf",
@@ -2463,96 +2436,96 @@
                 "_experience": 0,
                 "_expToNextLevel": 1000,
                 "_listIndex": 3,
-                "_headIndex": 6,
-                "_hairIndex": 1,
+                "_headIndex": 9,
+                "_hairIndex": 9,
                 "_earIndex": 2,
-                "_facialHairIndex": 10,
-                "_eyebrowIndex": 4,
-                "_skinColorIndex": 0,
+                "_facialHairIndex": 9,
+                "_eyebrowIndex": 3,
+                "_skinColorIndex": 2,
                 "_tattooColorIndex": 0,
                 "_hairColorIndex": 1,
                 "_eyeColorIndex": 0
             },
             "_attributesSaveData": {
-                "$id": 219,
+                "$id": 216,
                 "$type": 4,
                 "_characteristics": {
-                    "$id": 220,
+                    "$id": 217,
                     "$type": 5,
                     "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 221,
+                            "$id": 218,
                             "$type": 6,
                             "_key": "Endurance",
-                            "_current": 14,
-                            "_maximum": 14,
+                            "_current": 17,
+                            "_maximum": 17,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 219,
+                            "$type": 6,
+                            "_key": "Spirit",
+                            "_current": 21,
+                            "_maximum": 21,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 220,
+                            "$type": 6,
+                            "_key": "Intellect",
+                            "_current": 12,
+                            "_maximum": 12,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 221,
+                            "$type": 6,
+                            "_key": "Perception",
+                            "_current": 34,
+                            "_maximum": 34,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 222,
                             "$type": 6,
-                            "_key": "Spirit",
-                            "_current": 20,
-                            "_maximum": 20,
+                            "_key": "Might",
+                            "_current": 13,
+                            "_maximum": 13,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 223,
                             "$type": 6,
-                            "_key": "Intellect",
-                            "_current": 14,
-                            "_maximum": 14,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 224,
-                            "$type": 6,
-                            "_key": "Perception",
-                            "_current": 29,
-                            "_maximum": 29,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 225,
-                            "$type": 6,
-                            "_key": "Might",
-                            "_current": 15,
-                            "_maximum": 15,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 226,
-                            "$type": 6,
                             "_key": "Finesse",
-                            "_current": 29,
-                            "_maximum": 29,
+                            "_current": 30,
+                            "_maximum": 30,
                             "_modifier": 0,
                             "_spent": 0
                         }
                     ]
                 },
                 "_vitals": {
-                    "$id": 227,
+                    "$id": 224,
                     "$type": 5,
-                    "$rlength": 7,
+                    "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 228,
+                            "$id": 225,
                             "$type": 6,
                             "_key": "Life",
-                            "_current": 18,
-                            "_maximum": 18,
+                            "_current": 19,
+                            "_maximum": 19,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 229,
+                            "$id": 226,
                             "$type": 6,
                             "_key": "Armor",
                             "_current": 0,
@@ -2561,25 +2534,25 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 230,
+                            "$id": 227,
                             "$type": 6,
                             "_key": "Magic",
-                            "_current": 22,
-                            "_maximum": 22,
+                            "_current": 21,
+                            "_maximum": 21,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 231,
+                            "$id": 228,
                             "$type": 6,
                             "_key": "Stamina",
-                            "_current": 32,
-                            "_maximum": 32,
+                            "_current": 34,
+                            "_maximum": 34,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 232,
+                            "$id": 229,
                             "$type": 6,
                             "_key": "Actions",
                             "_current": 2,
@@ -2588,90 +2561,81 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 233,
-                            "$type": 6,
-                            "_key": "Movement",
-                            "_current": 4,
-                            "_maximum": 4,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 234,
+                            "$id": 230,
                             "$type": 6,
                             "_key": "Quick Actions",
-                            "_current": 1,
-                            "_maximum": 1,
+                            "_current": 0,
+                            "_maximum": 0,
                             "_modifier": 0,
                             "_spent": 0
                         }
                     ]
                 },
                 "_statistics": {
-                    "$id": 235,
+                    "$id": 231,
                     "$type": 5,
                     "$rlength": 7,
                     "$rcontent": [
                         {
-                            "$id": 236,
+                            "$id": 232,
                             "$type": 6,
                             "_key": "Aim",
-                            "_current": 58,
-                            "_maximum": 58,
+                            "_current": 64,
+                            "_maximum": 64,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 233,
+                            "$type": 6,
+                            "_key": "Attack",
+                            "_current": 47,
+                            "_maximum": 47,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 234,
+                            "$type": 6,
+                            "_key": "Block",
+                            "_current": 30,
+                            "_maximum": 30,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 235,
+                            "$type": 6,
+                            "_key": "Dodge",
+                            "_current": 64,
+                            "_maximum": 64,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 236,
+                            "$type": 6,
+                            "_key": "Focus",
+                            "_current": 33,
+                            "_maximum": 33,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 237,
                             "$type": 6,
-                            "_key": "Attack",
-                            "_current": 44,
-                            "_maximum": 44,
+                            "_key": "Speed",
+                            "_current": 64,
+                            "_maximum": 64,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 238,
                             "$type": 6,
-                            "_key": "Block",
-                            "_current": 29,
-                            "_maximum": 29,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 239,
-                            "$type": 6,
-                            "_key": "Dodge",
-                            "_current": 58,
-                            "_maximum": 58,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 240,
-                            "$type": 6,
-                            "_key": "Focus",
-                            "_current": 34,
-                            "_maximum": 34,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 241,
-                            "$type": 6,
-                            "_key": "Speed",
-                            "_current": 58,
-                            "_maximum": 58,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 242,
-                            "$type": 6,
                             "_key": "Willpower",
-                            "_current": 34,
-                            "_maximum": 34,
+                            "_current": 38,
+                            "_maximum": 38,
                             "_modifier": 0,
                             "_spent": 0
                         }
@@ -2679,15 +2643,15 @@
                 }
             },
             "_skillsSaveData": {
-                "$id": 243,
+                "$id": 239,
                 "$type": 7,
                 "_skills": {
-                    "$id": 244,
+                    "$id": 240,
                     "$type": 8,
                     "$rlength": 4,
                     "$rcontent": [
                         {
-                            "$id": 245,
+                            "$id": 241,
                             "$type": 9,
                             "_key": "Survival",
                             "_current": 2,
@@ -2696,7 +2660,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 246,
+                            "$id": 242,
                             "$type": 9,
                             "_key": "Water Magic",
                             "_current": 1,
@@ -2705,7 +2669,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 247,
+                            "$id": 243,
                             "$type": 9,
                             "_key": "Bows",
                             "_current": 2,
@@ -2714,7 +2678,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 248,
+                            "$id": 244,
                             "$type": 9,
                             "_key": "Awareness",
                             "_current": 1,
@@ -2726,15 +2690,15 @@
                 }
             },
             "_inventorySaveData": {
-                "$id": 249,
+                "$id": 245,
                 "$type": 10,
                 "_equippedItems": {
-                    "$id": 250,
+                    "$id": 246,
                     "$type": 11,
                     "$rlength": 10,
                     "$rcontent": [
                         {
-                            "$id": 251,
+                            "$id": 247,
                             "$type": 12,
                             "_name": "Short Bow",
                             "_definitionKey": "Short Bow",
@@ -2744,7 +2708,7 @@
                             "_nameFormat": 0,
                             "_equipmentSlot": 0,
                             "_renderSlots": {
-                                "$id": 252,
+                                "$id": 248,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -2764,67 +2728,67 @@
                             "_suffixEnchantKey": ""
                         },
                         {
+                            "$id": 249,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 250,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 251,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 252,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
                             "$id": 253,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 254,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 255,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 256,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 257,
                             "$type": 12,
                             "_name": "Leather Armor",
                             "_definitionKey": "Leather Armor",
@@ -2833,7 +2797,7 @@
                             "_itemType": 3,
                             "_nameFormat": 1,
                             "_equipmentSlot": 3,
-                            "_renderSlots": $iref:187,
+                            "_renderSlots": $iref:184,
                             "_materialAllowed": 14,
                             "_stackSize": 1,
                             "_itemPower": 0,
@@ -2848,67 +2812,67 @@
                             "_suffixEnchantKey": ""
                         },
                         {
+                            "$id": 254,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 255,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 256,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 257,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
                             "$id": 258,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 259,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 260,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 261,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 262,
                             "$type": 12,
                             "_name": "Leather Boots",
                             "_definitionKey": "Leather Boots",
@@ -2917,7 +2881,7 @@
                             "_itemType": 3,
                             "_nameFormat": 1,
                             "_equipmentSlot": 6,
-                            "_renderSlots": $iref:54,
+                            "_renderSlots": $iref:53,
                             "_materialAllowed": 14,
                             "_stackSize": 1,
                             "_itemPower": 0,
@@ -2927,6 +2891,66 @@
                             "_usesLeft": 0,
                             "_rarityKey": "Common",
                             "_materialKey": "Hide",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 259,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 260,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 261,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 262,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
@@ -2960,74 +2984,74 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 265,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 266,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 267,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 268,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
                         }
                     ]
                 },
                 "_accessories": {
-                    "$id": 269,
+                    "$id": 265,
                     "$type": 11,
                     "$rlength": 6,
                     "$rcontent": [
+                        {
+                            "$id": 266,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 267,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 268,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 269,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
                         {
                             "$id": 270,
                             "$type": 12,
@@ -3147,66 +3171,6 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 278,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 279,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 280,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 281,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
                         }
                     ]
                 },
@@ -3214,119 +3178,119 @@
             }
         },
         {
-            "$id": 282,
+            "$id": 278,
             "$type": 1,
             "_heroSaveData": {
-                "$id": 283,
+                "$id": 279,
                 "$type": 2,
                 "_name": {
-                    "$id": 284,
+                    "$id": 280,
                     "$type": 3,
                     "gender": 3,
-                    "title": "Mr",
-                    "firstName": "Yaropolk",
+                    "title": "Mrs",
+                    "firstName": "Elysa",
                     "nickName": "",
-                    "lastName": "Flamebone",
-                    "postfix": "the Crazed",
-                    "land": "Unker Marsh"
+                    "lastName": "Doomlust",
+                    "postfix": "",
+                    "land": "Shadow Marsh"
                 },
-                "_gender": 0,
+                "_gender": 1,
                 "_raceKey": "Mountain Dwarf",
                 "_professionKey": "Acolyte",
                 "_level": 1,
                 "_experience": 0,
                 "_expToNextLevel": 1000,
                 "_listIndex": 4,
-                "_headIndex": 18,
-                "_hairIndex": 13,
+                "_headIndex": 14,
+                "_hairIndex": 5,
                 "_earIndex": -1,
-                "_facialHairIndex": 3,
-                "_eyebrowIndex": 5,
-                "_skinColorIndex": 1,
+                "_facialHairIndex": 10,
+                "_eyebrowIndex": 2,
+                "_skinColorIndex": 0,
                 "_tattooColorIndex": 0,
                 "_hairColorIndex": 5,
                 "_eyeColorIndex": 3
             },
             "_attributesSaveData": {
-                "$id": 285,
+                "$id": 281,
                 "$type": 4,
                 "_characteristics": {
-                    "$id": 286,
+                    "$id": 282,
                     "$type": 5,
                     "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 287,
+                            "$id": 283,
                             "$type": 6,
                             "_key": "Endurance",
-                            "_current": 17,
-                            "_maximum": 17,
+                            "_current": 23,
+                            "_maximum": 23,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 284,
+                            "$type": 6,
+                            "_key": "Spirit",
+                            "_current": 24,
+                            "_maximum": 24,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 285,
+                            "$type": 6,
+                            "_key": "Intellect",
+                            "_current": 14,
+                            "_maximum": 14,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 286,
+                            "$type": 6,
+                            "_key": "Perception",
+                            "_current": 14,
+                            "_maximum": 14,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 287,
+                            "$type": 6,
+                            "_key": "Might",
+                            "_current": 22,
+                            "_maximum": 22,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
                             "$id": 288,
                             "$type": 6,
-                            "_key": "Spirit",
-                            "_current": 28,
-                            "_maximum": 28,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 289,
-                            "$type": 6,
-                            "_key": "Intellect",
-                            "_current": 17,
-                            "_maximum": 17,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 290,
-                            "$type": 6,
-                            "_key": "Perception",
-                            "_current": 11,
-                            "_maximum": 11,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 291,
-                            "$type": 6,
-                            "_key": "Might",
-                            "_current": 19,
-                            "_maximum": 19,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 292,
-                            "$type": 6,
                             "_key": "Finesse",
-                            "_current": 14,
-                            "_maximum": 14,
+                            "_current": 12,
+                            "_maximum": 12,
                             "_modifier": 0,
                             "_spent": 0
                         }
                     ]
                 },
                 "_vitals": {
-                    "$id": 293,
+                    "$id": 289,
                     "$type": 5,
-                    "$rlength": 7,
+                    "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 294,
+                            "$id": 290,
                             "$type": 6,
                             "_key": "Life",
-                            "_current": 28,
-                            "_maximum": 28,
+                            "_current": 32,
+                            "_maximum": 32,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 295,
+                            "$id": 291,
                             "$type": 6,
                             "_key": "Armor",
                             "_current": 0,
@@ -3335,25 +3299,25 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 296,
+                            "$id": 292,
                             "$type": 6,
                             "_key": "Magic",
-                            "_current": 27,
-                            "_maximum": 27,
+                            "_current": 24,
+                            "_maximum": 24,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 297,
+                            "$id": 293,
                             "$type": 6,
                             "_key": "Stamina",
-                            "_current": 32,
-                            "_maximum": 32,
+                            "_current": 33,
+                            "_maximum": 33,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 298,
+                            "$id": 294,
                             "$type": 6,
                             "_key": "Actions",
                             "_current": 2,
@@ -3362,90 +3326,81 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 299,
-                            "$type": 6,
-                            "_key": "Movement",
-                            "_current": 4,
-                            "_maximum": 4,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 300,
+                            "$id": 295,
                             "$type": 6,
                             "_key": "Quick Actions",
-                            "_current": 1,
-                            "_maximum": 1,
+                            "_current": 0,
+                            "_maximum": 0,
                             "_modifier": 0,
                             "_spent": 0
                         }
                     ]
                 },
                 "_statistics": {
-                    "$id": 301,
+                    "$id": 296,
                     "$type": 5,
                     "$rlength": 7,
                     "$rcontent": [
                         {
-                            "$id": 302,
+                            "$id": 297,
                             "$type": 6,
                             "_key": "Aim",
-                            "_current": 25,
-                            "_maximum": 25,
+                            "_current": 26,
+                            "_maximum": 26,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 303,
+                            "$id": 298,
                             "$type": 6,
                             "_key": "Attack",
-                            "_current": 30,
-                            "_maximum": 30,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 304,
-                            "$type": 6,
-                            "_key": "Block",
                             "_current": 36,
                             "_maximum": 36,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 305,
+                            "$id": 299,
+                            "$type": 6,
+                            "_key": "Block",
+                            "_current": 45,
+                            "_maximum": 45,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 300,
                             "$type": 6,
                             "_key": "Dodge",
-                            "_current": 25,
-                            "_maximum": 25,
+                            "_current": 26,
+                            "_maximum": 26,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 306,
+                            "$id": 301,
                             "$type": 6,
                             "_key": "Focus",
-                            "_current": 45,
-                            "_maximum": 45,
+                            "_current": 38,
+                            "_maximum": 38,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 307,
+                            "$id": 302,
                             "$type": 6,
                             "_key": "Speed",
-                            "_current": 25,
-                            "_maximum": 25,
+                            "_current": 26,
+                            "_maximum": 26,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 308,
+                            "$id": 303,
                             "$type": 6,
                             "_key": "Willpower",
-                            "_current": 45,
-                            "_maximum": 45,
+                            "_current": 47,
+                            "_maximum": 47,
                             "_modifier": 0,
                             "_spent": 0
                         }
@@ -3453,15 +3408,15 @@
                 }
             },
             "_skillsSaveData": {
-                "$id": 309,
+                "$id": 304,
                 "$type": 7,
                 "_skills": {
-                    "$id": 310,
+                    "$id": 305,
                     "$type": 8,
                     "$rlength": 5,
                     "$rcontent": [
                         {
-                            "$id": 311,
+                            "$id": 306,
                             "$type": 9,
                             "_key": "Blades",
                             "_current": 1,
@@ -3470,7 +3425,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 312,
+                            "$id": 307,
                             "$type": 9,
                             "_key": "Earth Magic",
                             "_current": 1,
@@ -3479,7 +3434,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 313,
+                            "$id": 308,
                             "$type": 9,
                             "_key": "Crafting",
                             "_current": 1,
@@ -3488,7 +3443,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 314,
+                            "$id": 309,
                             "$type": 9,
                             "_key": "Life Magic",
                             "_current": 1,
@@ -3497,7 +3452,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 315,
+                            "$id": 310,
                             "$type": 9,
                             "_key": "Order Magic",
                             "_current": 1,
@@ -3509,15 +3464,15 @@
                 }
             },
             "_inventorySaveData": {
-                "$id": 316,
+                "$id": 311,
                 "$type": 10,
                 "_equippedItems": {
-                    "$id": 317,
+                    "$id": 312,
                     "$type": 11,
                     "$rlength": 10,
                     "$rcontent": [
                         {
-                            "$id": 318,
+                            "$id": 313,
                             "$type": 12,
                             "_name": "Scepter of Light",
                             "_definitionKey": "Scepter of Light",
@@ -3527,7 +3482,7 @@
                             "_nameFormat": 0,
                             "_equipmentSlot": 0,
                             "_renderSlots": {
-                                "$id": 319,
+                                "$id": 314,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -3547,7 +3502,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 320,
+                            "$id": 315,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -3557,7 +3512,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 321,
+                                "$id": 316,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -3577,7 +3532,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 322,
+                            "$id": 317,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -3587,7 +3542,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 323,
+                                "$id": 318,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -3607,7 +3562,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 324,
+                            "$id": 319,
                             "$type": 12,
                             "_name": "Simple Vestments",
                             "_definitionKey": "Simple Vestments",
@@ -3617,30 +3572,30 @@
                             "_nameFormat": 1,
                             "_equipmentSlot": 3,
                             "_renderSlots": {
-                                "$id": 325,
+                                "$id": 320,
                                 "$type": 13,
                                 "$rlength": 4,
                                 "$rcontent": [
                                     {
-                                        "$id": 326,
+                                        "$id": 321,
                                         "$type": 14,
                                         "_bodyPart": 18,
                                         "_index": 8
                                     },
                                     {
-                                        "$id": 327,
+                                        "$id": 322,
                                         "$type": 14,
                                         "_bodyPart": 19,
                                         "_index": 10
                                     },
                                     {
-                                        "$id": 328,
+                                        "$id": 323,
                                         "$type": 14,
                                         "_bodyPart": 20,
                                         "_index": 10
                                     },
                                     {
-                                        "$id": 329,
+                                        "$id": 324,
                                         "$type": 14,
                                         "_bodyPart": 25,
                                         "_index": 24
@@ -3656,6 +3611,90 @@
                             "_usesLeft": 0,
                             "_rarityKey": "Common",
                             "_materialKey": "Linen",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 325,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 326,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 327,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 328,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 329,
+                            "$type": 12,
+                            "_name": "Leather Boots",
+                            "_definitionKey": "Leather Boots",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 3,
+                            "_nameFormat": 1,
+                            "_equipmentSlot": 6,
+                            "_renderSlots": $iref:53,
+                            "_materialAllowed": 14,
+                            "_stackSize": 1,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "Common",
+                            "_materialKey": "Hide",
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
@@ -3723,30 +3762,6 @@
                         {
                             "$id": 334,
                             "$type": 12,
-                            "_name": "Leather Boots",
-                            "_definitionKey": "Leather Boots",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 3,
-                            "_nameFormat": 1,
-                            "_equipmentSlot": 6,
-                            "_renderSlots": $iref:54,
-                            "_materialAllowed": 14,
-                            "_stackSize": 1,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "Common",
-                            "_materialKey": "Hide",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 335,
-                            "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
                             "_description": "",
@@ -3755,7 +3770,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 336,
+                                "$id": 335,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -3773,7 +3788,14 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        },
+                        }
+                    ]
+                },
+                "_accessories": {
+                    "$id": 336,
+                    "$type": 11,
+                    "$rlength": 6,
+                    "$rcontent": [
                         {
                             "$id": 337,
                             "$type": 12,
@@ -3833,16 +3855,9 @@
                             "_qualityKey": "",
                             "_prefixEnchantKey": "",
                             "_suffixEnchantKey": ""
-                        }
-                    ]
-                },
-                "_accessories": {
-                    "$id": 341,
-                    "$type": 11,
-                    "$rlength": 6,
-                    "$rcontent": [
+                        },
                         {
-                            "$id": 342,
+                            "$id": 341,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -3852,7 +3867,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 343,
+                                "$id": 342,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -3872,7 +3887,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 344,
+                            "$id": 343,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -3882,7 +3897,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 345,
+                                "$id": 344,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -3902,7 +3917,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 346,
+                            "$id": 345,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -3912,7 +3927,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 347,
+                                "$id": 346,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -3932,7 +3947,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 348,
+                            "$id": 347,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -3942,67 +3957,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 349,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 350,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 351,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 352,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 353,
+                                "$id": 348,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4027,21 +3982,21 @@
             }
         },
         {
-            "$id": 354,
+            "$id": 349,
             "$type": 1,
             "_heroSaveData": {
-                "$id": 355,
+                "$id": 350,
                 "$type": 2,
                 "_name": {
-                    "$id": 356,
+                    "$id": 351,
                     "$type": 3,
                     "gender": 3,
-                    "title": "Sire",
-                    "firstName": "Sigfrid",
+                    "title": "",
+                    "firstName": "Ardnton",
                     "nickName": "",
-                    "lastName": "Dreadhunter",
+                    "lastName": "Blackbite",
                     "postfix": "",
-                    "land": "Splintered Forest"
+                    "land": "Rothar"
                 },
                 "_gender": 0,
                 "_raceKey": "Valarian",
@@ -4050,71 +4005,71 @@
                 "_experience": 0,
                 "_expToNextLevel": 1000,
                 "_listIndex": 5,
-                "_headIndex": 14,
-                "_hairIndex": 4,
+                "_headIndex": 7,
+                "_hairIndex": 15,
                 "_earIndex": -1,
-                "_facialHairIndex": 6,
-                "_eyebrowIndex": 3,
+                "_facialHairIndex": 0,
+                "_eyebrowIndex": 1,
                 "_skinColorIndex": 1,
                 "_tattooColorIndex": 0,
-                "_hairColorIndex": 0,
-                "_eyeColorIndex": 1
+                "_hairColorIndex": 1,
+                "_eyeColorIndex": 0
             },
             "_attributesSaveData": {
-                "$id": 357,
+                "$id": 352,
                 "$type": 4,
                 "_characteristics": {
-                    "$id": 358,
+                    "$id": 353,
                     "$type": 5,
                     "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 359,
+                            "$id": 354,
                             "$type": 6,
                             "_key": "Endurance",
-                            "_current": 13,
-                            "_maximum": 13,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 360,
-                            "$type": 6,
-                            "_key": "Spirit",
-                            "_current": 25,
-                            "_maximum": 25,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 361,
-                            "$type": 6,
-                            "_key": "Intellect",
-                            "_current": 30,
-                            "_maximum": 30,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 362,
-                            "$type": 6,
-                            "_key": "Perception",
                             "_current": 12,
                             "_maximum": 12,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 363,
+                            "$id": 355,
                             "$type": 6,
-                            "_key": "Might",
-                            "_current": 10,
-                            "_maximum": 10,
+                            "_key": "Spirit",
+                            "_current": 27,
+                            "_maximum": 27,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 364,
+                            "$id": 356,
+                            "$type": 6,
+                            "_key": "Intellect",
+                            "_current": 31,
+                            "_maximum": 31,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 357,
+                            "$type": 6,
+                            "_key": "Perception",
+                            "_current": 13,
+                            "_maximum": 13,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 358,
+                            "$type": 6,
+                            "_key": "Might",
+                            "_current": 12,
+                            "_maximum": 12,
+                            "_modifier": 0,
+                            "_spent": 0
+                        },
+                        {
+                            "$id": 359,
                             "$type": 6,
                             "_key": "Finesse",
                             "_current": 14,
@@ -4125,21 +4080,21 @@
                     ]
                 },
                 "_vitals": {
-                    "$id": 365,
+                    "$id": 360,
                     "$type": 5,
-                    "$rlength": 7,
+                    "$rlength": 6,
                     "$rcontent": [
                         {
-                            "$id": 366,
+                            "$id": 361,
                             "$type": 6,
                             "_key": "Life",
-                            "_current": 13,
-                            "_maximum": 13,
+                            "_current": 14,
+                            "_maximum": 14,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 367,
+                            "$id": 362,
                             "$type": 6,
                             "_key": "Armor",
                             "_current": 0,
@@ -4148,16 +4103,16 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 368,
+                            "$id": 363,
                             "$type": 6,
                             "_key": "Magic",
-                            "_current": 42,
-                            "_maximum": 42,
+                            "_current": 44,
+                            "_maximum": 44,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 369,
+                            "$id": 364,
                             "$type": 6,
                             "_key": "Stamina",
                             "_current": 21,
@@ -4166,7 +4121,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 370,
+                            "$id": 365,
                             "$type": 6,
                             "_key": "Actions",
                             "_current": 2,
@@ -4175,90 +4130,81 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 371,
-                            "$type": 6,
-                            "_key": "Movement",
-                            "_current": 4,
-                            "_maximum": 4,
-                            "_modifier": 0,
-                            "_spent": 0
-                        },
-                        {
-                            "$id": 372,
+                            "$id": 366,
                             "$type": 6,
                             "_key": "Quick Actions",
-                            "_current": 1,
-                            "_maximum": 1,
+                            "_current": 0,
+                            "_maximum": 0,
                             "_modifier": 0,
                             "_spent": 0
                         }
                     ]
                 },
                 "_statistics": {
-                    "$id": 373,
+                    "$id": 367,
                     "$type": 5,
                     "$rlength": 7,
                     "$rcontent": [
                         {
-                            "$id": 374,
+                            "$id": 368,
                             "$type": 6,
                             "_key": "Aim",
-                            "_current": 26,
-                            "_maximum": 26,
+                            "_current": 27,
+                            "_maximum": 27,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 375,
+                            "$id": 369,
                             "$type": 6,
                             "_key": "Attack",
-                            "_current": 22,
-                            "_maximum": 22,
+                            "_current": 25,
+                            "_maximum": 25,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 376,
+                            "$id": 370,
                             "$type": 6,
                             "_key": "Block",
-                            "_current": 23,
-                            "_maximum": 23,
+                            "_current": 24,
+                            "_maximum": 24,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 377,
+                            "$id": 371,
                             "$type": 6,
                             "_key": "Dodge",
-                            "_current": 26,
-                            "_maximum": 26,
+                            "_current": 27,
+                            "_maximum": 27,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 378,
+                            "$id": 372,
                             "$type": 6,
                             "_key": "Focus",
-                            "_current": 55,
-                            "_maximum": 55,
+                            "_current": 58,
+                            "_maximum": 58,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 379,
+                            "$id": 373,
                             "$type": 6,
                             "_key": "Speed",
-                            "_current": 26,
-                            "_maximum": 26,
+                            "_current": 27,
+                            "_maximum": 27,
                             "_modifier": 0,
                             "_spent": 0
                         },
                         {
-                            "$id": 380,
+                            "$id": 374,
                             "$type": 6,
                             "_key": "Willpower",
-                            "_current": 38,
-                            "_maximum": 38,
+                            "_current": 39,
+                            "_maximum": 39,
                             "_modifier": 0,
                             "_spent": 0
                         }
@@ -4266,15 +4212,15 @@
                 }
             },
             "_skillsSaveData": {
-                "$id": 381,
+                "$id": 375,
                 "$type": 7,
                 "_skills": {
-                    "$id": 382,
+                    "$id": 376,
                     "$type": 8,
                     "$rlength": 5,
                     "$rcontent": [
                         {
-                            "$id": 383,
+                            "$id": 377,
                             "$type": 9,
                             "_key": "Order Magic",
                             "_current": 1,
@@ -4283,7 +4229,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 384,
+                            "$id": 378,
                             "$type": 9,
                             "_key": "Chaos Magic",
                             "_current": 1,
@@ -4292,7 +4238,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 385,
+                            "$id": 379,
                             "$type": 9,
                             "_key": "Polearms",
                             "_current": 1,
@@ -4301,7 +4247,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 386,
+                            "$id": 380,
                             "$type": 9,
                             "_key": "Air Magic",
                             "_current": 1,
@@ -4310,7 +4256,7 @@
                             "_spent": 0
                         },
                         {
-                            "$id": 387,
+                            "$id": 381,
                             "$type": 9,
                             "_key": "Fire Magic",
                             "_current": 1,
@@ -4322,15 +4268,15 @@
                 }
             },
             "_inventorySaveData": {
-                "$id": 388,
+                "$id": 382,
                 "$type": 10,
                 "_equippedItems": {
-                    "$id": 389,
+                    "$id": 383,
                     "$type": 11,
                     "$rlength": 10,
                     "$rcontent": [
                         {
-                            "$id": 390,
+                            "$id": 384,
                             "$type": 12,
                             "_name": "Fire Staff",
                             "_definitionKey": "Fire Staff",
@@ -4340,7 +4286,7 @@
                             "_nameFormat": 0,
                             "_equipmentSlot": 0,
                             "_renderSlots": {
-                                "$id": 391,
+                                "$id": 385,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4360,7 +4306,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 392,
+                            "$id": 386,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -4370,7 +4316,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 393,
+                                "$id": 387,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4390,7 +4336,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 394,
+                            "$id": 388,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -4400,7 +4346,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 395,
+                                "$id": 389,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4420,7 +4366,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 396,
+                            "$id": 390,
                             "$type": 12,
                             "_name": "Simple Robes",
                             "_definitionKey": "Simple Robes",
@@ -4430,30 +4376,30 @@
                             "_nameFormat": 1,
                             "_equipmentSlot": 3,
                             "_renderSlots": {
-                                "$id": 397,
+                                "$id": 391,
                                 "$type": 13,
                                 "$rlength": 4,
                                 "$rcontent": [
                                     {
-                                        "$id": 398,
+                                        "$id": 392,
                                         "$type": 14,
                                         "_bodyPart": 18,
                                         "_index": 6
                                     },
                                     {
-                                        "$id": 399,
+                                        "$id": 393,
                                         "$type": 14,
                                         "_bodyPart": 19,
                                         "_index": 20
                                     },
                                     {
-                                        "$id": 400,
+                                        "$id": 394,
                                         "$type": 14,
                                         "_bodyPart": 20,
                                         "_index": 20
                                     },
                                     {
-                                        "$id": 401,
+                                        "$id": 395,
                                         "$type": 14,
                                         "_bodyPart": 25,
                                         "_index": 9
@@ -4474,7 +4420,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 402,
+                            "$id": 396,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -4484,7 +4430,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 403,
+                                "$id": 397,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4504,7 +4450,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 404,
+                            "$id": 398,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -4514,7 +4460,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 405,
+                                "$id": 399,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4534,7 +4480,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 406,
+                            "$id": 400,
                             "$type": 12,
                             "_name": "Leather Boots",
                             "_definitionKey": "Leather Boots",
@@ -4543,7 +4489,7 @@
                             "_itemType": 3,
                             "_nameFormat": 1,
                             "_equipmentSlot": 6,
-                            "_renderSlots": $iref:54,
+                            "_renderSlots": $iref:53,
                             "_materialAllowed": 14,
                             "_stackSize": 1,
                             "_itemPower": 0,
@@ -4558,7 +4504,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 407,
+                            "$id": 401,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -4568,7 +4514,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 408,
+                                "$id": 402,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4588,7 +4534,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 409,
+                            "$id": 403,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -4598,7 +4544,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 410,
+                                "$id": 404,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4618,7 +4564,7 @@
                             "_suffixEnchantKey": ""
                         },
                         {
-                            "$id": 411,
+                            "$id": 405,
                             "$type": 12,
                             "_name": "",
                             "_definitionKey": "",
@@ -4628,7 +4574,7 @@
                             "_nameFormat": 4,
                             "_equipmentSlot": 11,
                             "_renderSlots": {
-                                "$id": 412,
+                                "$id": 406,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [
@@ -4650,10 +4596,100 @@
                     ]
                 },
                 "_accessories": {
-                    "$id": 413,
+                    "$id": 407,
                     "$type": 11,
                     "$rlength": 6,
                     "$rcontent": [
+                        {
+                            "$id": 408,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 409,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 410,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 411,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
+                        {
+                            "$id": 412,
+                            "$type": 12,
+                            "_name": "",
+                            "_definitionKey": "",
+                            "_description": "",
+                            "_modelIndex": -1,
+                            "_itemType": 29,
+                            "_nameFormat": 4,
+                            "_equipmentSlot": 11,
+                            "_renderSlots": {
+                                "$id": 413,
+                                "$type": 13,
+                                "$rlength": 0,
+                                "$rcontent": [
+                                ]
+                            },
+                            "_materialAllowed": 0,
+                            "_stackSize": 0,
+                            "_itemPower": 0,
+                            "_encumbrance": 0,
+                            "_goldValue": 0,
+                            "_gemValue": 0,
+                            "_usesLeft": 0,
+                            "_rarityKey": "",
+                            "_materialKey": "",
+                            "_qualityKey": "",
+                            "_prefixEnchantKey": "",
+                            "_suffixEnchantKey": ""
+                        },
                         {
                             "$id": 414,
                             "$type": 12,
@@ -4726,96 +4762,6 @@
                             "_equipmentSlot": 11,
                             "_renderSlots": {
                                 "$id": 419,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 420,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 421,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 422,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 423,
-                                "$type": 13,
-                                "$rlength": 0,
-                                "$rcontent": [
-                                ]
-                            },
-                            "_materialAllowed": 0,
-                            "_stackSize": 0,
-                            "_itemPower": 0,
-                            "_encumbrance": 0,
-                            "_goldValue": 0,
-                            "_gemValue": 0,
-                            "_usesLeft": 0,
-                            "_rarityKey": "",
-                            "_materialKey": "",
-                            "_qualityKey": "",
-                            "_prefixEnchantKey": "",
-                            "_suffixEnchantKey": ""
-                        },
-                        {
-                            "$id": 424,
-                            "$type": 12,
-                            "_name": "",
-                            "_definitionKey": "",
-                            "_description": "",
-                            "_modelIndex": -1,
-                            "_itemType": 29,
-                            "_nameFormat": 4,
-                            "_equipmentSlot": 11,
-                            "_renderSlots": {
-                                "$id": 425,
                                 "$type": 13,
                                 "$rlength": 0,
                                 "$rcontent": [

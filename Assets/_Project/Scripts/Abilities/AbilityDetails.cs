@@ -26,6 +26,9 @@ namespace Descending.Abilities
         [SerializeField] private SkillDefinition _skill = null;
         [SerializeField] private int _minimumSkill = 0;
         [SerializeField] private int _actionsToUse = 1;
+        [SerializeField] private TargetTypes _targetType = TargetTypes.None;
+        [SerializeField] private AreaTypes _areaType = AreaTypes.None;
+        [SerializeField] private RangeTypes _rangeType = RangeTypes.None;
         
         public string Name => _name;
         public string Key => _key;
@@ -38,6 +41,9 @@ namespace Descending.Abilities
         public SkillDefinition Skill => _skill;
         public int MinimumSkill => _minimumSkill;
         public int ActionsToUse => _actionsToUse;
+        public TargetTypes TargetType => _targetType;
+        public AreaTypes AreaType => _areaType;
+        public RangeTypes RangeType => _rangeType;
 
         public string GetTooltipText()
         {
@@ -46,9 +52,12 @@ namespace Descending.Abilities
             sb.Append("Ability Type ").Append(_abilityType).Append("\n");
             sb.Append("Cooldown ").Append(_cooldown).Append("\n");
             sb.Append("Description ").Append(_description).Append("\n");
-            sb.Append("Resource ").Append(_resourceAttribute.Name).Append(" ").Append(_resourceAmount).Append("\n\n");
-            sb.Append("Skill ").Append(_skill.Name).Append(" ").Append(_minimumSkill).Append("\n\n");
+            sb.Append("Resource ").Append(_resourceAttribute.Name).Append(" ").Append(_resourceAmount).Append("\n");
+            sb.Append("Skill ").Append(_skill.Name).Append(" ").Append(_minimumSkill).Append("\n");
             sb.Append("Actions ").Append(_actionsToUse).Append("\n");
+            sb.Append("Range ").Append(_rangeType).Append("\n");
+            sb.Append("Area ").Append(_areaType).Append("\n");
+            sb.Append("Target Type ").Append(_targetType).Append("\n");
 
             return sb.ToString();
         }

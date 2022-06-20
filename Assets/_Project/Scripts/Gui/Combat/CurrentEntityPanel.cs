@@ -78,7 +78,6 @@ namespace Descending.Gui
             if (_entity.GetType() == typeof(Hero))
             {
                 Hero hero = (Hero) _entity;
-                Debug.Log(hero.Abilities.ActionConfigs.Count);
                 for (int i = 0; i < hero.Abilities.ActionConfigs.Count; i++)
                 {
                     GameObject clone = Instantiate(_actionWidgetPrefab, _actionWidgetsParent);

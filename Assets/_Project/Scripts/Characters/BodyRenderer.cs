@@ -87,7 +87,7 @@ namespace Descending.Characters
             _tattooColorIndex = saveData.HeroData.TattooColorIndex;
         }
         
-        public void SetupBody(Genders gender, RaceDefinition race, ProfessionDefinition profession, BodyRenderer worldRenderer = null)
+        public void SetupBody(Genders gender, RaceDefinition race, ProfessionDefinition profession)
         {
             SetupParts();
             HideAll();
