@@ -19,21 +19,21 @@ namespace Descending.Equipment
         [SerializeField] private float _spellModifier = 0f;
         [SerializeField] private int _itemPower = 0;
         [SerializeField] private float _encumbranceModifier = 0;
-        [SerializeField] private float _goldValue = 0;
+        [SerializeField] private int _goldValue = 0;
         [SerializeField] private int _gemValue = 0;
 
-        public string Key { get => _key; }
-        public string Name { get => _name; }
-        public ItemMaterialType MaterialType { get => _materialType; }
-        public RarityDefinition Rarity { get => _rarity; }
-        public Color Color { get => _color; }
-        public float MightModifier { get => _mightModifier; }
-        public float FinesseModifier { get => _finesseModifier; }
-        public float SpellModifier { get => _spellModifier; }
-        public int ItemPower { get => _itemPower; }
-        public float EncumbranceModifier { get => _encumbranceModifier; }
-        public float GoldValue { get => _goldValue; }
-        public int GemValue { get => _gemValue; }
+        public string Key => _key;
+        public string Name => _name;
+        public ItemMaterialType MaterialType => _materialType;
+        public RarityDefinition Rarity => _rarity;
+        public Color Color => _color;
+        public float MightModifier => _mightModifier;
+        public float FinesseModifier => _finesseModifier;
+        public float SpellModifier => _spellModifier;
+        public int ItemPower => _itemPower;
+        public float EncumbranceModifier => _encumbranceModifier;
+        public int GoldValue => _goldValue;
+        public int GemValue => _gemValue;
 
 
         public string GetTooltipText()

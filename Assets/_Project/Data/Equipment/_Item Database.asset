@@ -23,13 +23,15 @@ MonoBehaviour:
     - Mail Armor
     - Battle Axe
     - Fire Staff
-    - Scepter of Light
+    - Holy Scepter
     - Torch
     - Simple Vestments
     - Dagger
     - Long Sword
     - Wood Shield
     - Hand Axe
+    - Small Essence Potion
+    - Small Healing Potion
     valueData:
     - {fileID: 11400000, guid: 2ae505d62fdd6724d8de1ca2207b74d3, type: 2}
     - {fileID: 11400000, guid: 20b1b02d41a03ff4ab8e47ecf612ddf7, type: 2}
@@ -47,3 +49,5 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a76083b8c56594643aa0dc8158f08229, type: 2}
     - {fileID: 11400000, guid: d945a7368b40b8844ae8609eceebef82, type: 2}
     - {fileID: 11400000, guid: ca126ec1f794922499ac8d62ca64b307, type: 2}
+    - {fileID: 11400000, guid: f6c3596b8f6a9d34c9d316abe2ab4d6a, type: 2}
+    - {fileID: 11400000, guid: ad1c8f40b627eb741a7477c8ac1ed106, type: 2}

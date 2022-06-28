@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1752634011024786, guid: 341831718b7c62847a9445f31ad4459c, type: 3}
       propertyPath: m_Name
-      value: Sun Elf Male
+      value: Shadow Elf Male
       objectReference: {fileID: 0}
     - target: {fileID: 1763904463690146, guid: 341831718b7c62847a9445f31ad4459c, type: 3}
       propertyPath: m_IsActive
@@ -278,6 +278,16 @@ PrefabInstance:
     - target: {fileID: 4571756472629890, guid: 341831718b7c62847a9445f31ad4459c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668169838034676865, guid: 341831718b7c62847a9445f31ad4459c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1668169838034676865, guid: 341831718b7c62847a9445f31ad4459c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 341831718b7c62847a9445f31ad4459c, type: 3}

@@ -97,17 +97,17 @@ MonoBehaviour:
   _startingItems:
   - _itemKey: Leather Armor
     _materialKey: Hide
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   - _itemKey: Leather Boots
     _materialKey: Hide
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   - _itemKey: Dagger
     _materialKey: Iron
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   _attributePointsPerLevel: 0

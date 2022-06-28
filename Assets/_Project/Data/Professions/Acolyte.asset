@@ -89,17 +89,17 @@ MonoBehaviour:
   _startingItems:
   - _itemKey: Simple Vestments
     _materialKey: Linen
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   - _itemKey: Leather Boots
     _materialKey: Hide
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
-  - _itemKey: Scepter of Light
+  - _itemKey: Holy Scepter
     _materialKey: Iron
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   _attributePointsPerLevel: 0

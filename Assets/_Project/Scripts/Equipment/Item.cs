@@ -178,20 +178,20 @@ namespace Descending.Equipment
             string prefix = "";
             string suffix = "";
 
-            // if (_quality != null)
-            // {
-            //     quality = _quality.Name;
-            // }
-            //
-            // if (_prefixEnchant != null)
-            // {
-            //     prefix = " " + _prefixEnchant.Name;
-            // }
-            //
-            // if (_suffixEnchant != null)
-            // {
-            //     suffix = " " + _suffixEnchant.Name;
-            // }
+            if (_qualityKey != "")
+            {
+                quality = _qualityKey;
+            }
+            
+            if (_prefixEnchantKey != "")
+            {
+                prefix = " " + _prefixEnchantKey;
+            }
+            
+            if (_suffixEnchantKey != "")
+            {
+                suffix = " " + _suffixEnchantKey;
+            }
 
             string name = "";
 
@@ -298,22 +298,22 @@ namespace Descending.Equipment
                 sb.Append("\n" + ItemDefinition.UsableData.GetTooltipText());
             }
 
-            //sb.Append("\nMaterial:  " + MaterialDefinition.GetTooltipText() + "\n");
+            sb.Append("\nMaterial:  " + MaterialDefinition.GetTooltipText() + "\n");
 
-            // if (_quality != null)
-            // {
-            //     sb.Append("Quality:  " + _quality.GetTooltipText() + "\n");
-            // }
-            //
-            // if (_prefixEnchant != null)
-            // {
-            //     sb.Append("Prefix:  " + _prefixEnchant.GetTooltipText() + "\n");
-            // }
-            //
-            // if (_suffixEnchant != null)
-            // {
-            //     sb.Append("Suffix:  " + _suffixEnchant.GetTooltipText() + "\n");
-            // }
+             if (_qualityKey != "")
+             {
+                 sb.Append("Quality:  " + Database.instance.Enchants.GetEnchant(_qualityKey).Name + "\n");
+             }
+            
+             if (_prefixEnchantKey != "")
+             {
+                 sb.Append("Prefix:  " + Database.instance.Enchants.GetEnchant(_prefixEnchantKey).Name + "\n");
+             }
+            
+             if (_suffixEnchantKey != "")
+             {
+                 sb.Append("Suffix:  " + Database.instance.Enchants.GetEnchant(_suffixEnchantKey).Name + "\n");
+             }
 
             return sb.ToString();
         }
@@ -322,31 +322,24 @@ namespace Descending.Equipment
         {
             _itemPower = ItemDefinition.BasePower;
             _itemPower += MaterialDefinition.ItemPower;
-
-            if (_prefixEnchantKey != "")
+            
+            if (_qualityKey != "")
             {
-                _itemPower += PrefixDefinition.ItemPower;
-            }
-
-            if (_suffixEnchantKey != "")
-            {
-                _itemPower += SuffixDefinition.ItemPower;
+                //Debug.Log("Quality " + _qualityKey);
+                _itemPower += Database.instance.Enchants.GetEnchant(_qualityKey).ItemPower;
             }
             
-            // if (_quality != null)
-            // {
-            //     _itemPower += _quality.ItemPower;
-            // }
-            //
-            // if (_prefixEnchant != null)
-            // {
-            //     _itemPower += _prefixEnchant.ItemPower;
-            // }
-            //
-            // if (_suffixEnchant != null)
-            // {
-            //     _itemPower += _suffixEnchant.ItemPower;
-            // }
+            if (_prefixEnchantKey != "")
+            {
+                //Debug.Log("Prefix " + _prefixEnchantKey);
+                _itemPower += Database.instance.Enchants.GetEnchant(_prefixEnchantKey).ItemPower;
+            }
+            
+            if (_suffixEnchantKey != "")
+            {
+                //Debug.Log("Suffix " + _suffixEnchantKey);
+                _itemPower += Database.instance.Enchants.GetEnchant(_suffixEnchantKey).ItemPower;
+            }
         }
 
         public void CalculateEncumbrance()
@@ -355,30 +348,30 @@ namespace Descending.Equipment
             int encumbranceBonus = (int) ((float) _encumbrance * MaterialDefinition.EncumbranceModifier);
             _encumbrance += encumbranceBonus;
 
-            // if (_quality != null)
-            // {
-            //     int qualityBonus = (int) ((float) _encumbrance * _quality.EncumbranceModifier);
-            //     _encumbrance += qualityBonus;
-            // }
-            //
-            // if (_prefixEnchant != null)
-            // {
-            //     int prefixBonus = (int) ((float) _encumbrance * _prefixEnchant.EncumbranceModifier);
-            //     _encumbrance += prefixBonus;
-            // }
-            //
-            // if (_suffixEnchant != null)
-            // {
-            //     int suffixBonus = (int) ((float) _encumbrance * _suffixEnchant.EncumbranceModifier);
-            //     _encumbrance += suffixBonus;
-            // }
+            if (_qualityKey != "")
+            {
+                int qualityBonus = (int) ((float) _encumbrance * Database.instance.Enchants.GetEnchant(_qualityKey).EncumbranceModifier);
+                _encumbrance += qualityBonus;
+            }
+            
+            if (_prefixEnchantKey != "")
+            {
+                int prefixBonus = (int) ((float) _encumbrance * Database.instance.Enchants.GetEnchant(_prefixEnchantKey).EncumbranceModifier);
+                _encumbrance += prefixBonus;
+            }
+            
+            if (_suffixEnchantKey != "")
+            {
+                int suffixBonus = (int) ((float) _encumbrance * Database.instance.Enchants.GetEnchant(_suffixEnchantKey).EncumbranceModifier);
+                _encumbrance += suffixBonus;
+            }
         }
 
-        public void SetQualityEnchant(Enchantment enchant)
+        public void SetQualityEnchant(EnchantmentDefinition enchant)
         {
             if (enchant != null)
             {
-                _qualityKey = enchant.Definition.Key;
+                _qualityKey = enchant.Key;
                 CalculatePower();
                 CalculateEncumbrance();
                 CalculateRarity();
@@ -472,30 +465,30 @@ namespace Descending.Equipment
             ItemDefinition definition = Database.instance.Items.GetItem(_definitionKey);
             _goldValue = definition.GoldValue;
             _gemValue = definition.GemValue;
+            
+            if (_materialKey != "")
+            {
+                _goldValue += Database.instance.Materials.GetMaterial(_materialKey).GoldValue;
+                _gemValue += Database.instance.Materials.GetMaterial(_materialKey).GemValue;
+            }
 
-            //if (_material != null)
-            //{
-            //    _goldValue += (int)((float)_goldValue * _material.GoldValue);
-            //    _gemValue += _material.GemValue;
-            //}
-
-            // if (_quality != null)
-            // {
-            //     _goldValue += (int) ((float) _goldValue * _quality.GoldValue);
-            //     _gemValue += _quality.GemValue;
-            // }
-            //
-            // if (_prefixEnchant != null)
-            // {
-            //     _goldValue += (int) ((float) _goldValue * _prefixEnchant.GoldValue);
-            //     _gemValue += _prefixEnchant.GemValue;
-            // }
-            //
-            // if (_suffixEnchant != null)
-            // {
-            //     _goldValue += (int) ((float) _goldValue * _suffixEnchant.GoldValue);
-            //     _gemValue += _suffixEnchant.GemValue;
-            // }
+            if (_qualityKey != "")
+            {
+                _goldValue += Database.instance.Enchants.GetEnchant(_qualityKey).GoldValue;
+                _gemValue += Database.instance.Enchants.GetEnchant(_qualityKey).GemValue;
+            }
+            
+            if (_prefixEnchantKey != "")
+            {
+                _goldValue += Database.instance.Enchants.GetEnchant(_prefixEnchantKey).GoldValue;
+                _gemValue += Database.instance.Enchants.GetEnchant(_prefixEnchantKey).GemValue;
+            }
+            
+            if (_suffixEnchantKey != "")
+            {
+                _goldValue += Database.instance.Enchants.GetEnchant(_suffixEnchantKey).GoldValue;
+                _gemValue += Database.instance.Enchants.GetEnchant(_suffixEnchantKey).GemValue;
+            }
         }
 
         public GameObject SpawnItemModel(Transform parent, int layer)

@@ -32,19 +32,11 @@ namespace Descending.Gui
         public void SetItem(Item item, int index)
         {
             _index = index;
-            
-            if (item != null && item.Name != "" && item.StackSize > 0)
-            {
-                _item = item;
-                _icon.sprite = _item.Icon;
-                _stackSizeLabel.text = item.StackSize.ToString();
+            _item = item;
+            _icon.sprite = _item.Icon;
+            _stackSizeLabel.text = item.StackSize.ToString();
 
-                _border.color = item.GetRarityColor();
-            }
-            else
-            {
-                Clear();
-            }
+            _border.color = item.GetRarityColor();
         }
 
         public void Clear()

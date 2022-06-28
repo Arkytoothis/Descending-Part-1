@@ -13,6 +13,7 @@ namespace Descending.Dungeons
 
         protected override void Run(DungeonGenerator generator)
         {
+            //Debug.Log("Finishing Dungeon");
             _undergroundManager.SetupParty();
         }
     }

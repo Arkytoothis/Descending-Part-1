@@ -28,7 +28,6 @@ namespace Descending.Encounters
         {
             //Debug.Log("Registering Encounter");
             encounter.transform.SetParent(_encountersParent, true);
-            EncounterGenerator.BuildEncounter(encounter);
             _encounters.Add(encounter);
         }
 
@@ -63,8 +62,8 @@ namespace Descending.Encounters
         {
             for (int i = 0; i < _encounters.Count; i++)
             {
-                int threatLevel = (int)(Vector3.Distance(_encounters[i].transform.position, startPosition) / threatModifier); 
-                _encounters[i].Setup(_partyManager, threatLevel);
+                //int threatLevel = (int)(Vector3.Distance(_encounters[i].transform.position, startPosition) / threatModifier); 
+                //_encounters[i].Setup(_partyManager, threatLevel);
             }
         }
         

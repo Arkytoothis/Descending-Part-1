@@ -29,6 +29,7 @@ namespace Descending.Equipment
         [SerializeField] private Hands _hands = Hands.None;
         [SerializeField] private int _bestQualityAllowed = 0;
         [SerializeField] private bool _enchantable = false;
+        [SerializeField] private bool _stackable = false;
         [SerializeField] private int _modelIndex = -1;
         [SerializeField] private int _basePower = 0;
         [SerializeField] private int _encumbrance = 0;
@@ -44,35 +45,35 @@ namespace Descending.Equipment
         [SerializeField] UsableData _usableData = null;
         [SerializeField] IngredientData _ingredientData = null;
         
-        public string Name { get => _name; }
-        public string Key { get => _key; }
-        public string Description { get => _description; }
-
-        public Sprite Icon { get => _icon; }
-        public GameObject EquipModel { get => _equipModel; }
-        public GameObject DropModel { get => _dropModel; }
-        public ItemType ItemType { get => _itemType; }
+        public string Name => _name;
+        public string Key => _key;
+        public string Description => _description;
+        public Sprite Icon => _icon;
+        public GameObject EquipModel => _equipModel;
+        public GameObject DropModel => _dropModel;
+        public ItemType ItemType => _itemType;
         public ItemCategory Category => _category;
-        public ItemNameFormat NameFormat { get => _nameFormat; }
-        public EquipmentSlot EquipmentSlot { get => _equipmentSlot; }
-        public List<RenderSlot> RenderSlots { get => _renderSlots; }
-        public ItemMaterialAllowed PrimaryMaterialAllowed { get => _materialAllowed; }
-        public int BestQualityAllowed { get => _bestQualityAllowed; }
-        public bool Enchantable { get => _enchantable; }
-        public int ModelIndex { get => _modelIndex; }
-        public int BasePower { get => _basePower; }
-        public int Encumbrance { get => _encumbrance; }
-        public int GoldValue { get => _goldValue; }
-        public int GemValue { get => _gemValue; }
+        public ItemNameFormat NameFormat => _nameFormat;
+        public EquipmentSlot EquipmentSlot => _equipmentSlot;
+        public List<RenderSlot> RenderSlots => _renderSlots;
+        public ItemMaterialAllowed PrimaryMaterialAllowed => _materialAllowed;
+        public int BestQualityAllowed => _bestQualityAllowed;
+        public bool Enchantable => _enchantable;
+        public int ModelIndex => _modelIndex;
+        public int BasePower => _basePower;
+        public int Encumbrance => _encumbrance;
+        public int GoldValue => _goldValue;
+        public int GemValue => _gemValue;
         public int MinimumMight => _minimumMight;
         public int MinimumFinesse => _minimumFinesse;
         public int MinimumMind => _minimumMind;
-        public Hands Hands { get => _hands; }
+        public Hands Hands => _hands;
+        public bool Stackable => _stackable;
 
-        public WeaponData WeaponData { get => _weaponData; }
-        public WearableData WearableData { get => _wearableData; }
-        public AccessoryData AccessoryData { get => _accessoryData; }
-        public UsableData UsableData { get => _usableData; }
+        public WeaponData WeaponData => _weaponData;
+        public WearableData WearableData => _wearableData;
+        public AccessoryData AccessoryData => _accessoryData;
+        public UsableData UsableData => _usableData;
         public IngredientData IngredientData => _ingredientData;
 
         public ItemDefinition Projectile => _projectile;

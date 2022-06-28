@@ -359,8 +359,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 845913506303988479}
-        m_TargetAssemblyTypeName: Descending.Scene_Overworld.Gui.ResourcesPanel,
-          Descending
+        m_TargetAssemblyTypeName: Descending.Gui.ResourcesPanel, Descending
         m_MethodName: OnSyncCoins
         m_Mode: 0
         m_Arguments:

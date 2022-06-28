@@ -16,5 +16,5 @@ MonoBehaviour:
   _key: Legendary
   _order: 5
   _color: {r: 0.745283, g: 0.50343245, b: 0.17225882, a: 1}
-  _minimumPower: 0
-  _maximumPower: 0
+  _minimumPower: 1000
+  _maximumPower: 10000

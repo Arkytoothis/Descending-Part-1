@@ -26,20 +26,22 @@ namespace Descending.Encounters
         
         public static void BuildEncounter(Encounter encounter)
         {
-            EncounterDifficulties difficulty = (EncounterDifficulties) Random.Range(0, (int) EncounterDifficulties.Number);
-            EnemyGroups group = (EnemyGroups) Random.Range(0, (int) EnemyGroups.Number);
+            if (encounter == null) return;
+            
+            //EncounterDifficulties difficulty = (EncounterDifficulties) Random.Range(0, (int) EncounterDifficulties.Number);
+            //EnemyGroups group = (EnemyGroups) Random.Range(0, (int) EnemyGroups.Number);
             List<EnemyShort> enemies = new List<EnemyShort>();
 
             int numEnemies = Random.Range(1, 7);
             
             for (int i = 0; i < numEnemies; i++)
             {
-                int rndIndex = Random.Range(0, _enemyGroupLists[(int) group].Count);
-                string enemyKey = _enemyGroupLists[(int) group][rndIndex];
+                int rndIndex = Random.Range(0, _enemyGroupLists[(int) encounter.Group].Count);
+                string enemyKey = _enemyGroupLists[(int) encounter.Group][rndIndex];
                 enemies.Add(new EnemyShort(enemyKey, 1));
             }
 
-            encounter.SetupData(difficulty, group, enemies);
+            encounter.SetupData(encounter.Difficulty, encounter.Group, enemies);
         }
     }
 }

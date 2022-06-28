@@ -16,5 +16,5 @@ MonoBehaviour:
   _key: Precious
   _order: 3
   _color: {r: 0, g: 0.4305151, b: 0.9433962, a: 1}
-  _minimumPower: 0
-  _maximumPower: 0
+  _minimumPower: 100
+  _maximumPower: 249

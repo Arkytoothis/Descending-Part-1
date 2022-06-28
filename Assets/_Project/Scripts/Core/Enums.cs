@@ -106,12 +106,6 @@ namespace Descending.Core
         Main_Menu, Overworld, Underground,
         Number, None
     }
-    
-    public enum EnemyGroups
-    {
-        Goblinoid, Undead, Viking, Bandit,
-        Number, None
-    }
 
     public enum Directions
     {
@@ -194,10 +188,16 @@ namespace Descending.Core
     {
         Look, Cursor, Number, None
     }
+
+    public enum EnemyGroups
+    {
+        Goblinoid, Undead, Viking, Bandit,
+        Number, None
+    }
     
     public enum EncounterDifficulties
     {
-        Easy, Standard, Hard, 
+        Easy, Standard, Hard, Overseer, Boss, Random,
         Number, None
     }
 }

@@ -30,7 +30,6 @@ namespace Descending.Characters
             return hero;
         }
         
-
         public static GameObject SpawnPortraitPrefab(Genders gender, RaceDefinition race, Transform parent)
         {
             if (gender == Genders.Male) return GameObject.Instantiate(race.PrefabMale, parent);

@@ -101,8 +101,8 @@ namespace Descending.Gui
             {
                 SetupFull();
                 _icon.sprite = item.Icon;
-                _title.text = item.Name;
-                //_title.color = GetTitleColor(item);
+                _title.text = item.DisplayName();
+                _title.color = GetTitleColor(item);
                 _description.text = item.ItemDefinition.Name + " Description - ";  
                 _details.text = item.GetTooltipText();
 

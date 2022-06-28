@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using Descending.Attributes;
 using Descending.Characters;
 using Descending.Core;
@@ -13,10 +14,8 @@ namespace Descending.Equipment
         
         [SerializeField] private Item[] _equippedItems = null;
         [SerializeField] private Item[] _accessories = null;
-        [SerializeField] private Item[] _stockpile = null;
         
         [SerializeField] private int _accessorySlots = 2;
-        [SerializeField] private int _stockpileSlots = 40;
         [SerializeField] private BodyRenderer _portraitBody = null;
 
         private Genders _gender = Genders.None;
@@ -24,8 +23,6 @@ namespace Descending.Equipment
         public Item[] EquippedItems => _equippedItems;
         public Item[] Accessories => _accessories;
         public int AccessorySlots => _accessorySlots;
-        public Item[] Stockpile => _stockpile;
-        public int StockpileSlots => _stockpileSlots;
 
         public void Setup(BodyRenderer portraitBody, Genders gender, RaceDefinition race, ProfessionDefinition profession)
         {
@@ -35,7 +32,6 @@ namespace Descending.Equipment
             
             _equippedItems = new Item[(int) EquipmentSlot.Number];
             _accessories = new Item[MAX_ACCESSORY_SLOTS];
-            _stockpile = new Item[_stockpileSlots];
             
             for (int i = 0; i < (int)EquipmentSlot.Number; i++)
             {
@@ -46,11 +42,6 @@ namespace Descending.Equipment
             {
                 _accessories[i] = null;
             }
-
-            for (int i = 0; i < _stockpileSlots; i++)
-            {
-                _stockpile[i] = null;
-            }
             
             for (int i = 0; i < profession.StartingItems.Count; i++)
             {
@@ -59,64 +50,7 @@ namespace Descending.Equipment
             }
         }
 
-        public void PickupItem(Item item)
-        {
-            for (int i = 0; i < _stockpile.Length; i++)
-            {
-                if (_stockpile[i] == null)
-                {
-                    _stockpile[i] = new Item(item);
-                    break;
-                }
-                else
-                {
-                    if (_stockpile[i].ItemDefinition.Key == item.ItemDefinition.Key)
-                    {
-                        _stockpile[i].AddToStack(1);
-                        break;
-                    }
-                }
-            }
-        }
-
-        public bool HasItem(ItemDefinition item, int amount)
-        {
-            bool hasItem = false;
-
-            for (int i = 0; i < _stockpile.Length; i++)
-            {
-                if (_stockpile[i] != null && _stockpile[i].ItemDefinition == item && _stockpile[i].StackSize >= amount)
-                {
-                    hasItem = true;
-                    break;
-                }
-            }
-
-            return hasItem;
-        }
-
-        public void RemoveItem(ItemDefinition item, int amount)
-        {
-            for (int i = 0; i < _stockpile.Length; i++)
-            {
-                if (_stockpile[i] != null && _stockpile[i].ItemDefinition == item && _stockpile[i].StackSize >= amount)
-                {
-                    _stockpile[i].StackSize -= amount;
-
-                    if (_stockpile[i].StackSize <= 0)
-                    {
-                        _stockpile[i] = null;
-                    }
-                    
-                    break;
-                }
-            }
-        }
-
-        public void ClearStockpileSlot(int index)
-        {
-            _stockpile[index] = null;
-        }
+        
         
         public void LoadData(BodyRenderer portraitBody, Genders gender, InventorySaveData saveData)
         {
@@ -145,7 +79,7 @@ namespace Descending.Equipment
 
         public void EquipItem(Item item)
         {
-            Debug.Log("Name: " + item.Name + " Slot: " + item.EquipmentSlot);
+            //Debug.Log("Name: " + item.Name + " Slot: " + item.EquipmentSlot);
             if (_equippedItems[(int) item.EquipmentSlot] == null)
             {
                 //Debug.Log("Equipping");
@@ -155,7 +89,7 @@ namespace Descending.Equipment
             else
             {
                 //Debug.Log("Swapping");
-                PickupItem(_equippedItems[(int) item.EquipmentSlot]);
+                //PickupItem(_equippedItems[(int) item.EquipmentSlot]);
                 _equippedItems[(int) item.EquipmentSlot] = new Item(item);
                 _portraitBody.EquipItem(item);
             }
@@ -179,11 +113,6 @@ namespace Descending.Equipment
         public WeaponData GetEquippedWeaponData()
         {
             return _equippedItems[(int) EquipmentSlot.Right_Hand].GetWeaponData();
-        }
-
-        public string GetRandomWalkSound()
-        {
-            return _equippedItems[(int) EquipmentSlot.Armor].GetWearableData().GetRandomWalkSound();
         }
 
         // public bool HasIngredients(RecipeDefinition recipe)

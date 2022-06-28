@@ -93,22 +93,22 @@ MonoBehaviour:
   _startingItems:
   - _itemKey: Mail Armor
     _materialKey: Iron
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   - _itemKey: Leather Boots
     _materialKey: Hide
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   - _itemKey: Long Sword
     _materialKey: Iron
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   - _itemKey: Wood Shield
     _materialKey: Wood
-    _qualityKey: 
+    _qualityKey: Poor
     _prefixEnchantment: 
     _suffixEnchantment: 
   _attributePointsPerLevel: 0

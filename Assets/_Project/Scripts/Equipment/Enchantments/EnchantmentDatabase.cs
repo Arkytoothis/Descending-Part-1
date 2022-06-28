@@ -14,7 +14,8 @@ namespace Descending.Equipment.Enchantments
 
         public EnchantmentDefinition GetEnchant(string key)
         {
-            Debug.Log(key);
+            //Debug.Log(key);
+            
             if (_enchantments.ContainsKey(key))
             {
                 return _enchantments[key];

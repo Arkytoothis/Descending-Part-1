@@ -22,13 +22,13 @@ namespace Descending.Scene_Underground
         private void Awake()
         {
             _database.Setup();
-            
-            _runtimeDungeon.Generate();
         }
 
         private void Start()
         {
             SetupGui();
+            _runtimeDungeon.Generate();
+            //SetupParty();
         }
 
         public void SetupParty()

@@ -35,7 +35,7 @@ namespace Descending.Party
         public void AddMaterials(int amount)
         {
             _materials += amount;
-            onSyncMaterials.Invoke(_supplies);
+            onSyncMaterials.Invoke(_materials);
         }
 
         public void AddSupplies(int amount)

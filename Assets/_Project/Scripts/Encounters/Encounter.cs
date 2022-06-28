@@ -15,23 +15,21 @@ namespace Descending.Encounters
     {
         [SerializeField] private EncounterDifficulties _difficulty = EncounterDifficulties.None;
         [SerializeField] private EnemyGroups _group = EnemyGroups.None;
-        [SerializeField] private int _threatLevel = 0;
 
         [SerializeField] private Transform _enemiesParent = null;
         [SerializeField] private List<Transform> _formation = null;
         [SerializeField] private List<EnemyShort> _enemyData = null;
         [SerializeField] private List<Enemy> _enemies = null;
         [SerializeField] private bool _setParent = true;
+        [SerializeField] private GameObject _worldMarker = null;
 
         [SerializeField] private EncounterEvent onRegisterEncounter = null;
         [SerializeField] private EncounterEvent onTriggerEncounter = null;
-
-        [SerializeField] private PartyManager _partyManager = null;
+        
         private bool _isActive = false;
         
         public EncounterDifficulties Difficulty => _difficulty;
         public EnemyGroups Group => _group;
-        public int ThreatLevel => _threatLevel;
         public bool IsActive => _isActive;
         public List<Enemy> Enemies => _enemies;
         public bool SetParent => _setParent;
@@ -41,11 +39,11 @@ namespace Descending.Encounters
             onRegisterEncounter.Invoke(this);
         }
 
-        public void Setup(PartyManager partyManager, int threatLevel)
+        private void Start()
         {
-            _partyManager = partyManager;
-            _threatLevel = threatLevel;
-            name = "Encounter: Threat:" + _threatLevel;
+            EncounterGenerator.BuildEncounter(this);
+            SpawnEnemies();
+            _worldMarker.SetActive(false);
         }
         
         public void SpawnEnemies()
@@ -55,6 +53,7 @@ namespace Descending.Encounters
                 EnemyDefinition definition = Database.instance.Enemies.GetEnemy(_enemyData[i].Key);
                 GameObject clone = Instantiate(definition.Prefab, _enemiesParent);
                 clone.transform.position = _formation[i].position;
+                clone.transform.rotation = _formation[i].rotation;
                 
                 Animator animator = clone.GetComponentInChildren<Animator>();
                 Enemy enemy = clone.GetComponent<Enemy>();
@@ -71,7 +70,7 @@ namespace Descending.Encounters
 
             for (int i = 0; i < _enemies.Count; i++)
             {
-                _enemies[i].transform.DOLookAt(_partyManager.PartyObject.transform.position, 0.2f);
+                _enemies[i].transform.DOLookAt(Camera.main.transform.position, 0.2f);
             }
         }
 
@@ -81,7 +80,6 @@ namespace Descending.Encounters
             _group = group;
             _enemyData = enemyData;
             
-            SpawnEnemies();
             Deactivate();
         }
 

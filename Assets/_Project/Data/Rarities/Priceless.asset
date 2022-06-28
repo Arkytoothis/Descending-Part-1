@@ -16,5 +16,5 @@ MonoBehaviour:
   _key: Priceless
   _order: 4
   _color: {r: 0.5507149, g: 0.24679601, b: 0.8867924, a: 1}
-  _minimumPower: 0
-  _maximumPower: 0
+  _minimumPower: 500
+  _maximumPower: 999

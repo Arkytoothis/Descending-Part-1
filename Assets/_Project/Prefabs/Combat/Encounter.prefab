@@ -112,7 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _difficulty: 4
   _group: 5
-  _triggerCollider: {fileID: 1527147173032885880}
   _threatLevel: 0
   _enemiesParent: {fileID: 1527147172880980891}
   _formation:
@@ -128,6 +127,7 @@ MonoBehaviour:
   _enemyData: []
   _enemies: []
   _setParent: 1
+  _worldMarker: {fileID: 8378021672439704853}
   onRegisterEncounter:
     m_PersistentCalls:
       m_Calls:
@@ -512,7 +512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6932150758421760832
 Transform:
   m_ObjectHideFlags: 0

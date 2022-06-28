@@ -59,7 +59,7 @@ namespace Descending.Gui
             if (encounter == null || _partyData == null) return;
             
             _nameLabel.text = encounter.name;
-            _encounterDetailsLabel.text = "Threat Level " + encounter.ThreatLevel + " " + encounter.Difficulty + " " + encounter.Group + " encounter";
+            _encounterDetailsLabel.text = encounter.Difficulty + " " + encounter.Group + " encounter";
             _heroWidgetsParent.ClearTransform();
             _heroWidgets.Clear();
             _enemyWidgetsParent.ClearTransform();

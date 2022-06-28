@@ -49,8 +49,12 @@ namespace Descending.Equipment
             item.SetMaterial(material);
 
             RandomizeQuality(ref item, plusChance);
-            RandomizePrefix(ref item, prefixChance);
-            RandomizeSuffix(ref item, suffixChance);
+
+            if (item.ItemDefinition.Category != ItemCategory.Accessories)
+            {
+                RandomizePrefix(ref item, prefixChance);
+                RandomizeSuffix(ref item, suffixChance);
+            }
 
             item.CalculateValue();
 
@@ -66,8 +70,12 @@ namespace Descending.Equipment
             MaterialDefinition material = GetItemMaterial(item, bestMaterial);
             item.SetMaterial(material);
             RandomizeQuality(ref item, plusChance);
-            RandomizePrefix(ref item, prefixChance);
-            RandomizeSuffix(ref item, suffixChance);
+
+            if (item.ItemDefinition.Category != ItemCategory.Accessories)
+            {
+                RandomizePrefix(ref item, prefixChance);
+                RandomizeSuffix(ref item, suffixChance);
+            }
 
             item.CalculateValue();
 
@@ -81,8 +89,13 @@ namespace Descending.Equipment
             MaterialDefinition material = GetItemMaterial(item, bestMaterial);
             item.SetMaterial(material);
             RandomizeQuality(ref item, plusChance);
-            RandomizePrefix(ref item, prefixChance);
-            RandomizeSuffix(ref item, suffixChance);
+
+            if (item.ItemDefinition.Category != ItemCategory.Accessories)
+            {
+                RandomizePrefix(ref item, prefixChance);
+                RandomizeSuffix(ref item, suffixChance);
+            }
+
             item.CalculateValue();
 
             return item;
@@ -202,7 +215,9 @@ namespace Descending.Equipment
 
             //if (UnityEngine.Random.Range(0, 100) < plusChance)
             //{
-            item.SetQualityEnchant(new Enchantment(_qualityEnchants[UnityEngine.Random.Range(5, _qualityEnchants.Count)]));
+            string key = _qualityEnchants[0].Key;
+            //Debug.Log(key);
+            item.SetQualityEnchant(_qualityEnchants[UnityEngine.Random.Range(0, _qualityEnchants.Count)]);
             //}
 
             // if (definition.BestQualityAllowed > -1)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Den.Tools;
 using Descending.Core;
 using Descending.Encounters;
@@ -7,8 +8,9 @@ using Descending.Party;
 using MapMagic.Core;
 using MapMagic.Products;
 using MapMagic.Terrains;
+using ScriptableObjectArchitecture;
+using Sirenix.Serialization;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 namespace Descending.World
 {
@@ -17,23 +19,54 @@ namespace Descending.World
         [SerializeField] private EncounterManager _encounterManager = null;
         [SerializeField] private float _threatModifier = 10f;
         [SerializeField] private MapMagicObject _mapMagic = null;
-        [SerializeField] private bool _randomize = true;
-
-        [SerializeField] private List<WorldSpawner> _worldSpawners = new List<WorldSpawner>();
-
-        private PartyManager _partyManager = null;
         
-        public void Generate(PartyManager partyManager)
+        private bool _randomize = true;
+        private List<WorldSpawner> _worldSpawners = new List<WorldSpawner>();
+        private PartyManager _partyManager = null;
+        private int _seed = 0;
+        private SceneLoadData _sceneLoadData = null;
+        
+        public void Generate(PartyManager partyManager, SceneLoadData sceneLoadData)
         {
             _partyManager = partyManager;
-            
-            if (_randomize == true)
-            {
-                int seed = Random.Range(0, 10000000);
-                _mapMagic.graph.random = new Noise(seed, permutationCount:32768);
-            }
+            _sceneLoadData = sceneLoadData;
+
+            // if (_sceneLoadData.LoadType == SceneBuildTypes.Generate)
+            // {
+            //     _randomize = true;
+            // }
+            // else
+            // {
+            //     _randomize = false;
+            // }
+            //
+            // if (_randomize == true)
+            // {
+            //     _seed = Random.Range(0, 10000000);
+            //     SaveData();
+            //     _mapMagic.graph.random = new Noise(_seed, permutationCount:32768);
+            // }
+            // else
+            // {
+            //     LoadData();
+            // }
         }
 
+        private void SaveData()
+        {
+            WorldGenerationData worldData = new WorldGenerationData(_seed);
+            byte[] bytes = SerializationUtility.SerializeValue(worldData, DataFormat.JSON);
+            File.WriteAllBytes(Database.instance.WorldDataFilePath, bytes);
+        }
+
+        private void LoadData()
+        {
+            byte[] bytes = null;
+            if (!File.Exists(Database.instance.WorldDataFilePath)) return;
+            bytes = File.ReadAllBytes(Database.instance.WorldDataFilePath);
+            _seed = SerializationUtility.DeserializeValue<WorldGenerationData>(bytes, DataFormat.JSON).WorldSeed;
+        }
+        
         public void OnRegisterSpawner(WorldSpawner spawner)
         {
             _worldSpawners.Add(spawner);
@@ -47,7 +80,6 @@ namespace Descending.World
             }
             else
             {
-                
                 //Debug.Log($"Applied main tile at {tile.coord.x}, {tile.coord.z}");
                 _worldSpawners.Sort((a, b) => a.transform.position.y.CompareTo(b.transform.position.y));
                 _worldSpawners[0].SpawnParty(_partyManager);

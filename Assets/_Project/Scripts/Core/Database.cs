@@ -31,6 +31,8 @@ namespace Descending.Core
         [SerializeField] private string _partyDataFilePath = "";
         [SerializeField] private string _resourceDataFilePath = "";
         [SerializeField] private string _timeDataFilePath = "";
+        [SerializeField] private string _partySpawnFilePath = "";
+        [SerializeField] private string _worldDataFilePath = "";
 
         [SerializeField] private Sprite _blankSprite = null;
 
@@ -50,10 +52,12 @@ namespace Descending.Core
         public EnemyDatabase Enemies => _enemies;
         public GameObject HeroPrefab => _heroPrefab;
         public Sprite BlankSprite => _blankSprite;
-        public string SceneLoadPath => _sceneLoadFilePath;
         public string PartyDataFilePath => _partyDataFilePath;
         public string TimeDataFilePath => _timeDataFilePath;
         public string ResourceDataFilePath => _resourceDataFilePath;
+        public string SceneLoadFilePath => _sceneLoadFilePath;
+        public string PartySpawnFilePath => _partySpawnFilePath;
+        public string WorldDataFilePath => _worldDataFilePath;
 
         public void Setup()
         {

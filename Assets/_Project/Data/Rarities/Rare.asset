@@ -16,5 +16,5 @@ MonoBehaviour:
   _key: Rare
   _order: 2
   _color: {r: 0, g: 0.6698113, b: 0.10250772, a: 1}
-  _minimumPower: 0
-  _maximumPower: 0
+  _minimumPower: 250
+  _maximumPower: 499

@@ -29,9 +29,34 @@ MonoBehaviour:
     _areaType: 0
     _rangeType: 1
   _effects:
-    rid: -2
+    rid: 5891233385468395524
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 5891233385468395524
+      type: {class: AbilityEffects, ns: Descending.Abilities, asm: Descending}
+      data:
+        _data:
+        - rid: 5891233385468395525
+        - rid: 5891233385468395526
+    - rid: 5891233385468395525
+      type: {class: DamageEffect, ns: Descending.Abilities, asm: Descending}
+      data:
+        _ability: {fileID: 11400000}
+        _effectType: 2
+        _affects: 1
+        _damageType: {fileID: 11400000, guid: e0f5fc9bb9f168e429dec03177c49a99, type: 2}
+        _attribute: {fileID: 11400000, guid: 830a4ee13042db94685c95be9ea29b88, type: 2}
+        _minimumValue: 10
+        _maximumValue: 20
+    - rid: 5891233385468395526
+      type: {class: RestoreEffect, ns: Descending.Abilities, asm: Descending}
+      data:
+        _ability: {fileID: 11400000}
+        _effectType: 6
+        _affects: 0
+        _attribute: {fileID: 11400000, guid: 830a4ee13042db94685c95be9ea29b88, type: 2}
+        _minimumValue: 10
+        _maximumValue: 20
+        _casterEffectPrefab: {fileID: 0}
+        _targetEffectPrefab: {fileID: 0}

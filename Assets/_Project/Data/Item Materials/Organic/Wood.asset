@@ -20,7 +20,7 @@ MonoBehaviour:
   _mightModifier: 0
   _finesseModifier: 0
   _spellModifier: 0
-  _itemPower: 0
+  _itemPower: 5
   _encumbranceModifier: 0
-  _goldValue: 0
+  _goldValue: 5
   _gemValue: 0

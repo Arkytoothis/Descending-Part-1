@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Descending.Characters;
+using Descending.Party;
 using UnityEngine;
 
 namespace Descending.Gui.Party_Window
@@ -37,9 +38,25 @@ namespace Descending.Gui.Party_Window
                 _accessoryWidgets[i].Clear();
             }
             
+            // for (int i = 0; i < _stockpileWidgets.Count; i++)
+            // {
+            //     _stockpileWidgets[i].Clear();
+            // }
+        }
+
+        public void OnSyncStockpile(StockpileController stockpile)
+        {
+            //Debug.Log("Syncing Stockpile");
             for (int i = 0; i < _stockpileWidgets.Count; i++)
             {
-                _stockpileWidgets[i].Clear();
+                if (i < stockpile.Items.Count && stockpile.Items[i] != null)
+                {
+                    _stockpileWidgets[i].SetItem(stockpile.Items[i], i);
+                }
+                else
+                {
+                    _stockpileWidgets[i].Clear();
+                }
             }
         }
     }

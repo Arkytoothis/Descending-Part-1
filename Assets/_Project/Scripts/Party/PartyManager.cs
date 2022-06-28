@@ -4,6 +4,7 @@ using System.IO;
 using Descending.Attributes;
 using Descending.Characters;
 using Descending.Core;
+using Descending.Equipment;
 using ScriptableObjectArchitecture;
 using Sirenix.Serialization;
 using UnityEngine;
@@ -15,6 +16,9 @@ namespace Descending.Party
         [SerializeField] private GameObject _partyObject = null;
         [SerializeField] private PartySpawner _spawner = null;
         [SerializeField] private Transform _heroesParent = null;
+        [SerializeField] private FirstPersonController _controller = null;
+        [SerializeField] private ResourcesController _resources = null;
+        [SerializeField] private StockpileController _stockpile = null;
         [SerializeField] private bool _loadData = true;
         
         [SerializeField] private PartyDataEvent onSyncPartyData = null;
@@ -35,6 +39,8 @@ namespace Descending.Party
             {
                 LoadParty();
             }
+
+            _controller.UseGravity = true;
         }
 
         private void BuildParty()
@@ -46,6 +52,9 @@ namespace Descending.Party
             _partyData.AddHero(SpawnHero(4, Utilities.GetRandomGender(), Database.instance.Races.GetRace("Mountain Dwarf"), Database.instance.Profession.GetProfession("Acolyte")), null);
             _partyData.AddHero(SpawnHero(5, Utilities.GetRandomGender(), Database.instance.Races.GetRace("Valarian"), Database.instance.Profession.GetProfession("Apprentice")), null);
 
+            _resources.AddCoins(100);
+            _resources.AddSupplies(12);
+            
             SyncPartyData();
         }
 
@@ -94,6 +103,7 @@ namespace Descending.Party
 
         private void LoadParty()
         {
+            //Debug.Log("Loading Party");
             if (!File.Exists(Database.instance.PartyDataFilePath)) return;
 
             byte[] bytes = File.ReadAllBytes(Database.instance.PartyDataFilePath);
@@ -103,7 +113,25 @@ namespace Descending.Party
             {
                 _partyData.AddHero(HeroBuilder.LoadHero(saveData[i]), _heroesParent);
             }
+
+            _resources.AddCoins(100);
+            _resources.AddSupplies(12);
+            _resources.AddMaterials(0);
+            _resources.AddGems(0);
             
+
+            for (int i = 0; i < 20; i++)
+            {
+                Item item = ItemGenerator.GenerateRandomItem(Database.instance.Rarities.GetRarity("Legendary"), 10, 10, 10);
+                _stockpile.PickupItem(item);
+            }            
+
+            _stockpile.SyncStockpile();
+        }
+
+        public void SetSpawnerPosition(Vector3 position)
+        {
+            _spawner.transform.position = position;
         }
     }
 }

@@ -125,7 +125,7 @@ namespace Descending.Combat
         {
             onSetEnemyClickEnabled.Invoke(true);
             Hero hero = _initiativeList[_currentInitiative].Hero;
-            Debug.Log("Processing Hero: " + hero.HeroData.Name.ShortName);
+            //Debug.Log("Processing Hero: " + hero.HeroData.Name.ShortName);
             onProcessInitiative.Invoke(_currentInitiative);
         }
 
@@ -133,7 +133,7 @@ namespace Descending.Combat
         {
             onSetEnemyClickEnabled.Invoke(false);
             Enemy enemy = _initiativeList[_currentInitiative].Enemy;
-            Debug.Log("Processing Enemy: " + enemy.EnemyDefinition.Name);
+            //Debug.Log("Processing Enemy: " + enemy.EnemyDefinition.Name);
             onProcessInitiative.Invoke(_currentInitiative);
 
             StartCoroutine(ProcessTurn_Coroutine());

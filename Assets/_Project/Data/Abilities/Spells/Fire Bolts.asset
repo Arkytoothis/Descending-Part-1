@@ -29,9 +29,34 @@ MonoBehaviour:
     _areaType: 0
     _rangeType: 1
   _effects:
-    rid: -2
+    rid: 5891233385468395520
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 5891233385468395520
+      type: {class: AbilityEffects, ns: Descending.Abilities, asm: Descending}
+      data:
+        _data:
+        - rid: 5891233385468395521
+        - rid: 5891233385468395532
+    - rid: 5891233385468395521
+      type: {class: DamageEffect, ns: Descending.Abilities, asm: Descending}
+      data:
+        _ability: {fileID: 11400000}
+        _effectType: 2
+        _affects: 1
+        _damageType: {fileID: 11400000, guid: 8ff2c276d8d17c242a2c7d9d56e56cac, type: 2}
+        _attribute: {fileID: 11400000, guid: 830a4ee13042db94685c95be9ea29b88, type: 2}
+        _minimumValue: 10
+        _maximumValue: 20
+    - rid: 5891233385468395532
+      type: {class: DamageOverTimeEffect, ns: Descending.Abilities, asm: Descending}
+      data:
+        _ability: {fileID: 11400000}
+        _effectType: 3
+        _affects: 1
+        _damageType: {fileID: 11400000, guid: 8ff2c276d8d17c242a2c7d9d56e56cac, type: 2}
+        _minimumValue: 1
+        _maximumValue: 3
+        _minimumDuration: 3
+        _maximumDuration: 3
